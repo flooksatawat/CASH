@@ -200,49 +200,48 @@
         <div class="absolute inset-0 bg-[#050505]/80 backdrop-blur-xl border-b border-white/5 z-[110] transition-all duration-300" id="nav-bg"></div>
         
         <!-- ปรับแต่ง padding-top ให้รองรับขอบจอ Notch -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex justify-between items-center relative z-[120] pt-[env(safe-area-inset-top)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex justify-between items-center relative z-[120] pt-[env(safe-area-inset-top)]">
             <!-- โลโก้ / ชื่อโปรเจกต์ -->
             <a href="#" class="flex flex-col justify-center">
-                <span class="text-xl sm:text-2xl font-black tracking-widest text-white leading-none mb-1">CASH</span>
-                <span class="text-[10px] sm:text-xs font-bold tracking-wider gradient-text-gold whitespace-nowrap leading-none">Chubb <span class="text-white">Agency Success Howto</span></span>
+                <span class="text-lg sm:text-xl font-black tracking-widest text-white leading-none mb-1">CASH</span>
+                <span class="text-[9px] sm:text-[10px] font-bold tracking-wider gradient-text-gold whitespace-nowrap leading-none">Chubb <span class="text-white hidden min-[375px]:inline">Agency Success Howto</span><span class="text-white min-[375px]:hidden">A.S.H.</span></span>
             </a>
             
-            <div class="flex items-center gap-4 sm:gap-6">
+            <div class="flex items-center gap-3 sm:gap-6">
                 <!-- ปุ่มร่วมงานกับเรา -->
-                <a href="#profile" class="hidden md:inline-block bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-200 transition-colors text-sm whitespace-nowrap shrink-0">ร่วมงานกับเรา</a>
+                <a href="#profile" class="hidden md:inline-block bg-white text-black px-4 py-1.5 rounded-full font-semibold hover:bg-gray-200 transition-colors text-xs whitespace-nowrap shrink-0">ร่วมงานกับเรา</a>
                 
                 <!-- Hamburger Button -->
                 <button id="menu-btn" class="w-10 h-10 flex flex-col justify-center items-end gap-1.5 focus:outline-none cursor-pointer relative z-[130]">
-                    <span id="line-1" class="w-6 h-[2px] bg-white transition-all duration-300 origin-right block"></span>
-                    <span id="line-2" class="w-5 h-[2px] bg-white transition-all duration-300 origin-right block"></span>
+                    <span id="line-1" class="w-5 h-[2px] bg-white transition-all duration-300 origin-right block"></span>
+                    <span id="line-2" class="w-4 h-[2px] bg-white transition-all duration-300 origin-right block"></span>
                 </button>
             </div>
         </div>
 
         <!-- Fullscreen Menu Overlay -->
-        <!-- ใช้ 100dvh เพื่อให้เต็มจอไม่โดนเบราว์เซอร์บัง -->
         <div id="mobile-menu" class="fixed inset-0 w-full h-[100dvh] bg-[#050505]/98 backdrop-blur-3xl transition-all duration-400 z-[100] flex flex-col justify-center items-center pb-[env(safe-area-inset-bottom)]" style="opacity: 0; pointer-events: none;">
-            <div class="flex flex-col items-center gap-8 text-2xl sm:text-3xl font-bold text-gray-200 w-full px-6">
+            <div class="flex flex-col items-center gap-6 text-xl sm:text-2xl font-bold text-gray-200 w-full px-6">
                 <a href="#academy" class="menu-link hover:text-purple-400 hover:scale-110 transition-all">ห้องเรียนออนไลน์</a>
                 <a href="#growth" class="menu-link hover:text-purple-400 hover:scale-110 transition-all">ความก้าวหน้า</a>
                 <a href="#products" class="menu-link hover:text-purple-400 hover:scale-110 transition-all">ผลิตภัณฑ์</a>
                 <a href="#simulator" class="menu-link hover:text-purple-400 hover:scale-110 transition-all">จำลองรายได้</a>
                 <a href="#profile" class="menu-link hover:text-purple-400 hover:scale-110 transition-all">โปรไฟล์</a>
-                <a href="#profile" class="menu-link md:hidden w-full max-w-[240px] text-center bg-white text-black px-6 py-3.5 rounded-full font-bold hover:bg-gray-200 transition-colors text-lg mt-6">ร่วมงานกับเรา</a>
+                <a href="#profile" class="menu-link md:hidden w-full max-w-[200px] text-center bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-colors text-base mt-4">ร่วมงานกับเรา</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section: ใช้ 100dvh ให้พอดีจอ S24 Ultra 100% -->
-    <section class="relative min-h-[100dvh] flex items-center justify-center pt-20 pb-10 sm:pt-32 sm:pb-20 overflow-hidden bg-grid-pattern safe-pb">
+    <!-- Hero Section -->
+    <section class="relative min-h-[100dvh] flex items-center justify-center pt-16 pb-10 sm:pt-24 sm:pb-20 overflow-hidden bg-grid-pattern safe-pb">
         <div class="absolute inset-0 z-0 pointer-events-none">
-            <div class="absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-purple-900/40 rounded-full blur-[100px]"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-72 h-72 sm:w-[500px] sm:h-[500px] bg-indigo-900/40 rounded-full blur-[120px]"></div>
+            <div class="absolute top-1/4 left-1/4 w-56 h-56 sm:w-80 sm:h-80 bg-purple-900/40 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-[400px] sm:h-[400px] bg-indigo-900/40 rounded-full blur-[120px]"></div>
         </div>
 
-        <div class="relative z-10 text-center w-full max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center mt-10 sm:mt-0">
+        <div class="relative z-10 text-center w-full max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center mt-6 sm:mt-0">
             <!-- AI Powered Badge -->
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-purple-900/30 border border-purple-500/50 text-purple-300 text-[10px] min-[412px]:text-xs font-semibold tracking-widest mb-6 min-[412px]:mb-8 reveal-up hero-elem shadow-[0_0_20px_rgba(139,92,246,0.3)] backdrop-blur-md">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-900/30 border border-purple-500/50 text-purple-300 text-[9px] min-[412px]:text-[10px] font-semibold tracking-widest mb-5 min-[412px]:mb-6 reveal-up hero-elem shadow-[0_0_20px_rgba(139,92,246,0.3)] backdrop-blur-md">
                 <span class="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-purple-500"></span>
@@ -250,92 +249,86 @@
                 POWERED BY iA x AI ECOSYSTEM
             </div>
             
-            <!-- การจัดขนาดฟอนต์ให้สมบูรณ์สำหรับ S24 Ultra (412px) -->
-            <h1 class="text-3xl min-[375px]:text-[32px] min-[412px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-5 min-[412px]:mb-6 sm:mb-8 reveal-up hero-elem leading-[1.35] sm:leading-[1.3] w-full">
+            <h1 class="text-2xl min-[375px]:text-[28px] min-[412px]:text-[30px] sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 min-[412px]:mb-5 sm:mb-6 reveal-up hero-elem leading-[1.35] sm:leading-[1.3] w-full">
                 ออกแบบชีวิตที่ใช่<br>
                 เพิ่มรายได้ที่ <span class="gradient-text-purple">ไร้ขีดจำกัด</span> ด้วย&nbsp;AI
             </h1>
             
-            <p class="text-sm min-[412px]:text-[15px] sm:text-base md:text-lg text-gray-400 max-w-[95%] sm:max-w-3xl mx-auto mb-10 sm:mb-12 reveal-up hero-elem leading-[1.7] sm:leading-[1.8]">
+            <p class="text-xs min-[412px]:text-[13px] sm:text-sm md:text-base text-gray-400 max-w-[95%] sm:max-w-2xl mx-auto mb-8 sm:mb-10 reveal-up hero-elem leading-[1.7] sm:leading-[1.8]">
                 ปลดล็อกข้อจำกัดเดิมๆ สู่การเป็น <strong>"นักออกแบบสินทรัพย์ (Asset Designer)"</strong> ยุคดิจิทัล 
                 สร้าง <strong><span class="whitespace-nowrap">"ร่างโคลน AI"</span></strong> ให้ทำงานแทนคุณ 24 ชม. พร้อมระบบการตลาดอัตโนมัติ 
                 ที่ให้คุณมีเวลาใช้ชีวิตได้เต็มที่
             </p>
             
-            <!-- ปุ่ม Call to action บนมือถือ (App feel) -->
-            <a href="#simulator" class="reveal-up hero-elem bg-white text-black font-bold px-8 py-3.5 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 active:scale-95 transition-all text-sm min-[412px]:text-base">
+            <a href="#simulator" class="reveal-up hero-elem bg-white text-black font-bold px-6 py-2.5 min-[412px]:px-8 min-[412px]:py-3 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 active:scale-95 transition-all text-xs min-[412px]:text-sm">
                 จำลองรายได้ของคุณ
             </a>
         </div>
     </section>
 
-    <!-- ปรับ Padding ให้กระชับขึ้นบนมือถือ (py-20) สำหรับหน้าจอ S24 Ultra -->
-    <section id="academy" class="py-20 sm:py-32 relative overflow-hidden bg-[#08080a] border-t border-white/5">
+    <!-- Academy Section -->
+    <section id="academy" class="py-16 sm:py-24 relative overflow-hidden bg-[#08080a] border-t border-white/5">
         <div class="absolute right-0 top-0 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
                 <!-- AI Visual Concept -->
                 <div class="order-2 lg:order-1 relative reveal-up flex justify-center">
-                    <div class="relative w-72 h-72 min-[412px]:w-80 min-[412px]:h-80 sm:w-96 sm:h-96 flex items-center justify-center">
-                        <!-- Connecting rings -->
+                    <div class="relative w-64 h-64 min-[412px]:w-72 min-[412px]:h-72 sm:w-80 sm:h-80 flex items-center justify-center">
                         <div class="absolute inset-0 border border-purple-500/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
                         <div class="absolute inset-4 border border-indigo-500/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
                         <div class="absolute inset-8 border border-white/10 rounded-full border-dashed animate-[spin_20s_linear_infinite]"></div>
                         
-                        <!-- Center AI Core -->
-                        <div class="w-24 h-24 min-[412px]:w-28 min-[412px]:h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-purple-500 to-indigo-700 ai-core-glow flex items-center justify-center z-10 relative">
-                            <svg class="w-10 h-10 sm:w-12 sm:h-12 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                        <div class="w-20 h-20 min-[412px]:w-24 min-[412px]:h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-purple-500 to-indigo-700 ai-core-glow flex items-center justify-center z-10 relative">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
                         </div>
                         
-                        <!-- Floating Tech Elements -->
-                        <div class="absolute top-6 left-6 min-[412px]:top-10 min-[412px]:left-10 glass-card p-2 sm:p-3 rounded-xl backdrop-blur-md animate-bounce shadow-lg" style="animation-duration: 3s;">
-                            <span class="text-[10px] min-[412px]:text-xs font-bold text-purple-400">Auto-Post</span>
+                        <div class="absolute top-4 left-4 min-[412px]:top-8 min-[412px]:left-8 glass-card p-2 rounded-xl backdrop-blur-md animate-bounce shadow-lg" style="animation-duration: 3s;">
+                            <span class="text-[9px] min-[412px]:text-[10px] font-bold text-purple-400">Auto-Post</span>
                         </div>
-                        <div class="absolute bottom-6 right-6 min-[412px]:bottom-10 min-[412px]:right-10 glass-card p-2 sm:p-3 rounded-xl backdrop-blur-md animate-bounce shadow-lg" style="animation-duration: 4s; animation-delay: 1s;">
-                            <span class="text-[10px] min-[412px]:text-xs font-bold text-indigo-400">AI Chatbot</span>
+                        <div class="absolute bottom-4 right-4 min-[412px]:bottom-8 min-[412px]:right-8 glass-card p-2 rounded-xl backdrop-blur-md animate-bounce shadow-lg" style="animation-duration: 4s; animation-delay: 1s;">
+                            <span class="text-[9px] min-[412px]:text-[10px] font-bold text-indigo-400">AI Chatbot</span>
                         </div>
-                        <div class="absolute top-1/2 -right-2 sm:-right-4 glass-card p-2 sm:p-3 rounded-xl backdrop-blur-md animate-bounce shadow-lg" style="animation-duration: 3.5s; animation-delay: 0.5s;">
-                            <span class="text-[10px] min-[412px]:text-xs font-bold text-white">Smart CRM</span>
+                        <div class="absolute top-1/2 -right-1 sm:-right-2 glass-card p-2 rounded-xl backdrop-blur-md animate-bounce shadow-lg" style="animation-duration: 3.5s; animation-delay: 0.5s;">
+                            <span class="text-[9px] min-[412px]:text-[10px] font-bold text-white">Smart CRM</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="order-1 lg:order-2 reveal-up">
-                    <div class="inline-block bg-purple-500/10 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full border border-purple-500/20 text-purple-400 text-xs sm:text-sm font-semibold mb-4 sm:mb-6 tracking-wider">NEXT-GEN SYSTEM</div>
-                    <h2 class="text-3xl min-[412px]:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">ระบบการทำงานอัจฉริยะ <br><span class="gradient-text-purple">PRIME AI</span></h2>
-                    <p class="text-gray-400 text-sm min-[412px]:text-base md:text-lg mb-8 leading-relaxed">
+                    <div class="inline-block bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20 text-purple-400 text-[9px] min-[412px]:text-[10px] font-semibold mb-3 sm:mb-4 tracking-wider">NEXT-GEN SYSTEM</div>
+                    <h2 class="text-2xl min-[412px]:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 leading-tight">ระบบการทำงานอัจฉริยะ <br><span class="gradient-text-purple">PRIME AI</span></h2>
+                    <p class="text-gray-400 text-xs min-[412px]:text-sm md:text-base mb-6 leading-relaxed">
                         ทิ้งการทำงานแบบเดิมๆ เราได้บูรณาการ AI เข้ามาเป็นผู้ช่วยส่วนตัวของคุณ ช่วยให้คุณทำงานน้อยลง แต่สร้างยอดขายและขยายฐานลูกค้าได้มากขึ้นในระดับสเกล 
                     </p>
                     
-                    <!-- App-style list items -->
-                    <div class="space-y-3 sm:space-y-5 text-gray-300">
-                        <div class="glass-card p-3 min-[412px]:p-4 rounded-2xl flex gap-3 sm:gap-4 hover:bg-white/5 transition-colors border-l-2 border-l-purple-500">
-                            <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="glass-card p-3 min-[412px]:p-3.5 rounded-2xl flex gap-3 hover:bg-white/5 transition-colors border-l-2 border-l-purple-500">
+                            <div class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold mb-1 text-sm min-[412px]:text-base">ร่างโคลน AI ทำงาน 24 ชม.</h4>
-                                <p class="text-xs min-[412px]:text-sm text-gray-400 leading-relaxed">ระบบ AI ตอบแชท ให้ข้อมูลเบื้องต้น และนัดหมายลูกค้าแทนคุณอัตโนมัติ แม้ในขณะที่คุณหลับ</p>
+                                <h4 class="text-white font-semibold mb-0.5 text-xs min-[412px]:text-sm">ร่างโคลน AI ทำงาน 24 ชม.</h4>
+                                <p class="text-[10px] min-[412px]:text-[11px] text-gray-400 leading-relaxed">ระบบ AI ตอบแชท ให้ข้อมูลเบื้องต้น และนัดหมายลูกค้าแทนคุณอัตโนมัติ แม้ในขณะที่คุณหลับ</p>
                             </div>
                         </div>
                         
-                        <div class="glass-card p-3 min-[412px]:p-4 rounded-2xl flex gap-3 sm:gap-4 hover:bg-white/5 transition-colors border-l-2 border-l-indigo-500">
-                            <div class="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                        <div class="glass-card p-3 min-[412px]:p-3.5 rounded-2xl flex gap-3 hover:bg-white/5 transition-colors border-l-2 border-l-indigo-500">
+                            <div class="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold mb-1 text-sm min-[412px]:text-base">ระบบการตลาดอัตโนมัติ</h4>
-                                <p class="text-xs min-[412px]:text-sm text-gray-400 leading-relaxed">AI ช่วยสร้างไอเดีย เขียนสคริปต์ ออกแบบโพสต์ และตั้งเวลาลงสื่อทุกช่องทางอย่างมืออาชีพ</p>
+                                <h4 class="text-white font-semibold mb-0.5 text-xs min-[412px]:text-sm">ระบบการตลาดอัตโนมัติ</h4>
+                                <p class="text-[10px] min-[412px]:text-[11px] text-gray-400 leading-relaxed">AI ช่วยสร้างไอเดีย เขียนสคริปต์ ออกแบบโพสต์ และตั้งเวลาลงสื่อทุกช่องทางอย่างมืออาชีพ</p>
                             </div>
                         </div>
 
-                        <div class="glass-card p-3 min-[412px]:p-4 rounded-2xl flex gap-3 sm:gap-4 hover:bg-white/5 transition-colors border-l-2 border-l-blue-500">
-                            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        <div class="glass-card p-3 min-[412px]:p-3.5 rounded-2xl flex gap-3 hover:bg-white/5 transition-colors border-l-2 border-l-blue-500">
+                            <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold mb-1 text-sm min-[412px]:text-base">วิเคราะห์ข้อมูลอัจฉริยะ</h4>
-                                <p class="text-xs min-[412px]:text-sm text-gray-400 leading-relaxed">คัดกรองลูกค้า High-Net-Worth วิเคราะห์ความต้องการเชิงลึก และแจ้งเตือนโอกาสการขายอัตโนมัติ</p>
+                                <h4 class="text-white font-semibold mb-0.5 text-xs min-[412px]:text-sm">วิเคราะห์ข้อมูลอัจฉริยะ</h4>
+                                <p class="text-[10px] min-[412px]:text-[11px] text-gray-400 leading-relaxed">คัดกรองลูกค้า High-Net-Worth วิเคราะห์ความต้องการเชิงลึก และแจ้งเตือนโอกาสการขายอัตโนมัติ</p>
                             </div>
                         </div>
                     </div>
@@ -344,234 +337,222 @@
         </div>
     </section>
 
-    <section id="growth" class="py-20 sm:py-32 bg-[#050505] relative border-t border-white/5 overflow-hidden">
-        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-yellow-900/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute right-0 bottom-0 w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <!-- Growth Section -->
+    <section id="growth" class="py-16 sm:py-24 bg-[#050505] relative border-t border-white/5 overflow-hidden">
+        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-yellow-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute right-0 bottom-0 w-[300px] h-[300px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="text-center mb-8 sm:mb-10 reveal-up">
-                <div class="inline-block bg-yellow-500/10 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full border border-yellow-500/20 text-yellow-400 text-xs sm:text-sm font-semibold mb-4 tracking-wider">SUCCESS BLUEPRINT</div>
-                <h2 class="text-3xl min-[412px]:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-6 sm:mb-8 reveal-up">
+                <div class="inline-block bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20 text-yellow-400 text-[9px] min-[412px]:text-[10px] font-semibold mb-3 tracking-wider">SUCCESS BLUEPRINT</div>
+                <h2 class="text-2xl min-[412px]:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 tracking-tight leading-tight">
                     แผนผังความสำเร็จ <br><span class="gradient-text-gold">แบบ Fast Track 6 เดือน</span>
                 </h2>
-                <p class="text-gray-400 text-sm min-[412px]:text-base max-w-3xl mx-auto leading-relaxed">
+                <p class="text-gray-400 text-xs min-[412px]:text-sm max-w-2xl mx-auto leading-relaxed">
                     แผนการทำงานที่ถูกออกแบบมาเพื่อเร่งอัตราการสร้างรายได้และผลักดันคุณขึ้นสู่ตำแหน่งผู้บริหารในเวลาที่สั้นที่สุด
                 </p>
             </div>
 
-            <!-- Dynamic Input Section -->
-            <div class="glass-card rounded-[1.5rem] min-[412px]:rounded-[2rem] p-5 min-[412px]:p-8 mb-8 sm:mb-12 max-w-4xl mx-auto border border-yellow-500/30 relative z-10 reveal-up shadow-[0_0_30px_rgba(234,179,8,0.1)]">
-                <div class="text-center mb-6">
-                    <h3 class="text-xl min-[412px]:text-2xl font-bold text-white mb-2">🎯 ออกแบบเป้าหมายของคุณ</h3>
-                    <p class="text-gray-400 text-xs min-[412px]:text-sm">ปรับมูลค่าการออกแบบสินทรัพย์ต่อเคส (Case Size) เพื่อจำลองผลลัพธ์</p>
+            <div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-4 min-[412px]:p-6 mb-6 sm:mb-8 max-w-3xl mx-auto border border-yellow-500/30 relative z-10 reveal-up shadow-[0_0_30px_rgba(234,179,8,0.1)]">
+                <div class="text-center mb-5">
+                    <h3 class="text-lg min-[412px]:text-xl font-bold text-white mb-1.5">🎯 ออกแบบเป้าหมายของคุณ</h3>
+                    <p class="text-gray-400 text-[10px] min-[412px]:text-xs">ปรับมูลค่าการออกแบบสินทรัพย์ต่อเคส (Case Size) เพื่อจำลองผลลัพธ์</p>
                 </div>
                 <div class="mb-2">
-                    <div class="flex flex-col min-[412px]:flex-row min-[412px]:justify-between mb-4 items-center min-[412px]:items-end gap-3 min-[412px]:gap-4">
-                        <label class="text-gray-300 font-medium text-sm min-[412px]:text-base text-center min-[412px]:text-left">มูลค่าออกแบบสินทรัพย์เฉลี่ย <br class="min-[412px]:hidden"><span class="text-xs opacity-70">(บาท/เคส)</span></label>
-                        <!-- Editable Input -->
-                        <div class="bg-purple-600 px-4 py-2 rounded-xl shadow-inner flex items-center justify-center min-w-[160px] transition-colors border border-purple-400 focus-within:border-white focus-within:ring-2 focus-within:ring-purple-300 cursor-text w-full min-[412px]:w-auto">
-                            <input type="text" id="plan-case-size-input" class="bg-transparent text-white font-bold text-2xl min-[412px]:text-3xl tracking-tight text-right w-full outline-none focus:ring-0 p-0 border-none m-0" value="36,000">
-                            <span class="text-white text-lg font-bold ml-2">฿</span>
+                    <div class="flex flex-col min-[412px]:flex-row min-[412px]:justify-between mb-3 items-center min-[412px]:items-end gap-2">
+                        <label class="text-gray-300 font-medium text-xs min-[412px]:text-sm text-center min-[412px]:text-left">มูลค่าออกแบบสินทรัพย์เฉลี่ย <br class="min-[412px]:hidden"><span class="text-[10px] opacity-70">(บาท/เคส)</span></label>
+                        <div class="bg-purple-600 px-3 py-1.5 rounded-xl shadow-inner flex items-center justify-center min-w-[140px] transition-colors border border-purple-400 focus-within:border-white focus-within:ring-2 focus-within:ring-purple-300 cursor-text w-full min-[412px]:w-auto">
+                            <input type="text" id="plan-case-size-input" class="bg-transparent text-white font-bold text-xl min-[412px]:text-2xl tracking-tight text-right w-full outline-none focus:ring-0 p-0 border-none m-0" value="36,000">
+                            <span class="text-white text-base font-bold ml-2">฿</span>
                         </div>
                     </div>
                     <input type="range" id="plan-slider" min="10000" max="150000" step="1000" value="36000" class="w-full slider-yellow">
-                    <div class="flex justify-between text-[10px] min-[412px]:text-xs text-gray-500 mt-2 font-mono">
+                    <div class="flex justify-between text-[9px] min-[412px]:text-[10px] text-gray-500 mt-2 font-mono">
                         <span>10,000</span>
                         <span>150,000+</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Strategy Bento Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 min-[412px]:gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 min-[412px]:gap-5">
                 
-                <!-- 1. The Executive Promotion Target (Large Card) -->
-                <div class="glass-card rounded-[1.5rem] min-[412px]:rounded-[2rem] p-5 min-[412px]:p-8 lg:col-span-2 lg:row-span-2 flex flex-col justify-between relative overflow-hidden group reveal-up border border-yellow-500/20 hover:border-yellow-500/50 transition-colors">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/4 group-hover:bg-yellow-500/20 transition-all"></div>
+                <div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-4 min-[412px]:p-6 lg:col-span-2 lg:row-span-2 flex flex-col justify-between relative overflow-hidden group reveal-up border border-yellow-500/20 hover:border-yellow-500/50 transition-colors">
+                    <div class="absolute top-0 right-0 w-56 h-56 bg-yellow-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/4 group-hover:bg-yellow-500/20 transition-all"></div>
                     
                     <div>
-                        <div class="flex items-center gap-3 min-[412px]:gap-4 mb-5 min-[412px]:mb-6">
-                            <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl min-[412px]:rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-[0_0_20px_rgba(234,179,8,0.3)] shrink-0">
-                                <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <div class="flex items-center gap-3 min-[412px]:gap-4 mb-4 min-[412px]:mb-5">
+                            <div class="w-10 h-10 min-[412px]:w-12 min-[412px]:h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-[0_0_20px_rgba(234,179,8,0.3)] shrink-0">
+                                <svg class="w-5 h-5 min-[412px]:w-6 min-[412px]:h-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             </div>
                             <div>
-                                <h3 class="text-lg min-[412px]:text-xl sm:text-2xl font-bold text-white leading-tight">แผนงานโปรโมทผู้บริหารตัวแทน (AS)</h3>
-                                <p class="text-yellow-400 text-xs min-[412px]:text-sm font-medium mt-0.5">เป้าหมาย: คอมมิชชัน 400,001 บาท ภายใน 6 เดือน</p>
+                                <h3 class="text-base min-[412px]:text-lg sm:text-xl font-bold text-white leading-tight">แผนงานโปรโมทผู้บริหาร (AS)</h3>
+                                <p class="text-yellow-400 text-[9px] min-[412px]:text-[10px] font-medium mt-0.5">เป้าหมาย: คอมมิชชัน 400,001 บาท / 6 เดือน</p>
                             </div>
                         </div>
 
-                        <div class="bg-[#161618] rounded-[1.25rem] p-4 min-[412px]:p-6 border border-white/5 backdrop-blur-sm mb-4 min-[412px]:mb-6 relative overflow-hidden">
-                            <!-- Header with Tabs -->
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 relative z-10">
+                        <div class="bg-[#161618] rounded-xl min-[412px]:rounded-[1.25rem] p-3.5 min-[412px]:p-5 border border-white/5 backdrop-blur-sm mb-4 relative overflow-hidden">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3 relative z-10">
                                 <div>
-                                    <h4 class="text-white font-bold text-base min-[412px]:text-lg">สูตรลัด: ออกแบบ <span id="promo-cases" class="text-2xl min-[412px]:text-3xl text-yellow-400 mx-1">8</span> เคส / เดือน</h4>
-                                    <p class="text-gray-400 text-[10px] min-[412px]:text-xs mt-1">(ตัวอย่าง: เคสละ <span id="promo-case-size">30,000</span> ฿ x คอม 30% = ค่าคอม <span id="promo-fyc-per-case">9,000</span> ฿/เคส)</p>
+                                    <h4 class="text-white font-bold text-sm min-[412px]:text-base">สูตรลัด: ออกแบบ <span id="promo-cases" class="text-xl min-[412px]:text-2xl text-yellow-400 mx-1">8</span> เคส/เดือน</h4>
+                                    <p class="text-gray-400 text-[9px] min-[412px]:text-[10px] mt-1">เคสละ <span id="promo-case-size">30,000</span> ฿ (ค่าคอม <span id="promo-fyc-per-case">9,000</span> ฿/เคส)</p>
                                 </div>
                                 
-                                <!-- Tabs (App Style) -->
                                 <div class="flex bg-black p-1 rounded-lg border border-white/10 w-full sm:w-auto shrink-0">
-                                    <button id="tab-m13" class="flex-1 sm:w-20 min-[412px]:w-24 py-1.5 text-[11px] min-[412px]:text-xs font-bold rounded-md transition-all bg-purple-600 text-white shadow-md">เดือน 1-3</button>
-                                    <button id="tab-m46" class="flex-1 sm:w-20 min-[412px]:w-24 py-1.5 text-[11px] min-[412px]:text-xs font-bold rounded-md transition-all text-gray-400 hover:text-white">เดือน 4-6</button>
+                                    <button id="tab-m13" class="flex-1 sm:w-16 min-[412px]:w-20 py-1 text-[9px] min-[412px]:text-[10px] font-bold rounded-md transition-all bg-purple-600 text-white shadow-md">เดือน 1-3</button>
+                                    <button id="tab-m46" class="flex-1 sm:w-16 min-[412px]:w-20 py-1 text-[9px] min-[412px]:text-[10px] font-bold rounded-md transition-all text-gray-400 hover:text-white">เดือน 4-6</button>
                                 </div>
                             </div>
                             
-                            <!-- Details Rows -->
-                            <div class="space-y-2 relative z-10">
-                                <div class="flex justify-between items-center bg-[#1e1e20] p-3 min-[412px]:p-3.5 rounded-lg border border-white/5">
-                                    <span class="text-xs min-[412px]:text-sm text-gray-300">ค่าคอมมิชชันพื้นฐาน (ค่าคอม)</span>
-                                    <span class="text-sm min-[412px]:text-base text-white font-bold"><span id="promo-fyc">72,000</span> ฿</span>
+                            <div class="space-y-1.5 min-[412px]:space-y-2 relative z-10">
+                                <div class="flex justify-between items-center bg-[#1e1e20] p-2.5 min-[412px]:p-3 rounded-lg border border-white/5">
+                                    <span class="text-[11px] min-[412px]:text-xs text-gray-300">ค่าคอมมิชชันพื้นฐาน</span>
+                                    <span class="text-xs min-[412px]:text-sm text-white font-bold"><span id="promo-fyc">72,000</span> ฿</span>
                                 </div>
 
-                                <!-- Accordions -->
                                 <div class="bg-[#1e1e20] rounded-lg border border-white/5 overflow-hidden transition-all group">
-                                    <div class="flex justify-between items-center p-3 min-[412px]:p-3.5 cursor-pointer hover:bg-white/5 select-none" onclick="toggleBonusDetails('details-mb')">
-                                        <span class="text-xs min-[412px]:text-sm text-yellow-400 flex items-center gap-1.5">
-                                            โบนัสรายเดือน (<span id="promo-mb-pct">35</span>% ของค่าคอม)
-                                            <svg id="icon-mb" class="w-3 h-3 min-[412px]:w-4 min-[412px]:h-4 opacity-60 group-hover:opacity-100 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    <div class="flex justify-between items-center p-2.5 min-[412px]:p-3 cursor-pointer hover:bg-white/5 select-none" onclick="toggleBonusDetails('details-mb')">
+                                        <span class="text-[11px] min-[412px]:text-xs text-yellow-400 flex items-center gap-1.5">
+                                            โบนัสรายเดือน (<span id="promo-mb-pct">35</span>%)
+                                            <svg id="icon-mb" class="w-3 h-3 opacity-60 group-hover:opacity-100 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                                         </span>
-                                        <span class="text-sm min-[412px]:text-base text-yellow-400 font-bold">+ <span id="promo-mb">25,200</span> ฿</span>
+                                        <span class="text-xs min-[412px]:text-sm text-yellow-400 font-bold">+ <span id="promo-mb">25,200</span> ฿</span>
                                     </div>
-                                    <div id="details-mb" class="hidden px-3 min-[412px]:px-4 pb-4 min-[412px]:pb-5 pt-2 text-xs min-[412px]:text-sm text-gray-300 border-t border-white/5 bg-black/40">
-                                        <div class="mb-2 min-[412px]:mb-3 text-yellow-500/90 font-semibold text-[11px] min-[412px]:text-sm">เงื่อนไข: อัตราความยั่งยืนกรมธรรม์ (K2) >= 70%</div>
-                                        <div class="flex flex-col gap-y-2 min-[412px]:gap-y-3 text-[10px] min-[412px]:text-sm">
-                                            <div class="px-1 min-[412px]:px-2 py-1 flex justify-between"><span>ค่าคอม 8,000 - 16,000</span> <span class="text-white font-medium">20%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-1 flex justify-between"><span>ค่าคอม 16,001 - 32,000</span> <span class="text-white font-medium">25%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-1 flex justify-between"><span>ค่าคอม 32,001 - 64,000</span> <span class="text-white font-medium">30%</span></div>
-                                            <div class="bg-yellow-500/20 text-yellow-300 font-bold rounded px-1 min-[412px]:px-2 py-1 -mx-1 min-[412px]:-mx-2 border border-yellow-500/30 flex justify-between"><span>ค่าคอม 64,001 ขึ้นไป</span> <span><span class="text-[8px] min-[412px]:text-[10px] bg-yellow-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>35%</span></div>
+                                    <div id="details-mb" class="hidden px-3 min-[412px]:px-4 pb-3 min-[412px]:pb-4 pt-1.5 text-[10px] min-[412px]:text-[11px] text-gray-300 border-t border-white/5 bg-black/40">
+                                        <div class="mb-1.5 min-[412px]:mb-2 text-yellow-500/90 font-semibold">เงื่อนไข: K2 >= 70%</div>
+                                        <div class="flex flex-col gap-y-1.5 min-[412px]:gap-y-2">
+                                            <div class="px-1 min-[412px]:px-2 flex justify-between"><span>คอม 8k - 16k</span> <span class="text-white font-medium">20%</span></div>
+                                            <div class="px-1 min-[412px]:px-2 flex justify-between"><span>คอม 16k+ - 32k</span> <span class="text-white font-medium">25%</span></div>
+                                            <div class="px-1 min-[412px]:px-2 flex justify-between"><span>คอม 32k+ - 64k</span> <span class="text-white font-medium">30%</span></div>
+                                            <div class="bg-yellow-500/20 text-yellow-300 font-bold rounded px-1 min-[412px]:px-2 py-0.5 -mx-1 border border-yellow-500/30 flex justify-between"><span>คอม 64k+ ขึ้นไป</span> <span><span class="text-[7px] min-[412px]:text-[8px] bg-yellow-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>35%</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <div class="flex justify-between items-center bg-gradient-to-r from-purple-900/30 to-transparent p-3 min-[412px]:p-3.5 rounded-lg border-l-2 border-purple-500 my-1">
-                                    <span class="text-xs min-[412px]:text-sm font-bold text-purple-300">รายได้ ต่อเดือน</span>
-                                    <span class="text-base min-[412px]:text-lg font-bold text-purple-400"><span id="promo-first-month">97,200</span> ฿</span>
+                                <div class="flex justify-between items-center bg-gradient-to-r from-purple-900/30 to-transparent p-2.5 min-[412px]:p-3 rounded-lg border-l-2 border-purple-500 my-1">
+                                    <span class="text-[11px] min-[412px]:text-xs font-bold text-purple-300">รายได้ ต่อเดือน</span>
+                                    <span class="text-sm min-[412px]:text-base font-bold text-purple-400"><span id="promo-first-month">97,200</span> ฿</span>
                                 </div>
 
-                                <div class="text-[11px] min-[412px]:text-sm text-gray-300 mt-2 min-[412px]:mt-3 mb-1 min-[412px]:mb-2 px-1 font-semibold tracking-wide">เดือนที่ 2 เป็นต้นไป</div>
+                                <div class="text-[9px] min-[412px]:text-[10px] text-gray-300 mt-2 mb-1 px-1 font-semibold tracking-wide">เดือนที่ 2 เป็นต้นไป</div>
 
                                 <div class="bg-[#1e1e20] rounded-lg border border-white/5 overflow-hidden transition-all group">
-                                    <div class="flex justify-between items-center p-3 min-[412px]:p-3.5 cursor-pointer hover:bg-white/5 select-none" onclick="toggleBonusDetails('details-nab')">
-                                        <span class="text-xs min-[412px]:text-sm text-blue-400 flex items-center gap-1.5 leading-tight">
-                                            <span id="promo-nab-label">โบนัสตัวแทนใหม่ (เฉลี่ย เดือน 1-3)</span>
-                                            <svg id="icon-nab" class="w-3 h-3 min-[412px]:w-4 min-[412px]:h-4 opacity-60 group-hover:opacity-100 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    <div class="flex justify-between items-center p-2.5 min-[412px]:p-3 cursor-pointer hover:bg-white/5 select-none" onclick="toggleBonusDetails('details-nab')">
+                                        <span class="text-[11px] min-[412px]:text-xs text-blue-400 flex items-center gap-1.5 leading-tight">
+                                            <span id="promo-nab-label">โบนัสตัวแทนใหม่ (เฉลี่ย)</span>
+                                            <svg id="icon-nab" class="w-3 h-3 opacity-60 group-hover:opacity-100 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                                         </span>
-                                        <span class="text-sm min-[412px]:text-base text-blue-400 font-bold shrink-0 ml-2">+ <span id="promo-nab">5,000</span> ฿</span>
+                                        <span class="text-xs min-[412px]:text-sm text-blue-400 font-bold shrink-0 ml-2">+ <span id="promo-nab">5,000</span> ฿</span>
                                     </div>
-                                    <div id="details-nab" class="hidden px-3 min-[412px]:px-4 pb-4 min-[412px]:pb-5 pt-2 text-xs min-[412px]:text-sm text-gray-300 border-t border-white/5 bg-black/40">
-                                        <div class="mb-2 min-[412px]:mb-3 text-blue-500/90 font-semibold text-[11px] min-[412px]:text-sm">เงื่อนไข: นับผลงานอนุมัติ 6 เดือนแรก</div>
-                                        <div class="grid grid-cols-1 gap-y-3 min-[412px]:gap-y-4 text-[10px] min-[412px]:text-sm">
+                                    <div id="details-nab" class="hidden px-3 min-[412px]:px-4 pb-3 min-[412px]:pb-4 pt-1.5 text-[10px] min-[412px]:text-[11px] text-gray-300 border-t border-white/5 bg-black/40">
+                                        <div class="mb-1.5 min-[412px]:mb-2 text-blue-500/90 font-semibold">เงื่อนไข: ผลงานอนุมัติ 6 เดือนแรก</div>
+                                        <div class="grid grid-cols-1 gap-y-2 min-[412px]:gap-y-3">
                                             <div>
-                                                <div class="text-white border-b border-white/10 pb-1 mb-1.5 px-1 min-[412px]:px-2 font-medium">เดือนที่ 1-3 (จ่ายสิ้นเดือน 3)</div>
-                                                <div class="flex justify-between mb-1 px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1"><span>ค่าคอม 20,000+ และ 3 ราย</span> <span class="text-white font-medium">6,000 ฿</span></div>
-                                                <div class="flex justify-between bg-blue-500/20 text-blue-300 font-bold rounded px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 -mx-1 min-[412px]:-mx-2 border border-blue-500/30"><span>ค่าคอม 50,000+ และ 5 ราย</span> <span><span class="text-[8px] min-[412px]:text-[10px] bg-blue-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>15,000 ฿</span></div>
+                                                <div class="text-white border-b border-white/10 pb-0.5 mb-1 px-1 font-medium">เดือน 1-3 (จ่ายสิ้นเดือน 3)</div>
+                                                <div class="flex justify-between mb-0.5 px-1"><span>คอม 20k+ และ 3 ราย</span> <span class="text-white font-medium">6,000 ฿</span></div>
+                                                <div class="flex justify-between bg-blue-500/20 text-blue-300 font-bold rounded px-1 py-0.5 -mx-1 border border-blue-500/30"><span>คอม 50k+ และ 5 ราย</span> <span><span class="text-[7px] min-[412px]:text-[8px] bg-blue-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>15k ฿</span></div>
                                             </div>
                                             <div>
-                                                <div class="text-white border-b border-white/10 pb-1 mb-1.5 px-1 min-[412px]:px-2 font-medium">เดือนที่ 4-6 (จ่ายสิ้นเดือน 6)</div>
-                                                <div class="flex justify-between mb-1 px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1"><span>ค่าคอม 40,000+ และ 5 ราย</span> <span class="text-white font-medium">10,000 ฿</span></div>
-                                                <div class="flex justify-between bg-blue-500/20 text-blue-300 font-bold rounded px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 -mx-1 min-[412px]:-mx-2 border border-blue-500/30"><span>ค่าคอม 100,000+ และ 10 ราย</span> <span><span class="text-[8px] min-[412px]:text-[10px] bg-blue-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>25,000 ฿</span></div>
+                                                <div class="text-white border-b border-white/10 pb-0.5 mb-1 px-1 font-medium">เดือน 4-6 (จ่ายสิ้นเดือน 6)</div>
+                                                <div class="flex justify-between mb-0.5 px-1"><span>คอม 40k+ และ 5 ราย</span> <span class="text-white font-medium">10,000 ฿</span></div>
+                                                <div class="flex justify-between bg-blue-500/20 text-blue-300 font-bold rounded px-1 py-0.5 -mx-1 border border-blue-500/30"><span>คอม 100k+ และ 10 ราย</span> <span><span class="text-[7px] min-[412px]:text-[8px] bg-blue-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>25k ฿</span></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="bg-[#1e1e20] rounded-lg border border-white/5 overflow-hidden transition-all group">
-                                    <div class="flex justify-between items-center p-3 min-[412px]:p-3.5 cursor-pointer hover:bg-white/5 select-none" onclick="toggleBonusDetails('details-myb')">
-                                        <span class="text-xs min-[412px]:text-sm text-pink-400 flex items-center gap-1.5 leading-tight">
-                                            โบนัสครึ่งปีเฉลี่ย (<span id="promo-myb-pct">35</span>% ของค่าคอม)
-                                            <svg id="icon-myb" class="w-3 h-3 min-[412px]:w-4 min-[412px]:h-4 opacity-60 group-hover:opacity-100 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                    <div class="flex justify-between items-center p-2.5 min-[412px]:p-3 cursor-pointer hover:bg-white/5 select-none" onclick="toggleBonusDetails('details-myb')">
+                                        <span class="text-[11px] min-[412px]:text-xs text-pink-400 flex items-center gap-1.5 leading-tight">
+                                            โบนัสครึ่งปีเฉลี่ย (<span id="promo-myb-pct">35</span>%)
+                                            <svg id="icon-myb" class="w-3 h-3 opacity-60 group-hover:opacity-100 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                                         </span>
-                                        <span class="text-sm min-[412px]:text-base text-pink-400 font-bold shrink-0 ml-2">+ <span id="promo-myb">25,200</span> ฿</span>
+                                        <span class="text-xs min-[412px]:text-sm text-pink-400 font-bold shrink-0 ml-2">+ <span id="promo-myb">25,200</span> ฿</span>
                                     </div>
-                                    <div id="details-myb" class="hidden px-3 min-[412px]:px-4 pb-4 min-[412px]:pb-5 pt-2 text-xs min-[412px]:text-sm text-gray-300 border-t border-white/5 bg-black/40">
-                                        <div class="mb-2 min-[412px]:mb-3 text-pink-500/90 font-semibold text-[11px] min-[412px]:text-sm">เงื่อนไข: สะสมค่าคอมทุกครึ่งปี (K2 >= 70%)</div>
-                                        <div class="flex flex-col gap-y-1 min-[412px]:gap-y-2 text-[10px] min-[412px]:text-sm">
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>40,000 - 60,000</span> <span class="text-white font-medium">17.5%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>60,001 - 100,000</span> <span class="text-white font-medium">20.0%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>100,001 - 150,000</span> <span class="text-white font-medium">22.5%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>150,001 - 200,000</span> <span class="text-white font-medium">25.0%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>200,001 - 250,000</span> <span class="text-white font-medium">27.5%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>250,001 - 300,000</span> <span class="text-white font-medium">30.0%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>300,001 - 400,000</span> <span class="text-white font-medium">32.5%</span></div>
-                                            <div class="bg-pink-500/20 text-pink-300 font-bold rounded px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 -mx-1 min-[412px]:-mx-2 border border-pink-500/30 flex justify-between"><span>400,001 ขึ้นไป</span> <span><span class="text-[8px] min-[412px]:text-[10px] bg-pink-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>35.0%</span></div>
+                                    <div id="details-myb" class="hidden px-3 min-[412px]:px-4 pb-3 min-[412px]:pb-4 pt-1.5 text-[10px] min-[412px]:text-[11px] text-gray-300 border-t border-white/5 bg-black/40">
+                                        <div class="mb-1.5 min-[412px]:mb-2 text-pink-500/90 font-semibold">เงื่อนไข: สะสมค่าคอม (K2 >= 70%)</div>
+                                        <div class="flex flex-col gap-y-1">
+                                            <div class="px-1 flex justify-between"><span>40k - 60k</span> <span class="text-white font-medium">17.5%</span></div>
+                                            <div class="px-1 flex justify-between"><span>60k+ - 100k</span> <span class="text-white font-medium">20.0%</span></div>
+                                            <div class="px-1 flex justify-between"><span>100k+ - 150k</span> <span class="text-white font-medium">22.5%</span></div>
+                                            <div class="px-1 flex justify-between"><span>150k+ - 200k</span> <span class="text-white font-medium">25.0%</span></div>
+                                            <div class="px-1 flex justify-between"><span>200k+ - 250k</span> <span class="text-white font-medium">27.5%</span></div>
+                                            <div class="px-1 flex justify-between"><span>250k+ - 300k</span> <span class="text-white font-medium">30.0%</span></div>
+                                            <div class="px-1 flex justify-between"><span>300k+ - 400k</span> <span class="text-white font-medium">32.5%</span></div>
+                                            <div class="bg-pink-500/20 text-pink-300 font-bold rounded px-1 py-0.5 -mx-1 border border-pink-500/30 flex justify-between"><span>400k+ ขึ้นไป</span> <span><span class="text-[7px] min-[412px]:text-[8px] bg-pink-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>35.0%</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <div class="flex justify-between items-center bg-gradient-to-r from-yellow-600/20 to-yellow-900/10 p-3 min-[412px]:p-4 rounded-lg border-l-4 border-yellow-500 mt-3 min-[412px]:mt-4">
-                                    <span class="text-[11px] min-[412px]:text-sm font-bold text-white" id="promo-total-label">รายได้รวมเฉลี่ยต่อเดือน (เดือน 1-3)</span>
-                                    <span class="text-xl min-[412px]:text-2xl font-bold text-yellow-400"><span id="promo-total">127,400</span> ฿</span>
+                                <div class="flex justify-between items-center bg-gradient-to-r from-yellow-600/20 to-yellow-900/10 p-2.5 min-[412px]:p-3 rounded-lg border-l-4 border-yellow-500 mt-2 min-[412px]:mt-3">
+                                    <span class="text-[10px] min-[412px]:text-[11px] font-bold text-white" id="promo-total-label">รายได้รวมเฉลี่ย/เดือน</span>
+                                    <span class="text-lg min-[412px]:text-xl font-bold text-yellow-400"><span id="promo-total">127,400</span> ฿</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. The Free Insurance Hack -->
-                <div class="glass-card rounded-[1.5rem] min-[412px]:rounded-[2rem] p-5 min-[412px]:p-8 lg:col-span-1 flex flex-col justify-center relative overflow-hidden group reveal-up delay-100">
+                <div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-4 min-[412px]:p-6 lg:col-span-1 flex flex-col justify-center relative overflow-hidden group reveal-up delay-100">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
-                        <div class="w-10 h-10 min-[412px]:w-12 min-[412px]:h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-3 min-[412px]:mb-4">
-                            <svg class="w-5 h-5 min-[412px]:w-6 min-[412px]:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div class="w-8 h-8 min-[412px]:w-10 min-[412px]:h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-2.5 min-[412px]:mb-3">
+                            <svg class="w-4 h-4 min-[412px]:w-5 min-[412px]:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold text-white mb-2">สูตรลับ "ได้สวัสดิการสุขภาพฟรี"</h3>
-                        <p class="text-xs min-[412px]:text-sm text-gray-400 leading-relaxed mb-3 min-[412px]:mb-4">
-                            เพียงแนะนำการออกแบบสินทรัพย์แค่ <span id="free-cases" class="text-blue-400 font-bold text-2xl min-[412px]:text-3xl mx-1">3</span> <span class="text-blue-400 font-bold">เคส / เดือน</span> <br><span class="text-[10px] min-[412px]:text-xs opacity-70">(เฉลี่ยเคสละ <span id="free-case-size">30,000</span> ฿)</span>
+                        <h3 class="text-base min-[412px]:text-lg font-bold text-white mb-1.5">สูตรลับ "สวัสดิการสุขภาพฟรี"</h3>
+                        <p class="text-[10px] min-[412px]:text-[11px] text-gray-400 leading-relaxed mb-3">
+                            แนะนำการออกแบบสินทรัพย์แค่ <span id="free-cases" class="text-blue-400 font-bold text-xl min-[412px]:text-2xl mx-1">3</span> <span class="text-blue-400 font-bold">เคส / เดือน</span> <br><span class="text-[9px] min-[412px]:text-[10px] opacity-70">(เฉลี่ยเคสละ <span id="free-case-size">30,000</span> ฿)</span>
                         </p>
-                        <div class="bg-[#161618] p-3 min-[412px]:p-4 rounded-xl border border-white/5 shadow-inner">
-                            <p class="text-[11px] min-[412px]:text-xs text-gray-300 mb-1 min-[412px]:mb-2">ค่าคอม <span id="free-fyc">27,000</span> ฿ <br><span class="text-blue-300">+ รวมโบนัสเฉลี่ยต่อเดือน (<span id="free-bonuses">6,750</span> ฿)</span></p>
-                            <p class="text-sm min-[412px]:text-base text-white mb-1">รวมรับเฉลี่ย <span id="free-total" class="text-xl min-[412px]:text-2xl font-bold text-blue-400 ml-1">33,750</span> ฿ / เดือน</p>
-                            <p class="text-[9px] min-[412px]:text-[10px] text-gray-500 leading-tight mt-1.5 min-[412px]:mt-2">*คำนวณเฉลี่ย 6 เดือนแรก ครอบคลุมค่าเบี้ยสุขภาพเหมาจ่ายฟรี!</p>
+                        <div class="bg-[#161618] p-3 min-[412px]:p-3.5 rounded-xl border border-white/5 shadow-inner">
+                            <p class="text-[9px] min-[412px]:text-[10px] text-gray-300 mb-1">ค่าคอม <span id="free-fyc">27,000</span> ฿ <br><span class="text-blue-300">+ โบนัสเฉลี่ย/ด. (<span id="free-bonuses">6,750</span> ฿)</span></p>
+                            <p class="text-xs min-[412px]:text-sm text-white mb-1">รวมรับเฉลี่ย <span id="free-total" class="text-lg min-[412px]:text-xl font-bold text-blue-400 ml-1">33,750</span> ฿/ด.</p>
+                            <p class="text-[8px] min-[412px]:text-[9px] text-gray-500 leading-tight mt-1 min-[412px]:mt-1.5">*คำนวณเฉลี่ย 6 ด.แรก ครอบคลุมค่าเบี้ยสุขภาพฟรี!</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. The Power of 5 (Team Building) -->
-                <div class="glass-card rounded-[1.5rem] min-[412px]:rounded-[2rem] p-5 min-[412px]:p-8 lg:col-span-1 flex flex-col justify-center relative overflow-hidden group reveal-up delay-200">
+                <div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-4 min-[412px]:p-6 lg:col-span-1 flex flex-col justify-center relative overflow-hidden group reveal-up delay-200">
                     <div class="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
-                        <div class="w-10 h-10 min-[412px]:w-12 min-[412px]:h-12 rounded-xl bg-green-500/20 flex items-center justify-center text-green-400 mb-3 min-[412px]:mb-4">
-                            <svg class="w-5 h-5 min-[412px]:w-6 min-[412px]:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <div class="w-8 h-8 min-[412px]:w-10 min-[412px]:h-10 rounded-xl bg-green-500/20 flex items-center justify-center text-green-400 mb-2.5 min-[412px]:mb-3">
+                            <svg class="w-4 h-4 min-[412px]:w-5 min-[412px]:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                         </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold text-white mb-2">พลังแห่งเลข 5 (สร้างทีม)</h3>
-                        <p class="text-xs min-[412px]:text-sm text-gray-400 leading-relaxed">
-                            เพียงแนะนำเพื่อนร่วมอาชีพนักออกแบบสินทรัพย์ครบ <span class="text-green-400 font-bold">5 คน</span> 
+                        <h3 class="text-base min-[412px]:text-lg font-bold text-white mb-2">พลังแห่งเลข 5 (สร้างทีม)</h3>
+                        <p class="text-[10px] min-[412px]:text-[11px] text-gray-400 leading-relaxed">
+                            เพียงแนะนำเพื่อนร่วมอาชีพครบ <span class="text-green-400 font-bold">5 คน</span> 
                             <br><br>
-                            คุณจะได้รับ <span class="text-white font-bold bg-white/10 px-1.5 min-[412px]:px-2 py-0.5 rounded">โบนัสบริหารเพิ่ม 20%</span> จากค่าคอมมิชชันทั้งหมด ยิ่งขยายทีมมาก รายได้ยิ่งทวีคูณอย่างไร้ขีดจำกัด
+                            รับ <span class="text-white font-bold bg-white/10 px-1.5 py-0.5 rounded">โบนัสบริหารเพิ่ม 20%</span> จากค่าคอมมิชชันทั้งหมด ยิ่งขยายทีมมาก รายได้ยิ่งทวีคูณ
                         </p>
                     </div>
                 </div>
 
-                <!-- 4. Fast Start Bonuses (Bottom spanning cards) -->
-                <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-4 min-[412px]:gap-6 mt-1 min-[412px]:mt-2">
-                    <!-- Month 1-3 -->
-                    <div class="glass-card rounded-2xl min-[412px]:rounded-3xl p-4 min-[412px]:p-6 flex items-center gap-4 min-[412px]:gap-6 reveal-up border-l-4 border-l-purple-500 hover:bg-white/5 transition-colors cursor-default shadow-[0_0_20px_rgba(168,85,247,0.1)]">
-                        <div class="w-12 h-12 min-[412px]:w-16 min-[412px]:h-16 shrink-0 rounded-full bg-purple-500/20 flex flex-col items-center justify-center">
-                            <span class="text-purple-400 text-[10px] min-[412px]:text-xs font-bold uppercase">เดือนที่</span>
-                            <span class="text-white font-bold text-lg min-[412px]:text-xl leading-none">1-3</span>
+                <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-3 min-[412px]:gap-4 mt-1">
+                    <div class="glass-card rounded-xl min-[412px]:rounded-2xl p-3 min-[412px]:p-4 flex items-center gap-3 min-[412px]:gap-4 reveal-up border-l-4 border-l-purple-500 hover:bg-white/5 transition-colors cursor-default shadow-[0_0_20px_rgba(168,85,247,0.1)]">
+                        <div class="w-10 h-10 min-[412px]:w-12 min-[412px]:h-12 shrink-0 rounded-full bg-purple-500/20 flex flex-col items-center justify-center">
+                            <span class="text-purple-400 text-[8px] min-[412px]:text-[9px] font-bold uppercase">เดือนที่</span>
+                            <span class="text-white font-bold text-base min-[412px]:text-lg leading-none">1-3</span>
                         </div>
                         <div class="flex-1">
-                            <h4 class="text-base min-[412px]:text-lg font-bold text-white mb-0.5 min-[412px]:mb-1">Fast Start Bonus</h4>
-                            <p class="text-gray-400 text-[11px] min-[412px]:text-sm mb-1 min-[412px]:mb-2">ผ่านเงื่อนไขทำผลงาน 5 เคส (เบี้ยรวม 50,000)</p>
+                            <h4 class="text-sm min-[412px]:text-base font-bold text-white mb-0.5">Fast Start Bonus</h4>
+                            <p class="text-gray-400 text-[9px] min-[412px]:text-[10px]">ทำผลงาน 5 เคส (เบี้ย 50k)</p>
                         </div>
                         <div class="text-right">
-                            <div class="text-[10px] min-[412px]:text-xs text-gray-500 mb-0.5 min-[412px]:mb-1">รับโบนัสพิเศษเพิ่ม</div>
-                            <div class="text-xl min-[412px]:text-2xl font-bold text-purple-400">+15,000฿</div>
+                            <div class="text-[9px] min-[412px]:text-[10px] text-gray-500 mb-0.5">รับเพิ่ม</div>
+                            <div class="text-lg min-[412px]:text-xl font-bold text-purple-400">+15k฿</div>
                         </div>
                     </div>
 
-                    <!-- Month 4-6 -->
-                    <div class="glass-card rounded-2xl min-[412px]:rounded-3xl p-4 min-[412px]:p-6 flex items-center gap-4 min-[412px]:gap-6 reveal-up delay-100 border-l-4 border-l-indigo-500 hover:bg-white/5 transition-colors cursor-default shadow-[0_0_20px_rgba(99,102,241,0.1)]">
-                        <div class="w-12 h-12 min-[412px]:w-16 min-[412px]:h-16 shrink-0 rounded-full bg-indigo-500/20 flex flex-col items-center justify-center">
-                            <span class="text-indigo-400 text-[10px] min-[412px]:text-xs font-bold uppercase">เดือนที่</span>
-                            <span class="text-white font-bold text-lg min-[412px]:text-xl leading-none">4-6</span>
+                    <div class="glass-card rounded-xl min-[412px]:rounded-2xl p-3 min-[412px]:p-4 flex items-center gap-3 min-[412px]:gap-4 reveal-up delay-100 border-l-4 border-l-indigo-500 hover:bg-white/5 transition-colors cursor-default shadow-[0_0_20px_rgba(99,102,241,0.1)]">
+                        <div class="w-10 h-10 min-[412px]:w-12 min-[412px]:h-12 shrink-0 rounded-full bg-indigo-500/20 flex flex-col items-center justify-center">
+                            <span class="text-indigo-400 text-[8px] min-[412px]:text-[9px] font-bold uppercase">เดือนที่</span>
+                            <span class="text-white font-bold text-base min-[412px]:text-lg leading-none">4-6</span>
                         </div>
                         <div class="flex-1">
-                            <h4 class="text-base min-[412px]:text-lg font-bold text-white mb-0.5 min-[412px]:mb-1">Momentum Bonus</h4>
-                            <p class="text-gray-400 text-[11px] min-[412px]:text-sm mb-1 min-[412px]:mb-2">ผ่านเงื่อนไขทำผลงาน 10 เคส (เบี้ยรวม 100,000)</p>
+                            <h4 class="text-sm min-[412px]:text-base font-bold text-white mb-0.5">Momentum Bonus</h4>
+                            <p class="text-gray-400 text-[9px] min-[412px]:text-[10px]">ทำผลงาน 10 เคส (เบี้ย 100k)</p>
                         </div>
                         <div class="text-right">
-                            <div class="text-[10px] min-[412px]:text-xs text-gray-500 mb-0.5 min-[412px]:mb-1">รับโบนัสพิเศษเพิ่ม</div>
-                            <div class="text-xl min-[412px]:text-2xl font-bold text-indigo-400">+25,000฿</div>
+                            <div class="text-[9px] min-[412px]:text-[10px] text-gray-500 mb-0.5">รับเพิ่ม</div>
+                            <div class="text-lg min-[412px]:text-xl font-bold text-indigo-400">+25k฿</div>
                         </div>
                     </div>
                 </div>
@@ -579,256 +560,241 @@
         </div>
     </section>
 
-    <!-- Product Slider Section ลด Padding ให้กระชับ -->
-    <section id="products" class="py-20 sm:py-32 bg-[#08080a] relative overflow-hidden">
-        <div class="absolute left-0 top-1/3 -translate-y-1/2 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <!-- Products Section -->
+    <section id="products" class="py-16 sm:py-24 bg-[#08080a] relative overflow-hidden">
+        <div class="absolute left-0 top-1/3 -translate-y-1/2 w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="text-center mb-10 sm:mb-16 reveal-up">
-                <h2 class="text-3xl min-[412px]:text-4xl md:text-5xl font-bold mb-3 min-[412px]:mb-4">ผลิตภัณฑ์ที่ <span class="gradient-text-gold">ตอบโจทย์</span> ทุกช่วงชีวิต</h2>
-                <p class="text-gray-400 text-sm min-[412px]:text-base md:text-lg max-w-2xl mx-auto">อาวุธระดับพรีเมียม 10 รูปแบบ ที่ช่วยให้นักออกแบบสินทรัพย์สามารถวางแผนความมั่งคั่งและปกป้องความเสี่ยงให้ลูกค้าได้อย่างไร้รอยต่อ</p>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-8 sm:mb-12 reveal-up">
+                <h2 class="text-2xl min-[412px]:text-3xl md:text-4xl font-bold mb-3">ผลิตภัณฑ์ที่ <span class="gradient-text-gold">ตอบโจทย์</span> ทุกช่วงชีวิต</h2>
+                <p class="text-gray-400 text-[11px] min-[412px]:text-xs md:text-sm max-w-2xl mx-auto">อาวุธระดับพรีเมียม 10 รูปแบบ ที่ช่วยให้นักออกแบบสินทรัพย์สามารถวางแผนความมั่งคั่งและปกป้องความเสี่ยงให้ลูกค้าได้อย่างไร้รอยต่อ</p>
             </div>
         </div>
 
-        <!-- Horizontal Slider (Card ขนาดพอดีจอ S24 Ultra คือ w-[85vw] หรือประมาณ 350px) -->
         <div class="w-full relative z-20 slider-mask reveal-up">
-            <div id="product-track" class="flex gap-4 min-[412px]:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-[10vw] pb-6 pt-4 items-stretch cursor-grab select-none">
+            <div id="product-track" class="flex gap-3 min-[412px]:gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-[10vw] pb-6 pt-2 items-stretch cursor-grab select-none">
                 
-                <!-- 1. Health Protection -->
-                <div class="bento-card w-[85vw] min-[412px]:w-[340px] sm:w-[380px] shrink-0 snap-center rounded-3xl p-6 min-[412px]:p-8 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #60a5fa, #8b5cf6);">
+                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #60a5fa, #8b5cf6);">
                     <div>
-                        <div class="flex justify-between items-start mb-5 min-[412px]:mb-6">
-                            <div class="w-14 h-14 min-[412px]:w-16 min-[412px]:h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center icon-box shadow-lg shadow-purple-500/20">
-                                <svg class="w-7 h-7 min-[412px]:w-8 min-[412px]:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <div class="flex justify-between items-start mb-4 min-[412px]:mb-5">
+                            <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center icon-box shadow-lg shadow-purple-500/20">
+                                <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                             </div>
-                            <div class="text-[9px] min-[412px]:text-[10px] font-bold text-white bg-purple-500/20 px-2 min-[412px]:px-3 py-1 min-[412px]:py-1.5 rounded-full border border-purple-500/30 uppercase tracking-wider backdrop-blur-md">Top Seller</div>
+                            <div class="text-[8px] min-[412px]:text-[9px] font-bold text-white bg-purple-500/20 px-2 py-1 rounded-full border border-purple-500/30 uppercase tracking-wider backdrop-blur-md">Top Seller</div>
                         </div>
-                        <h3 class="text-xl min-[412px]:text-2xl font-bold mb-2 min-[412px]:mb-3 text-white">Health Protection</h3>
-                        <p class="text-gray-400 text-xs min-[412px]:text-sm leading-relaxed mb-5 min-[412px]:mb-6">ประกันสุขภาพเหมาจ่ายวงเงินสูงระดับพรีเมียม ครอบคลุมการรักษาโรคร้ายแรงทั่วโลก เครื่องมือเปิดใจลูกค้าชั้นยอดที่ตลาดมีความต้องการสูงสุดในปัจจุบัน</p>
+                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Health Protection</h3>
+                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">ประกันสุขภาพเหมาจ่ายวงเงินสูงระดับพรีเมียม ครอบคลุมการรักษาโรคร้ายแรงทั่วโลก เครื่องมือเปิดใจลูกค้าชั้นยอด</p>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] min-[412px]:text-xs bg-white/5 border border-white/10 px-2 min-[412px]:px-3 py-1 rounded-full text-gray-300">เหมาจ่ายตามจริง</span>
-                        <span class="text-[10px] min-[412px]:text-xs bg-white/5 border border-white/10 px-2 min-[412px]:px-3 py-1 rounded-full text-gray-300">คุ้มครองทั่วโลก</span>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">เหมาจ่ายตามจริง</span>
+                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">คุ้มครองทั่วโลก</span>
                     </div>
                 </div>
 
-                <!-- 2. Retirement Wealth -->
-                <div class="bento-card w-[85vw] min-[412px]:w-[340px] sm:w-[380px] shrink-0 snap-center rounded-3xl p-6 min-[412px]:p-8 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #fbbf24, #ea580c);">
+                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #fbbf24, #ea580c);">
                     <div>
-                        <div class="flex justify-between items-start mb-5 min-[412px]:mb-6">
-                            <div class="w-14 h-14 min-[412px]:w-16 min-[412px]:h-16 rounded-2xl bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center icon-box shadow-lg shadow-orange-500/20">
-                                <svg class="w-7 h-7 min-[412px]:w-8 min-[412px]:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div class="flex justify-between items-start mb-4 min-[412px]:mb-5">
+                            <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center icon-box shadow-lg shadow-orange-500/20">
+                                <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
-                            <div class="text-[9px] min-[412px]:text-[10px] font-bold text-yellow-500 bg-yellow-500/10 px-2 min-[412px]:px-3 py-1 min-[412px]:py-1.5 rounded-full border border-yellow-500/20 uppercase tracking-wider">High Premium</div>
+                            <div class="text-[8px] min-[412px]:text-[9px] font-bold text-yellow-500 bg-yellow-500/10 px-2 py-1 rounded-full border border-yellow-500/20 uppercase tracking-wider">High Premium</div>
                         </div>
-                        <h3 class="text-xl min-[412px]:text-2xl font-bold mb-2 min-[412px]:mb-3 text-white">Retirement Wealth</h3>
-                        <p class="text-gray-400 text-xs min-[412px]:text-sm leading-relaxed mb-5 min-[412px]:mb-6">แบบประกันบำนาญเพื่อการออกแบบสินทรัพย์เพื่อวัยเกษียณ การันตีกระแสเงินสด ตอบโจทย์กลุ่มลูกค้าระดับบนที่ต้องการลดหย่อนภาษีเต็มเพดาน</p>
+                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Retirement Wealth</h3>
+                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">แบบประกันบำนาญเพื่อวัยเกษียณ การันตีกระแสเงินสด ตอบโจทย์กลุ่มลูกค้าระดับบนที่ต้องการลดหย่อนภาษีเต็มเพดาน</p>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] min-[412px]:text-xs bg-white/5 border border-white/10 px-2 min-[412px]:px-3 py-1 rounded-full text-gray-300">ลดหย่อนภาษี</span>
-                        <span class="text-[10px] min-[412px]:text-xs bg-white/5 border border-white/10 px-2 min-[412px]:px-3 py-1 rounded-full text-gray-300">บำนาญตลอดชีพ</span>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">ลดหย่อนภาษี</span>
+                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">บำนาญตลอดชีพ</span>
                     </div>
                 </div>
 
-                <!-- 3. Unit-Linked -->
-                <div class="bento-card w-[85vw] min-[412px]:w-[340px] sm:w-[380px] shrink-0 snap-center rounded-3xl p-6 min-[412px]:p-8 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #34d399, #059669);">
+                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #34d399, #059669);">
                     <div>
-                        <div class="flex justify-between items-start mb-5 min-[412px]:mb-6">
-                            <div class="w-14 h-14 min-[412px]:w-16 min-[412px]:h-16 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center icon-box shadow-lg shadow-emerald-500/20">
-                                <svg class="w-7 h-7 min-[412px]:w-8 min-[412px]:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        <div class="flex justify-between items-start mb-4 min-[412px]:mb-5">
+                            <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center icon-box shadow-lg shadow-emerald-500/20">
+                                <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                             </div>
-                            <div class="text-[9px] min-[412px]:text-[10px] font-bold text-green-400 bg-green-500/10 px-2 min-[412px]:px-3 py-1 min-[412px]:py-1.5 rounded-full border border-green-500/20 uppercase tracking-wider">Investment</div>
+                            <div class="text-[8px] min-[412px]:text-[9px] font-bold text-green-400 bg-green-500/10 px-2 py-1 rounded-full border border-green-500/20 uppercase tracking-wider">Investment</div>
                         </div>
-                        <h3 class="text-xl min-[412px]:text-2xl font-bold mb-2 min-[412px]:mb-3 text-white">Unit-Linked</h3>
-                        <p class="text-gray-400 text-xs min-[412px]:text-sm leading-relaxed mb-5 min-[412px]:mb-6">ประกันชีวิตควบการลงทุน มอบโอกาสรับผลตอบแทนสูง ยืดหยุ่นปรับเปลี่ยนได้ตามช่วงชีวิต สำหรับนักออกแบบสินทรัพย์ที่ถือใบอนุญาต IC</p>
+                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Unit-Linked</h3>
+                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">ประกันชีวิตควบการลงทุน มอบโอกาสรับผลตอบแทนสูง ยืดหยุ่นปรับเปลี่ยนได้ตามช่วงชีวิต สำหรับผู้ถือใบอนุญาต IC</p>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] min-[412px]:text-xs bg-white/5 border border-white/10 px-2 min-[412px]:px-3 py-1 rounded-full text-gray-300">ลงทุนผ่านกองทุนรวม</span>
-                        <span class="text-[10px] min-[412px]:text-xs bg-white/5 border border-white/10 px-2 min-[412px]:px-3 py-1 rounded-full text-gray-300">ยืดหยุ่นสูง</span>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">ลงทุนกองทุนรวม</span>
+                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">ยืดหยุ่นสูง</span>
                     </div>
                 </div>
 
-                <!-- 4. Legacy Planning -->
-                <div class="bento-card w-[85vw] min-[412px]:w-[340px] sm:w-[380px] shrink-0 snap-center rounded-3xl p-6 min-[412px]:p-8 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #fcd34d, #b45309);">
+                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #fcd34d, #b45309);">
                     <div>
-                        <div class="flex justify-between items-start mb-5 min-[412px]:mb-6">
-                            <div class="w-14 h-14 min-[412px]:w-16 min-[412px]:h-16 rounded-2xl bg-gradient-to-br from-yellow-300 to-yellow-600 flex items-center justify-center icon-box shadow-lg shadow-yellow-500/20">
-                                <svg class="w-7 h-7 min-[412px]:w-8 min-[412px]:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m22 4v-4m-3.1-2l-3.1-5m-5.8 5l-3.1-5m12 11V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-14v-4m2 4h-2"></path></svg>
+                        <div class="flex justify-between items-start mb-4 min-[412px]:mb-5">
+                            <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-yellow-300 to-yellow-600 flex items-center justify-center icon-box shadow-lg shadow-yellow-500/20">
+                                <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m22 4v-4m-3.1-2l-3.1-5m-5.8 5l-3.1-5m12 11V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-14v-4m2 4h-2"></path></svg>
                             </div>
-                            <div class="text-[9px] min-[412px]:text-[10px] font-bold text-yellow-300 bg-yellow-500/10 px-2 min-[412px]:px-3 py-1 min-[412px]:py-1.5 rounded-full border border-yellow-500/20 uppercase tracking-wider">Wealth Transfer</div>
+                            <div class="text-[8px] min-[412px]:text-[9px] font-bold text-yellow-300 bg-yellow-500/10 px-2 py-1 rounded-full border border-yellow-500/20 uppercase tracking-wider">Wealth Transfer</div>
                         </div>
-                        <h3 class="text-xl min-[412px]:text-2xl font-bold mb-2 min-[412px]:mb-3 text-white">Legacy Planning</h3>
-                        <p class="text-gray-400 text-xs min-[412px]:text-sm leading-relaxed mb-5 min-[412px]:mb-6">การส่งต่อความมั่งคั่งและการวางแผนภาษีมรดก สร้างเงินก้อนใหญ่ไร้ภาษีเพื่อส่งต่อความมั่นคงสู่ทายาทเจเนอเรชันถัดไปอย่างสมบูรณ์แบบ</p>
+                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Legacy Planning</h3>
+                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">การส่งต่อความมั่งคั่งและวางแผนภาษีมรดก สร้างเงินก้อนใหญ่ไร้ภาษีเพื่อส่งต่อความมั่นคงสู่ทายาทอย่างสมบูรณ์แบบ</p>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] min-[412px]:text-xs bg-white/5 border border-white/10 px-2 min-[412px]:px-3 py-1 rounded-full text-gray-300">ทุนประกันสูง</span>
-                        <span class="text-[10px] min-[412px]:text-xs bg-white/5 border border-white/10 px-2 min-[412px]:px-3 py-1 rounded-full text-gray-300">ปลอดภาษีมรดก</span>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">ทุนประกันสูง</span>
+                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">ปลอดภาษีมรดก</span>
                     </div>
                 </div>
 
-                <!-- 5. CI Shield -->
-                <div class="bento-card w-[85vw] min-[412px]:w-[340px] sm:w-[380px] shrink-0 snap-center rounded-3xl p-6 min-[412px]:p-8 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #f87171, #be123c);">
+                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #f87171, #be123c);">
                     <div>
-                        <div class="w-14 h-14 min-[412px]:w-16 min-[412px]:h-16 rounded-2xl bg-gradient-to-br from-red-400 to-rose-600 flex items-center justify-center mb-5 min-[412px]:mb-6 icon-box shadow-lg shadow-red-500/20">
-                            <svg class="w-7 h-7 min-[412px]:w-8 min-[412px]:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-red-400 to-rose-600 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-red-500/20">
+                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                         </div>
-                        <h3 class="text-xl min-[412px]:text-2xl font-bold mb-2 min-[412px]:mb-3 text-white">CI Shield</h3>
-                        <p class="text-gray-400 text-xs min-[412px]:text-sm leading-relaxed mb-5 min-[412px]:mb-6">สินทรัพย์ปกป้องโรคร้ายแรง เจอ จ่าย จบ รับเงินก้อนใหญ่ทันทีเมื่อตรวจพบ เพื่อเป็นทุนสำรองระหว่างพักฟื้นโดยไม่กระทบเงินเก็บ</p>
+                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">CI Shield</h3>
+                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">สินทรัพย์ปกป้องโรคร้ายแรง เจอ จ่าย จบ รับเงินก้อนใหญ่ทันทีเพื่อเป็นทุนสำรองระหว่างพักฟื้นโดยไม่กระทบเงินเก็บ</p>
                     </div>
                 </div>
 
-                <!-- 6. Education Fund -->
-                <div class="bento-card w-[85vw] min-[412px]:w-[340px] sm:w-[380px] shrink-0 snap-center rounded-3xl p-6 min-[412px]:p-8 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #2dd4bf, #0f766e);">
+                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #2dd4bf, #0f766e);">
                     <div>
-                        <div class="w-14 h-14 min-[412px]:w-16 min-[412px]:h-16 rounded-2xl bg-gradient-to-br from-teal-400 to-cyan-600 flex items-center justify-center mb-5 min-[412px]:mb-6 icon-box shadow-lg shadow-teal-500/20">
-                            <svg class="w-7 h-7 min-[412px]:w-8 min-[412px]:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-teal-400 to-cyan-600 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-teal-500/20">
+                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
                         </div>
-                        <h3 class="text-xl min-[412px]:text-2xl font-bold mb-2 min-[412px]:mb-3 text-white">Education Fund</h3>
-                        <p class="text-gray-400 text-xs min-[412px]:text-sm leading-relaxed mb-5 min-[412px]:mb-6">ออกแบบสินทรัพย์สะสมทรัพย์แบบมีระยะเวลา เพื่อสร้างกองทุนการศึกษาที่แน่นอนให้กับบุตรหลาน พร้อมความคุ้มครองผู้ชำระเบี้ย</p>
+                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Education Fund</h3>
+                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">ออกแบบสินทรัพย์สะสมทรัพย์แบบมีระยะเวลา เพื่อสร้างกองทุนการศึกษาที่แน่นอนให้บุตรหลาน พร้อมความคุ้มครองผู้ชำระเบี้ย</p>
                     </div>
                 </div>
 
-                <!-- 7. Tax Saver Pro -->
-                <div class="bento-card w-[85vw] min-[412px]:w-[340px] sm:w-[380px] shrink-0 snap-center rounded-3xl p-6 min-[412px]:p-8 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #818cf8, #4338ca);">
+                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #818cf8, #4338ca);">
                     <div>
-                        <div class="w-14 h-14 min-[412px]:w-16 min-[412px]:h-16 rounded-2xl bg-gradient-to-br from-indigo-400 to-indigo-700 flex items-center justify-center mb-5 min-[412px]:mb-6 icon-box shadow-lg shadow-indigo-500/20">
-                            <svg class="w-7 h-7 min-[412px]:w-8 min-[412px]:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-700 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-indigo-500/20">
+                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                         </div>
-                        <h3 class="text-xl min-[412px]:text-2xl font-bold mb-2 min-[412px]:mb-3 text-white">Tax Saver Pro</h3>
-                        <p class="text-gray-400 text-xs min-[412px]:text-sm leading-relaxed mb-5 min-[412px]:mb-6">รูปแบบสินทรัพย์ระยะสั้นที่ออกแบบมาเฉพาะเพื่อการลดหย่อนภาษี 100,000 บาทแรก คืนทุนไว ผลตอบแทนคุ้มค่า</p>
+                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Tax Saver Pro</h3>
+                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">รูปแบบสินทรัพย์ระยะสั้นที่ออกแบบมาเฉพาะเพื่อการลดหย่อนภาษี 100,000 บาทแรก คืนทุนไว ผลตอบแทนคุ้มค่า</p>
                     </div>
                 </div>
 
-                <!-- 8. Keyman Protection -->
-                <div class="bento-card w-[85vw] min-[412px]:w-[340px] sm:w-[380px] shrink-0 snap-center rounded-3xl p-6 min-[412px]:p-8 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #94a3b8, #334155);">
+                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #94a3b8, #334155);">
                     <div>
-                        <div class="w-14 h-14 min-[412px]:w-16 min-[412px]:h-16 rounded-2xl bg-gradient-to-br from-slate-400 to-slate-700 flex items-center justify-center mb-5 min-[412px]:mb-6 icon-box shadow-lg shadow-slate-500/20">
-                            <svg class="w-7 h-7 min-[412px]:w-8 min-[412px]:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-14v-4m2 4h-2m-2 0V5a2 2 0 012-2h10a2 2 0 012 2v16m-4 0v-4"></path></svg>
+                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-slate-400 to-slate-700 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-slate-500/20">
+                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-14v-4m2 4h-2m-2 0V5a2 2 0 012-2h10a2 2 0 012 2v16m-4 0v-4"></path></svg>
                         </div>
-                        <h3 class="text-xl min-[412px]:text-2xl font-bold mb-2 min-[412px]:mb-3 text-white">Keyman Protection</h3>
-                        <p class="text-gray-400 text-xs min-[412px]:text-sm leading-relaxed mb-5 min-[412px]:mb-6">สินทรัพย์คุ้มครองบุคคลสำคัญขององค์กร ปกป้องความเสี่ยงและรักษาเสถียรภาพของธุรกิจคุณ พร้อมสิทธินำไปหักค่าใช้จ่ายบริษัท</p>
+                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Keyman Protection</h3>
+                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">สินทรัพย์คุ้มครองบุคคลสำคัญขององค์กร ปกป้องความเสี่ยงและรักษาเสถียรภาพธุรกิจ พร้อมสิทธินำไปหักค่าใช้จ่ายบริษัท</p>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] min-[412px]:text-xs bg-white/5 border border-white/10 px-2 min-[412px]:px-3 py-1 rounded-full text-gray-300">Corporate</span>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">Corporate</span>
                     </div>
                 </div>
 
-                <!-- 9. Endowment 15/5 -->
-                <div class="bento-card w-[85vw] min-[412px]:w-[340px] sm:w-[380px] shrink-0 snap-center rounded-3xl p-6 min-[412px]:p-8 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #f472b6, #db2777);">
+                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #f472b6, #db2777);">
                     <div>
-                        <div class="w-14 h-14 min-[412px]:w-16 min-[412px]:h-16 rounded-2xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center mb-5 min-[412px]:mb-6 icon-box shadow-lg shadow-pink-500/20">
-                            <svg class="w-7 h-7 min-[412px]:w-8 min-[412px]:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-pink-500/20">
+                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08-.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <h3 class="text-xl min-[412px]:text-2xl font-bold mb-2 min-[412px]:mb-3 text-white">Endowment 15/5</h3>
-                        <p class="text-gray-400 text-xs min-[412px]:text-sm leading-relaxed mb-5 min-[412px]:mb-6">สินทรัพย์ระยะสั้น ชำระเพียง 5 ปี คุ้มครองถึง 15 ปี รับเงินคืนทุกปี ตอบโจทย์คนรุ่นใหม่ที่ชอบผลตอบแทนชัดเจน</p>
+                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Endowment 15/5</h3>
+                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">สินทรัพย์ระยะสั้น ชำระเพียง 5 ปี คุ้มครองถึง 15 ปี รับเงินคืนทุกปี ตอบโจทย์คนรุ่นใหม่ที่ชอบผลตอบแทนชัดเจน</p>
                     </div>
                 </div>
 
-                <!-- 10. Global Health Care -->
-                <div class="bento-card w-[85vw] min-[412px]:w-[340px] sm:w-[380px] shrink-0 snap-center rounded-3xl p-6 min-[412px]:p-8 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #8b5cf6, #4c1d95);">
+                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #8b5cf6, #4c1d95);">
                     <div>
-                        <div class="w-14 h-14 min-[412px]:w-16 min-[412px]:h-16 rounded-2xl bg-gradient-to-br from-purple-400 to-indigo-800 flex items-center justify-center mb-5 min-[412px]:mb-6 icon-box shadow-lg shadow-purple-500/20">
-                            <svg class="w-7 h-7 min-[412px]:w-8 min-[412px]:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-purple-400 to-indigo-800 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-purple-500/20">
+                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <h3 class="text-xl min-[412px]:text-2xl font-bold mb-2 min-[412px]:mb-3 text-white">Global Care VIP</h3>
-                        <p class="text-gray-400 text-xs min-[412px]:text-sm leading-relaxed mb-5 min-[412px]:mb-6">ยกระดับการรักษา ครอบคลุมโรงพยาบาลชั้นนำทั่วโลก วงเงินสูงสุด 100 ล้านบาท พร้อมบริการเคลื่อนย้ายผู้ป่วยฉุกเฉินระดับ VIP</p>
+                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Global Care VIP</h3>
+                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">ยกระดับการรักษา ครอบคลุมโรงพยาบาลชั้นนำทั่วโลก วงเงินสูงสุด 100 ล้านบาท พร้อมบริการเคลื่อนย้ายผู้ป่วยฉุกเฉินระดับ VIP</p>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] min-[412px]:text-xs font-semibold text-purple-300">Exclusive VIP</span>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-[9px] min-[412px]:text-[10px] font-semibold text-purple-300">Exclusive VIP</span>
                     </div>
                 </div>
 
             </div>
 
             <!-- Slider Controls -->
-            <div class="flex justify-center gap-6 mt-6 sm:mt-8 pb-4 sm:pb-8 relative z-30 pointer-events-auto">
-                <button id="scroll-left" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 active:scale-95 flex items-center justify-center backdrop-blur-md transition-all text-white shadow-lg cursor-pointer">
-                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            <div class="flex justify-center gap-4 mt-5 sm:mt-8 pb-4 relative z-30 pointer-events-auto">
+                <button id="scroll-left" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 active:scale-95 flex items-center justify-center backdrop-blur-md transition-all text-white shadow-lg cursor-pointer">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
-                <button id="scroll-right" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 active:scale-95 flex items-center justify-center backdrop-blur-md transition-all text-white shadow-lg cursor-pointer">
-                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <button id="scroll-right" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 active:scale-95 flex items-center justify-center backdrop-blur-md transition-all text-white shadow-lg cursor-pointer">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Simulator Section ลด Padding ให้กระชับ -->
-    <section id="simulator" class="py-20 sm:py-32 relative bg-[#0a0a0c]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-10 sm:mb-16 reveal-up">
-                <h2 class="text-3xl min-[412px]:text-4xl md:text-5xl font-bold mb-3 min-[412px]:mb-4">จำลองเส้นทาง <span class="gradient-text-gold">ความมั่งคั่ง (5 ปี)</span></h2>
-                <p class="text-gray-400 text-sm min-[412px]:text-base md:text-lg">ออกแบบเป้าหมายของคุณ แล้วดูพลังของ Passive Income ที่สะสมและเติบโตขึ้นทุกปี</p>
+    <!-- Simulator Section -->
+    <section id="simulator" class="py-16 sm:py-24 relative bg-[#0a0a0c]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-12 reveal-up">
+                <h2 class="text-2xl min-[412px]:text-3xl md:text-4xl font-bold mb-3">จำลองเส้นทาง <span class="gradient-text-gold">ความมั่งคั่ง (5 ปี)</span></h2>
+                <p class="text-gray-400 text-[11px] min-[412px]:text-xs md:text-sm">ออกแบบเป้าหมายของคุณ แล้วดูพลังของ Passive Income ที่สะสมและเติบโตขึ้นทุกปี</p>
             </div>
 
-            <div class="glass-card rounded-[1.5rem] min-[412px]:rounded-3xl p-5 min-[412px]:p-8 md:p-12 max-w-5xl mx-auto reveal-up">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-stretch">
+            <div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-4 min-[412px]:p-6 md:p-8 max-w-5xl mx-auto reveal-up">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 items-stretch">
                     <div class="flex flex-col justify-center">
-                        <!-- Editable Clients Field -->
-                        <div class="mb-6 sm:mb-8">
-                            <div class="flex flex-col sm:flex-row sm:justify-between mb-3 sm:mb-4 items-start sm:items-end gap-2">
-                                <label class="text-gray-300 font-medium text-sm min-[412px]:text-base">จำนวนลูกค้าใหม่ที่ดูแล / เดือน</label>
-                                <div class="bg-purple-600 px-3 py-1.5 rounded-xl shadow-inner flex items-center justify-end w-full sm:w-[120px] transition-colors border border-purple-400 focus-within:border-white focus-within:ring-2 focus-within:ring-purple-300 cursor-text">
-                                    <input type="text" id="clients-input" value="5" class="bg-transparent text-white font-bold text-lg min-[412px]:text-xl text-right w-full outline-none focus:ring-0 p-0 border-none m-0">
-                                    <span class="text-white font-bold text-base min-[412px]:text-lg ml-2">ราย</span>
+                        <div class="mb-5 sm:mb-6">
+                            <div class="flex flex-col sm:flex-row sm:justify-between mb-2.5 items-start sm:items-end gap-2">
+                                <label class="text-gray-300 font-medium text-[11px] min-[412px]:text-xs">จำนวนลูกค้าใหม่ที่ดูแล / เดือน</label>
+                                <div class="bg-purple-600 px-3 py-1 rounded-xl shadow-inner flex items-center justify-end w-full sm:w-[100px] transition-colors border border-purple-400 focus-within:border-white focus-within:ring-2 focus-within:ring-purple-300 cursor-text">
+                                    <input type="text" id="clients-input" value="5" class="bg-transparent text-white font-bold text-base min-[412px]:text-lg text-right w-full outline-none focus:ring-0 p-0 border-none m-0">
+                                    <span class="text-white font-bold text-sm min-[412px]:text-base ml-1.5">ราย</span>
                                 </div>
                             </div>
                             <input type="range" id="clients-slider" min="1" max="20" value="5">
                         </div>
                         
-                        <!-- Editable Premium Field -->
-                        <div class="mb-6 sm:mb-8">
-                            <div class="flex flex-col sm:flex-row sm:justify-between mb-3 sm:mb-4 items-start sm:items-end gap-2">
-                                <label class="text-gray-300 font-medium text-sm min-[412px]:text-base">มูลค่าออกแบบสินทรัพย์ต่อเคส</label>
-                                <div class="bg-purple-600 px-3 py-1.5 rounded-xl shadow-inner flex items-center justify-end w-full sm:min-w-[160px] transition-colors border border-purple-400 focus-within:border-white focus-within:ring-2 focus-within:ring-purple-300 cursor-text">
-                                    <input type="text" id="premium-input" value="36,000" class="bg-transparent text-white font-bold text-lg min-[412px]:text-xl text-right w-full outline-none focus:ring-0 p-0 border-none m-0">
-                                    <span class="text-white font-bold text-base min-[412px]:text-lg ml-2">฿</span>
+                        <div class="mb-5 sm:mb-6">
+                            <div class="flex flex-col sm:flex-row sm:justify-between mb-2.5 items-start sm:items-end gap-2">
+                                <label class="text-gray-300 font-medium text-[11px] min-[412px]:text-xs">มูลค่าออกแบบสินทรัพย์ต่อเคส</label>
+                                <div class="bg-purple-600 px-3 py-1 rounded-xl shadow-inner flex items-center justify-end w-full sm:min-w-[140px] transition-colors border border-purple-400 focus-within:border-white focus-within:ring-2 focus-within:ring-purple-300 cursor-text">
+                                    <input type="text" id="premium-input" value="36,000" class="bg-transparent text-white font-bold text-base min-[412px]:text-lg text-right w-full outline-none focus:ring-0 p-0 border-none m-0">
+                                    <span class="text-white font-bold text-sm min-[412px]:text-base ml-1.5">฿</span>
                                 </div>
                             </div>
                             <input type="range" id="premium-slider" min="10000" max="100000" step="1000" value="36000">
                         </div>
                         
-                        <div class="bg-purple-900/20 rounded-xl p-4 min-[412px]:p-5 border border-purple-500/20 mt-4 sm:mt-auto">
-                            <p class="text-xs min-[412px]:text-sm text-gray-300 font-bold mb-2 min-[412px]:mb-3">โครงสร้างการคำนวณรายได้สะสม</p>
-                            <ul class="text-[10px] min-[412px]:text-xs sm:text-sm space-y-2 min-[412px]:space-y-3">
+                        <div class="bg-purple-900/20 rounded-xl p-3 min-[412px]:p-4 border border-purple-500/20 mt-2 sm:mt-auto">
+                            <p class="text-[10px] min-[412px]:text-[11px] text-gray-300 font-bold mb-2">โครงสร้างการคำนวณรายได้สะสม</p>
+                            <ul class="text-[9px] min-[412px]:text-[10px] sm:text-xs space-y-1.5 min-[412px]:space-y-2">
                                 <li class="flex justify-between items-center">
                                     <span class="text-gray-400">คอมมิชชันปีแรก + โบนัส (Active)</span> 
-                                    <span class="text-purple-400 font-semibold bg-purple-500/10 px-1.5 min-[412px]:px-2 py-0.5 min-[412px]:py-1 rounded">เฉลี่ย 45-65%</span>
+                                    <span class="text-purple-400 font-semibold bg-purple-500/10 px-1.5 py-0.5 rounded">เฉลี่ย 45-65%</span>
                                 </li>
                                 <li class="flex justify-between items-center">
                                     <span class="text-gray-400">คอมฯ ปีต่ออายุ (Passive)</span> 
-                                    <span class="text-yellow-400 font-semibold bg-yellow-500/10 px-1.5 min-[412px]:px-2 py-0.5 min-[412px]:py-1 rounded">รับต่อเนื่อง 10 ปี</span>
+                                    <span class="text-yellow-400 font-semibold bg-yellow-500/10 px-1.5 py-0.5 rounded">รับต่อเนื่อง 10 ปี</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="text-center p-5 min-[412px]:p-6 sm:p-8 bg-gradient-to-b from-purple-900/30 to-transparent rounded-2xl border border-purple-500/30 flex flex-col h-full justify-between">
+                    <div class="text-center p-4 min-[412px]:p-5 sm:p-6 bg-gradient-to-b from-purple-900/30 to-transparent rounded-xl border border-purple-500/30 flex flex-col h-full justify-between">
                         <div>
-                            <p class="text-white font-bold text-base min-[412px]:text-lg mb-6 min-[412px]:mb-8 tracking-wide">เส้นทางการเติบโตของรายได้รวมต่อปี</p>
+                            <p class="text-white font-bold text-sm min-[412px]:text-base mb-4 sm:mb-6 tracking-wide">เส้นทางการเติบโตของรายได้รวมต่อปี</p>
                             
-                            <!-- Multi-Year Chart Container -->
-                            <div class="flex items-end justify-between h-40 min-[412px]:h-48 gap-1.5 min-[412px]:gap-2 sm:gap-4 mb-4 min-[412px]:mb-6 relative" id="multi-year-chart">
-                                <!-- JS จะสร้างแท่งกราฟที่นี่ -->
+                            <div class="flex items-end justify-between h-32 min-[412px]:h-40 gap-1.5 sm:gap-3 mb-3 min-[412px]:mb-4 relative" id="multi-year-chart">
                             </div>
                             
-                            <div class="w-full h-[1px] bg-white/10 my-3 min-[412px]:my-4"></div>
-                            <div class="flex flex-col min-[412px]:flex-row justify-center gap-2 min-[412px]:gap-6 text-[10px] min-[412px]:text-xs sm:text-sm mb-3 min-[412px]:mb-4">
-                                <div class="flex items-center justify-center gap-1.5 min-[412px]:gap-2"><div class="w-2.5 h-2.5 min-[412px]:w-3 min-[412px]:h-3 bg-purple-500 rounded-sm shadow-[0_0_8px_rgba(168,85,247,0.6)]"></div> <span class="text-gray-400">Active (ผลงานใหม่)</span></div>
-                                <div class="flex items-center justify-center gap-1.5 min-[412px]:gap-2"><div class="w-2.5 h-2.5 min-[412px]:w-3 min-[412px]:h-3 bg-yellow-400 rounded-sm shadow-[0_0_8px_rgba(250,204,21,0.6)]"></div> <span class="text-gray-400">Passive (ปีต่ออายุ)</span></div>
+                            <div class="w-full h-[1px] bg-white/10 my-2 min-[412px]:my-3"></div>
+                            <div class="flex flex-col min-[412px]:flex-row justify-center gap-1.5 min-[412px]:gap-4 text-[9px] min-[412px]:text-[10px] sm:text-xs mb-2">
+                                <div class="flex items-center justify-center gap-1.5"><div class="w-2.5 h-2.5 bg-purple-500 rounded-[2px]"></div> <span class="text-gray-400">Active (ใหม่)</span></div>
+                                <div class="flex items-center justify-center gap-1.5"><div class="w-2.5 h-2.5 bg-yellow-400 rounded-[2px]"></div> <span class="text-gray-400">Passive (ต่ออายุ)</span></div>
                             </div>
                         </div>
                         
-                        <div class="mt-2 min-[412px]:mt-4 border border-white/5 text-left bg-black/40 p-4 min-[412px]:p-5 rounded-xl backdrop-blur-sm shadow-inner">
-                            <div class="flex justify-between items-start sm:items-center text-xs min-[412px]:text-sm mb-1.5 min-[412px]:mb-2 gap-2">
-                                <span class="text-gray-400">ค่าคอมมิชชันปีแรก (ค่าคอม) เฉลี่ย/เดือน:</span>
+                        <div class="mt-2 min-[412px]:mt-3 border border-white/5 text-left bg-black/40 p-3 min-[412px]:p-4 rounded-xl backdrop-blur-sm shadow-inner">
+                            <div class="flex justify-between items-center text-[10px] min-[412px]:text-[11px] mb-1.5 gap-2">
+                                <span class="text-gray-400">ค่าคอมฯปีแรก เฉลี่ย/ด.:</span>
                                 <span class="text-white font-medium whitespace-nowrap" id="base-income">฿ 0</span>
                             </div>
-                            <div class="flex justify-between items-start sm:items-center text-xs min-[412px]:text-sm mb-2 min-[412px]:mb-3 pb-2 min-[412px]:pb-3 border-b border-white/10 gap-2">
-                                <span class="text-gray-400">รวมโบนัสเฉลี่ย/เดือน:</span>
+                            <div class="flex justify-between items-center text-[10px] min-[412px]:text-[11px] mb-2 pb-2 border-b border-white/10 gap-2">
+                                <span class="text-gray-400">รวมโบนัส เฉลี่ย/ด.:</span>
                                 <span class="text-green-400 font-medium whitespace-nowrap" id="bonus-income">+ ฿ 0</span>
                             </div>
-                            <p class="text-[10px] min-[412px]:text-xs text-gray-500 mb-0.5 min-[412px]:mb-1 uppercase tracking-widest text-center mt-3 min-[412px]:mt-4">คาดการณ์รายได้ต่อปี <span class="text-white font-bold">ในปีที่ 5</span></p>
-                            <p class="text-3xl min-[412px]:text-4xl md:text-5xl font-bold gradient-text-gold text-center" id="year5-total">฿ 0</p>
+                            <p class="text-[9px] min-[412px]:text-[10px] text-gray-500 mb-0.5 uppercase tracking-widest text-center mt-2 min-[412px]:mt-3">คาดการณ์รายได้ต่อปี <span class="text-white font-bold">ในปีที่ 5</span></p>
+                            <p class="text-2xl min-[412px]:text-3xl md:text-4xl font-bold gradient-text-gold text-center" id="year5-total">฿ 0</p>
                         </div>
                     </div>
                 </div>
@@ -836,57 +802,54 @@
         </div>
     </section>
 
-    <!-- Profile Section ลด Padding -->
-    <section id="profile" class="py-20 sm:py-32 relative overflow-hidden bg-[#08080a] border-t border-white/5 safe-pb">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] bg-purple-900/20 rounded-full blur-[150px] pointer-events-none"></div>
+    <!-- Profile Section -->
+    <section id="profile" class="py-16 sm:py-24 relative overflow-hidden bg-[#08080a] border-t border-white/5 safe-pb">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] bg-purple-900/20 rounded-full blur-[150px] pointer-events-none"></div>
         
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="text-center mb-10 sm:mb-16 reveal-up">
-                <h2 class="text-3xl min-[412px]:text-4xl md:text-5xl font-bold mb-3 min-[412px]:mb-4">ร่วมงานกับ <span class="gradient-text-gold">ทีมงานมืออาชีพ</span></h2>
-                <p class="text-gray-400 text-sm min-[412px]:text-base md:text-lg">ความสำเร็จของคุณ คือเป้าหมายสูงสุดของเรา</p>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-8 sm:mb-12 reveal-up">
+                <h2 class="text-2xl min-[412px]:text-3xl md:text-4xl font-bold mb-2.5">ร่วมงานกับ <span class="gradient-text-gold">ทีมงานมืออาชีพ</span></h2>
+                <p class="text-gray-400 text-xs min-[412px]:text-sm md:text-base">ความสำเร็จของคุณ คือเป้าหมายสูงสุดของเรา</p>
             </div>
 
-            <!-- Profile Card -->
-            <div class="glass-card rounded-[1.5rem] min-[412px]:rounded-[2rem] p-6 min-[412px]:p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 sm:gap-12 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] reveal-up">
+            <div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-5 min-[412px]:p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 sm:gap-10 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] reveal-up">
                 
-                <!-- Image container with upload -->
                 <div class="perspective-1000 shrink-0">
-                    <div id="tilt-image" class="tilt-card-transition relative w-48 h-48 min-[412px]:w-64 min-[412px]:h-64 md:w-80 md:h-80 rounded-[1.5rem] overflow-hidden shadow-2xl border border-white/20 group bg-[#111]">
+                    <div id="tilt-image" class="tilt-card-transition relative w-40 h-40 min-[412px]:w-56 min-[412px]:h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-2xl border border-white/20 group bg-[#111]">
                         <img id="profile-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" alt="Executive Profile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         
                         <label for="profile-upload" class="absolute inset-0 bg-black/70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer backdrop-blur-sm">
-                            <div class="w-12 h-12 min-[412px]:w-16 min-[412px]:h-16 rounded-full bg-purple-600/30 flex items-center justify-center mb-2 min-[412px]:mb-3">
-                                <svg class="w-6 h-6 min-[412px]:w-8 min-[412px]:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 16V8a2 2 0 012-2h14a2 2 0 012 2v8m-10 4h4m-4 0v-4m4 0v4m-4-4l-4 4m4-4l4 4"></path></svg>
+                            <div class="w-10 h-10 min-[412px]:w-14 min-[412px]:h-14 rounded-full bg-purple-600/30 flex items-center justify-center mb-2">
+                                <svg class="w-5 h-5 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 16V8a2 2 0 012-2h14a2 2 0 012 2v8m-10 4h4m-4 0v-4m4 0v4m-4-4l-4 4m4-4l4 4"></path></svg>
                             </div>
-                            <span class="text-white font-medium text-xs min-[412px]:text-base">เปลี่ยนรูปโปรไฟล์</span>
-                            <span class="text-[10px] min-[412px]:text-xs text-gray-400 mt-1">(คลิกเพื่ออัพโหลด)</span>
+                            <span class="text-white font-medium text-[10px] min-[412px]:text-sm">เปลี่ยนรูปโปรไฟล์</span>
+                            <span class="text-[9px] min-[412px]:text-[10px] text-gray-400 mt-1">(คลิกอัพโหลด)</span>
                         </label>
                         <input type="file" id="profile-upload" accept="image/*" class="hidden">
                     </div>
                 </div>
 
-                <!-- Info -->
                 <div class="text-center md:text-left flex-1 w-full">
-                    <div class="inline-block bg-purple-500/20 px-3 min-[412px]:px-4 py-1 min-[412px]:py-1.5 rounded-full border border-purple-500/30 text-purple-300 text-[10px] min-[412px]:text-sm font-semibold mb-3 min-[412px]:mb-4 tracking-wider">AGENCY DIRECTOR</div>
-                    <h3 class="text-2xl min-[412px]:text-3xl sm:text-4xl font-bold text-white mb-1.5 min-[412px]:mb-2">ดร. ธนวัฒน์ มั่งคั่ง</h3>
-                    <p class="text-luxury-gold font-medium text-sm min-[412px]:text-base sm:text-lg mb-4 min-[412px]:mb-6">ผู้อำนวยการบริหารภาคอาวุโส</p>
+                    <div class="inline-block bg-purple-500/20 px-3 py-1 rounded-full border border-purple-500/30 text-purple-300 text-[9px] min-[412px]:text-[10px] font-semibold mb-2.5 min-[412px]:mb-3 tracking-wider">AGENCY DIRECTOR</div>
+                    <h3 class="text-xl min-[412px]:text-2xl sm:text-3xl font-bold text-white mb-1 min-[412px]:mb-1.5">ดร. ธนวัฒน์ มั่งคั่ง</h3>
+                    <p class="text-luxury-gold font-medium text-xs min-[412px]:text-sm sm:text-base mb-4 min-[412px]:mb-5">ผู้อำนวยการบริหารภาคอาวุโส</p>
                     
-                    <p class="text-gray-300 text-xs min-[412px]:text-sm sm:text-base leading-relaxed mb-6 min-[412px]:mb-8 italic border-l-4 border-purple-500 pl-3 min-[412px]:pl-4 text-left">
+                    <p class="text-gray-300 text-[11px] min-[412px]:text-xs sm:text-sm leading-relaxed mb-5 min-[412px]:mb-6 italic border-l-4 border-purple-500 pl-3 text-left">
                         "เราไม่ได้แค่สร้างนักขาย แต่เราสร้าง 'เจ้าของธุรกิจ' ที่พร้อมส่งต่อคุณค่า และความมั่นคงทางการเงินให้กับทุกครอบครัว ด้วยระบบการทำงานระดับสากล"
                     </p>
                     
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 min-[412px]:gap-4 sm:gap-6 justify-center md:justify-start">
-                        <div class="bg-white/5 p-3 min-[412px]:p-4 rounded-xl border border-white/5 backdrop-blur-sm">
-                            <div class="text-xl min-[412px]:text-2xl sm:text-3xl font-bold text-white mb-0.5 min-[412px]:mb-1">15<span class="text-purple-500">+</span></div>
-                            <div class="text-[9px] min-[412px]:text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">ปีแห่งประสบการณ์</div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 min-[412px]:gap-3 justify-center md:justify-start">
+                        <div class="bg-white/5 p-2.5 min-[412px]:p-3 rounded-xl border border-white/5 backdrop-blur-sm">
+                            <div class="text-lg min-[412px]:text-xl sm:text-2xl font-bold text-white mb-0.5">15<span class="text-purple-500">+</span></div>
+                            <div class="text-[8px] min-[412px]:text-[9px] text-gray-400 uppercase tracking-wider">ปีประสบการณ์</div>
                         </div>
-                        <div class="bg-white/5 p-3 min-[412px]:p-4 rounded-xl border border-white/5 backdrop-blur-sm">
-                            <div class="text-xl min-[412px]:text-2xl sm:text-3xl font-bold text-white mb-0.5 min-[412px]:mb-1">MDRT</div>
-                            <div class="text-[9px] min-[412px]:text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">Lifetime Member</div>
+                        <div class="bg-white/5 p-2.5 min-[412px]:p-3 rounded-xl border border-white/5 backdrop-blur-sm">
+                            <div class="text-lg min-[412px]:text-xl sm:text-2xl font-bold text-white mb-0.5">MDRT</div>
+                            <div class="text-[8px] min-[412px]:text-[9px] text-gray-400 uppercase tracking-wider">Lifetime Member</div>
                         </div>
-                        <div class="bg-white/5 p-3 min-[412px]:p-4 rounded-xl border border-white/5 backdrop-blur-sm sm:col-span-1 col-span-2">
-                            <div class="text-xl min-[412px]:text-2xl sm:text-3xl font-bold text-white mb-0.5 min-[412px]:mb-1">100<span class="text-purple-500">+</span></div>
-                            <div class="text-[9px] min-[412px]:text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">ทีมงานนักออกแบบสินทรัพย์</div>
+                        <div class="bg-white/5 p-2.5 min-[412px]:p-3 rounded-xl border border-white/5 backdrop-blur-sm sm:col-span-1 col-span-2">
+                            <div class="text-lg min-[412px]:text-xl sm:text-2xl font-bold text-white mb-0.5">100<span class="text-purple-500">+</span></div>
+                            <div class="text-[8px] min-[412px]:text-[9px] text-gray-400 uppercase tracking-wider">ทีม Asset Designer</div>
                         </div>
                     </div>
                 </div>
@@ -894,10 +857,10 @@
         </div>
     </section>
 
-    <footer class="bg-black text-gray-500 text-xs min-[412px]:text-sm py-8 min-[412px]:py-12 border-t border-white/10 safe-pb">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-3 min-[412px]:gap-4">
+    <footer class="bg-black text-gray-500 text-[10px] min-[412px]:text-[11px] sm:text-xs py-8 border-t border-white/10 safe-pb">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-2.5 min-[412px]:gap-3">
             <p>Copyright © 2026 Chubb Agency Success Howto.</p>
-            <div class="flex gap-4 min-[412px]:gap-6">
+            <div class="flex gap-3 min-[412px]:gap-4">
                 <a href="#" class="hover:text-white transition-colors">นโยบายความเป็นส่วนตัว</a>
                 <a href="#" class="hover:text-white transition-colors">เงื่อนไขการสมัคร</a>
             </div>
@@ -938,18 +901,16 @@
                         mobileMenu.style.opacity = '1';
                         mobileMenu.style.pointerEvents = 'auto';
                         line1.style.transform = 'translateY(4px) rotate(45deg)';
-                        // ปรับ Line 2 ให้กว้างเท่ากันตอนกากบาท
-                        line2.classList.remove('w-5');
-                        line2.classList.add('w-6');
+                        line2.classList.remove('w-4');
+                        line2.classList.add('w-5');
                         line2.style.transform = 'translateY(-4px) rotate(-45deg)';
                         document.body.style.overflow = 'hidden';
                     } else {
                         mobileMenu.style.opacity = '0';
                         mobileMenu.style.pointerEvents = 'none';
                         line1.style.transform = 'translateY(0) rotate(0deg)';
-                        // คืนค่าความกว้าง Line 2 กลับ
-                        line2.classList.remove('w-6');
-                        line2.classList.add('w-5');
+                        line2.classList.remove('w-5');
+                        line2.classList.add('w-4');
                         line2.style.transform = 'translateY(0) rotate(0deg)';
                         document.body.style.overflow = '';
                     }
@@ -1029,7 +990,6 @@
                 });
             }
 
-            // ฟังก์ชันเช็คเรทโบนัสรายเดือนจาก PDF (MB)
             function getMbTier(fyc) {
                 if (fyc >= 64001) return 0.35;
                 if (fyc >= 32001) return 0.30;
@@ -1038,7 +998,6 @@
                 return 0;
             }
 
-            // ฟังก์ชันเช็คเรทโบนัสครึ่งปีจาก PDF (MYB)
             function getMybTier(halfYearFyc) {
                 if (halfYearFyc >= 400001) return 0.35;
                 if (halfYearFyc >= 300001) return 0.325;
@@ -1051,7 +1010,6 @@
                 return 0;
             }
 
-            // --- Multi-Year Income Simulator Logic ---
             setupSyncInput('clients-input', 'clients-slider', calculateMultiYearIncome, false);
             setupSyncInput('premium-input', 'premium-slider', calculateMultiYearIncome, true);
 
@@ -1136,22 +1094,18 @@
                     const passiveHeight = maxTotal > 0 ? (d.passive / maxTotal) * 100 : 0;
                     
                     let totalFormatted = Math.floor(d.total).toLocaleString();
-                    // ย่อขนาดฟอนต์ tooltip ลงบนมือถือเล็กน้อย
                     const barHtml = `
                         <div class="flex flex-col items-center flex-1 group h-full relative">
-                            <!-- Tooltip -->
-                            <div class="text-[10px] sm:text-xs text-white font-bold bg-black/90 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap absolute -top-8 sm:-top-10 pointer-events-none z-10 border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                            <div class="text-[9px] sm:text-[10px] text-white font-bold bg-black/90 px-1.5 sm:px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap absolute -top-6 sm:-top-8 pointer-events-none z-10 border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
                                 ฿ ${totalFormatted}
                             </div>
                             
-                            <!-- Bar -->
-                            <div class="w-full max-w-[30px] sm:max-w-[50px] flex flex-col justify-end h-full cursor-pointer hover:brightness-110 transition-all relative">
-                                <div class="w-full bg-yellow-400 transition-all duration-1000 rounded-t-sm min-[412px]:rounded-t-md" style="height: ${passiveHeight}%; box-shadow: inset 0 2px 4px rgba(255,255,255,0.4);"></div>
-                                <div class="w-full bg-purple-500 transition-all duration-1000 ${d.passive === 0 ? 'rounded-t-sm min-[412px]:rounded-t-md' : ''}" style="height: ${activeHeight}%; box-shadow: inset 0 2px 4px rgba(255,255,255,0.2);"></div>
+                            <div class="w-full max-w-[25px] sm:max-w-[40px] flex flex-col justify-end h-full cursor-pointer hover:brightness-110 transition-all relative">
+                                <div class="w-full bg-yellow-400 transition-all duration-1000 rounded-t-[2px] min-[412px]:rounded-t-sm" style="height: ${passiveHeight}%; box-shadow: inset 0 2px 4px rgba(255,255,255,0.4);"></div>
+                                <div class="w-full bg-purple-500 transition-all duration-1000 ${d.passive === 0 ? 'rounded-t-[2px] min-[412px]:rounded-t-sm' : ''}" style="height: ${activeHeight}%; box-shadow: inset 0 2px 4px rgba(255,255,255,0.2);"></div>
                             </div>
                             
-                            <!-- Label -->
-                            <div class="text-[10px] min-[412px]:text-xs sm:text-sm text-gray-400 mt-2 min-[412px]:mt-3 font-medium group-hover:text-white transition-colors">ปี ${d.year}</div>
+                            <div class="text-[9px] min-[412px]:text-[10px] sm:text-xs text-gray-400 mt-1.5 min-[412px]:mt-2 font-medium group-hover:text-white transition-colors">ปี ${d.year}</div>
                         </div>
                     `;
                     chart.innerHTML += barHtml;
@@ -1169,7 +1123,6 @@
 
             calculateMultiYearIncome();
 
-            // --- Success Blueprint Logic ---
             setupSyncInput('plan-case-size-input', 'plan-slider', calculateBlueprint, true);
             
             const tabM13 = document.getElementById('tab-m13');
@@ -1244,7 +1197,7 @@
                     pNabMonthly = nab13 / 3;
                     
                     if(promoNabLabel) promoNabLabel.textContent = "โบนัสตัวแทนใหม่ (เฉลี่ย เดือน 1-3)";
-                    if(promoTotalLabel) promoTotalLabel.textContent = "รายได้รวมเฉลี่ยต่อเดือน (เดือน 1-3)";
+                    if(promoTotalLabel) promoTotalLabel.textContent = "รายได้รวมเฉลี่ย/เดือน (เดือน 1-3)";
                 } else {
                     let m6Fyc = pFyc * 3;
                     let m6Cases = pCases * 3;
@@ -1254,7 +1207,7 @@
                     pNabMonthly = nab46 / 3;
                     
                     if(promoNabLabel) promoNabLabel.textContent = "โบนัสตัวแทนใหม่ (เฉลี่ย เดือน 4-6)";
-                    if(promoTotalLabel) promoTotalLabel.textContent = "รายได้รวมเฉลี่ยต่อเดือน (เดือน 4-6)";
+                    if(promoTotalLabel) promoTotalLabel.textContent = "รายได้รวมเฉลี่ย/เดือน (เดือน 4-6)";
                 }
                 
                 const pFirstMonth = pFyc + pMb;
@@ -1335,7 +1288,6 @@
             
             calculateBlueprint();
 
-            // Effect ติดตามเมาส์
             const track = document.getElementById("product-track");
             if (track) {
                 track.addEventListener("mousemove", e => {
@@ -1350,7 +1302,6 @@
                 });
             }
 
-            // --- Slider Swipe / Drag to Scroll Logic ---
             let isDown = false;
             let startX;
             let scrollLeft;
@@ -1393,7 +1344,6 @@
             const btnRight = document.getElementById('scroll-right');
             
             if(btnLeft && btnRight && track) {
-                // ลดระยะ Scroll ลงหน่อยเวลาเล่นบนจอเล็ก
                 const scrollAmount = window.innerWidth > 640 ? 400 : window.innerWidth * 0.85;
                 
                 btnLeft.addEventListener('click', () => {
@@ -1449,7 +1399,6 @@
 
             const tiltImage = document.getElementById('tilt-image');
             
-            // บนมือถือมักจะไม่มี Hover Effect เลยไม่ต้องเปิดใช้ Tilt แบบ 3D หนักๆ เท่าคอม
             if (tiltImage && window.innerWidth > 768) {
                 tiltImage.addEventListener('mousemove', (e) => {
                     const rect = tiltImage.getBoundingClientRect();
