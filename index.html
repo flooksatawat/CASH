@@ -204,7 +204,7 @@
             <!-- โลโก้ / ชื่อโปรเจกต์ -->
             <a href="#" class="flex flex-col justify-center">
                 <span class="text-lg sm:text-xl font-black tracking-widest text-white leading-none mb-1">CASH</span>
-                <span class="text-[9px] sm:text-[10px] font-bold tracking-wider gradient-text-gold whitespace-nowrap leading-none">Chubb <span class="text-white hidden min-[375px]:inline">Agency Success Howto</span><span class="text-white min-[375px]:hidden">A.S.H.</span></span>
+                <span class="text-[9px] sm:text-[10px] font-bold tracking-wider gradient-text-gold whitespace-nowrap leading-none">Chubb <span class="text-white">Agency Success Howto</span></span>
             </a>
             
             <div class="flex items-center gap-3 sm:gap-6">
@@ -737,34 +737,38 @@
                             <div class="flex flex-col sm:flex-row sm:justify-between mb-2.5 items-start sm:items-end gap-2">
                                 <label class="text-gray-300 font-medium text-[11px] min-[412px]:text-xs">จำนวนลูกค้าใหม่ที่ดูแล / เดือน</label>
                                 <div class="bg-purple-600 px-3 py-1 rounded-xl shadow-inner flex items-center justify-end w-full sm:w-[100px] transition-colors border border-purple-400 focus-within:border-white focus-within:ring-2 focus-within:ring-purple-300 cursor-text">
-                                    <input type="text" id="clients-input" value="5" class="bg-transparent text-white font-bold text-base min-[412px]:text-lg text-right w-full outline-none focus:ring-0 p-0 border-none m-0">
+                                    <input type="text" id="clients-input" value="10" class="bg-transparent text-white font-bold text-base min-[412px]:text-lg text-right w-full outline-none focus:ring-0 p-0 border-none m-0">
                                     <span class="text-white font-bold text-sm min-[412px]:text-base ml-1.5">ราย</span>
                                 </div>
                             </div>
-                            <input type="range" id="clients-slider" min="1" max="20" value="5">
+                            <input type="range" id="clients-slider" min="1" max="20" value="10">
                         </div>
                         
                         <div class="mb-5 sm:mb-6">
                             <div class="flex flex-col sm:flex-row sm:justify-between mb-2.5 items-start sm:items-end gap-2">
-                                <label class="text-gray-300 font-medium text-[11px] min-[412px]:text-xs">มูลค่าออกแบบสินทรัพย์ต่อเคส</label>
+                                <label class="text-gray-300 font-medium text-[11px] min-[412px]:text-xs">เบี้ยประกันเฉลี่ยต่อราย</label>
                                 <div class="bg-purple-600 px-3 py-1 rounded-xl shadow-inner flex items-center justify-end w-full sm:min-w-[140px] transition-colors border border-purple-400 focus-within:border-white focus-within:ring-2 focus-within:ring-purple-300 cursor-text">
-                                    <input type="text" id="premium-input" value="36,000" class="bg-transparent text-white font-bold text-base min-[412px]:text-lg text-right w-full outline-none focus:ring-0 p-0 border-none m-0">
+                                    <input type="text" id="premium-input" value="20,000" class="bg-transparent text-white font-bold text-base min-[412px]:text-lg text-right w-full outline-none focus:ring-0 p-0 border-none m-0">
                                     <span class="text-white font-bold text-sm min-[412px]:text-base ml-1.5">฿</span>
                                 </div>
                             </div>
-                            <input type="range" id="premium-slider" min="10000" max="100000" step="1000" value="36000">
+                            <input type="range" id="premium-slider" min="10000" max="100000" step="1000" value="20000">
                         </div>
                         
                         <div class="bg-purple-900/20 rounded-xl p-3 min-[412px]:p-4 border border-purple-500/20 mt-2 sm:mt-auto">
-                            <p class="text-[10px] min-[412px]:text-[11px] text-gray-300 font-bold mb-2">โครงสร้างการคำนวณรายได้สะสม</p>
+                            <p class="text-[10px] min-[412px]:text-[11px] text-gray-300 font-bold mb-2 min-[412px]:mb-3">โครงสร้างการคำนวณแบบจำลอง MDRT</p>
                             <ul class="text-[9px] min-[412px]:text-[10px] sm:text-xs space-y-1.5 min-[412px]:space-y-2">
-                                <li class="flex justify-between items-center">
-                                    <span class="text-gray-400">คอมมิชชันปีแรก + โบนัส (Active)</span> 
-                                    <span class="text-purple-400 font-semibold bg-purple-500/10 px-1.5 py-0.5 rounded">เฉลี่ย 45-65%</span>
+                                <li class="flex justify-between items-center border-b border-white/5 pb-1.5">
+                                    <span class="text-gray-400">คอมมิชชันปีแรก (FYC)</span> 
+                                    <span class="text-purple-400 font-semibold">40%</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/5 pb-1.5">
+                                    <span class="text-gray-400">คอมฯ ปีต่ออายุ (RYC ปี 2-5)</span> 
+                                    <span class="text-yellow-400 font-semibold">16%, 10%, 5%, 5%</span>
                                 </li>
                                 <li class="flex justify-between items-center">
-                                    <span class="text-gray-400">คอมฯ ปีต่ออายุ (Passive)</span> 
-                                    <span class="text-yellow-400 font-semibold bg-yellow-500/10 px-1.5 py-0.5 rounded">รับต่อเนื่อง 10 ปี</span>
+                                    <span class="text-gray-400">โบนัส MB, MYB, SP, เงินเดือน</span> 
+                                    <span class="text-blue-400 font-semibold">ตามโครงสร้าง</span>
                                 </li>
                             </ul>
                         </div>
@@ -780,21 +784,23 @@
                             <div class="w-full h-[1px] bg-white/10 my-2 min-[412px]:my-3"></div>
                             <div class="flex flex-col min-[412px]:flex-row justify-center gap-1.5 min-[412px]:gap-4 text-[9px] min-[412px]:text-[10px] sm:text-xs mb-2">
                                 <div class="flex items-center justify-center gap-1.5"><div class="w-2.5 h-2.5 bg-purple-500 rounded-[2px]"></div> <span class="text-gray-400">Active (ใหม่)</span></div>
-                                <div class="flex items-center justify-center gap-1.5"><div class="w-2.5 h-2.5 bg-yellow-400 rounded-[2px]"></div> <span class="text-gray-400">Passive (ต่ออายุ)</span></div>
+                                <div class="flex items-center justify-center gap-1.5"><div class="w-2.5 h-2.5 bg-yellow-400 rounded-[2px]"></div> <span class="text-gray-400">Passive (ต่ออายุ & เงินเดือน)</span></div>
                             </div>
                         </div>
                         
-                        <div class="mt-2 min-[412px]:mt-3 border border-white/5 text-left bg-black/40 p-3 min-[412px]:p-4 rounded-xl backdrop-blur-sm shadow-inner">
-                            <div class="flex justify-between items-center text-[10px] min-[412px]:text-[11px] mb-1.5 gap-2">
-                                <span class="text-gray-400">ค่าคอมฯปีแรก เฉลี่ย/ด.:</span>
-                                <span class="text-white font-medium whitespace-nowrap" id="base-income">฿ 0</span>
+                        <div class="mt-2 min-[412px]:mt-3 border border-white/5 text-left bg-black/40 p-3 min-[412px]:p-4 rounded-xl backdrop-blur-sm shadow-inner relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[40px] pointer-events-none"></div>
+
+                            <div class="flex justify-between items-center text-[10px] min-[412px]:text-[11px] mb-1.5 gap-2 relative z-10">
+                                <span class="text-gray-400">รวมรายได้สะสม 5 ปี:</span>
+                                <span class="text-white font-medium whitespace-nowrap" id="total-5year">฿ 0</span>
                             </div>
-                            <div class="flex justify-between items-center text-[10px] min-[412px]:text-[11px] mb-2 pb-2 border-b border-white/10 gap-2">
-                                <span class="text-gray-400">รวมโบนัส เฉลี่ย/ด.:</span>
-                                <span class="text-green-400 font-medium whitespace-nowrap" id="bonus-income">+ ฿ 0</span>
+                            <div class="flex justify-between items-center text-[10px] min-[412px]:text-[11px] mb-2 pb-2 border-b border-white/10 gap-2 relative z-10">
+                                <span class="text-blue-300 font-bold">AAA BONUS (โบนัสพิเศษ):</span>
+                                <span class="text-blue-400 font-bold whitespace-nowrap" id="aaa-bonus">+ ฿ 0</span>
                             </div>
-                            <p class="text-[9px] min-[412px]:text-[10px] text-gray-500 mb-0.5 uppercase tracking-widest text-center mt-2 min-[412px]:mt-3">คาดการณ์รายได้ต่อปี <span class="text-white font-bold">ในปีที่ 5</span></p>
-                            <p class="text-2xl min-[412px]:text-3xl md:text-4xl font-bold gradient-text-gold text-center" id="year5-total">฿ 0</p>
+                            <p class="text-[9px] min-[412px]:text-[10px] text-gray-500 mb-0.5 uppercase tracking-widest text-center mt-2 min-[412px]:mt-3 relative z-10">คาดการณ์รวมรับทั้งหมด <span class="text-white font-bold">ภายใน 5 ปี</span></p>
+                            <p class="text-2xl min-[412px]:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-300 to-white text-center leading-tight py-1 relative z-10" id="grand-total-19m">฿ 0</p>
                         </div>
                     </div>
                 </div>
@@ -1020,66 +1026,76 @@
                 const clientsPerMonth = parseInt(clientsStr) || 0;
                 const caseSize = parseInt(premiumStr) || 0;
 
-                const fycPerCase = caseSize * 0.30;
-                const monthlyFyc = fycPerCase * clientsPerMonth;
-                const mbPercent = getMbTier(monthlyFyc);
-                const monthlyBonus = monthlyFyc * mbPercent;
-                
-                const halfYearFyc = monthlyFyc * 6;
-                const mybPercent = getMybTier(halfYearFyc);
-                const halfYearBonus = halfYearFyc * mybPercent;
-                
-                let m3Fyc = monthlyFyc * 3;
-                let m3Cases = clientsPerMonth * 3;
-                let nab1 = 0;
-                if (m3Fyc >= 50000 && m3Cases >= 5) nab1 = 15000;
-                else if (m3Fyc >= 20000 && m3Cases >= 3) nab1 = 6000;
-                
-                let m6Fyc = monthlyFyc * 6;
-                let m6Cases = clientsPerMonth * 6;
-                let nab2 = 0;
-                if (m6Fyc >= 100000 && m6Cases >= 10) nab2 = 25000;
-                else if (m6Fyc >= 40000 && m6Cases >= 5) nab2 = 10000;
-                
-                const nabTotal = nab1 + nab2;
+                // คำนวณแบบเทียบบัญญัติไตรยางศ์จากฐาน MDRT ในภาพ (10 ราย x 20,000 = FYP 2,400,000)
+                const yearlyFyp = clientsPerMonth * 12 * caseSize;
+                const scaleRatio = yearlyFyp / 2400000; 
 
-                const yearlyActiveYear1 = (monthlyFyc * 12) + (monthlyBonus * 12) + (halfYearBonus * 2) + nabTotal;
-                const yearlyActiveYear2Plus = (monthlyFyc * 12) + (monthlyBonus * 12) + (halfYearBonus * 2);
+                // ตัวเลขฐานต่อปี (Active) จากภาพอ้างอิง
+                const baseFyc = 960000;
+                const baseMb = 336000;
+                const baseMyb = 369600;
+                const baseSp = 48000;
+                const baseNab = 40000; // เฉพาะปีที่ 1
                 
-                const totalBonusesMonthly = monthlyBonus + (halfYearBonus / 6) + (nabTotal / 6);
-                
-                const baseIncomeEl = document.getElementById('base-income');
-                const bonusIncomeEl = document.getElementById('bonus-income');
-                
-                if (baseIncomeEl) animateValue(baseIncomeEl, parseInt(baseIncomeEl.getAttribute('data-val')||0), monthlyFyc, 500, '฿ ');
-                if (bonusIncomeEl) animateValue(bonusIncomeEl, parseInt(bonusIncomeEl.getAttribute('data-val')||0), totalBonusesMonthly, 500, '+ ฿ ');
-                
-                if (baseIncomeEl) baseIncomeEl.setAttribute('data-val', monthlyFyc);
-                if (bonusIncomeEl) bonusIncomeEl.setAttribute('data-val', totalBonusesMonthly);
+                const yearlyFyc = baseFyc * scaleRatio;
+                const yearlyMb = baseMb * scaleRatio;
+                const yearlyMyb = baseMyb * scaleRatio;
+                const yearlySp = baseSp * scaleRatio;
+                const extraNab = baseNab * scaleRatio;
 
-                const yearlyPremium = clientsPerMonth * 12 * caseSize;
+                const yearlyActiveBase = yearlyFyc + yearlyMb + yearlyMyb + yearlySp;
 
                 const data = [];
-                for(let year = 1; year <= 5; year++) {
-                    let active = (year === 1) ? yearlyActiveYear1 : yearlyActiveYear2Plus;
-                    let passive = 0;
+                let cumulativeTotal = 0;
 
-                    if (year >= 2) {
-                        passive += yearlyPremium * 0.15;  
+                for(let year = 1; year <= 5; year++) {
+                    let active = yearlyActiveBase;
+                    let passive = 0;
+                    let career = 0;
+
+                    if (year === 1) {
+                        active += extraNab; // บวกพิเศษพนักงานใหม่ 40k ในปีแรก
                     }
-                    if (year >= 3) {
-                        passive += yearlyPremium * 0.05 * (year - 2); 
-                    }
+
+                    // Passive (RYC ตามภาพ)
+                    if (year >= 2) passive += (384000 * scaleRatio); // RYC 1 (16%)
+                    if (year >= 3) passive += (240000 * scaleRatio); // RYC 2 (10%)
+                    if (year >= 4) passive += (120000 * scaleRatio); // RYC 3 (5%)
+                    if (year >= 5) passive += (120000 * scaleRatio); // RYC 4 (5%)
+
+                    // Career Benefit (เงินเดือนผู้บริหาร ตามภาพ)
+                    if (year === 3) career = 422400 * scaleRatio;
+                    if (year === 4) career = 686400 * scaleRatio;
+                    if (year === 5) career = 818400 * scaleRatio;
+
+                    let yearTotal = active + passive + career;
+                    cumulativeTotal += yearTotal;
 
                     data.push({
                         year: year,
                         active: active,
-                        passive: passive,
-                        total: active + passive
+                        passive: passive + career, // นำ Career รวมในแท่งสีเหลืองให้เหมือนภาพ
+                        total: yearTotal
                     });
                 }
 
+                const aaaBonus = 6000000 * scaleRatio;
+                const grandTotal = cumulativeTotal + aaaBonus;
+
                 renderChart(data);
+
+                // อัปเดตตัวเลขแสดงผลรวม
+                const t5yEl = document.getElementById('total-5year');
+                const aaaEl = document.getElementById('aaa-bonus');
+                const grandEl = document.getElementById('grand-total-19m');
+
+                if(t5yEl) animateValue(t5yEl, parseInt(t5yEl.getAttribute('data-val')||0), cumulativeTotal, 500, '฿ ');
+                if(aaaEl) animateValue(aaaEl, parseInt(aaaEl.getAttribute('data-val')||0), aaaBonus, 500, '+ ฿ ');
+                if(grandEl) animateValue(grandEl, parseInt(grandEl.getAttribute('data-val')||0), grandTotal, 600, '฿ ');
+
+                if(t5yEl) t5yEl.setAttribute('data-val', cumulativeTotal);
+                if(aaaEl) aaaEl.setAttribute('data-val', aaaBonus);
+                if(grandEl) grandEl.setAttribute('data-val', grandTotal);
             }
 
             function renderChart(data) {
@@ -1110,15 +1126,6 @@
                     `;
                     chart.innerHTML += barHtml;
                 });
-
-                const year5 = data[4];
-                const year5TotalEl = document.getElementById('year5-total');
-                if(year5TotalEl) {
-                    animateValue(year5TotalEl, 
-                        parseInt(year5TotalEl.getAttribute('data-val') || 0), 
-                        year5.total, 600, '฿ ');
-                    year5TotalEl.setAttribute('data-val', year5.total);
-                }
             }
 
             calculateMultiYearIncome();
