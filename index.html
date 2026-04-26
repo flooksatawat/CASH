@@ -204,7 +204,7 @@
             <!-- โลโก้ / ชื่อโปรเจกต์ -->
             <a href="#" class="flex flex-col justify-center">
                 <span class="text-xl sm:text-2xl font-black tracking-widest text-white leading-none mb-1">CASH</span>
-                <span class="text-[10px] sm:text-xs font-bold tracking-wider gradient-text-gold whitespace-nowrap leading-none">Chubb <span class="text-white hidden min-[375px]:inline">Agency Success Howto</span><span class="text-white min-[375px]:hidden">A.S.H.</span></span>
+                <span class="text-[10px] sm:text-xs font-bold tracking-wider gradient-text-gold whitespace-nowrap leading-none">Chubb <span class="text-white">Agency Success Howto</span></span>
             </a>
             
             <div class="flex items-center gap-4 sm:gap-6">
@@ -367,7 +367,7 @@
                 </div>
                 <div class="mb-2">
                     <div class="flex flex-col min-[412px]:flex-row min-[412px]:justify-between mb-4 items-center min-[412px]:items-end gap-3 min-[412px]:gap-4">
-                        <label class="text-gray-300 font-medium text-sm min-[412px]:text-base">มูลค่าเฉลี่ยต่อเคส <span class="hidden min-[412px]:inline">(บาท)</span></label>
+                        <label class="text-gray-300 font-medium text-sm min-[412px]:text-base text-center min-[412px]:text-left">มูลค่าออกแบบสินทรัพย์เฉลี่ย <br class="min-[412px]:hidden"><span class="text-xs opacity-70">(บาท/เคส)</span></label>
                         <!-- Editable Input -->
                         <div class="bg-purple-600 px-4 py-2 rounded-xl shadow-inner flex items-center justify-center min-w-[160px] transition-colors border border-purple-400 focus-within:border-white focus-within:ring-2 focus-within:ring-purple-300 cursor-text w-full min-[412px]:w-auto">
                             <input type="text" id="plan-case-size-input" class="bg-transparent text-white font-bold text-2xl min-[412px]:text-3xl tracking-tight text-right w-full outline-none focus:ring-0 p-0 border-none m-0" value="36,000">
@@ -395,8 +395,8 @@
                                 <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             </div>
                             <div>
-                                <h3 class="text-lg min-[412px]:text-xl sm:text-2xl font-bold text-white leading-tight">แผนโปรโมทผู้บริหาร (AS)</h3>
-                                <p class="text-yellow-400 text-xs min-[412px]:text-sm font-medium mt-0.5">เป้าหมาย: คอมมิชชัน 400k / 6 เดือน</p>
+                                <h3 class="text-lg min-[412px]:text-xl sm:text-2xl font-bold text-white leading-tight">แผนงานโปรโมทผู้บริหารตัวแทน (AS)</h3>
+                                <p class="text-yellow-400 text-xs min-[412px]:text-sm font-medium mt-0.5">เป้าหมาย: คอมมิชชัน 400,001 บาท ภายใน 6 เดือน</p>
                             </div>
                         </div>
 
@@ -404,8 +404,8 @@
                             <!-- Header with Tabs -->
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 relative z-10">
                                 <div>
-                                    <h4 class="text-white font-bold text-base min-[412px]:text-lg">สูตรลัด: ออกแบบ <span id="promo-cases" class="text-2xl min-[412px]:text-3xl text-yellow-400 mx-1">8</span> เคส/เดือน</h4>
-                                    <p class="text-gray-400 text-[10px] min-[412px]:text-xs mt-1">เฉลี่ยเคสละ <span id="promo-case-size">30,000</span> ฿ (ค่าคอม <span id="promo-fyc-per-case">9,000</span> ฿/เคส)</p>
+                                    <h4 class="text-white font-bold text-base min-[412px]:text-lg">สูตรลัด: ออกแบบ <span id="promo-cases" class="text-2xl min-[412px]:text-3xl text-yellow-400 mx-1">8</span> เคส / เดือน</h4>
+                                    <p class="text-gray-400 text-[10px] min-[412px]:text-xs mt-1">(ตัวอย่าง: เคสละ <span id="promo-case-size">30,000</span> ฿ x คอม 30% = ค่าคอม <span id="promo-fyc-per-case">9,000</span> ฿/เคส)</p>
                                 </div>
                                 
                                 <!-- Tabs (App Style) -->
@@ -418,7 +418,7 @@
                             <!-- Details Rows -->
                             <div class="space-y-2 relative z-10">
                                 <div class="flex justify-between items-center bg-[#1e1e20] p-3 min-[412px]:p-3.5 rounded-lg border border-white/5">
-                                    <span class="text-xs min-[412px]:text-sm text-gray-300">ค่าคอมมิชชันพื้นฐาน</span>
+                                    <span class="text-xs min-[412px]:text-sm text-gray-300">ค่าคอมมิชชันพื้นฐาน (ค่าคอม)</span>
                                     <span class="text-sm min-[412px]:text-base text-white font-bold"><span id="promo-fyc">72,000</span> ฿</span>
                                 </div>
 
@@ -426,18 +426,18 @@
                                 <div class="bg-[#1e1e20] rounded-lg border border-white/5 overflow-hidden transition-all group">
                                     <div class="flex justify-between items-center p-3 min-[412px]:p-3.5 cursor-pointer hover:bg-white/5 select-none" onclick="toggleBonusDetails('details-mb')">
                                         <span class="text-xs min-[412px]:text-sm text-yellow-400 flex items-center gap-1.5">
-                                            โบนัสรายเดือน (<span id="promo-mb-pct">35</span>%)
+                                            โบนัสรายเดือน (<span id="promo-mb-pct">35</span>% ของค่าคอม)
                                             <svg id="icon-mb" class="w-3 h-3 min-[412px]:w-4 min-[412px]:h-4 opacity-60 group-hover:opacity-100 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                                         </span>
                                         <span class="text-sm min-[412px]:text-base text-yellow-400 font-bold">+ <span id="promo-mb">25,200</span> ฿</span>
                                     </div>
                                     <div id="details-mb" class="hidden px-3 min-[412px]:px-4 pb-4 min-[412px]:pb-5 pt-2 text-xs min-[412px]:text-sm text-gray-300 border-t border-white/5 bg-black/40">
-                                        <div class="mb-2 min-[412px]:mb-3 text-yellow-500/90 font-semibold text-[11px] min-[412px]:text-sm">เงื่อนไข: อัตราความยั่งยืน (K2) >= 70%</div>
-                                        <div class="grid grid-rows-2 grid-flow-col auto-cols-fr gap-x-4 min-[412px]:gap-x-6 gap-y-2 min-[412px]:gap-y-3 text-[10px] min-[412px]:text-sm">
-                                            <div class="px-1 min-[412px]:px-2 py-1">8k - 16k <span class="float-right text-white font-medium">20%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-1">16k+ - 32k <span class="float-right text-white font-medium">25%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-1">32k+ - 64k <span class="float-right text-white font-medium">30%</span></div>
-                                            <div class="bg-yellow-500/20 text-yellow-300 font-bold rounded px-1 min-[412px]:px-2 py-1 -mx-1 min-[412px]:-mx-2 border border-yellow-500/30">64k+ ขึ้นไป <span class="float-right text-yellow-400">35% <span class="text-[8px] min-[412px]:text-[10px] bg-yellow-400 text-black px-1 rounded-sm ml-1 uppercase">Max</span></span></div>
+                                        <div class="mb-2 min-[412px]:mb-3 text-yellow-500/90 font-semibold text-[11px] min-[412px]:text-sm">เงื่อนไข: อัตราความยั่งยืนกรมธรรม์ (K2) >= 70%</div>
+                                        <div class="flex flex-col gap-y-2 min-[412px]:gap-y-3 text-[10px] min-[412px]:text-sm">
+                                            <div class="px-1 min-[412px]:px-2 py-1 flex justify-between"><span>ค่าคอม 8,000 - 16,000</span> <span class="text-white font-medium">20%</span></div>
+                                            <div class="px-1 min-[412px]:px-2 py-1 flex justify-between"><span>ค่าคอม 16,001 - 32,000</span> <span class="text-white font-medium">25%</span></div>
+                                            <div class="px-1 min-[412px]:px-2 py-1 flex justify-between"><span>ค่าคอม 32,001 - 64,000</span> <span class="text-white font-medium">30%</span></div>
+                                            <div class="bg-yellow-500/20 text-yellow-300 font-bold rounded px-1 min-[412px]:px-2 py-1 -mx-1 min-[412px]:-mx-2 border border-yellow-500/30 flex justify-between"><span>ค่าคอม 64,001 ขึ้นไป</span> <span><span class="text-[8px] min-[412px]:text-[10px] bg-yellow-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>35%</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -451,24 +451,24 @@
 
                                 <div class="bg-[#1e1e20] rounded-lg border border-white/5 overflow-hidden transition-all group">
                                     <div class="flex justify-between items-center p-3 min-[412px]:p-3.5 cursor-pointer hover:bg-white/5 select-none" onclick="toggleBonusDetails('details-nab')">
-                                        <span class="text-xs min-[412px]:text-sm text-blue-400 flex items-center gap-1.5">
-                                            <span id="promo-nab-label">โบนัสตัวแทนใหม่ (เฉลี่ย)</span>
-                                            <svg id="icon-nab" class="w-3 h-3 min-[412px]:w-4 min-[412px]:h-4 opacity-60 group-hover:opacity-100 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                        <span class="text-xs min-[412px]:text-sm text-blue-400 flex items-center gap-1.5 leading-tight">
+                                            <span id="promo-nab-label">โบนัสตัวแทนใหม่ (เฉลี่ย เดือน 1-3)</span>
+                                            <svg id="icon-nab" class="w-3 h-3 min-[412px]:w-4 min-[412px]:h-4 opacity-60 group-hover:opacity-100 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                                         </span>
-                                        <span class="text-sm min-[412px]:text-base text-blue-400 font-bold">+ <span id="promo-nab">5,000</span> ฿</span>
+                                        <span class="text-sm min-[412px]:text-base text-blue-400 font-bold shrink-0 ml-2">+ <span id="promo-nab">5,000</span> ฿</span>
                                     </div>
                                     <div id="details-nab" class="hidden px-3 min-[412px]:px-4 pb-4 min-[412px]:pb-5 pt-2 text-xs min-[412px]:text-sm text-gray-300 border-t border-white/5 bg-black/40">
                                         <div class="mb-2 min-[412px]:mb-3 text-blue-500/90 font-semibold text-[11px] min-[412px]:text-sm">เงื่อนไข: นับผลงานอนุมัติ 6 เดือนแรก</div>
-                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 min-[412px]:gap-x-6 gap-y-2 min-[412px]:gap-y-3 text-[10px] min-[412px]:text-sm">
+                                        <div class="grid grid-cols-1 gap-y-3 min-[412px]:gap-y-4 text-[10px] min-[412px]:text-sm">
                                             <div>
-                                                <div class="text-white border-b border-white/10 pb-1 mb-1.5 px-1 min-[412px]:px-2 font-medium">เดือน 1-3 (จ่ายสิ้นเดือน 3)</div>
-                                                <div class="flex justify-between mb-1 px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1">คอม 20k+ & 3 ราย <span class="text-white font-medium">6,000 ฿</span></div>
-                                                <div class="flex justify-between bg-blue-500/20 text-blue-300 font-bold rounded px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 -mx-1 min-[412px]:-mx-2 border border-blue-500/30">คอม 50k+ & 5 ราย <span><span class="text-[8px] min-[412px]:text-[10px] bg-blue-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>15,000 ฿</span></div>
+                                                <div class="text-white border-b border-white/10 pb-1 mb-1.5 px-1 min-[412px]:px-2 font-medium">เดือนที่ 1-3 (จ่ายสิ้นเดือน 3)</div>
+                                                <div class="flex justify-between mb-1 px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1"><span>ค่าคอม 20,000+ และ 3 ราย</span> <span class="text-white font-medium">6,000 ฿</span></div>
+                                                <div class="flex justify-between bg-blue-500/20 text-blue-300 font-bold rounded px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 -mx-1 min-[412px]:-mx-2 border border-blue-500/30"><span>ค่าคอม 50,000+ และ 5 ราย</span> <span><span class="text-[8px] min-[412px]:text-[10px] bg-blue-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>15,000 ฿</span></div>
                                             </div>
                                             <div>
-                                                <div class="text-white border-b border-white/10 pb-1 mb-1.5 mt-2 sm:mt-0 px-1 min-[412px]:px-2 font-medium">เดือน 4-6 (จ่ายสิ้นเดือน 6)</div>
-                                                <div class="flex justify-between mb-1 px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1">คอม 40k+ & 5 ราย <span class="text-white font-medium">10,000 ฿</span></div>
-                                                <div class="flex justify-between bg-blue-500/20 text-blue-300 font-bold rounded px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 -mx-1 min-[412px]:-mx-2 border border-blue-500/30">คอม 100k+ & 10 ราย <span><span class="text-[8px] min-[412px]:text-[10px] bg-blue-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>25,000 ฿</span></div>
+                                                <div class="text-white border-b border-white/10 pb-1 mb-1.5 px-1 min-[412px]:px-2 font-medium">เดือนที่ 4-6 (จ่ายสิ้นเดือน 6)</div>
+                                                <div class="flex justify-between mb-1 px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1"><span>ค่าคอม 40,000+ และ 5 ราย</span> <span class="text-white font-medium">10,000 ฿</span></div>
+                                                <div class="flex justify-between bg-blue-500/20 text-blue-300 font-bold rounded px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 -mx-1 min-[412px]:-mx-2 border border-blue-500/30"><span>ค่าคอม 100,000+ และ 10 ราย</span> <span><span class="text-[8px] min-[412px]:text-[10px] bg-blue-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>25,000 ฿</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -476,29 +476,29 @@
 
                                 <div class="bg-[#1e1e20] rounded-lg border border-white/5 overflow-hidden transition-all group">
                                     <div class="flex justify-between items-center p-3 min-[412px]:p-3.5 cursor-pointer hover:bg-white/5 select-none" onclick="toggleBonusDetails('details-myb')">
-                                        <span class="text-xs min-[412px]:text-sm text-pink-400 flex items-center gap-1.5">
-                                            โบนัสครึ่งปีเฉลี่ย (<span id="promo-myb-pct">35</span>%)
-                                            <svg id="icon-myb" class="w-3 h-3 min-[412px]:w-4 min-[412px]:h-4 opacity-60 group-hover:opacity-100 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                        <span class="text-xs min-[412px]:text-sm text-pink-400 flex items-center gap-1.5 leading-tight">
+                                            โบนัสครึ่งปีเฉลี่ย (<span id="promo-myb-pct">35</span>% ของค่าคอม)
+                                            <svg id="icon-myb" class="w-3 h-3 min-[412px]:w-4 min-[412px]:h-4 opacity-60 group-hover:opacity-100 transition-transform duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                                         </span>
-                                        <span class="text-sm min-[412px]:text-base text-pink-400 font-bold">+ <span id="promo-myb">25,200</span> ฿</span>
+                                        <span class="text-sm min-[412px]:text-base text-pink-400 font-bold shrink-0 ml-2">+ <span id="promo-myb">25,200</span> ฿</span>
                                     </div>
                                     <div id="details-myb" class="hidden px-3 min-[412px]:px-4 pb-4 min-[412px]:pb-5 pt-2 text-xs min-[412px]:text-sm text-gray-300 border-t border-white/5 bg-black/40">
-                                        <div class="mb-2 min-[412px]:mb-3 text-pink-500/90 font-semibold text-[11px] min-[412px]:text-sm">เงื่อนไข: สะสมค่าคอม (K2 >= 70%)</div>
-                                        <div class="grid grid-rows-4 grid-flow-col auto-cols-fr gap-x-4 min-[412px]:gap-x-6 gap-y-1 min-[412px]:gap-y-2 text-[10px] min-[412px]:text-sm">
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1">40k - 60k <span class="float-right text-white font-medium">17.5%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1">60k+ - 100k <span class="float-right text-white font-medium">20%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1">100k+ - 150k <span class="float-right text-white font-medium">22.5%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1">150k+ - 200k <span class="float-right text-white font-medium">25%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1">200k+ - 250k <span class="float-right text-white font-medium">27.5%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1">250k+ - 300k <span class="float-right text-white font-medium">30%</span></div>
-                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1">300k+ - 400k <span class="float-right text-white font-medium">32.5%</span></div>
-                                            <div class="bg-pink-500/20 text-pink-300 font-bold rounded px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 -mx-1 min-[412px]:-mx-2 border border-pink-500/30">400k+ <span class="float-right text-pink-400">35% <span class="text-[8px] min-[412px]:text-[10px] bg-pink-400 text-black px-1 rounded-sm ml-1 uppercase">Max</span></span></div>
+                                        <div class="mb-2 min-[412px]:mb-3 text-pink-500/90 font-semibold text-[11px] min-[412px]:text-sm">เงื่อนไข: สะสมค่าคอมทุกครึ่งปี (K2 >= 70%)</div>
+                                        <div class="flex flex-col gap-y-1 min-[412px]:gap-y-2 text-[10px] min-[412px]:text-sm">
+                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>40,000 - 60,000</span> <span class="text-white font-medium">17.5%</span></div>
+                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>60,001 - 100,000</span> <span class="text-white font-medium">20.0%</span></div>
+                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>100,001 - 150,000</span> <span class="text-white font-medium">22.5%</span></div>
+                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>150,001 - 200,000</span> <span class="text-white font-medium">25.0%</span></div>
+                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>200,001 - 250,000</span> <span class="text-white font-medium">27.5%</span></div>
+                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>250,001 - 300,000</span> <span class="text-white font-medium">30.0%</span></div>
+                                            <div class="px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 flex justify-between"><span>300,001 - 400,000</span> <span class="text-white font-medium">32.5%</span></div>
+                                            <div class="bg-pink-500/20 text-pink-300 font-bold rounded px-1 min-[412px]:px-2 py-0.5 min-[412px]:py-1 -mx-1 min-[412px]:-mx-2 border border-pink-500/30 flex justify-between"><span>400,001 ขึ้นไป</span> <span><span class="text-[8px] min-[412px]:text-[10px] bg-pink-400 text-black px-1 rounded-sm mr-1 uppercase">Max</span>35.0%</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="flex justify-between items-center bg-gradient-to-r from-yellow-600/20 to-yellow-900/10 p-3 min-[412px]:p-4 rounded-lg border-l-4 border-yellow-500 mt-3 min-[412px]:mt-4">
-                                    <span class="text-[11px] min-[412px]:text-sm font-bold text-white" id="promo-total-label">รายได้รวมเฉลี่ย/เดือน</span>
+                                    <span class="text-[11px] min-[412px]:text-sm font-bold text-white" id="promo-total-label">รายได้รวมเฉลี่ยต่อเดือน (เดือน 1-3)</span>
                                     <span class="text-xl min-[412px]:text-2xl font-bold text-yellow-400"><span id="promo-total">127,400</span> ฿</span>
                                 </div>
                             </div>
@@ -513,14 +513,14 @@
                         <div class="w-10 h-10 min-[412px]:w-12 min-[412px]:h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-3 min-[412px]:mb-4">
                             <svg class="w-5 h-5 min-[412px]:w-6 min-[412px]:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold text-white mb-2">สูตร "ได้สวัสดิการฟรี"</h3>
+                        <h3 class="text-lg min-[412px]:text-xl font-bold text-white mb-2">สูตรลับ "ได้สวัสดิการสุขภาพฟรี"</h3>
                         <p class="text-xs min-[412px]:text-sm text-gray-400 leading-relaxed mb-3 min-[412px]:mb-4">
-                            เพียงแนะนำ <span id="free-cases" class="text-blue-400 font-bold text-2xl min-[412px]:text-3xl mx-1">3</span> <span class="text-blue-400 font-bold">เคส/เดือน</span> <br><span class="text-[10px] min-[412px]:text-xs opacity-70">(เฉลี่ยเคสละ <span id="free-case-size">30,000</span> ฿)</span>
+                            เพียงแนะนำการออกแบบสินทรัพย์แค่ <span id="free-cases" class="text-blue-400 font-bold text-2xl min-[412px]:text-3xl mx-1">3</span> <span class="text-blue-400 font-bold">เคส / เดือน</span> <br><span class="text-[10px] min-[412px]:text-xs opacity-70">(เฉลี่ยเคสละ <span id="free-case-size">30,000</span> ฿)</span>
                         </p>
                         <div class="bg-[#161618] p-3 min-[412px]:p-4 rounded-xl border border-white/5 shadow-inner">
-                            <p class="text-[11px] min-[412px]:text-xs text-gray-300 mb-1 min-[412px]:mb-2">ค่าคอม <span id="free-fyc">27,000</span> ฿ <br><span class="text-blue-300">+ โบนัสเฉลี่ย (<span id="free-bonuses">6,750</span> ฿)</span></p>
-                            <p class="text-sm min-[412px]:text-base text-white mb-1">รวมรับ <span id="free-total" class="text-xl min-[412px]:text-2xl font-bold text-blue-400 ml-1">33,750</span> ฿/ด.</p>
-                            <p class="text-[9px] min-[412px]:text-[10px] text-gray-500 leading-tight mt-1.5 min-[412px]:mt-2">*คำนวณ 6 เดือนแรก ครอบคลุมค่าเบี้ยสุขภาพฟรี!</p>
+                            <p class="text-[11px] min-[412px]:text-xs text-gray-300 mb-1 min-[412px]:mb-2">ค่าคอม <span id="free-fyc">27,000</span> ฿ <br><span class="text-blue-300">+ รวมโบนัสเฉลี่ยต่อเดือน (<span id="free-bonuses">6,750</span> ฿)</span></p>
+                            <p class="text-sm min-[412px]:text-base text-white mb-1">รวมรับเฉลี่ย <span id="free-total" class="text-xl min-[412px]:text-2xl font-bold text-blue-400 ml-1">33,750</span> ฿ / เดือน</p>
+                            <p class="text-[9px] min-[412px]:text-[10px] text-gray-500 leading-tight mt-1.5 min-[412px]:mt-2">*คำนวณเฉลี่ย 6 เดือนแรก ครอบคลุมค่าเบี้ยสุขภาพเหมาจ่ายฟรี!</p>
                         </div>
                     </div>
                 </div>
@@ -534,9 +534,9 @@
                         </div>
                         <h3 class="text-lg min-[412px]:text-xl font-bold text-white mb-2">พลังแห่งเลข 5 (สร้างทีม)</h3>
                         <p class="text-xs min-[412px]:text-sm text-gray-400 leading-relaxed">
-                            เพียงแนะนำเพื่อนร่วมอาชีพครบ <span class="text-green-400 font-bold">5 คน</span> 
+                            เพียงแนะนำเพื่อนร่วมอาชีพนักออกแบบสินทรัพย์ครบ <span class="text-green-400 font-bold">5 คน</span> 
                             <br><br>
-                            คุณจะได้รับ <span class="text-white font-bold bg-white/10 px-1.5 min-[412px]:px-2 py-0.5 rounded">โบนัสบริหารเพิ่ม 20%</span> จากค่าคอมมิชชันทั้งหมด ยิ่งขยายทีมมาก รายได้ยิ่งทวีคูณ
+                            คุณจะได้รับ <span class="text-white font-bold bg-white/10 px-1.5 min-[412px]:px-2 py-0.5 rounded">โบนัสบริหารเพิ่ม 20%</span> จากค่าคอมมิชชันทั้งหมด ยิ่งขยายทีมมาก รายได้ยิ่งทวีคูณอย่างไร้ขีดจำกัด
                         </p>
                     </div>
                 </div>
@@ -551,11 +551,11 @@
                         </div>
                         <div class="flex-1">
                             <h4 class="text-base min-[412px]:text-lg font-bold text-white mb-0.5 min-[412px]:mb-1">Fast Start Bonus</h4>
-                            <p class="text-gray-400 text-[11px] min-[412px]:text-sm mb-1 min-[412px]:mb-2">ทำผลงาน 5 เคส (เบี้ย 50k)</p>
+                            <p class="text-gray-400 text-[11px] min-[412px]:text-sm mb-1 min-[412px]:mb-2">ผ่านเงื่อนไขทำผลงาน 5 เคส (เบี้ยรวม 50,000)</p>
                         </div>
                         <div class="text-right">
-                            <div class="text-[10px] min-[412px]:text-xs text-gray-500 mb-0.5 min-[412px]:mb-1">รับเพิ่ม</div>
-                            <div class="text-xl min-[412px]:text-2xl font-bold text-purple-400">+15k฿</div>
+                            <div class="text-[10px] min-[412px]:text-xs text-gray-500 mb-0.5 min-[412px]:mb-1">รับโบนัสพิเศษเพิ่ม</div>
+                            <div class="text-xl min-[412px]:text-2xl font-bold text-purple-400">+15,000฿</div>
                         </div>
                     </div>
 
@@ -567,11 +567,11 @@
                         </div>
                         <div class="flex-1">
                             <h4 class="text-base min-[412px]:text-lg font-bold text-white mb-0.5 min-[412px]:mb-1">Momentum Bonus</h4>
-                            <p class="text-gray-400 text-[11px] min-[412px]:text-sm mb-1 min-[412px]:mb-2">ทำผลงาน 10 เคส (เบี้ย 100k)</p>
+                            <p class="text-gray-400 text-[11px] min-[412px]:text-sm mb-1 min-[412px]:mb-2">ผ่านเงื่อนไขทำผลงาน 10 เคส (เบี้ยรวม 100,000)</p>
                         </div>
                         <div class="text-right">
-                            <div class="text-[10px] min-[412px]:text-xs text-gray-500 mb-0.5 min-[412px]:mb-1">รับเพิ่ม</div>
-                            <div class="text-xl min-[412px]:text-2xl font-bold text-indigo-400">+25k฿</div>
+                            <div class="text-[10px] min-[412px]:text-xs text-gray-500 mb-0.5 min-[412px]:mb-1">รับโบนัสพิเศษเพิ่ม</div>
+                            <div class="text-xl min-[412px]:text-2xl font-bold text-indigo-400">+25,000฿</div>
                         </div>
                     </div>
                 </div>
@@ -819,13 +819,13 @@
                         </div>
                         
                         <div class="mt-2 min-[412px]:mt-4 border border-white/5 text-left bg-black/40 p-4 min-[412px]:p-5 rounded-xl backdrop-blur-sm shadow-inner">
-                            <div class="flex justify-between text-xs min-[412px]:text-sm mb-1.5 min-[412px]:mb-2">
-                                <span class="text-gray-400">ค่าคอมฯปีแรก เฉลี่ย/ด.:</span>
-                                <span class="text-white font-medium" id="base-income">฿ 0</span>
+                            <div class="flex justify-between items-start sm:items-center text-xs min-[412px]:text-sm mb-1.5 min-[412px]:mb-2 gap-2">
+                                <span class="text-gray-400">ค่าคอมมิชชันปีแรก (ค่าคอม) เฉลี่ย/เดือน:</span>
+                                <span class="text-white font-medium whitespace-nowrap" id="base-income">฿ 0</span>
                             </div>
-                            <div class="flex justify-between text-xs min-[412px]:text-sm mb-2 min-[412px]:mb-3 pb-2 min-[412px]:pb-3 border-b border-white/10">
-                                <span class="text-gray-400">รวมโบนัส เฉลี่ย/ด.:</span>
-                                <span class="text-green-400 font-medium" id="bonus-income">+ ฿ 0</span>
+                            <div class="flex justify-between items-start sm:items-center text-xs min-[412px]:text-sm mb-2 min-[412px]:mb-3 pb-2 min-[412px]:pb-3 border-b border-white/10 gap-2">
+                                <span class="text-gray-400">รวมโบนัสเฉลี่ย/เดือน:</span>
+                                <span class="text-green-400 font-medium whitespace-nowrap" id="bonus-income">+ ฿ 0</span>
                             </div>
                             <p class="text-[10px] min-[412px]:text-xs text-gray-500 mb-0.5 min-[412px]:mb-1 uppercase tracking-widest text-center mt-3 min-[412px]:mt-4">คาดการณ์รายได้ต่อปี <span class="text-white font-bold">ในปีที่ 5</span></p>
                             <p class="text-3xl min-[412px]:text-4xl md:text-5xl font-bold gradient-text-gold text-center" id="year5-total">฿ 0</p>
@@ -878,7 +878,7 @@
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 min-[412px]:gap-4 sm:gap-6 justify-center md:justify-start">
                         <div class="bg-white/5 p-3 min-[412px]:p-4 rounded-xl border border-white/5 backdrop-blur-sm">
                             <div class="text-xl min-[412px]:text-2xl sm:text-3xl font-bold text-white mb-0.5 min-[412px]:mb-1">15<span class="text-purple-500">+</span></div>
-                            <div class="text-[9px] min-[412px]:text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">ปีประสบการณ์</div>
+                            <div class="text-[9px] min-[412px]:text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">ปีแห่งประสบการณ์</div>
                         </div>
                         <div class="bg-white/5 p-3 min-[412px]:p-4 rounded-xl border border-white/5 backdrop-blur-sm">
                             <div class="text-xl min-[412px]:text-2xl sm:text-3xl font-bold text-white mb-0.5 min-[412px]:mb-1">MDRT</div>
@@ -886,7 +886,7 @@
                         </div>
                         <div class="bg-white/5 p-3 min-[412px]:p-4 rounded-xl border border-white/5 backdrop-blur-sm sm:col-span-1 col-span-2">
                             <div class="text-xl min-[412px]:text-2xl sm:text-3xl font-bold text-white mb-0.5 min-[412px]:mb-1">100<span class="text-purple-500">+</span></div>
-                            <div class="text-[9px] min-[412px]:text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">ทีมงาน Asset Designer</div>
+                            <div class="text-[9px] min-[412px]:text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">ทีมงานนักออกแบบสินทรัพย์</div>
                         </div>
                     </div>
                 </div>
@@ -1243,8 +1243,8 @@
                     else if (m3Fyc >= 20000 && m3Cases >= 3) nab13 = 6000;
                     pNabMonthly = nab13 / 3;
                     
-                    if(promoNabLabel) promoNabLabel.textContent = "โบนัสตัวแทนใหม่ (เฉลี่ย)";
-                    if(promoTotalLabel) promoTotalLabel.textContent = "รายได้รวมเฉลี่ย/เดือน";
+                    if(promoNabLabel) promoNabLabel.textContent = "โบนัสตัวแทนใหม่ (เฉลี่ย เดือน 1-3)";
+                    if(promoTotalLabel) promoTotalLabel.textContent = "รายได้รวมเฉลี่ยต่อเดือน (เดือน 1-3)";
                 } else {
                     let m6Fyc = pFyc * 3;
                     let m6Cases = pCases * 3;
@@ -1253,8 +1253,8 @@
                     else if (m6Fyc >= 40000 && m6Cases >= 5) nab46 = 10000;
                     pNabMonthly = nab46 / 3;
                     
-                    if(promoNabLabel) promoNabLabel.textContent = "โบนัสตัวแทนใหม่ (เฉลี่ย)";
-                    if(promoTotalLabel) promoTotalLabel.textContent = "รายได้รวมเฉลี่ย/เดือน";
+                    if(promoNabLabel) promoNabLabel.textContent = "โบนัสตัวแทนใหม่ (เฉลี่ย เดือน 4-6)";
+                    if(promoTotalLabel) promoTotalLabel.textContent = "รายได้รวมเฉลี่ยต่อเดือน (เดือน 4-6)";
                 }
                 
                 const pFirstMonth = pFyc + pMb;
