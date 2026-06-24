@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chubb GD 2025 Benefits & Calculator</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen relative">
+
+  <!-- Header Banner -->
+  <header class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="bg-white p-2 rounded-lg shadow-inner">
+          <svg class="w-8 h-8 text-blue-900" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="100" rx="15" fill="currentColor"/>
+            <path d="M25 50 C 25 35, 75 35, 75 50 C 75 65, 25 65, 25 50" stroke="white" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="50" cy="50" r="10" fill="white"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-xl md:text-2xl font-bold tracking-wide">CHUBB GD 2025</h1>
+          <p class="text-xs text-blue-200">ระบบคำนวณและแจกแจงขั้นผลประโยชน์ตัวแทน & ผู้บริหาร (ฉบับแก้ไขเพิ่มโบนัสครึ่งปี)</p>
+        </div>
+      </div>
+      <!-- Mode Tabs -->
+      <nav class="flex bg-blue-950/50 p-1 rounded-xl border border-blue-800/40 w-full md:w-auto">
+        <button id="tab-agent" onclick="switchTab('agent')" class="flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 bg-blue-600 text-white shadow-md">
+          <i data-lucide="user"></i> ตัวแทน (Agent)
+        </button>
+        <button id="tab-al" onclick="switchTab('al')" class="flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 text-blue-300 hover:text-white">
+          <i data-lucide="users"></i> ผู้บริหาร (AL)
+        </button>
+        <button id="tab-gd" onclick="switchTab('gd')" class="flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 text-blue-300 hover:text-white">
+          <i data-lucide="award"></i> ผู้อำนวยการ (GD)
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+
+    <!-- TAB 1: AGENT LEVEL -->
+    <div id="section-agent" class="space-y-6">
+      
+      <!-- Summary Intro Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <!-- Card 1: Monthly -->
+        <div onclick="openBonusDetailModal('agent_monthly')" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between gap-3 cursor-pointer hover:border-blue-300 hover:shadow-md transition-all">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 bg-emerald-50 text-emerald-600 rounded-xl">
+              <i data-lucide="trending-up" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-400 block font-medium">โบนัสรายเดือนสูงสุด</span>
+              <span class="text-xl font-bold text-slate-800">35%<span class="text-xs font-normal text-slate-400"> ของ FYC</span></span>
+            </div>
+          </div>
+          <span class="text-[10px] text-blue-600 font-semibold flex items-center"><i data-lucide="chevron-right" class="w-3 h-3"></i></span>
+        </div>
+        <!-- Card 2: Mid-year (New Addition) -->
+        <div onclick="openBonusDetailModal('agent_midyear')" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between gap-3 cursor-pointer hover:border-orange-300 hover:shadow-md transition-all">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 bg-orange-50 text-orange-600 rounded-xl">
+              <i data-lucide="calendar" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-400 block font-medium">โบนัสครึ่งปีสูงสุด</span>
+              <span class="text-xl font-bold text-slate-800">35%<span class="text-xs font-normal text-slate-400"> ของ FYC</span></span>
+            </div>
+          </div>
+          <span class="text-[10px] text-orange-600 font-semibold flex items-center"><i data-lucide="chevron-right" class="w-3 h-3"></i></span>
+        </div>
+        <!-- Card 3: New Agent -->
+        <div onclick="openBonusDetailModal('agent_newagent')" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between gap-3 cursor-pointer hover:border-blue-300 hover:shadow-md transition-all">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 bg-blue-50 text-blue-600 rounded-xl">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-400 block font-medium">โบนัสตัวแทนใหม่</span>
+              <span class="text-xl font-bold text-slate-800">25,000</span>
+            </div>
+          </div>
+          <span class="text-[10px] text-blue-600 font-semibold flex items-center"><i data-lucide="chevron-right" class="w-3 h-3"></i></span>
+        </div>
+        <!-- Card 4: Maintenance -->
+        <div onclick="openBonusDetailModal('agent_maintenance')" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between gap-3 cursor-pointer hover:border-blue-300 hover:shadow-md transition-all">
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 bg-purple-50 text-purple-600 rounded-xl">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-400 block font-medium">รักษาสถานภาพ/ไตรมาส</span>
+              <span class="text-sm font-bold text-slate-800">1 ราย & FYP 12k</span>
+            </div>
+          </div>
+          <span class="text-[10px] text-blue-600 font-semibold flex items-center"><i data-lucide="chevron-right" class="w-3 h-3"></i></span>
+        </div>
+      </div>
+
+      <!-- Agent Calculator & Simulator -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Input Form -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 lg:col-span-5 space-y-5">
+          <div class="border-b pb-3 flex justify-between items-center">
+            <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+              <i data-lucide="calculator" class="text-blue-600"></i> จำลองผลงานตัวแทน
+            </h3>
+            <button onclick="resetAgentInputs()" class="text-xs text-red-500 font-semibold hover:underline flex items-center gap-1">
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> ล้างข้อมูล
+            </button>
+          </div>
+          
+          <div class="space-y-4">
+            <!-- FYC Month Input -->
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label for="input-agent-fyc-manual" class="text-sm font-semibold text-slate-700">
+                  ระบุผลงาน FYC อนุมัติในเดือนนี้ (บาท)
+                </label>
+                <span class="text-blue-600 font-bold" id="agent-fyc-display">0 บาท</span>
+              </div>
+              
+              <div class="relative rounded-md shadow-sm mb-2">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <span class="text-slate-500 sm:text-sm">฿</span>
+                </div>
+                <input type="number" name="agent_fyc_manual" id="input-agent-fyc-manual" oninput="syncAgentManual('fyc')" class="block w-full rounded-xl border border-slate-300 py-3 pl-8 pr-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 font-bold text-lg" placeholder="กรอกตัวเลข FYC">
+              </div>
+
+              <!-- Quick choice chips -->
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <button onclick="setAgentFycValue(12000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">12,000</button>
+                <button onclick="setAgentFycValue(25000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">25,000</button>
+                <button onclick="setAgentFycValue(50000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">50,000</button>
+                <button onclick="setAgentFycValue(80000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">80,000</button>
+                <button onclick="setAgentFycValue(120000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">120,000</button>
+              </div>
+
+              <input id="input-agent-fyc" type="range" min="0" max="200000" step="5000" value="35000" oninput="syncAgentSlider('fyc')" class="w-full accent-blue-600">
+              <div class="flex justify-between text-xxs text-slate-400 px-1 mt-1">
+                <span>0</span>
+                <span>50k</span>
+                <span>100k</span>
+                <span>150k</span>
+                <span>200k+</span>
+              </div>
+            </div>
+
+            <!-- FYC Cumulative Mid-Year Input -->
+            <div class="bg-orange-50/50 p-4 rounded-xl border border-orange-100 space-y-2">
+              <div class="flex justify-between items-center">
+                <label for="input-agent-fyc-mid-manual" class="text-xs font-bold text-orange-950">
+                  สิทธิ์สะสมโบนัสครึ่งปี (ม.ค. - มิ.ย. / ก.ค. - ธ.ค.)
+                </label>
+                <span class="text-xs text-orange-700 font-semibold" id="agent-fyc-mid-display">0 บาท</span>
+              </div>
+              <p class="text-[10px] text-slate-500">ระบบจำลองคิดให้ล่วงหน้า (หรือคุณสามารถป้อนเพื่อทวนยอดสะสมครึ่งปีโดยตรงได้ที่นี่)</p>
+              <div class="relative rounded-md shadow-sm">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <span class="text-slate-500 sm:text-xs">฿</span>
+                </div>
+                <input type="number" id="input-agent-fyc-mid-manual" oninput="calculateAgentBenefits()" class="block w-full rounded-lg border border-slate-300 py-1.5 pl-7 pr-3 text-slate-900 focus:border-orange-500 focus:outline-none text-xs font-semibold" placeholder="กรอกสถิติครึ่งปี">
+              </div>
+              <button onclick="autoFillMidYearFromMonthly()" class="w-full text-center text-[10px] text-orange-600 font-semibold bg-white py-1 rounded border border-orange-200 hover:bg-orange-50">
+                ⚡ คำนวณเบื้องต้น (คูณผลงาน 6 เดือน)
+              </button>
+            </div>
+
+            <!-- K2 Retention Rate Input -->
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="text-sm font-semibold text-slate-700">
+                  อัตราความยั่งยืนกรมธรรม์ K2 (%)
+                </label>
+                <span class="text-indigo-600 font-bold" id="agent-k2-display">85%</span>
+              </div>
+              <div class="relative rounded-md shadow-sm mb-2">
+                <input type="number" id="input-agent-k2-manual" min="0" max="100" oninput="syncAgentManual('k2')" class="block w-full rounded-xl border border-slate-300 py-2 px-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 font-bold text-sm" placeholder="กรอกสัดส่วนเปอร์เซ็นต์">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                  <span class="text-slate-500 sm:text-sm">%</span>
+                </div>
+              </div>
+
+              <input id="input-agent-k2" type="range" min="0" max="100" step="1" value="85" oninput="syncAgentSlider('k2')" class="w-full accent-indigo-600">
+              <div class="flex justify-between text-xxs text-slate-400 px-1 mt-1">
+                <span>0%</span>
+                <span class="text-red-500 font-semibold">70% (เกณฑ์ขั้นต่ำ)</span>
+                <span class="text-green-600 font-semibold">85% (โบนัสคูณ 110%)</span>
+                <span>100%</span>
+              </div>
+            </div>
+
+            <!-- New Code & Status Checkboxes -->
+            <div class="bg-slate-50 p-4 rounded-xl space-y-3 border border-slate-100">
+              <span class="text-xs font-bold text-slate-500 block uppercase tracking-wider">โบนัสตัวแทนใหม่ (New Agent Bonus)</span>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="space-y-1">
+                  <label class="text-xs text-slate-500 block">สะสมช่วง 3 เดือนแรก</label>
+                  <select id="select-agent-new3" onchange="calculateAgentBenefits()" class="w-full px-2 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-medium">
+                    <option value="none">ไม่รับ / เกินช่วงเวลา</option>
+                    <option value="tier1">FYC >= 20K + 3 Cases (รับ 6,000)</option>
+                    <option value="tier2">FYC >= 50K + 5 Cases (รับ 15,000)</option>
+                  </select>
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs text-slate-500 block">สะสมช่วงเดือนที่ 4 - 6</label>
+                  <select id="select-agent-new6" onchange="calculateAgentBenefits()" class="w-full px-2 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-medium">
+                    <option value="none">ไม่รับ / เกินช่วงเวลา</option>
+                    <option value="tier1">FYC >= 40K + 5 Cases (รับ 10,000)</option>
+                    <option value="tier2">FYC >= 100K + 10 Cases (รับ 25,000)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recruitment Bonus Simulation -->
+            <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100 space-y-2">
+              <span class="text-xs font-bold text-blue-800 block uppercase tracking-wider flex items-center gap-1">
+                <i data-lucide="user-plus" class="w-3.5 h-3.5"></i> โบนัสชวนตัวแทนใหม่ (Recruitment)
+              </span>
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="text-xxs text-slate-500 block mb-1">FYC ยอดตัวแทนใหม่เดือน 1-12 (บาท)</label>
+                  <input id="input-recruit-fyc1" type="number" value="10000" oninput="calculateAgentBenefits()" class="w-full px-2 py-1.5 bg-white border border-slate-300 rounded-lg text-xs text-right font-medium text-slate-700">
+                </div>
+                <div>
+                  <label class="text-xxs text-slate-500 block mb-1">FYC ยอดตัวแทนใหม่เดือน 13-24 (บาท)</label>
+                  <input id="input-recruit-fyc2" type="number" value="0" oninput="calculateAgentBenefits()" class="w-full px-2 py-1.5 bg-white border border-slate-300 rounded-lg text-xs text-right font-medium text-slate-700">
+                </div>
+              </div>
+            </div>
+
+            <!-- Career Benefit Status -->
+            <div class="flex items-center justify-between p-3 bg-indigo-50/30 rounded-xl border border-indigo-100/50">
+              <div class="flex items-center gap-2">
+                <i data-lucide="shield" class="w-5 h-5 text-indigo-600"></i>
+                <div>
+                  <span class="text-xs font-bold text-slate-700 block">สิทธิ์ Career Benefit สิ้นปี</span>
+                  <span class="text-xxs text-slate-400">สะสมครบ 8 รายสามัญ + FYC >= 100K + งานอนุมัติอย่างน้อย 8 เดือน</span>
+                </div>
+              </div>
+              <input id="chk-career" type="checkbox" checked onchange="calculateAgentBenefits()" class="w-5 h-5 accent-indigo-600 rounded">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Calculated Output Dashboard -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+            <h3 class="text-lg font-bold text-slate-800 border-b pb-3 mb-4 flex items-center gap-2">
+              <i data-lucide="wallet" class="text-emerald-500"></i> ผลตอบแทนโดยประมาณ (รวมประมาณการสะสมครึ่งปี)
+            </h3>
+
+            <!-- Grand Total Result -->
+            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 text-white p-6 rounded-2xl mb-6 shadow-md shadow-emerald-100 flex justify-between items-center">
+              <div>
+                <span class="text-xs opacity-90 block font-medium">ยอดรายได้จำลอง (โบนัสเดือนนี้ + โบนัสครึ่งปีเมื่อผ่านตามเป้าสะสม)</span>
+                <span class="text-2xl md:text-3xl font-extrabold" id="agent-total-bonus">0 บาท</span>
+              </div>
+              <div class="text-right hidden sm:block">
+                <span class="text-xs bg-white/20 px-3 py-1 rounded-full border border-white/20 inline-block font-semibold">อัตราความยั่งยืน K2: <span id="agent-k2-status-badge">ผ่านเกณฑ์</span></span>
+              </div>
+            </div>
+
+            <!-- Breakdowns -->
+            <div class="space-y-4">
+              <div class="flex justify-between items-center border-b pb-1">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">รายละเอียดแจกแจง (แตะเพื่อดูเงื่อนไขทุกขั้น)</h4>
+                <span class="text-xxs text-slate-400 flex items-center gap-0.5"><i data-lucide="info" class="w-3 h-3"></i> กดดูตารางบันไดผลประโยชน์</span>
+              </div>
+              
+              <!-- Monthly Bonus Detail -->
+              <div onclick="openBonusDetailModal('agent_monthly')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    โบนัสรายเดือน (Monthly Bonus) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400" id="agent-monthly-bonus-desc">คำนวณจากช่วงผลงาน FYC รายเดือน</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800 block" id="agent-val-monthly">0 บาท</span>
+                  <span class="text-xxs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full font-semibold" id="agent-val-monthly-rate">0% of FYC</span>
+                </div>
+              </div>
+
+              <!-- Mid-Year Bonus Detail (New Addition) -->
+              <div onclick="openBonusDetailModal('agent_midyear')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-orange-100 hover:bg-orange-50/50 transition-all cursor-pointer bg-orange-50/20">
+                <div>
+                  <span class="text-sm font-bold text-orange-950 flex items-center gap-1.5">
+                    โบนัสครึ่งปี (Mid-year Bonus) <span class="bg-orange-500 text-white text-[9px] px-1.5 py-0.2 rounded-full">อัปเดต</span> <i data-lucide="external-link" class="w-3 h-3 text-orange-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-500">คิดจากผลงานสะสมครึ่งปีปฏิทิน (พิจารณาจ่ายล่วงหน้าไตรมาส 1 และ 3)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-orange-800 block" id="agent-val-midyear">0 บาท</span>
+                  <span class="text-xxs bg-orange-100 text-orange-800 px-2 py-0.5 rounded-full font-semibold" id="agent-val-midyear-rate">0% of Mid-Year FYC</span>
+                </div>
+              </div>
+
+              <!-- New Agent Bonus -->
+              <div onclick="openBonusDetailModal('agent_newagent')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    โบนัสตัวแทนใหม่สะสม (New Agent Bonus) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400">จ่ายตามกรอบเวลา 3 หรือ 6 เดือนแรกเมื่อส่งครบเคส</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800" id="agent-val-newagent">0 บาท</span>
+                </div>
+              </div>
+
+              <!-- Recruitment Bonus -->
+              <div onclick="openBonusDetailModal('agent_recruit')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    โบนัสชวนตัวแทนใหม่ (Recruitment Bonus) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400">ผู้แนะนำรับ 20% (ปีแรก) และ 10% (ปีที่สอง)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800" id="agent-val-recruitment">0 บาท</span>
+                </div>
+              </div>
+
+              <!-- Career Benefit (Year-end accrued monthly) -->
+              <div onclick="openBonusDetailModal('agent_career')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    สวัสดิการสายอาชีพ (Career Benefit) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400">ค่าบำเหน็จปีที่ 2 - 10 x %K2 / 12 เดือน (สะสมสิ้นปีจ่าย ก.พ. ถัดไป)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800 block" id="agent-val-career">0 บาท / เดือน</span>
+                  <span class="text-xxs text-emerald-600 font-semibold" id="agent-val-career-rate">K2 ตัวคูณโบนัส 110%</span>
+                </div>
+              </div>
+
+              <!-- Saving Plan -->
+              <div onclick="openBonusDetailModal('agent_saving')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    กองทุนเงินสะสม (Saving Plan) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400">5% ของ FYC ออมสวัสดิการสมทบเพื่อความมั่นคงระยะยาว</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800 block" id="agent-val-saving">0 บาท</span>
+                  <span class="text-xxs text-slate-400">สมทบเข้าระบบ</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Quick Rules Box -->
+          <div class="bg-blue-900 text-blue-100 p-5 rounded-2xl space-y-3 shadow-sm">
+            <h4 class="font-bold flex items-center gap-2 text-white">
+              <i data-lucide="info"></i> เกณฑ์สวัสดิการสำคัญระดับตัวแทน (Agent)
+            </h4>
+            <ul class="text-xs space-y-2 opacity-95 list-disc pl-4">
+              <li><strong>โบนัสครึ่งปี (Mid-year Bonus)</strong>: คำนวณเบี้ยสามัญจากครึ่งปีปฏิทิน K2 ต้องไม่ต่ำกว่า 70% และหากทำ K2 ได้ถึง 85% จะได้รับโบนัส <strong>110% ของอัตราสัญญาทีเออร์</strong></li>
+              <li><strong>หากอัตรา K2 มากกว่าหรือเท่ากับ 85%</strong>: จะได้รับโบนัสรายเดือนและโบนัสครึ่งปีเพิ่มขึ้นเป็น <strong>110% ของอัตราปกติ</strong></li>
+              <li><strong>ประกันกลุ่มสวัสดิการ</strong>: ประเมินจากผลงานสะสมรายปี เพื่อมอบความคุ้มครองในปีถัดไป (1 เม.ย. - 31 มี.ค.)</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TAB 2: AL (AS/AM/SM/DM) LEVEL -->
+    <div id="section-al" class="hidden space-y-6">
+      
+      <!-- AL Header Information -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+            <i data-lucide="briefcase" class="text-blue-600"></i> ระดับผู้บริหารตัวแทน (AL Benefits 2025)
+          </h2>
+          <p class="text-sm text-slate-500">คำนวณและเช็คสิทธิ์สำหรับหัวหน้าฝ่ายขาย (AS), ผู้จัดการ (AM), ผู้จัดการอาวุโส (SM) และผู้จัดการภาค (DM)</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <label class="text-sm font-bold text-slate-600">เลือกตำแหน่งปัจจุบันของคุณ:</label>
+          <select id="select-al-rank" onchange="calculateALBenefits()" class="px-3 py-2 bg-blue-50 border border-blue-200 text-blue-900 font-bold rounded-xl focus:outline-none">
+            <option value="AS">AS (หัวหน้าฝ่ายขาย)</option>
+            <option value="AM" selected>AM (ผู้จัดการ)</option>
+            <option value="SM">SM (ผู้จัดการอาวุโส)</option>
+            <option value="DM">DM (ผู้จัดการภาค)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Main Input & Output for AL -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Input Form (AL) -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 lg:col-span-5 space-y-5">
+          <div class="border-b pb-3 flex justify-between items-center">
+            <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+              <i data-lucide="sliders" class="text-indigo-600"></i> ตั้งค่าผลงานบริหารทีม
+            </h3>
+            <button onclick="resetALInputs()" class="text-xs text-red-500 font-semibold hover:underline flex items-center gap-1">
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> ล้างข้อมูล
+            </button>
+          </div>
+
+          <div class="space-y-4">
+            
+            <!-- FYC Team Monthly Input -->
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label for="input-al-fyc-manual" class="text-sm font-semibold text-slate-700">
+                  ระบุผลงาน FYC ทีมงานรวมเดือนนี้ (บาท)
+                </label>
+                <span class="text-blue-600 font-bold" id="al-fyc-display">0 บาท</span>
+              </div>
+
+              <!-- Direct Number Input for AL -->
+              <div class="relative rounded-md shadow-sm mb-2">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <span class="text-slate-500 sm:text-sm">฿</span>
+                </div>
+                <input type="number" id="input-al-fyc-manual" oninput="syncALManual('fyc')" class="block w-full rounded-xl border border-slate-300 py-3 pl-8 pr-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 font-bold text-lg" placeholder="กรอกตัวเลข FYC">
+              </div>
+
+              <!-- Quick choice chips -->
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <button onclick="setAlFycValue(50000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">50,000</button>
+                <button onclick="setAlFycValue(100000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">100,000</button>
+                <button onclick="setAlFycValue(150000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">150,000</button>
+                <button onclick="setAlFycValue(250000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">250,000</button>
+                <button onclick="setAlFycValue(500000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">500,000</button>
+              </div>
+
+              <input id="input-al-fyc" type="range" min="0" max="500000" step="5000" value="65000" oninput="syncALSlider('fyc')" class="w-full accent-blue-600">
+              <div class="flex justify-between text-xxs text-slate-400 px-1 mt-1">
+                <span>0</span>
+                <span>125k</span>
+                <span>250k</span>
+                <span>375k</span>
+                <span>500k+</span>
+              </div>
+            </div>
+
+            <!-- K2 Quality input -->
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label for="input-al-k2-manual" class="text-sm font-semibold text-slate-700">
+                  ความยั่งยืนกรมธรรม์ทีม K2 (%)
+                </label>
+                <span class="text-teal-600 font-bold" id="al-k2-display">75%</span>
+              </div>
+              <div class="relative rounded-md shadow-sm mb-2">
+                <input type="number" id="input-al-k2-manual" min="0" max="100" oninput="syncALManual('k2')" class="block w-full rounded-xl border border-slate-300 py-2 px-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 font-bold text-sm" placeholder="กรอกเปอร์เซ็นต์">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                  <span class="text-slate-500 sm:text-sm">%</span>
+                </div>
+              </div>
+
+              <input id="input-al-k2" type="range" min="0" max="100" step="1" value="75" oninput="syncALSlider('k2')" class="w-full accent-teal-600">
+              <div class="flex justify-between text-xxs text-slate-400 px-1 mt-1">
+                <span>0%</span>
+                <span class="text-red-500 font-semibold">ต่ำกว่า 70% หัก 5%</span>
+                <span class="text-indigo-600 font-semibold">85%+ คูณ 110%</span>
+                <span>100%</span>
+              </div>
+            </div>
+
+            <!-- New Recruit Active Standard -->
+            <div class="bg-indigo-50/40 p-4 rounded-xl border border-indigo-100 space-y-2">
+              <span class="text-xs font-bold text-indigo-900 block uppercase tracking-wider flex justify-between">
+                <span>ตัวแทนใหม่มาตรฐาน (Active Recruit)</span>
+                <span class="text-indigo-700 font-bold" id="al-recruit-badge">สะสมครบ 2 คน/ปี</span>
+              </span>
+              <p class="text-xxs text-slate-400">ต้องชวนตัวแทนใหม่มาตรฐาน (FYC 10K ใน 6 เดือนแรก) อย่างน้อย 1 คนต่อครึ่งปี หรือ 2 คนต่อปีปฏิทิน เพื่อป้องกันการถูกแขวนโบนัสผันแปร 15%</p>
+              
+              <div class="flex items-center gap-4 mt-2">
+                <label class="text-xs text-slate-600">จำนวนตัวแทนใหม่สะสมปีนี้:</label>
+                <select id="select-al-new-standards" onchange="calculateALBenefits()" class="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-semibold">
+                  <option value="0">0 คน (ถูกแขวนหัก 15%)</option>
+                  <option value="1">1 คน (ผ่านเกณฑ์ขั้นต้น)</option>
+                  <option value="2" selected>2 คนขึ้นไป (ผ่านเกณฑ์สมบูรณ์)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Recruitment Agency Development Active Count -->
+            <div>
+              <label class="block text-sm font-semibold text-slate-600 mb-1">
+                จำนวน Active Code ตัวแทนตรงในเดือนนี้ (เพื่อพัฒนาทีม)
+              </label>
+              <select id="select-al-active-codes" onchange="calculateALBenefits()" class="w-full px-3 py-2 border border-slate-200 rounded-xl text-sm font-medium">
+                <option value="0">0-2 Active (ไม่ได้รับโบนัสส่วนนี้)</option>
+                <option value="3" selected>3 Active (AS: 10% / AM: 10% / SM: 0% / DM: 0%)</option>
+                <option value="4">4 Active (AS: 15% / AM: 15% / SM: 0% / DM: 0%)</option>
+                <option value="5">5 Active (AS: 20% / AM: 20% / SM: 10% / DM: 10%)</option>
+                <option value="6">6 Active (SM: 15% / DM: 15%)</option>
+                <option value="8">8 Active ขึ้นไป (SM: 20% / DM: 20%)</option>
+              </select>
+            </div>
+
+            <!-- New Code FYC Month Simulation -->
+            <div>
+              <label for="input-al-new-code-fyc" class="block text-sm font-semibold text-slate-600 mb-1 flex justify-between">
+                <span>FYC ของตัวแทนออกรหัสใหม่ (ใน 6 เดือนแรก)</span>
+                <span class="text-slate-500 font-bold" id="al-new-code-fyc-val">20,000 บาท</span>
+              </label>
+              <input id="input-al-new-code-fyc" type="number" value="20000" oninput="calculateALBenefits()" class="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-sm text-right font-semibold text-slate-700 focus:outline-none focus:ring-1 focus:ring-blue-500">
+            </div>
+
+            <!-- Quality Benefit Requirement Met -->
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-2">
+              <span class="text-xs font-bold text-slate-500 block uppercase tracking-wider">โบนัสคุณภาพงาน (Marketing Scheme 7% FYP)</span>
+              <div class="space-y-1 text-xxs text-slate-400">
+                <p>✓ ผลงาน FYC ของทีมบรรลุ 100% ของโควต้าเดือน</p>
+                <p>✓ อัตราสัดส่วนสัญญาเพิ่มเติ่ม (Rider Ratio) >= 10%</p>
+                <p>✓ อัตราความยั่งยืนกรมธรรม์สะสม K2 >= 80%</p>
+              </div>
+              <div class="flex items-center justify-between mt-2 pt-2 border-t border-slate-200/60">
+                <label class="text-xs font-semibold text-slate-700">ยืนยันว่าทีมงานผ่านเงื่อนไขครบถ้วน:</label>
+                <input id="chk-al-qb" type="checkbox" checked onchange="calculateALBenefits()" class="w-5 h-5 accent-emerald-500 rounded">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Calculated Output Dashboard (AL) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+            <h3 class="text-lg font-bold text-slate-800 border-b pb-3 mb-4 flex items-center gap-2">
+              <i data-lucide="wallet" class="text-blue-600"></i> การวิเคราะห์และประมาณการผลประโยชน์
+            </h3>
+
+            <!-- Grand Total AL Result -->
+            <div class="bg-gradient-to-br from-blue-700 to-indigo-800 text-white p-6 rounded-2xl mb-6 shadow-md flex justify-between items-center">
+              <div>
+                <span class="text-sm opacity-90 block font-medium">รวมค่าบริหารทีมงานโดยประมาณในเดือนนี้</span>
+                <span class="text-3xl md:text-4xl font-extrabold" id="al-total-bonus">0 บาท</span>
+              </div>
+              <div class="text-right hidden sm:block">
+                <span class="text-xs bg-white/20 px-3 py-1 rounded-full border border-white/20 inline-block font-semibold">ตำแหน่งปัจจุบัน: <span id="al-rank-badge" class="text-yellow-300 font-bold">AM</span></span>
+              </div>
+            </div>
+
+            <!-- Detailed Breakdowns -->
+            <div class="space-y-4">
+              <div class="flex justify-between items-center border-b pb-1">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">ประมาณรายได้รายเดือน (แตะเพื่อดูรายละเอียดขั้น)</h4>
+                <span class="text-xxs text-slate-400 flex items-center gap-0.5"><i data-lucide="info" class="w-3 h-3"></i> กดดูตารางโบนัส</span>
+              </div>
+              
+              <!-- Fixed Override -->
+              <div onclick="openBonusDetailModal('al_fixed')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    ค่าบริหารทีมงานคงที่ (Fixed Override) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400" id="al-fixed-override-desc">สิทธิการรับรายเดือนเมื่อบรรลุเป้าโควตาสะสมรายไตรมาส</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800 block" id="al-val-fixed">0 บาท</span>
+                  <span class="text-xxs bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full font-semibold" id="al-fixed-status">ได้รับสิทธิ์</span>
+                </div>
+              </div>
+
+              <!-- Variable Override -->
+              <div onclick="openBonusDetailModal('al_variable')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    ค่าบริหารทีมงานผันแปร (Variable Override) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400" id="al-variable-override-desc">คำนวณตามอัตราตำแหน่งจาก All YC (ถูกปรับลดเมื่อไม่ครบเงื่อนไข K2 หรือ Recruit)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800 block" id="al-val-variable">0 บาท</span>
+                  <span class="text-xxs text-red-500 font-semibold block" id="al-variable-penalty"></span>
+                  <span class="text-xxs text-slate-500" id="al-val-variable-rate">30% of YC</span>
+                </div>
+              </div>
+
+              <!-- Quality Benefit (7% of FYP) -->
+              <div onclick="openBonusDetailModal('al_quality')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    สิทธิ์โบนัสคุณภาพงานสะสม (Quality Benefit) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400">7% ของ FYP (หากผ่านเกณฑ์ Rider Ratio 10%, ผลงาน 100% โควต้า และ K2 สะสม >= 80%)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-emerald-600 block" id="al-val-quality">0 บาท</span>
+                  <span class="text-xxs text-slate-400" id="al-quality-status">อิงตามการยืนยันด้านซ้าย</span>
+                </div>
+              </div>
+
+              <!-- Agency Development Quality Benefit -->
+              <div onclick="openBonusDetailModal('al_development')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    สิทธิ์โบนัสพัฒนาตัวแทน (Agency Development) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400">คำนวณตามจำนวน Active ในทีมตรง ของตัวแทนที่ออกรหัสใหม่ภายใน 6 เดือนแรก</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800 block" id="al-val-development">0 บาท</span>
+                  <span class="text-xxs text-indigo-600 font-semibold" id="al-development-rate">10% of New Code FYC</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Promotion & Maintenance Standards Table for the Rank -->
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+            <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+              <i data-lucide="award" class="text-yellow-500"></i> เกณฑ์เลื่อนตำแหน่ง & รักษาสภาพของตำแหน่ง <span id="al-table-rank-title" class="text-blue-700">AM</span>
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Promotion criteria box -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 space-y-2">
+                <span class="text-xs font-bold text-blue-800 uppercase block tracking-wider">เกณฑ์ในการเลื่อนตำแหน่ง</span>
+                <ul class="text-xs space-y-1 text-slate-600 list-disc pl-4" id="al-promo-criteria-list">
+                  <!-- JS Injection -->
+                </ul>
+              </div>
+              <!-- Maintenance criteria box -->
+              <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 space-y-2">
+                <span class="text-xs font-bold text-teal-800 uppercase block tracking-wider">เกณฑ์รักษาสถานภาพตำแหน่ง</span>
+                <ul class="text-xs space-y-1 text-slate-600 list-disc pl-4" id="al-maint-criteria-list">
+                  <!-- JS Injection -->
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TAB 3: GD (JAGD/AGD/EAGD/SEAGD) LEVEL -->
+    <div id="section-gd" class="hidden space-y-6">
+      
+      <!-- GD Header Banner -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+            <i data-lucide="crown" class="text-amber-500"></i> ระดับผู้อำนวยการกลุ่มตัวแทน (GD 2025)
+          </h2>
+          <p class="text-sm text-slate-500">พิจารณาโครงสร้างผลประโยชน์ทีมตรงและกลุ่มลูกหลาน สำหรับตำแหน่งสูงสุด JAGD, AGD, EAGD และ SEAGD</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <label class="text-sm font-bold text-slate-600">ตำแหน่ง:</label>
+          <select id="select-gd-rank" onchange="calculateGDBenefits()" class="px-3 py-2 bg-amber-50 border border-amber-200 text-amber-900 font-bold rounded-xl focus:outline-none">
+            <option value="JAGD">JAGD (ผู้อำนวยการกลุ่มระดับต้น)</option>
+            <option value="AGD">AGD (ผู้อำนวยการกลุ่ม)</option>
+            <option value="EAGD" selected>EAGD (ผู้อำนวยการกลุ่มอาวุโส)</option>
+            <option value="SEAGD">SEAGD (ผู้อำนวยการกลุ่มระดับสูง)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Main Input & Output for GD -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Input Form (GD) -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 lg:col-span-5 space-y-5">
+          <div class="border-b pb-3 flex justify-between items-center">
+            <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+              <i data-lucide="settings-2" class="text-amber-600"></i> ตัวแปรกำหนดผลงาน GD
+            </h3>
+            <button onclick="resetGDInputs()" class="text-xs text-red-500 font-semibold hover:underline flex items-center gap-1">
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> ล้างข้อมูล
+            </button>
+          </div>
+
+          <div class="space-y-4">
+            
+            <!-- FYC Team Monthly Input GD -->
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label for="input-gd-fyc-manual" class="text-sm font-semibold text-slate-700">
+                  ระบุผลงาน FYC ทีมรวมสะสมปีนี้ (บาท)
+                </label>
+                <span class="text-amber-700 font-bold" id="gd-fyc-display">0 บาท</span>
+              </div>
+
+              <!-- Direct Number Input for GD -->
+              <div class="relative rounded-md shadow-sm mb-2">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <span class="text-slate-500 sm:text-sm">฿</span>
+                </div>
+                <input type="number" id="input-gd-fyc-manual" oninput="syncGDManual('fyc')" class="block w-full rounded-xl border border-slate-300 py-3 pl-8 pr-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 font-bold text-lg" placeholder="กรอกผลงานกลุ่มสะสม">
+              </div>
+
+              <!-- Quick choice chips -->
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <button onclick="setGdFycValue(3000000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">3.0M</button>
+                <button onclick="setGdFycValue(4500000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">4.5M</button>
+                <button onclick="setGdFycValue(6000000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">6.0M</button>
+                <button onclick="setGdFycValue(8000000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">8.0M</button>
+                <button onclick="setGdFycValue(10000000)" class="text-xxs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-2 py-1 rounded">10.0M</button>
+              </div>
+
+              <input id="input-gd-fyc" type="range" min="0" max="15000000" step="100000" value="7500000" oninput="syncGDSlider('fyc')" class="w-full accent-amber-500">
+              <div class="flex justify-between text-xxs text-slate-400 px-1 mt-1">
+                <span>0</span>
+                <span>3.5M</span>
+                <span>7.0M</span>
+                <span>10.5M</span>
+                <span>15.0M+</span>
+              </div>
+            </div>
+
+            <!-- K2 Quality input GD -->
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label for="input-gd-k2-manual" class="text-sm font-semibold text-slate-700">
+                  อัตราความยั่งยืนกรมธรรม์กลุ่มตรง K2 (%)
+                </label>
+                <span class="text-teal-600 font-bold" id="gd-k2-display">85%</span>
+              </div>
+              <div class="relative rounded-md shadow-sm mb-2">
+                <input type="number" id="input-gd-k2-manual" min="0" max="100" oninput="syncGDManual('k2')" class="block w-full rounded-xl border border-slate-300 py-2 px-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 font-bold text-sm" placeholder="กรอกเปอร์เซ็นต์">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                  <span class="text-slate-500 sm:text-sm">%</span>
+                </div>
+              </div>
+
+              <input id="input-gd-k2" type="range" min="0" max="100" step="1" value="85" oninput="syncGDSlider('k2')" class="w-full accent-teal-600">
+              <div class="flex justify-between text-xxs text-slate-400 px-1 mt-1">
+                <span>0%</span>
+                <span class="text-red-500 font-semibold">ต่ำกว่า 70% (แขวนสิทธิ์)</span>
+                <span class="text-indigo-600 font-semibold">85%+ (อัตราเพิ่ม 110%)</span>
+                <span>100%</span>
+              </div>
+            </div>
+
+            <!-- Quota Achieved Simulation -->
+            <div>
+              <label class="block text-sm font-semibold text-slate-600 mb-1">
+                ผลงานสะสมเปรียบเทียบโควต้าไตรมาส (Quarterly Quota)
+              </label>
+              <select id="select-gd-quota-achieved" onchange="calculateGDBenefits()" class="w-full px-3 py-2 border border-slate-200 rounded-xl text-sm font-medium">
+                <option value="below-75">ต่ำกว่า 75% โควต้าสะสม (ไม่รับโบนัสและค่าบริหารทีมคงที่)</option>
+                <option value="75">75% - 99% ของโควต้าสะสม</option>
+                <option value="100" selected>100% - 124% ของโควต้าสะสม</option>
+                <option value="125">125% - 149% ของโควต้าสะสม</option>
+                <option value="150">150% - 174% ของโควต้าสะสม</option>
+                <option value="175">175% - 199% ของโควต้าสะสม</option>
+                <option value="200">ตั้งแต่ 200% ของโควต้าสะสมขึ้นไป</option>
+              </select>
+              <p class="text-xxs text-slate-400 mt-1">โควต้าต่อปี: JAGD: 4M / AGD: 6M / EAGD: 8M / SEAGD: 10M</p>
+            </div>
+
+            <!-- Active Recruit count for GD -->
+            <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-100/60 space-y-2">
+              <span class="text-xs font-bold text-amber-900 block uppercase tracking-wider flex justify-between">
+                <span>ผลประโยชน์จากการพัฒนาตัวแทน (GD Level)</span>
+              </span>
+              <p class="text-xxs text-slate-400">นับจำนวน Active Recruit ในทีมในแต่ละเดือน เพื่อรับ % จาก FYC ของ New Code</p>
+              
+              <div class="grid grid-cols-2 gap-2 mt-2">
+                <div>
+                  <label class="text-xxs text-slate-500 block mb-1">จำนวน Active Recruit เดือนนี้:</label>
+                  <select id="select-gd-active-recruits" onchange="calculateGDBenefits()" class="w-full px-2 py-1 bg-white border border-slate-200 rounded-lg text-xs font-semibold">
+                    <option value="0">0-1 คน (ไม่ผ่านเกณฑ์)</option>
+                    <option value="recruit-low">ระดับขั้นต่ำ (2-3 คน ตามตำแหน่ง)</option>
+                    <option value="recruit-mid" selected>ระดับกลาง (4-5 คน ตามตำแหน่ง)</option>
+                    <option value="recruit-high">ระดับสูงสุด (6-8 คน ตามตำแหน่ง)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="text-xxs text-slate-500 block mb-1">FYC ของรหัสใหม่สะสม:</label>
+                  <input id="input-gd-new-fyc" type="number" value="150000" oninput="calculateGDBToDisplay()" class="w-full px-2 py-1 bg-white border border-slate-300 rounded-lg text-xs text-right font-semibold">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Calculated Output Dashboard (GD) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+            <h3 class="text-lg font-bold text-slate-800 border-b pb-3 mb-4 flex items-center gap-2">
+              <i data-lucide="award" class="text-amber-500"></i> ผลตอบแทนกลุ่มตัวแทนตามตำแหน่งสะสม
+            </h3>
+
+            <!-- Grand Total GD Result -->
+            <div class="bg-gradient-to-br from-amber-600 to-orange-700 text-white p-6 rounded-2xl mb-6 shadow-md flex justify-between items-center">
+              <div>
+                <span class="text-sm opacity-90 block font-medium">ประมาณการเงินผลประโยชน์สะสมของท่าน</span>
+                <span class="text-3xl md:text-4xl font-extrabold" id="gd-total-bonus">0 บาท</span>
+              </div>
+              <div class="text-right hidden sm:block">
+                <span class="text-xs bg-white/20 px-3 py-1 rounded-full border border-white/20 inline-block font-semibold">โควต้า: <span id="gd-quota-status-badge" class="font-bold">100% Achieved</span></span>
+              </div>
+            </div>
+
+            <!-- Detailed Breakdowns -->
+            <div class="space-y-4">
+              <div class="flex justify-between items-center border-b pb-1">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">รายละเอียดรายรับและโบนัสสะสม (แตะเพื่อดูรายละเอียดขั้น)</h4>
+                <span class="text-xxs text-slate-400 flex items-center gap-0.5"><i data-lucide="info" class="w-3 h-3"></i> กดดูตารางโบนัส</span>
+              </div>
+              
+              <!-- Fixed Team Override -->
+              <div onclick="openBonusDetailModal('gd_fixed')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    ค่าบริหารทีมงานคงที่ (Fixed Override) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400" id="gd-fixed-desc">จ่ายเป็นรายเดือนเมื่อผ่านเกณฑ์ 75% ของโควต้าสะสมไตรมาส</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800 block" id="gd-val-fixed">0 บาท / เดือน</span>
+                  <span class="text-xxs bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded-full font-semibold" id="gd-fixed-status-text">สิทธิ์สมบูรณ์</span>
+                </div>
+              </div>
+
+              <!-- Variable Override -->
+              <div onclick="openBonusDetailModal('gd_variable')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    ค่าบริหารทีมงานผันแปร (Variable Override - GD) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400">วัดผลตามอัตราความยั่งยืน K2 (7.0% - 9.0% ของ FYC และ 4.5% - 6.0% ของ RYC)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800 block" id="gd-val-variable">0 บาท</span>
+                  <span class="text-xxs text-amber-600 font-semibold block" id="gd-val-variable-rate">8.0% of FYC</span>
+                </div>
+              </div>
+
+              <!-- GD Bonus (Quarterly Quota) -->
+              <div onclick="openBonusDetailModal('gd_bonus')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    โบนัสผู้บริหารกลุ่ม GD Bonus (พิจารณาทุกสิ้นไตรมาส) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400">จ่ายตามสัดส่วนการผ่านเป้าโควต้าสะสม (1% - 9% ของ FYC ขึ้นกับตำแหน่ง)</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800 block" id="gd-val-bonus-rate-value">0 บาท</span>
+                  <span class="text-xxs text-indigo-600 font-semibold block" id="gd-val-bonus-pct">0% of FYC</span>
+                </div>
+              </div>
+
+              <!-- Agency Development Benefit -->
+              <div onclick="openBonusDetailModal('gd_dev')" class="flex justify-between items-start py-3 px-3 rounded-xl border border-transparent hover:border-blue-100 hover:bg-slate-50 transition-all cursor-pointer">
+                <div>
+                  <span class="text-sm font-bold text-slate-700 flex items-center gap-1.5">
+                    ผลประโยชน์การพัฒนาตัวแทน (New Code Benefit) <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+                  </span>
+                  <span class="text-xs text-slate-400">คิดเป็น % จาก FYC ของ New Code ตามจำนวน Active Recruit ในทีม</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-bold text-slate-800 block" id="gd-val-dev">0 บาท</span>
+                  <span class="text-xxs text-slate-500" id="gd-val-dev-rate">0% of New Code FYC</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Promotion and Maintenance Rules for GD level -->
+          <div class="bg-slate-900 text-amber-100 p-5 rounded-2xl space-y-4">
+            <h4 class="font-bold flex items-center gap-2 text-white border-b border-slate-800 pb-2">
+              <i data-lucide="shield-alert"></i> เกณฑ์เลื่อนตำแหน่งและการรักษาคุณสมบัติระดับกลุ่ม
+            </h4>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs opacity-95">
+              <div class="space-y-2">
+                <strong class="text-amber-400 block">การรักษาสถานภาพ (Maintenance):</strong>
+                <ul class="list-disc pl-4 space-y-1">
+                  <li><strong>K2 ของกลุ่มตรง</strong>: ต้องไม่ต่ำกว่า 70%</li>
+                  <li><strong>ผลงานสะสมรายปี</strong>:
+                    <ul class="pl-3 list-circle space-y-0.5">
+                      <li>JAGD: FYC >= 3,000,000</li>
+                      <li>AGD: FYC >= 4,500,000</li>
+                      <li>EAGD: FYC >= 6,000,000</li>
+                      <li>SEAGD: FYC >= 7,500,000</li>
+                    </ul>
+                  </li>
+                  <li><strong>จำนวนผู้บริหารใต้สังกัดตรง</strong>: JAGD: 9 หน่วย / AGD: 12 หน่วย / EAGD: 15 หน่วย / SEAGD: 18 หน่วย</li>
+                </ul>
+              </div>
+
+              <div class="space-y-2">
+                <strong class="text-amber-400 block">เงื่อนไขสวัสดิการเกษียณและคุ้มครอง:</strong>
+                <ul class="list-disc pl-4 space-y-1">
+                  <li><strong>กองทุนเกษียณอายุ (Retirement)</strong>: โอนผลประโยชน์ทั้งหมด 5% ของค่าบริหารทีมผันแปร สะสมไว้ให้ในระบบเมื่ออายุครบ 55 ปี หรือครบ 10 ปีทำงาน</li>
+                  <li><strong>ประกันชีวิตและสวัสดิการรักษากลุ่ม</strong>: 
+                    <ul class="pl-3 list-circle space-y-0.5">
+                      <li>JAGD: คุ้มครองชีวิต 1.0M, GHS 2.6K / OPD 500</li>
+                      <li>AGD: คุ้มครองชีวิต 1.2M, GHS 2.6K / OPD 500</li>
+                      <li>EAGD: คุ้มครองชีวิต 1.4M, GHS 2.6K / OPD 500</li>
+                      <li>SEAGD: คุ้มครองชีวิต 1.6M, GHS 2.6K / OPD 500</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- MAIN REFERENCE TABS (BOTTOM ACCORDION) -->
+    <section class="mt-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+      <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+        <i data-lucide="book-open" class="text-blue-900"></i> สรุปตารางเปรียบเทียบและอ้างอิงคุณสมบัติ
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Card 1 -->
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+          <span class="text-xs font-bold text-slate-400 block mb-1">ระดับตัวแทน (Agent)</span>
+          <p class="text-sm text-slate-700 font-semibold mb-2">เป้ารักษาสถานภาพ (ต่อไตรมาส)</p>
+          <div class="bg-white px-3 py-2 rounded-lg text-xs font-bold text-slate-800 shadow-xs">
+            1 รายสามัญ และ FYP 12,000 ต่อไตรมาส
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+          <span class="text-xs font-bold text-slate-400 block mb-1">ระดับผู้บริหาร (AL)</span>
+          <p class="text-sm text-slate-700 font-semibold mb-2">เป้ารักษาสถานภาพ (ต่อปีสะสม)</p>
+          <div class="bg-white px-3 py-2 rounded-lg text-xs space-y-1 text-slate-800 shadow-xs font-bold">
+            <div>AS: FYC 100,000 / AM: FYC 200,000</div>
+            <div>SM: FYC 300,000 / DM: FYC 400,000</div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+          <span class="text-xs font-bold text-slate-400 block mb-1">ระดับผู้อำนวยการ (GD)</span>
+          <p class="text-sm text-slate-700 font-semibold mb-2">เป้ารักษาสถานภาพ (ต่อปีสะสม)</p>
+          <div class="bg-white px-3 py-2 rounded-lg text-xs space-y-1 text-slate-800 shadow-xs font-bold">
+            <div>JAGD: 3.0M / AGD: 4.5M</div>
+            <div>EAGD: 6.0M / SEAGD: 7.5M</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- COLLAPSIBLE DETAILED MODAL OVERLAY -->
+  <div id="bonus-detail-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-300">
+    <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col max-h-[85vh]">
+      
+      <!-- Modal Header -->
+      <div id="modal-header" class="p-5 text-white flex justify-between items-center bg-gradient-to-r from-blue-900 to-indigo-900">
+        <div class="flex items-center gap-2.5">
+          <div id="modal-icon-container" class="p-2 bg-white/10 rounded-lg">
+            <i data-lucide="info" class="w-5 h-5 text-white"></i>
+          </div>
+          <div>
+            <h3 id="modal-title" class="font-bold text-base md:text-lg">รายละเอียดขั้นโบนัส</h3>
+            <p id="modal-subtitle" class="text-xxs text-blue-200">เกณฑ์การคำนวณและบันไดผลตอบแทน Chubb 2025</p>
+          </div>
+        </div>
+        <button onclick="closeBonusDetailModal()" class="p-1 rounded-full hover:bg-white/15 transition-all focus:outline-none">
+          <i data-lucide="x" class="w-5 h-5 text-white"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Collapsible/Scrollable detail tables) -->
+      <div id="modal-body" class="p-6 overflow-y-auto space-y-5 text-sm text-slate-700">
+        <!-- JS will inject custom content here dynamically -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-slate-50 border-t flex justify-end gap-2">
+        <button onclick="closeBonusDetailModal()" class="px-5 py-2 text-xs bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl transition-all">
+          ปิดหน้าต่างนี้
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Active Tab Navigation
+    function switchTab(tabId) {
+      document.getElementById('section-agent').classList.add('hidden');
+      document.getElementById('section-al').classList.add('hidden');
+      document.getElementById('section-gd').classList.add('hidden');
+
+      const btnAgent = document.getElementById('tab-agent');
+      const btnAl = document.getElementById('tab-al');
+      const btnGd = document.getElementById('tab-gd');
+
+      btnAgent.className = "flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 text-blue-300 hover:text-white";
+      btnAl.className = "flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 text-blue-300 hover:text-white";
+      btnGd.className = "flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 text-blue-300 hover:text-white";
+
+      if (tabId === 'agent') {
+        document.getElementById('section-agent').classList.remove('hidden');
+        btnAgent.className = "flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 bg-blue-600 text-white shadow-md";
+        calculateAgentBenefits();
+      } else if (tabId === 'al') {
+        document.getElementById('section-al').classList.remove('hidden');
+        btnAl.className = "flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 bg-blue-600 text-white shadow-md";
+        calculateALBenefits();
+      } else if (tabId === 'gd') {
+        document.getElementById('section-gd').classList.remove('hidden');
+        btnGd.className = "flex-1 md:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 bg-blue-600 text-white shadow-md";
+        calculateGDBenefits();
+      }
+    }
+
+    // ==========================================
+    // AGENT TWO-WAY BINDING & MID-YEAR LOGIC
+    // ==========================================
+    function setAgentFycValue(val) {
+      document.getElementById('input-agent-fyc-manual').value = val;
+      document.getElementById('input-agent-fyc').value = val;
+      autoFillMidYearFromMonthly();
+    }
+
+    function autoFillMidYearFromMonthly() {
+      const val = parseInt(document.getElementById('input-agent-fyc-manual').value) || 0;
+      // Estimate cumulative 6-month performance from current monthly average
+      document.getElementById('input-agent-fyc-mid-manual').value = val * 6;
+      calculateAgentBenefits();
+    }
+
+    function syncAgentManual(type) {
+      if (type === 'fyc') {
+        const val = parseInt(document.getElementById('input-agent-fyc-manual').value) || 0;
+        document.getElementById('input-agent-fyc').value = val;
+        // Pre-fill mid year based on input if mid year is empty or 0
+        const midVal = parseInt(document.getElementById('input-agent-fyc-mid-manual').value) || 0;
+        if (midVal === 0) {
+          document.getElementById('input-agent-fyc-mid-manual').value = val * 6;
+        }
+      } else if (type === 'k2') {
+        let val = parseInt(document.getElementById('input-agent-k2-manual').value) || 0;
+        if (val > 100) val = 100;
+        if (val < 0) val = 0;
+        document.getElementById('input-agent-k2-manual').value = val;
+        document.getElementById('input-agent-k2').value = val;
+      }
+      calculateAgentBenefits();
+    }
+
+    function syncAgentSlider(type) {
+      if (type === 'fyc') {
+        const val = document.getElementById('input-agent-fyc').value;
+        document.getElementById('input-agent-fyc-manual').value = val;
+        // Update mid year projection too
+        const midVal = parseInt(document.getElementById('input-agent-fyc-mid-manual').value) || 0;
+        if (midVal === 0 || midVal === (val * 5)) {
+          document.getElementById('input-agent-fyc-mid-manual').value = val * 6;
+        }
+      } else if (type === 'k2') {
+        const val = document.getElementById('input-agent-k2').value;
+        document.getElementById('input-agent-k2-manual').value = val;
+      }
+      calculateAgentBenefits();
+    }
+
+    function calculateAgentBenefits() {
+      const fycValue = parseInt(document.getElementById('input-agent-fyc-manual').value) || 0;
+      const k2Value = parseInt(document.getElementById('input-agent-k2-manual').value) || 0;
+      const midYearFycValue = parseInt(document.getElementById('input-agent-fyc-mid-manual').value) || 0;
+      
+      document.getElementById('agent-fyc-display').innerText = fycValue.toLocaleString() + ' บาท';
+      document.getElementById('agent-fyc-mid-display').innerText = midYearFycValue.toLocaleString() + ' บาท';
+      document.getElementById('agent-k2-display').innerText = k2Value + '%';
+
+      // 1. Monthly Bonus (โบนัสรายเดือน)
+      let monthlyBonusRate = 0;
+      if (fycValue >= 64001) {
+        monthlyBonusRate = 0.35;
+      } else if (fycValue >= 32001) {
+        monthlyBonusRate = 0.30;
+      } else if (fycValue >= 16001) {
+        monthlyBonusRate = 0.25;
+      } else if (fycValue >= 8000) {
+        monthlyBonusRate = 0.20;
+      }
+
+      let monthlyBonus = fycValue * monthlyBonusRate;
+
+      // Adjust for K2 >= 85% gets 110% of rate
+      let isK2BonusActive = false;
+      if (k2Value >= 85) {
+        monthlyBonus = monthlyBonus * 1.10;
+        isK2BonusActive = true;
+        document.getElementById('agent-val-career-rate').innerText = 'K2 ตัวคูณโบนัส 110% (ผ่าน)';
+        document.getElementById('agent-val-career-rate').className = 'text-xxs text-emerald-600 font-semibold';
+      } else {
+        document.getElementById('agent-val-career-rate').innerText = 'K2 น้อยกว่า 85% (ไม่ได้รับโบนัส 110%)';
+        document.getElementById('agent-val-career-rate').className = 'text-xxs text-slate-400';
+      }
+
+      // Check minimum K2 for Monthly Bonus (requires K2 >= 70%)
+      if (k2Value < 70) {
+        monthlyBonus = 0;
+        document.getElementById('agent-k2-status-badge').innerText = 'ไม่ผ่านเกณฑ์ K2 (ต่ำกว่า 70%)';
+        document.getElementById('agent-k2-status-badge').className = 'text-xs bg-red-500/20 px-3 py-1 rounded-full border border-red-500 inline-block font-semibold text-red-100';
+      } else {
+        document.getElementById('agent-k2-status-badge').innerText = 'ผ่านเกณฑ์ K2';
+        document.getElementById('agent-k2-status-badge').className = 'text-xs bg-white/20 px-3 py-1 rounded-full border border-white/20 inline-block font-semibold text-white';
+      }
+
+      document.getElementById('agent-val-monthly').innerText = monthlyBonus.toLocaleString(undefined, {maximumFractionDigits:0}) + ' บาท';
+      document.getElementById('agent-val-monthly-rate').innerText = (monthlyBonusRate * 100) + '% ของ FYC' + (isK2BonusActive ? ' (x110% โบนัส K2)' : '');
+
+
+      // 2. Mid-Year Bonus Calculation (New Addition)
+      // Criteria from official Chubb Agent Table Page 1
+      // FYC 40k-60k: 17.5% | 60,001-100k: 20% | 100,001-150k: 22.5% | 150,001-200k: 25.0%
+      // 200,001-250k: 27.5% | 250,001-300k: 30.0% | 300,001-400k: 32.5% | 400,001+: 35.0%
+      let midYearRate = 0;
+      if (midYearFycValue >= 400001) {
+        midYearRate = 0.35;
+      } else if (midYearFycValue >= 300001) {
+        midYearRate = 0.325;
+      } else if (midYearFycValue >= 250001) {
+        midYearRate = 0.30;
+      } else if (midYearFycValue >= 200001) {
+        midYearRate = 0.275;
+      } else if (midYearFycValue >= 150001) {
+        midYearRate = 0.25;
+      } else if (midYearFycValue >= 100001) {
+        midYearRate = 0.225;
+      } else if (midYearFycValue >= 60001) {
+        midYearRate = 0.20;
+      } else if (midYearFycValue >= 40000) {
+        midYearRate = 0.175;
+      }
+
+      let midYearBonus = midYearFycValue * midYearRate;
+
+      // Adjust for K2 >= 85% gets 110% multiplier
+      if (k2Value >= 85 && midYearBonus > 0) {
+        midYearBonus = midYearBonus * 1.10;
+      }
+      
+      // Minimum K2 requirement is 70%
+      if (k2Value < 70) {
+        midYearBonus = 0;
+      }
+
+      document.getElementById('agent-val-midyear').innerText = midYearBonus.toLocaleString(undefined, {maximumFractionDigits:0}) + ' บาท';
+      document.getElementById('agent-val-midyear-rate').innerText = (midYearRate * 100).toFixed(1) + '% ของ FYC สะสม' + (isK2BonusActive && midYearBonus > 0 ? ' (x110% โบนัส K2)' : '');
+
+
+      // 3. New Agent Bonus
+      const new3Select = document.getElementById('select-agent-new3').value;
+      const new6Select = document.getElementById('select-agent-new6').value;
+      let newAgentBonusValue = 0;
+
+      if (new3Select === 'tier1') newAgentBonusValue += 6000;
+      else if (new3Select === 'tier2') newAgentBonusValue += 15000;
+
+      if (new6Select === 'tier1') newAgentBonusValue += 10000;
+      else if (new6Select === 'tier2') newAgentBonusValue += 25000;
+
+      document.getElementById('agent-val-newagent').innerText = newAgentBonusValue.toLocaleString() + ' บาท';
+
+      // 4. Recruitment Bonus
+      const recruitFyc1 = parseInt(document.getElementById('input-recruit-fyc1').value) || 0;
+      const recruitFyc2 = parseInt(document.getElementById('input-recruit-fyc2').value) || 0;
+      const recruitmentBonus = (recruitFyc1 * 0.20) + (recruitFyc2 * 0.10);
+      document.getElementById('agent-val-recruitment').innerText = recruitmentBonus.toLocaleString() + ' บาท';
+
+      // 5. Career Benefit
+      let careerBenefitValue = 0;
+      const hasCareerBenefit = document.getElementById('chk-career').checked;
+      if (hasCareerBenefit) {
+        const baseCommYear2_10 = 50000; 
+        const k2Factor = k2Value / 100;
+        careerBenefitValue = (baseCommYear2_10 * k2Factor);
+        if (k2Value >= 85) {
+          careerBenefitValue = careerBenefitValue * 1.10;
+        }
+      }
+      document.getElementById('agent-val-career').innerText = hasCareerBenefit 
+        ? careerBenefitValue.toLocaleString(undefined, {maximumFractionDigits: 0}) + ' บาท' 
+        : '0 บาท (ไม่ได้รับการจำลอง)';
+
+      // 6. Saving Plan (5% of FYC)
+      const savingPlan = fycValue * 0.05;
+      document.getElementById('agent-val-saving').innerText = savingPlan.toLocaleString(undefined, {maximumFractionDigits:0}) + ' บาท';
+
+      // Total simulated monthly payouts + mid year payout estimate
+      const totalBonusMonth = monthlyBonus + midYearBonus + newAgentBonusValue + recruitmentBonus;
+      document.getElementById('agent-total-bonus').innerText = totalBonusMonth.toLocaleString(undefined, {maximumFractionDigits: 0}) + ' บาท';
+    }
+
+    function resetAgentInputs() {
+      document.getElementById('input-agent-fyc-manual').value = 35000;
+      document.getElementById('input-agent-fyc-mid-manual').value = 210000;
+      document.getElementById('input-agent-fyc').value = 35000;
+      document.getElementById('input-agent-k2-manual').value = 85;
+      document.getElementById('input-agent-k2').value = 85;
+      document.getElementById('select-agent-new3').value = 'none';
+      document.getElementById('select-agent-new6').value = 'none';
+      document.getElementById('input-recruit-fyc1').value = 10000;
+      document.getElementById('input-recruit-fyc2').value = 0;
+      document.getElementById('chk-career').checked = true;
+      calculateAgentBenefits();
+    }
+
+
+    // ==========================================
+    // AL (AS/AM/SM/DM) TWO-WAY BINDING LOGIC
+    // ==========================================
+    function setAlFycValue(val) {
+      document.getElementById('input-al-fyc-manual').value = val;
+      document.getElementById('input-al-fyc').value = val;
+      calculateALBenefits();
+    }
+
+    function syncALManual(type) {
+      if (type === 'fyc') {
+        const val = parseInt(document.getElementById('input-al-fyc-manual').value) || 0;
+        document.getElementById('input-al-fyc').value = val;
+      } else if (type === 'k2') {
+        let val = parseInt(document.getElementById('input-al-k2-manual').value) || 0;
+        if (val > 100) val = 100;
+        if (val < 0) val = 0;
+        document.getElementById('input-al-k2-manual').value = val;
+        document.getElementById('input-al-k2').value = val;
+      }
+      calculateALBenefits();
+    }
+
+    function syncALSlider(type) {
+      if (type === 'fyc') {
+        const val = document.getElementById('input-al-fyc').value;
+        document.getElementById('input-al-fyc-manual').value = val;
+      } else if (type === 'k2') {
+        const val = document.getElementById('input-al-k2').value;
+        document.getElementById('input-al-k2-manual').value = val;
+      }
+      calculateALBenefits();
+    }
+
+    function calculateALBenefits() {
+      const rank = document.getElementById('select-al-rank').value;
+      const fycValue = parseInt(document.getElementById('input-al-fyc-manual').value) || 0;
+      const k2Value = parseInt(document.getElementById('input-al-k2-manual').value) || 0;
+      const activeStandards = parseInt(document.getElementById('select-al-new-standards').value) || 0;
+      const activeCodesVal = document.getElementById('select-al-active-codes').value;
+      const newCodeFycValue = parseInt(document.getElementById('input-al-new-code-fyc').value) || 0;
+      const hasQb = document.getElementById('chk-al-qb').checked;
+
+      document.getElementById('al-fyc-display').innerText = fycValue.toLocaleString() + ' บาท';
+      document.getElementById('al-k2-display').innerText = k2Value + '%';
+      document.getElementById('al-new-code-fyc-val').innerText = newCodeFycValue.toLocaleString() + ' บาท';
+      document.getElementById('al-rank-badge').innerText = rank;
+      document.getElementById('al-table-rank-title').innerText = rank;
+
+      let fixedOverride = 0;
+      if (rank === 'AS') {
+        fixedOverride = 3500;
+      } else if (rank === 'AM') {
+        fixedOverride = 8500;
+      } else if (rank === 'SM') {
+        fixedOverride = 13500;
+      } else if (rank === 'DM') {
+        fixedOverride = 18500;
+      }
+
+      document.getElementById('al-val-fixed').innerText = fixedOverride.toLocaleString() + ' บาท';
+
+      let variableRate = 0;
+      if (rank === 'AS') variableRate = 0.25;
+      else if (rank === 'AM') variableRate = 0.30;
+      else if (rank === 'SM') variableRate = 0.35;
+      else if (rank === 'DM') variableRate = 0.40;
+
+      let variableBonus = fycValue * variableRate;
+
+      let penaltiesMsg = [];
+      if (k2Value < 70) {
+        variableBonus = variableBonus * 0.95;
+        penaltiesMsg.push("หัก 5% (K2 ต่ำกว่า 70%)");
+      }
+
+      if (activeStandards === 0) {
+        variableBonus = variableBonus * 0.85;
+        penaltiesMsg.push("หัก 15% (ไม่มี New Recruit มาตรฐาน)");
+      }
+
+      let is110Bonus = false;
+      if (k2Value >= 85) {
+        variableBonus = variableBonus * 1.10;
+        is110Bonus = true;
+      }
+
+      document.getElementById('al-val-variable').innerText = variableBonus.toLocaleString(undefined, {maximumFractionDigits: 0}) + ' บาท';
+      document.getElementById('al-val-variable-rate').innerText = (variableRate * 100) + '% ของ All YC' + (is110Bonus ? ' (บวกเพิ่มสิทธิ์ความเลิศ K2 110%)' : '');
+      document.getElementById('al-variable-penalty').innerText = penaltiesMsg.length > 0 ? penaltiesMsg.join(" / ") : "ไม่มีอัตราโทษหักเงิน";
+
+      let qualityBenefitValue = 0;
+      if (hasQb) {
+        const mockFyp = fycValue * 2.8;
+        qualityBenefitValue = mockFyp * 0.07;
+        document.getElementById('al-quality-status').innerText = 'ผ่านเงื่อนไขครบถ้วน (ประมาณการจาก FYP)';
+      } else {
+        qualityBenefitValue = 0;
+        document.getElementById('al-quality-status').innerText = 'ไม่ได้รับ (ไม่ผ่านเงื่อนไขคุณภาพงาน)';
+      }
+      document.getElementById('al-val-quality').innerText = qualityBenefitValue.toLocaleString(undefined, {maximumFractionDigits: 0}) + ' บาท';
+
+      let devRate = 0;
+      if (activeCodesVal === '3') devRate = 0.10;
+      else if (activeCodesVal === '4') devRate = 0.15;
+      else if (activeCodesVal === '5') devRate = 0.20;
+      else if (activeCodesVal === '6') devRate = 0.15;
+      else if (activeCodesVal === '8') devRate = 0.20;
+
+      const devBonus = newCodeFycValue * devRate;
+      document.getElementById('al-val-development').innerText = devBonus.toLocaleString(undefined, {maximumFractionDigits:0}) + ' บาท';
+      document.getElementById('al-development-rate').innerText = (devRate * 100) + '% of New Code FYC';
+
+      const grandTotalAL = fixedOverride + variableBonus + qualityBenefitValue + devBonus;
+      document.getElementById('al-total-bonus').innerText = grandTotalAL.toLocaleString(undefined, {maximumFractionDigits: 0}) + ' บาท';
+
+      updateALRulesBox(rank);
+    }
+
+    function resetALInputs() {
+      document.getElementById('input-al-fyc-manual').value = 65000;
+      document.getElementById('input-al-fyc').value = 65000;
+      document.getElementById('input-al-k2-manual').value = 75;
+      document.getElementById('input-al-k2').value = 75;
+      document.getElementById('select-al-new-standards').value = "2";
+      document.getElementById('select-al-active-codes').value = "3";
+      document.getElementById('input-al-new-code-fyc').value = 20000;
+      document.getElementById('chk-al-qb').checked = true;
+      calculateALBenefits();
+    }
+
+
+    // ==========================================
+    // GD LEVEL TWO-WAY BINDING LOGIC
+    // ==========================================
+    function setGdFycValue(val) {
+      document.getElementById('input-gd-fyc-manual').value = val;
+      document.getElementById('input-gd-fyc').value = val;
+      calculateGDBenefits();
+    }
+
+    function syncGDManual(type) {
+      if (type === 'fyc') {
+        const val = parseInt(document.getElementById('input-gd-fyc-manual').value) || 0;
+        document.getElementById('input-gd-fyc').value = val;
+      } else if (type === 'k2') {
+        let val = parseInt(document.getElementById('input-gd-k2-manual').value) || 0;
+        if (val > 100) val = 100;
+        if (val < 0) val = 0;
+        document.getElementById('input-gd-k2-manual').value = val;
+        document.getElementById('input-gd-k2').value = val;
+      }
+      calculateGDBenefits();
+    }
+
+    function syncGDSlider(type) {
+      if (type === 'fyc') {
+        const val = document.getElementById('input-gd-fyc').value;
+        document.getElementById('input-gd-fyc-manual').value = val;
+      } else if (type === 'k2') {
+        const val = document.getElementById('input-gd-k2').value;
+        document.getElementById('input-gd-k2-manual').value = val;
+      }
+      calculateGDBenefits();
+    }
+
+    function calculateGDBToDisplay() {
+      calculateGDBenefits();
+    }
+
+    function calculateGDBenefits() {
+      const rank = document.getElementById('select-gd-rank').value;
+      const fycValue = parseInt(document.getElementById('input-gd-fyc-manual').value) || 0;
+      const k2Value = parseInt(document.getElementById('input-gd-k2-manual').value) || 0;
+      const quotaAchieved = document.getElementById('select-gd-quota-achieved').value;
+      const activeRecruits = document.getElementById('select-gd-active-recruits').value;
+      const newFyc = parseInt(document.getElementById('input-gd-new-fyc').value) || 0;
+
+      document.getElementById('gd-fyc-display').innerText = fycValue.toLocaleString() + ' บาท';
+      document.getElementById('gd-k2-display').innerText = k2Value + '%';
+
+      let fixedOverride = 0;
+      if (rank === 'JAGD') fixedOverride = 27500;
+      else if (rank === 'AGD') fixedOverride = 40000;
+      else if (rank === 'EAGD') fixedOverride = 52500;
+      else if (rank === 'SEAGD') fixedOverride = 65000;
+
+      if (quotaAchieved === 'below-75') {
+        fixedOverride = 0;
+        document.getElementById('gd-fixed-status-text').innerText = 'ไม่ได้รับสิทธิ์ (ต่ำกว่าเกณฑ์โควต้า)';
+        document.getElementById('gd-fixed-status-text').className = 'text-xxs bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-semibold';
+      } else {
+        document.getElementById('gd-fixed-status-text').innerText = 'ได้รับสิทธิ์สมบูรณ์';
+        document.getElementById('gd-fixed-status-text').className = 'text-xxs bg-emerald-100 text-emerald-600 px-2 py-0.5 rounded-full font-semibold';
+      }
+      document.getElementById('gd-val-fixed').innerText = fixedOverride.toLocaleString() + ' บาท / เดือน';
+
+      let varRate = 0;
+      if (k2Value >= 85) varRate = 0.09;
+      else if (k2Value >= 80) varRate = 0.085;
+      else if (k2Value >= 70) varRate = 0.08;
+      else if (k2Value >= 50) varRate = 0.07;
+      else varRate = 0;
+
+      const estimatedMonthFyc = fycValue / 12;
+      let variableBonus = estimatedMonthFyc * varRate;
+
+      document.getElementById('gd-val-variable').innerText = variableBonus.toLocaleString(undefined, {maximumFractionDigits: 0}) + ' บาท';
+      document.getElementById('gd-val-variable-rate').innerText = (varRate * 100).toFixed(1) + '% จาก FYC รายเดือนประมาณการ';
+
+      let gdBonusRate = 0;
+      if (quotaAchieved === 'below-75') {
+        gdBonusRate = 0;
+      } else if (quotaAchieved === '75') {
+        if (rank === 'JAGD') gdBonusRate = 0.01;
+        else if (rank === 'AGD') gdBonusRate = 0.03;
+        else if (rank === 'EAGD') gdBonusRate = 0.02;
+        else if (rank === 'SEAGD') gdBonusRate = 0.04;
+      } else if (quotaAchieved === '100') {
+        if (rank === 'JAGD') gdBonusRate = 0.05;
+        else if (rank === 'AGD') gdBonusRate = 0.04;
+        else if (rank === 'EAGD') gdBonusRate = 0.03;
+        else if (rank === 'SEAGD') gdBonusRate = 0.02;
+      } else if (quotaAchieved === '125') {
+        if (rank === 'JAGD') gdBonusRate = 0.04;
+        else if (rank === 'AGD') gdBonusRate = 0.06;
+        else if (rank === 'EAGD') gdBonusRate = 0.05;
+        else if (rank === 'SEAGD') gdBonusRate = 0.03;
+      } else if (quotaAchieved === '150') {
+        if (rank === 'JAGD') gdBonusRate = 0.04;
+        else if (rank === 'AGD') gdBonusRate = 0.05;
+        else if (rank === 'EAGD') gdBonusRate = 0.06;
+        else if (rank === 'SEAGD') gdBonusRate = 0.07;
+      } else if (quotaAchieved === '175') {
+        if (rank === 'JAGD') gdBonusRate = 0.06;
+        else if (rank === 'AGD') gdBonusRate = 0.08;
+        else if (rank === 'EAGD') gdBonusRate = 0.07;
+        else if (rank === 'SEAGD') gdBonusRate = 0.05;
+      } else if (quotaAchieved === '200') {
+        if (rank === 'JAGD') gdBonusRate = 0.07;
+        else if (rank === 'AGD') gdBonusRate = 0.09;
+        else if (rank === 'EAGD') gdBonusRate = 0.08;
+        else if (rank === 'SEAGD') gdBonusRate = 0.06;
+      }
+
+      let gdBonusIs110 = false;
+      if (k2Value >= 85 && gdBonusRate > 0) {
+        gdBonusRate = gdBonusRate * 1.10;
+        gdBonusIs110 = true;
+      }
+
+      const quarterlyBonusAccrued = (estimatedMonthFyc * gdBonusRate);
+
+      document.getElementById('gd-val-bonus-rate-value').innerText = quarterlyBonusAccrued.toLocaleString(undefined, {maximumFractionDigits:0}) + ' บาท';
+      document.getElementById('gd-val-bonus-pct').innerText = (gdBonusRate * 100).toFixed(1) + '% ของ FYC' + (gdBonusIs110 ? ' (บวก 110% จาก K2)' : '');
+      document.getElementById('gd-quota-status-badge').innerText = quotaAchieved + '% โควต้าสะสม';
+
+      let activeRecruitRate = 0;
+      if (activeRecruits === 'recruit-low') {
+        activeRecruitRate = 0.06;
+      } else if (activeRecruits === 'recruit-mid') {
+        activeRecruitRate = 0.08;
+      } else if (activeRecruits === 'recruit-high') {
+        activeRecruitRate = 0.10;
+      }
+
+      const gdDevBonus = newFyc * activeRecruitRate;
+      document.getElementById('gd-val-dev').innerText = gdDevBonus.toLocaleString() + ' บาท';
+      document.getElementById('gd-val-dev-rate').innerText = (activeRecruitRate * 100) + '% ของ FYC New Code';
+
+      const grandTotalGD = fixedOverride + variableBonus + quarterlyBonusAccrued + gdDevBonus;
+      document.getElementById('gd-total-bonus').innerText = grandTotalGD.toLocaleString(undefined, {maximumFractionDigits: 0}) + ' บาท';
+    }
+
+    function resetGDInputs() {
+      document.getElementById('input-gd-fyc-manual').value = 7500000;
+      document.getElementById('input-gd-fyc').value = 7500000;
+      document.getElementById('input-gd-k2-manual').value = 85;
+      document.getElementById('input-gd-k2').value = 85;
+      document.getElementById('select-gd-quota-achieved').value = "100";
+      document.getElementById('select-gd-active-recruits').value = "recruit-mid";
+      document.getElementById('input-gd-new-fyc').value = 150000;
+      calculateGDBenefits();
+    }
+
+
+    // ==========================================
+    // UTILITY INTERFACES & RULES GENERATION
+    // ==========================================
+    function updateALRulesBox(rank) {
+      const promoList = document.getElementById('al-promo-criteria-list');
+      const maintList = document.getElementById('al-maint-criteria-list');
+      
+      let promoHtml = "";
+      let maintHtml = "";
+
+      if (rank === 'AS') {
+        promoHtml = `
+          <li>เลื่อนจากตัวแทน (Agent) ดำรงตำแหน่งอย่างน้อย 3 เดือน</li>
+          <li>มีผลงาน FYC ส่วนตัวย้อนหลัง 12 เดือนสะสม 200,000 บาท</li>
+          <li>มี 2 New Code ที่มีผลงาน FYC อย่างน้อย 20,000 บาท</li>
+          <li>มี Active สะสม ตนเอง + ตัวแทนใหม่ >= 12 คน</li>
+          <li>อัตรา K2 ส่วนตัวไม่ต่ำกว่า 70% และมีสวัสดิการประกันชีวิตบริษัททุน 5 แสน</li>
+        `;
+        maintHtml = `
+          <li>รักษาผลงานสะสมรายปี FYC 100,000 บาท</li>
+          <li>มีทุนประกันกับบริษัทไม่น้อยกว่า 500,000 บาท</li>
+          <li>มีตัวแทนในทีมไม่น้อยกว่า 2 คน</li>
+          <li>มี Active สะสมในหน่วยตรง >= 16 คน</li>
+          <li>อัตราความยั่งยืนกรมธรรม์ K2 สะสมไม่ต่ำกว่า 70%</li>
+        `;
+      } else if (rank === 'AM') {
+        promoHtml = `
+          <li>เลื่อนจากตำแหน่ง AS และดำรงตำแหน่งอย่างน้อย 1 ปี</li>
+          <li>มีผลงานกลุ่มสะสม FYC 400,000 บาท ย้อนหลัง 12 เดือน</li>
+          <li>มีตัวแทนรวมในหน่วยอย่างน้อย 4 คน และ K2 ไม่ต่ำกว่า 70%</li>
+          <li>มี Active สะสมหน่วยตรงอย่างน้อย 20 คน</li>
+          <li>มีหน่วยงานลูกที่เลื่อนขั้นขึ้นพร้อมกันอย่างน้อย 1 หน่วย</li>
+        `;
+        maintHtml = `
+          <li>รักษาผลงานสะสมรายปี FYC 200,000 บาท (นับหน่วยลูกไม่เกิน 100K)</li>
+          <li>มีทุนประกันกับบริษัทไม่น้อยกว่า 750,000 บาท</li>
+          <li>มีตัวแทนในทีมอย่างน้อย 3 คน</li>
+          <li>มี Active สะสมในหน่วยตรง >= 20 คน</li>
+          <li>อัตราความยั่งยืนกรมธรรม์ K2 สะสมไม่ต่ำกว่า 70%</li>
+        `;
+      } else if (rank === 'SM') {
+        promoHtml = `
+          <li>เลื่อนจากตำแหน่ง AM และดำรงตำแหน่งอย่างน้อย 1 ปี</li>
+          <li>มีผลงานกลุ่มสะสม FYC 600,000 บาท</li>
+          <li>มีตัวแทนรวมในหน่วยอย่างน้อย 6 คน และ K2 ไม่ต่ำกว่า 70%</li>
+          <li>มี Active สะสมในหน่วยตรงอย่างน้อย 25 คน</li>
+          <li>ผ่านเกณฑ์สัมมนา Chubb Way (M1 + M2) มีทุนประกัน 1 ล้าน</li>
+        `;
+        maintHtml = `
+          <li>รักษาผลงานสะสมรายปี FYC 300,000 บาท (นับหน่วยลูกไม่เกิน 150K)</li>
+          <li>มีทุนประกันกับบริษัทไม่น้อยกว่า 1,000,000 บาท</li>
+          <li>มีตัวแทนในทีมอย่างน้อย 4 คน</li>
+          <li>มี Active สะสมในหน่วยตรง >= 24 คน</li>
+          <li>อัตราความยั่งยืนกรมธรรม์ K2 สะสมไม่ต่ำกว่า 70%</li>
+        `;
+      } else if (rank === 'DM') {
+        promoHtml = `
+          <li>เลื่อนจากตำแหน่ง SM และดำรงตำแหน่งอย่างน้อย 1 ปี</li>
+          <li>มีผลงานกลุ่มสะสม FYC 800,000 บาท</li>
+          <li>มีตัวแทนรวมในหน่วยอย่างน้อย 8 คน และ K2 ไม่ต่ำกว่า 70%</li>
+          <li>มี Active สะสมในหน่วยตรงอย่างน้อย 30 คน</li>
+          <li>มีคุณสมบัติผ่านหลักสูตร Warrior และประกันกับบริษัททุน 1.5 ล้าน</li>
+        `;
+        maintHtml = `
+          <li>รักษาผลงานสะสมรายปี FYC 400,000 บาท (นับหน่วยลูกไม่เกิน 200K)</li>
+          <li>มีทุนประกันกับบริษัทไม่น้อยกว่า 1,250,000 บาท</li>
+          <li>มีตัวแทนในทีมอย่างน้อย 6 คน</li>
+          <li>มี Active สะสมในหน่วยตรง >= 28 คน</li>
+          <li>อัตราความยั่งยืนกรมธรรม์ K2 สะสมไม่ต่ำกว่า 70%</li>
+        `;
+      }
+
+      promoList.innerHTML = promoHtml;
+      maintList.innerHTML = maintHtml;
+    }
+
+    // ==========================================
+    // INTERACTIVE MODALS FOR DETAILED TIERS
+    // ==========================================
+    function openBonusDetailModal(type) {
+      const modal = document.getElementById('bonus-detail-modal');
+      const title = document.getElementById('modal-title');
+      const body = document.getElementById('modal-body');
+      const header = document.getElementById('modal-header');
+      const iconContainer = document.getElementById('modal-icon-container');
+
+      if (type.startsWith('agent_')) {
+        header.className = "p-5 text-white flex justify-between items-center bg-gradient-to-r from-emerald-600 to-teal-700";
+        iconContainer.innerHTML = '<i data-lucide="user" class="w-5 h-5 text-white"></i>';
+      } else if (type.startsWith('al_')) {
+        header.className = "p-5 text-white flex justify-between items-center bg-gradient-to-r from-blue-700 to-indigo-800";
+        iconContainer.innerHTML = '<i data-lucide="briefcase" class="w-5 h-5 text-white"></i>';
+      } else if (type.startsWith('gd_')) {
+        header.className = "p-5 text-white flex justify-between items-center bg-gradient-to-r from-amber-500 to-orange-600";
+        iconContainer.innerHTML = '<i data-lucide="award" class="w-5 h-5 text-white"></i>';
+      }
+
+      let contentHtml = "";
+
+      // 1. Agent Monthly Bonus modal
+      if (type === 'agent_monthly') {
+        const agentFyc = parseInt(document.getElementById('input-agent-fyc-manual').value) || 0;
+        const agentK2 = parseInt(document.getElementById('input-agent-k2-manual').value) || 0;
+        title.innerText = "ตารางโบนัสรายเดือน (Agent Monthly Bonus)";
+
+        const tiers = [
+          { label: "ต่ำกว่าเกณฑ์", min: 0, max: 7999, rate: 0, desc: "ไม่มีโบนัส" },
+          { label: "ขั้นที่ 1", min: 8000, max: 16000, rate: 20, desc: "20% ของ FYC" },
+          { label: "ขั้นที่ 2", min: 16001, max: 32000, rate: 25, desc: "25% ของ FYC" },
+          { label: "ขั้นที่ 3", min: 32001, max: 64000, rate: 30, desc: "30% ของ FYC" },
+          { label: "ขั้นสูงสุด (ขั้นที่ 4)", min: 64001, max: Infinity, rate: 35, desc: "35% ของ FYC" }
+        ];
+
+        contentHtml += `<p class="font-semibold text-slate-800">ผลงานรายเดือนปัจจุบัน: <span class="text-blue-600 font-bold underline">${agentFyc.toLocaleString()} บาท (K2: ${agentK2}%)</span></p>`;
+        contentHtml += `<div class="border rounded-2xl overflow-hidden"><table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-slate-100 text-slate-600 font-bold">
+              <th class="p-3">ขั้นโบนัส</th>
+              <th class="p-3">เป้าหมาย FYC (บาท)</th>
+              <th class="p-3 text-right">อัตราโบนัส</th>
+            </tr>
+          </thead>
+          <tbody>`;
+
+        tiers.forEach(t => {
+          const isActive = (agentFyc >= t.min && agentFyc <= t.max);
+          const activeClass = isActive ? "bg-emerald-50 text-emerald-900 border-l-4 border-emerald-500 font-bold" : "border-b border-slate-100";
+          const badge = isActive ? '<span class="ml-1.5 px-1.5 py-0.5 text-[9px] bg-emerald-500 text-white rounded-full font-bold">คุณอยู่ในขั้นนี้</span>' : '';
+          const maxLabel = t.max === Infinity ? "ขึ้นไป" : ` - ${t.max.toLocaleString()}`;
+          contentHtml += `<tr class="${activeClass}">
+            <td class="p-3">${t.label}${badge}</td>
+            <td class="p-3">${t.min.toLocaleString()}${maxLabel}</td>
+            <td class="p-3 text-right text-sm">${t.rate}%</td>
+          </tr>`;
+        });
+        contentHtml += `</tbody></table></div>`;
+        contentHtml += `<div class="bg-blue-50 p-4 rounded-xl text-xs space-y-1 text-slate-600">
+          <p class="font-bold text-blue-900">💡 เงื่อนไขสิทธิ์ความคงอยู่ (K2):</p>
+          <p>• <strong>K2 >= 85%</strong>: รับรางวัลทวีคูณเป็น <strong>110% ของอัตราที่คำนวณได้</strong></p>
+          <p>• <strong>K2 &lt; 70%</strong>: งดจ่ายสิทธิ์โบนัสงวดนี้</p>
+        </div>`;
+      }
+
+      // 2. Agent Mid-Year Bonus modal (NEW ADDITION)
+      else if (type === 'agent_midyear') {
+        const agentMidFyc = parseInt(document.getElementById('input-agent-fyc-mid-manual').value) || 0;
+        const agentK2 = parseInt(document.getElementById('input-agent-k2-manual').value) || 0;
+        title.innerText = "ตารางโบนัสครึ่งปี (Agent Mid-year Bonus)";
+
+        const midTiers = [
+          { label: "ต่ำกว่าเกณฑ์สะสม", min: 0, max: 39999, rate: 0 },
+          { label: "ขั้นที่ 1", min: 40000, max: 60000, rate: 17.5 },
+          { label: "ขั้นที่ 2", min: 60001, max: 100000, rate: 20.0 },
+          { label: "ขั้นที่ 3", min: 100001, max: 150000, rate: 22.5 },
+          { label: "ขั้นที่ 4", min: 150001, max: 200000, rate: 25.0 },
+          { label: "ขั้นที่ 5", min: 200001, max: 250000, rate: 27.5 },
+          { label: "ขั้นที่ 6", min: 250001, max: 300000, rate: 30.0 },
+          { label: "ขั้นที่ 7", min: 300001, max: 400000, rate: 32.5 },
+          { label: "ขั้นสูงสุด (ขั้นที่ 8)", min: 400001, max: Infinity, rate: 35.0 }
+        ];
+
+        contentHtml += `<p class="font-semibold text-slate-800">ผลงานสะสมครึ่งปีจำลอง: <span class="text-orange-600 font-bold underline">${agentMidFyc.toLocaleString()} บาท (K2: ${agentK2}%)</span></p>`;
+        contentHtml += `<div class="border rounded-2xl overflow-hidden"><table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-slate-100 text-slate-600 font-bold">
+              <th class="p-2.5">ขั้นโบนัส</th>
+              <th class="p-2.5">ยอดสะสม FYC ครึ่งปี (บาท)</th>
+              <th class="p-2.5 text-right">อัตราโบนัส</th>
+            </tr>
+          </thead>
+          <tbody>`;
+
+        midTiers.forEach(t => {
+          const isActive = (agentMidFyc >= t.min && agentMidFyc <= t.max);
+          const activeClass = isActive ? "bg-orange-50 text-orange-950 border-l-4 border-orange-500 font-bold" : "border-b border-slate-100";
+          const badge = isActive ? '<span class="ml-1 px-1.5 py-0.5 text-[8px] bg-orange-500 text-white rounded-full font-bold">คุณอยู่ในระดับนี้</span>' : '';
+          const maxLabel = t.max === Infinity ? "ขึ้นไป" : ` - ${t.max.toLocaleString()}`;
+          contentHtml += `<tr class="${activeClass}">
+            <td class="p-2.5">${t.label}${badge}</td>
+            <td class="p-2.5">${t.min.toLocaleString()}${maxLabel}</td>
+            <td class="p-2.5 text-right text-xs font-bold">${t.rate}%</td>
+          </tr>`;
+        });
+        contentHtml += `</tbody></table></div>`;
+        
+        // Next tier advice logic
+        const currentTierIndex = midTiers.findIndex(t => agentMidFyc >= t.min && agentMidFyc <= t.max);
+        if (currentTierIndex !== -1 && currentTierIndex < midTiers.length - 1) {
+          const nextTier = midTiers[currentTierIndex + 1];
+          const diff = nextTier.min - agentMidFyc;
+          contentHtml += `<div class="bg-orange-50/70 p-3 rounded-xl text-xs border border-orange-100 text-orange-950 font-medium">
+            🎯 อีกเพียง <span class="text-orange-700 font-bold underline">${diff.toLocaleString()} บาท</span> จะได้รับการขยับขึ้นไปใน ${nextTier.label} (เพื่อรับโบนัสเพิ่มขึ้นเป็น ${nextTier.rate}%)
+          </div>`;
+        }
+
+        contentHtml += `<div class="bg-blue-50 p-4 rounded-xl text-xs space-y-1 text-slate-600">
+          <p class="font-bold text-blue-900">💡 รายละเอียดสิทธิ์ทวีคูณความคงอยู่:</p>
+          <p>• ต้องคงอัตราความยั่งยืน <strong>K2 ไม่น้อยกว่า 70%</strong> เพื่อมีสิทธิ์รับโบนัสนี้</p>
+          <p>• หากทำผลการรักษางาน <strong>K2 >= 85%</strong> จะได้รับอัตราทวีคูณเพิ่มพิเศษ <strong>110% ของอัตราปกติ</strong></p>
+        </div>`;
+      }
+
+      // 3. Agent New Agent Bonus
+      else if (type === 'agent_newagent') {
+        title.innerText = "โบนัสตัวแทนใหม่ (New Agent Bonus)";
+        contentHtml += `<p class="text-xs text-slate-500">สำหรับส่งเสริมตัวแทนใหม่ที่มีอายุงานใน 6 เดือนแรกโดยเริ่มนับตั้งแต่ออกรหัส</p>`;
+        contentHtml += `<div class="space-y-4">
+          <div class="border rounded-2xl overflow-hidden p-4 bg-slate-50">
+            <h4 class="font-bold text-blue-900 text-xs mb-2 flex items-center gap-1"><i data-lucide="check-circle" class="w-3.5 h-3.5"></i> ช่วง 3 เดือนแรกของการทำงาน</h4>
+            <ul class="text-xs space-y-2 pl-4 list-disc text-slate-600">
+              <li><strong>ระดับ 1 (รับ 6,000 บาท):</strong> ต้องมีผลงานสะสม FYC >= 20,000 บาท และส่งงานอย่างน้อย 3 ราย</li>
+              <li><strong>ระดับ 2 (รับ 15,000 บาท):</strong> ต้องมีผลงานสะสม FYC >= 50,000 บาท และส่งงานอย่างน้อย 5 ราย</li>
+            </ul>
+          </div>
+          <div class="border rounded-2xl overflow-hidden p-4 bg-slate-50">
+            <h4 class="font-bold text-indigo-900 text-xs mb-2 flex items-center gap-1"><i data-lucide="check-circle" class="w-3.5 h-3.5"></i> ช่วงเดือนที่ 4 - 6 ของการทำงาน</h4>
+            <ul class="text-xs space-y-2 pl-4 list-disc text-slate-600">
+              <li><strong>ระดับ 1 (รับ 10,000 บาท):</strong> ต้องมีผลงานสะสม FYC >= 40,000 บาท และส่งงานอย่างน้อย 5 ราย</li>
+              <li><strong>ระดับ 2 (รับ 25,000 บาท):</strong> ต้องมีผลงานสะสม FYC >= 100,000 บาท และส่งงานอย่างน้อย 10 ราย</li>
+            </ul>
+          </div>
+          <p class="text-xxs text-red-500 font-semibold">*หมายเหตุ: ไม่นับรวมจำนวนรายจากประเภทสัญญาประกันอุบัติเหตุส่วนบุคคล (PA) และประกันกลุ่ม</p>
+        </div>`;
+      }
+
+      // 4. Agent Maintenance (รักษาสถานภาพ)
+      else if (type === 'agent_maintenance') {
+        title.innerText = "เกณฑ์รักษาสถานภาพของตัวแทน";
+        contentHtml += `<div class="space-y-4 text-xs">
+          <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+            <span class="font-bold text-indigo-900 block text-sm">เป้าหมายขั้นต่ำต่อไตรมาส</span>
+            <p class="mt-2 text-slate-700">ตัวแทนทุกคนต้องผ่านเกณฑ์รักษาสภาพทุก ๆ สิ้นไตรมาส (มี.ค., มิ.ย., ก.ย., ธ.ค.) เพื่อคงรหัสขาย:</p>
+            <ul class="list-decimal pl-4 mt-2 space-y-1 font-semibold text-slate-800">
+              <li>ส่งผลงานอย่างน้อย 1 รายสามัญ</li>
+              <li>มีผลรวมเบี้ยประกันภัยปีแรกสะสม (FYP) ไม่น้อยกว่า 12,000 บาท</li>
+            </ul>
+          </div>
+          <p class="text-xxs text-slate-400">นับสัดส่วนรวมจากกรมธรรม์ประเภทสามัญ, PARD, PAS, PASF และประกันภัยกลุ่มให้แบบ 100%</p>
+        </div>`;
+      }
+
+      // 5. Agent Recruitment
+      else if (type === 'agent_recruit') {
+        title.innerText = "โบนัสชวนตัวแทนใหม่ (Recruitment Bonus)";
+        contentHtml += `<div class="space-y-3 text-xs">
+          <p class="font-bold text-slate-800 text-sm">โครงสร้างสิทธิผู้ชวนตัวแทนตรง:</p>
+          <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-100">
+            <span class="font-bold text-emerald-900 block">✓ ปีที่ 1 (เดือน 1 - 12):</span>
+            <p>รับเงินรางวัลส่วนแบ่ง <strong>20% ของ FYC</strong> ที่ตัวแทนใหม่ที่เราชวนสร้างขึ้นในแต่ละรอบขาย</p>
+          </div>
+          <div class="bg-blue-50 p-3 rounded-xl border border-blue-100">
+            <span class="font-bold text-blue-900 block">✓ ปีที่ 2 (เดือน 13 - 24):</span>
+            <p>รับเงินรางวัลส่วนแบ่ง <strong>10% ของ FYC</strong> ที่สร้างได้ในรอบปีถัดไป</p>
+          </div>
+          <p class="font-semibold text-slate-700">⚠️ เงื่อนไขการปลดล็อคยอดจ่าย:</p>
+          <p>• ตัวแทนใหม่คนดังกล่าวต้องสร้างผลงานสะสม FYC เริ่มต้นครบ 10,000 บาทขึ้นไป ระบบจึงจะเริ่มพิจารณาคำนวณและจ่ายให้สูงสุดไม่เกิน 100,000 บาท หรือสูงสุดเป็นเวลา 24 เดือน</p>
+        </div>`;
+      }
+
+      // 6. Agent Career Benefit
+      else if (type === 'agent_career') {
+        title.innerText = "ผลประโยชน์สายอาชีพ (Career Benefit)";
+        contentHtml += `<div class="space-y-4 text-xs">
+          <p class="text-slate-600">สิทธิรับเงินอุดหนุนรายเดือนของตัวแทนอาชีพที่รักษายอดผลงานได้สม่ำเสมอ คำนวณจ่ายในรอบเดือน ก.พ. ของปีถัดไป:</p>
+          <div class="p-3 bg-slate-50 rounded-xl border">
+            <span class="font-bold text-slate-800">สูตรคำนวณเงินรายเดือน:</span>
+            <p class="font-mono text-center text-sm py-2 text-indigo-700 bg-white border rounded-lg my-1">
+              (ค่าบำเหน็จปีที่ 2 - 10 × %K2) ÷ 12
+            </p>
+          </div>
+          <div class="space-y-2">
+            <h4 class="font-bold text-slate-800">เงื่อนไขการรับสิทธิ์:</h4>
+            <div class="pl-4 border-l-2 border-slate-300 space-y-2">
+              <p><strong>เงื่อนไขที่ 1 (ปกติ):</strong> มีผลผลิตสะสม 8 รายสามัญ, FYC ไม่ต่ำกว่า 100,000 บาทต่อปี, มีผลงานอนุมัติกระจายตัวอย่างน้อย 8 เดือน และ K2 >= 75%</p>
+              <p><strong>เงื่อนไขที่ 2 (รับเพิ่ม 110%):</strong> มีสะสม 8 รายสามัญ, FYC สะสมไม่ต่ำกว่า 200,000 บาทต่อปี, มีงานอนุมัติอย่างน้อย 8 เดือน และ <strong>K2 >= 85%</strong> (สูตรคำนวณจะคูณเพิ่มเป็น 110%)</p>
+            </div>
+          </div>
+        </div>`;
+      }
+
+      // 7. Agent Saving Plan
+      else if (type === 'agent_saving') {
+        title.innerText = "กองทุนเงินสะสมตัวแทน (Saving Plan)";
+        contentHtml += `<div class="space-y-3 text-xs">
+          <p class="text-slate-600">สวัสดิการการออมเงินสะสมในระหว่างการทำงานร่วมกับบริษัทฯ:</p>
+          <div class="p-4 bg-emerald-50 border border-emerald-100 rounded-xl font-semibold text-emerald-900 text-center text-base">
+            บริษัทสะสมเพิ่มสมทบให้ 5% ของ FYC
+          </div>
+          <p class="text-slate-600"><strong>เงื่อนไขการรับเงินก้อนสะสมออก:</strong> เมื่อเกิดกรณีเสียชีวิตในระหว่างปฏิบัติงาน หรือรักษาสภาพเป็นตัวแทนครบกำหนด 10 ปี (รับเงินก้อนจ่ายครั้งเดียว-จบงาน)</p>
+          <p class="text-xxs text-slate-400">สัดส่วนการนับยอดสะสม: นับผลงานประเภท PARD และประกันภัยกลุ่ม 50% ส่วนประเภทอุบัติเหตุ PAS, PASF นับให้ที่สัดส่วน 25%</p>
+        </div>`;
+      }
+
+      // 8. AL Fixed Override
+      else if (type === 'al_fixed') {
+        const alRank = document.getElementById('select-al-rank').value;
+        title.innerText = "ค่าบริหารทีมงานคงที่ (AL Fixed Override)";
+        contentHtml += `<p class="text-xs text-slate-600">รับรายเดือนคงที่อิงตามตำแหน่งเมื่อทำผลงานสะสมของทีมผ่านเกณฑ์อย่างน้อย 75% ของโควต้าสะสมแต่ละช่วงไตรมาส:</p>`;
+        
+        const ranks = [
+          { name: "AS (หัวหน้าฝ่ายขาย)", pay: 3500, qQuota: 50000 },
+          { name: "AM (ผู้จัดการ)", pay: 8500, qQuota: 75000 },
+          { name: "SM (ผู้จัดการอาวุโส)", pay: 13500, qQuota: 112500 },
+          { name: "DM (ผู้จัดการภาค)", pay: 18500, qQuota: 150000 }
+        ];
+
+        contentHtml += `<div class="border rounded-2xl overflow-hidden"><table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-slate-100 text-slate-600 font-bold">
+              <th class="p-3">ตำแหน่ง</th>
+              <th class="p-3">เป้าสะสม/ไตรมาส</th>
+              <th class="p-3 text-right">ค่าบริหาร/เดือน</th>
+            </tr>
+          </thead>
+          <tbody>`;
+
+        ranks.forEach(r => {
+          const isUserRank = r.name.startsWith(alRank);
+          const activeClass = isUserRank ? "bg-indigo-50 text-indigo-900 border-l-4 border-indigo-600 font-bold" : "border-b border-slate-100";
+          const badge = isUserRank ? '<span class="ml-1.5 px-1.5 py-0.5 text-[9px] bg-indigo-600 text-white rounded-full font-bold">ตำแหน่งปัจจุบัน</span>' : '';
+          contentHtml += `<tr class="${activeClass}">
+            <td class="p-3">${r.name}${badge}</td>
+            <td class="p-3">>= ${r.qQuota.toLocaleString()}</td>
+            <td class="p-3 text-right font-bold text-sm text-indigo-800">${r.pay.toLocaleString()} บาท</td>
+          </tr>`;
+        });
+        contentHtml += `</tbody></table></div>`;
+      }
+
+      // 9. AL Variable Override
+      else if (type === 'al_variable') {
+        const alRank = document.getElementById('select-al-rank').value;
+        const alK2 = parseInt(document.getElementById('input-al-k2-manual').value) || 0;
+        title.innerText = "ค่าบริหารผันแปรตามสิทธิ์ (AL Variable Override)";
+        contentHtml += `<p class="text-xs text-slate-600">ส่วนแบ่งบริหารทีมงานผันแปรคิดเปอร์เซ็นต์จ่ายจากยอด All YC รายเดือนสะสม:</p>`;
+        
+        const rates = [
+          { rank: "AS", rate: 25 },
+          { rank: "AM", rate: 30 },
+          { rank: "SM", rate: 35 },
+          { rank: "DM", rate: 40 }
+        ];
+
+        contentHtml += `<div class="border rounded-2xl overflow-hidden"><table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-slate-100 text-slate-600 font-bold">
+              <th class="p-3">ระดับผู้บริหาร</th>
+              <th class="p-3">สัดส่วนอัตราจ่ายผันแปร (All YC)</th>
+            </tr>
+          </thead>
+          <tbody>`;
+
+        rates.forEach(r => {
+          const isActive = (r.rank === alRank);
+          const activeClass = isActive ? "bg-indigo-50 text-indigo-900 border-l-4 border-indigo-600 font-bold" : "border-b border-slate-100";
+          const badge = isActive ? '<span class="ml-1.5 px-1.5 py-0.5 text-[9px] bg-indigo-600 text-white rounded-full font-bold">คุณ</span>' : '';
+          contentHtml += `<tr class="${activeClass}">
+            <td class="p-3">${r.rank} ${badge}</td>
+            <td class="p-3 text-sm font-bold text-indigo-800">${r.rate}%</td>
+          </tr>`;
+        });
+        contentHtml += `</tbody></table></div>`;
+        
+        contentHtml += `<div class="bg-red-50 p-4 rounded-xl text-xs space-y-1.5 text-slate-600 border border-red-100">
+          <p class="font-bold text-red-900">⚠️ เงื่อนไขการปรับแขวนและหักค่าผันแปร:</p>
+          <p>• <strong>K2 &lt; 70%:</strong> อัตราจ่ายผันแปรจะถูกหักออก <strong>5%</strong> ทันที</p>
+          <p>• <strong>ไม่มีตัวแทนใหม่มาตรฐาน (New Recruit) สะสมสะสม:</strong> จะถูกระงับ/แขวนหักจ่าย <strong>15%</strong> (ปลดล็อกเมื่อมีสะสมครบ 2 คนต่อปี)</p>
+          <p>• <strong>ทำเป้าได้ต่ำกว่า 50% ของเป้าโควต้าต่อเดือน:</strong> ค่าบริหารงวดนั้นจะโดนแขวนไว้ 100% จนกว่าสะสมรายไตรมาสจะพ้น 50%</p>
+        </div>`;
+      }
+
+      // 10. AL Quality Benefit (MS)
+      else if (type === 'al_quality') {
+        title.innerText = "โบนัสคุณภาพงาน (Marketing Scheme 7% FYP)";
+        contentHtml += `<div class="space-y-3 text-xs text-slate-700">
+          <p class="text-slate-600">รับสิทธิ์ผลประโยชน์เพิ่ม <strong>7% ของเบี้ยรับปีแรก (FYP)</strong> จากหน่วยงานในเดือนที่มีผู้ได้รับ QB ตามเงื่อนไขดังนี้:</p>
+          <div class="border rounded-xl p-4 bg-slate-50 space-y-2">
+            <p><strong>1. ผลงานขั้นต่ำ:</strong> ผ่านเป้าหมาย FYC ประจำเดือนไม่น้อยกว่า 75% ของโควต้ารายเดือน (เมื่อเข้าเดือนที่ 13+ จะต้องถึง 100%)</p>
+            <p><strong>2. Rider Ratio:</strong> มีสัดส่วนเบี้ยสัญญาเพิ่มเติมขั้นต่ำ 10% ของเบี้ยหลัก (ยกเว้นกรณี Jumbo Case ที่เบี้ยสะสม >= 30,000)</p>
+            <p><strong>3. K2 ของกลุ่มงานตรง:</strong> ต้องอยู่ในสัดส่วนความคงอยู่ไม่ต่ำกว่า 80%</p>
+          </div>
+          <p class="text-xxs text-red-500 font-semibold">*หมายเหตุ: ไม่นับคำนวณสัดส่วนผลงานจากประกันอุบัติเหตุ PA และประกันภัยกลุ่ม</p>
+        </div>`;
+      }
+
+      // 11. AL Agency Development Quality Benefit
+      else if (type === 'al_development') {
+        title.innerText = "โบนัสพัฒนาตัวแทนใหม่ (AL Development Benefit)";
+        contentHtml += `<p class="text-xs text-slate-600">จ่ายตามสัดส่วนจำนวนสัญญางาน Active จากตัวแทนตรงในทีมที่มีโค้ดออกงานใน 6 เดือนแรก:</p>`;
+        
+        contentHtml += `<div class="border rounded-2xl overflow-hidden text-xs"><table class="w-full text-left">
+          <thead>
+            <tr class="bg-slate-100 font-bold text-slate-600">
+              <th class="p-3">จำนวน Active คึกคัก</th>
+              <th class="p-3">อัตราโบนัสจ่าย (AS / AM)</th>
+              <th class="p-3">อัตราโบนัสจ่าย (SM / DM)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="p-3 font-semibold">3 Active</td>
+              <td class="p-3 text-emerald-600 font-bold">10%</td>
+              <td class="p-3 text-slate-400">ยังไม่ถึงขั้นต่ำ</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-3 font-semibold">4 Active</td>
+              <td class="p-3 text-emerald-600 font-bold">15%</td>
+              <td class="p-3 text-slate-400">ยังไม่ถึงขั้นต่ำ</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-3 font-semibold">5 Active</td>
+              <td class="p-3 text-emerald-600 font-bold">20%</td>
+              <td class="p-3 text-indigo-600 font-bold">10%</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-3 font-semibold">6 Active</td>
+              <td class="p-3 text-slate-400">-</td>
+              <td class="p-3 text-indigo-600 font-bold">15%</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold">8 Active+</td>
+              <td class="p-3 text-slate-400">-</td>
+              <td class="p-3 text-indigo-600 font-bold">20%</td>
+            </tr>
+          </tbody></table></div>`;
+      }
+
+      // 12. GD Fixed Override
+      else if (type === 'gd_fixed') {
+        const gdRank = document.getElementById('select-gd-rank').value;
+        title.innerText = "ค่าบริหารกลุ่มตัวแทนคงที่ (GD Fixed Override)";
+        contentHtml += `<p class="text-xs text-slate-600">รับรายเดือนคงที่ระดับโครงสร้างผู้อำนวยการกลุ่มเมื่อผ่านโควตาสะสมรายไตรมาส:</p>`;
+        
+        const gdRanks = [
+          { rank: "JAGD", pay: 27500, quota: "4M ต่อปี" },
+          { rank: "AGD", pay: 40000, quota: "6M ต่อปี" },
+          { rank: "EAGD", pay: 52500, quota: "8M ต่อปี" },
+          { rank: "SEAGD", pay: 65000, quota: "10M ต่อปี" }
+        ];
+
+        contentHtml += `<div class="border rounded-2xl overflow-hidden text-xs"><table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-100 font-bold text-slate-600">
+              <th class="p-3">ระดับ GD</th>
+              <th class="p-3">เป้าโควต้า</th>
+              <th class="p-3 text-right">ค่าบริหารคงที่/เดือน</th>
+            </tr>
+          </thead>
+          <tbody>`;
+
+        gdRanks.forEach(r => {
+          const isActive = (r.rank === gdRank);
+          const activeClass = isActive ? "bg-amber-50 text-amber-900 border-l-4 border-amber-500 font-bold" : "border-b border-slate-100";
+          const badge = isActive ? '<span class="ml-1.5 px-1.5 py-0.5 text-[9px] bg-amber-500 text-white rounded-full font-bold">คุณ</span>' : '';
+          contentHtml += `<tr class="${activeClass}">
+            <td class="p-3">${r.rank} ${badge}</td>
+            <td class="p-3">${r.quota}</td>
+            <td class="p-3 text-right text-sm font-bold text-amber-800">${r.pay.toLocaleString()} บาท</td>
+          </tr>`;
+        });
+        contentHtml += `</tbody></table></div>`;
+      }
+
+      // 13. GD Variable Override
+      else if (type === 'gd_variable') {
+        const gdK2 = parseInt(document.getElementById('input-gd-k2-manual').value) || 0;
+        title.innerText = "ค่าบริหารผันแปรระดับกลุ่ม (GD Variable Override)";
+        contentHtml += `<p class="text-xs text-slate-600">วัดผลตามอัตราความยั่งยืนกรมธรรม์ K2 ของกลุ่มตรง ณ สิ้นเดือนนั้น ๆ:</p>`;
+        
+        const varTiers = [
+          { label: "ระงับ/แขวนผลประโยชน์", range: "ต่ำกว่า 50%", fyc: 0, ryc: 0 },
+          { label: "ระดับตั้งต้น K2 ต่ำ", range: "50% - 69.99%", fyc: 7.0, ryc: 4.5 },
+          { label: "ระดับมาตรฐาน K2 ปานกลาง", range: "70% - 79.99%", fyc: 8.0, ryc: 5.0 },
+          { label: "ระดับเกณฑ์ดี", range: "80% - 84.99%", fyc: 8.5, ryc: 5.5 },
+          { label: "ระดับความเลิศดีเด่น K2 สูง", range: "85% เป็นต้นไป", fyc: 9.0, ryc: 6.0 }
+        ];
+
+        contentHtml += `<div class="border rounded-2xl overflow-hidden text-xs"><table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-100 font-bold text-slate-600">
+              <th class="p-3">เกณฑ์ระดับ K2</th>
+              <th class="p-3">เปอร์เซ็นต์จ่าย FYC</th>
+              <th class="p-3">เปอร์เซ็นต์จ่าย RYC</th>
+            </tr>
+          </thead>
+          <tbody>`;
+
+        varTiers.forEach(t => {
+          let isActive = false;
+          if (t.range.includes("ต่ำกว่า 50") && gdK2 < 50) isActive = true;
+          else if (t.range.includes("50% - 69") && gdK2 >= 50 && gdK2 < 70) isActive = true;
+          else if (t.range.includes("70% - 79") && gdK2 >= 70 && gdK2 < 80) isActive = true;
+          else if (t.range.includes("80% - 84") && gdK2 >= 80 && gdK2 < 85) isActive = true;
+          else if (t.range.includes("85%") && gdK2 >= 85) isActive = true;
+
+          const activeClass = isActive ? "bg-amber-50 text-amber-900 border-l-4 border-amber-500 font-bold" : "border-b border-slate-100";
+          const badge = isActive ? '<span class="ml-1 py-0.5 px-1 bg-amber-500 text-white rounded-xs">คุณ</span>' : '';
+          contentHtml += `<tr class="${activeClass}">
+            <td class="p-3">${t.range} ${badge}</td>
+            <td class="p-3 font-semibold text-amber-800">${t.fyc}%</td>
+            <td class="p-3 font-semibold text-slate-600">${t.ryc}%</td>
+          </tr>`;
+        });
+        contentHtml += `</tbody></table></div>`;
+      }
+
+      // 14. GD Bonus
+      else if (type === 'gd_bonus') {
+        title.innerText = "โบนัสผู้บริหารกลุ่มไตรมาส (GD Bonus)";
+        contentHtml += `<p class="text-xs text-slate-600">สัดส่วนการคิดโบนัสจ่ายจาก FYC ทั้งกลุ่มตามอัตราตำแหน่งและสัดส่วนผลงานผ่านโควต้าสะสม:</p>`;
+        
+        contentHtml += `<div class="border rounded-2xl overflow-hidden text-xxs"><table class="w-full text-left">
+          <thead>
+            <tr class="bg-slate-100 text-slate-600 font-bold">
+              <th class="p-2">ยอดสะสมโควต้า</th>
+              <th class="p-2">JAGD</th>
+              <th class="p-2">AGD</th>
+              <th class="p-2">EAGD</th>
+              <th class="p-2">SEAGD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="p-2 font-semibold">75% โควต้า</td>
+              <td class="p-2">1%</td>
+              <td class="p-2">3%</td>
+              <td class="p-2">2%</td>
+              <td class="p-2">4%</td>
+            </tr>
+            <tr class="border-b bg-amber-50/20">
+              <td class="p-2 font-semibold text-amber-900">100% โควต้า</td>
+              <td class="p-2">5%</td>
+              <td class="p-2">4%</td>
+              <td class="p-2">3%</td>
+              <td class="p-2">2%</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-2 font-semibold">125% โควต้า</td>
+              <td class="p-2">4%</td>
+              <td class="p-2">6%</td>
+              <td class="p-2">5%</td>
+              <td class="p-2">3%</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-2 font-semibold">150% โควต้า</td>
+              <td class="p-2">4%</td>
+              <td class="p-2">5%</td>
+              <td class="p-2">6%</td>
+              <td class="p-2">7%</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-2 font-semibold">175% โควต้า</td>
+              <td class="p-2">6%</td>
+              <td class="p-2">8%</td>
+              <td class="p-2">7%</td>
+              <td class="p-2">5%</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-semibold">200% โควต้า</td>
+              <td class="p-2">7%</td>
+              <td class="p-2">9%</td>
+              <td class="p-2">8%</td>
+              <td class="p-2">6%</td>
+            </tr>
+          </tbody></table></div>`;
+        
+        contentHtml += `<div class="bg-blue-50 p-4 rounded-xl text-xs space-y-1 text-slate-600">
+          <p class="font-bold text-blue-900">💡 เงื่อนไขการรับโบนัส K2 ความเป็นเลิศ:</p>
+          <p>• หากความยั่งยืน <strong>K2 ของกลุ่มตรง >= 85%</strong> สิทธิโบนัสตัวนี้จะปรับจ่ายเพิ่มให้ขึ้นเป็น <strong>110% ของอัตราสัดส่วนปกติ</strong></p>
+        </div>`;
+      }
+
+      // 15. GD Development
+      else if (type === 'gd_dev') {
+        title.innerText = "ผลประโยชน์การพัฒนาตัวแทนระดับกลุ่ม GD";
+        contentHtml += `<p class="text-xs text-slate-600">นับยอด Active Recruit ในทีมงานเพื่อรับสิทธิ์จ่ายโบนัสจากเป้าหมาย FYC ของ New Code:</p>`;
+        
+        contentHtml += `<div class="border rounded-2xl overflow-hidden text-xs"><table class="w-full text-left">
+          <thead>
+            <tr class="bg-slate-100 font-bold text-slate-600">
+              <th class="p-3">เกณฑ์และโบนัสพัฒนา</th>
+              <th class="p-3">ระดับสัดส่วนจ่าย</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="p-3"><strong>ระดับขั้นต่ำ (2-3 Active):</strong> อัตราจ่ายพื้นฐาน New Code</td>
+              <td class="p-3 text-amber-700 font-bold">6% ของ FYC</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-3"><strong>ระดับปานกลาง (4-5 Active):</strong> อัตรากลาง</td>
+              <td class="p-3 text-amber-700 font-bold">8% ของ FYC</td>
+            </tr>
+            <tr>
+              <td class="p-3"><strong>ระดับสูงสุด (6-8 Active+):</strong> อัตราสูงสุด</td>
+              <td class="p-3 text-amber-700 font-bold">10% ของ FYC</td>
+            </tr>
+          </tbody></table></div>`;
+      }
+
+      body.innerHTML = contentHtml;
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeBonusDetailModal() {
+      const modal = document.getElementById('bonus-detail-modal');
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    // Default Initialization on Load
+    window.onload = function() {
+      // Set default values for Agent
+      document.getElementById('input-agent-fyc-manual').value = 35000;
+      document.getElementById('input-agent-fyc-mid-manual').value = 210000; // default 35k * 6
+      document.getElementById('input-agent-k2-manual').value = 85;
+      
+      // Set default values for AL
+      document.getElementById('input-al-fyc-manual').value = 65000;
+      document.getElementById('input-al-k2-manual').value = 75;
+
+      // Set default values for GD
+      document.getElementById('input-gd-fyc-manual').value = 7500000;
+      document.getElementById('input-gd-k2-manual').value = 85;
+
+      // Run Initial calculations
+      calculateAgentBenefits();
+      calculateALBenefits();
+      calculateGDBenefits();
+    };
+  </script>
+</body>
+</html>
