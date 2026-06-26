@@ -2333,15 +2333,6 @@
       calculateALBenefits();
       calculateGDBenefits();
     };
-    window.addEventListener('message', function(e) {
-      if (e.data && e.data.type === 'cash-theme') {
-        if (e.data.theme === 'light') {
-          document.body.classList.remove('luxury-gd');
-        } else {
-          document.body.classList.add('luxury-gd');
-        }
-      }
-    });
   </script>
 </body>
 </html>

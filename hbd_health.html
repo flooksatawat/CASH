@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday & Exclusive Gift Presentation</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Prompt -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&family=Noto+Serif+Thai:wght@700;800;900&family=Charmonman:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Three.js for 3D Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <style>
+        html {
+            font-size: 100%; /* mobile default */
+        }
+        @media (min-width: 768px) {
+            html { font-size: 112.5%; }
+        }
+
+        :root {
+            --gold-primary: #FFD700;
+            --gold-light: #FFE55C;
+            --gold-dark: #B8860B;
+            --dark-blue: #040814;
+            --glass-bg: rgba(4, 10, 28, 0.92);
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            max-width: 100vw;
+            background-color: var(--dark-blue);
+            color: white;
+            font-family: 'Prompt', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* 3D Canvas Background */
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 2rem;
+            box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255,255,255,0.1);
+        }
+
+        .text-gold { color: var(--gold-primary); }
+        .glow-gold { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+        .border-gold { border-color: var(--gold-primary); }
+        .bg-gold { background-color: var(--gold-primary); color: var(--dark-blue); }
+
+        /* ====================================================
+           Advanced 3D Interactive Text & Intro Animation
+        ==================================================== */
+        .hbd-3d-container {
+            perspective: 1500px;
+            transform-style: preserve-3d;
+            width: 100%;
+            z-index: 50;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hbd-wrapper-height {
+            height: 140px;
+        }
+        @media (min-width: 768px) {
+            .hbd-wrapper-height { height: 200px; }
+        }
+
+        /* Project Gift Box Cards */
+        .project-gift-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 0 1rem;
+            flex-wrap: wrap;
+        }
+        .project-gift-card {
+            flex: 0 0 clamp(110px, 40vw, 160px);
+            width: clamp(110px, 40vw, 160px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+        .project-gift-icon {
+            font-size: clamp(3rem, 10vw, 6rem);
+            color: #FFD700;
+            filter: drop-shadow(0 0 18px rgba(255,215,0,0.85));
+            transition: transform 0.3s ease, filter 0.3s ease;
+            animation: giftFloat 3s ease-in-out infinite;
+        }
+        .project-gift-card:nth-child(2) .project-gift-icon {
+            animation-delay: -1.5s;
+        }
+        @keyframes giftFloat {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+        .project-gift-card:hover .project-gift-icon {
+            filter: drop-shadow(0 0 40px rgba(255,215,0,1));
+            transform: scale(1.15) rotate(0deg) !important;
+            animation-play-state: paused;
+        }
+        .project-gift-label {
+            margin-top: 1rem;
+            font-size: clamp(0.85rem, 2vw, 1.1rem);
+            font-weight: 700;
+            color: var(--gold-primary);
+            letter-spacing: 0.05em;
+            text-align: center;
+            white-space: normal;
+        }
+        .project-gift-sublabel {
+            font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+            color: rgba(255,255,255,0.55);
+            text-align: center;
+            margin-top: 0.25rem;
+        }
+        .project-gift-card.pop-out .project-gift-icon {
+            animation: giftExplode 0.5s forwards ease-in;
+        }
+
+        /* Intro Gift Animation Classes */
+        .gift-intro {
+            animation: dropInGift 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes dropInGift {
+            0% { transform: translateY(-100px) scale(0); opacity: 0; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        .gift-pop-out {
+            animation: giftExplode 0.5s forwards ease-in;
+        }
+        @keyframes giftExplode {
+            0% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 30px rgba(255,215,0,0.8)); }
+            40% { transform: scale(1.2) rotate(-10deg); opacity: 1; filter: drop-shadow(0 0 60px rgba(255,215,0,1)); }
+            100% { transform: scale(2.5) rotate(15deg); opacity: 0; filter: drop-shadow(0 0 100px rgba(255,215,0,0)); visibility: hidden; }
+        }
+
+        /* Text Pop In Animation */
+        .text-pop-in {
+            animation: textBounceIn 1.2s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes textBounceIn {
+            0% { transform: scale(0) translateZ(-200px); opacity: 0; }
+            100% { transform: scale(1) translateZ(0); opacity: 1; }
+        }
+
+        #hbd-3d-wrapper {
+            transform-style: preserve-3d;
+            will-change: transform;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .hbd-3d-text {
+            font-family: 'Charmonman', serif;
+            font-size: clamp(2.5rem, 10vw, 7rem);
+            font-weight: 900;
+            line-height: 1.1;
+            text-align: center;
+            transform-style: preserve-3d;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        /* Character 3D Wave Animation */
+        .hbd-char {
+            display: inline-block;
+            color: #FFE800;
+            -webkit-text-stroke: 1px #B8860B;
+            text-shadow:
+                0 2px 4px rgba(0, 0, 0, 0.6),
+                0 0 16px rgba(255, 215, 0, 0.5);
+            transform-style: preserve-3d;
+        }
+        .hbd-char.wave {
+            animation: wave3D 3.5s ease-in-out 1;
+            animation-delay: calc(var(--i) * 0.12s);
+        }
+
+        @keyframes wave3D {
+            0%, 100% { 
+                transform: translateZ(20px) translateY(0px);
+            }
+            50% {
+                transform: translateZ(70px) translateY(-15px);
+                color: #FFFFFF;
+                text-shadow:
+                    0 1px 0 #d19a00, 0 2px 0 #c28f00, 0 3px 0 #b38400, 0 4px 0 #a47900, 
+                    0 5px 0 #956e00, 0 6px 0 #866300, 0 7px 0 #775800, 0 8px 0 #684d00,
+                    0 25px 25px rgba(0, 0, 0, 0.9),
+                    0 0 40px rgba(255, 215, 0, 0.9);
+            }
+        }
+
+        .hbd-crown {
+            font-size: 3rem;
+            color: #FFD700;
+            transform-style: preserve-3d;
+            filter: drop-shadow(0 15px 15px rgba(0,0,0,0.8)) drop-shadow(0 0 25px rgba(255,215,0,0.9));
+            animation: floatCrown3D 4s ease-in-out infinite;
+        }
+        @media (min-width: 768px) {
+            .hbd-crown { font-size: 4rem; }
+        }
+        @keyframes floatCrown3D {
+            0%, 100% { transform: translateZ(50px) translateY(0px) rotateY(-20deg) rotateX(10deg); }
+            50% { transform: translateZ(100px) translateY(-25px) rotateY(20deg) rotateX(-10deg) scale(1.15); }
+        }
+
+        /* Photo Slider */
+        .photo-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            padding: 0.5rem 1.5rem 1rem;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .photo-slider::-webkit-scrollbar { display: none; }
+
+        /* 3D Flipping Photo Cards */
+        .img-upload-box {
+            flex: 0 0 72vw;
+            max-width: 300px;
+            aspect-ratio: 4 / 5;
+            border-radius: 1.5rem;
+            cursor: pointer;
+            perspective: 1500px;
+            z-index: 10;
+            scroll-snap-align: center;
+            container-type: inline-size;
+        }
+
+        .img-card-inner {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border-radius: 1.5rem;
+        }
+
+        .img-upload-box.flipped .img-card-inner {
+            transform: rotateY(180deg) scale(1.05);
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.5);
+        }
+
+        .img-front, .img-back {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            background-color: var(--dark-blue);
+        }
+
+        .img-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #0A1128, #1a264a);
+            border-color: var(--gold-primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 5%;
+        }
+
+        .uploaded-img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            z-index: 5;
+        }
+
+        /* Smart Auto-Scaling Text for Greetings on Mobile */
+        .greeting-icon {
+            font-size: 16cqi;
+            margin-bottom: 4cqi;
+            color: var(--gold-primary);
+        }
+        .greeting-title {
+            white-space: nowrap !important;
+            font-size: 9cqi;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 2cqi;
+            letter-spacing: 0.5px;
+        }
+        .greeting-desc {
+            white-space: nowrap !important;
+            font-size: 6cqi;
+            font-weight: 500;
+            color: var(--gold-primary);
+        }
+
+        /* Custom Button */
+        .btn-gold {
+            background: linear-gradient(135deg, #FFD700, #FDB931);
+            color: #040814;
+            font-weight: 800;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+        }
+        .btn-gold:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
+        }
+
+        /* View Transitions */
+        .view-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        .view-section.active {
+            display: block;
+            opacity: 1;
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ADL Animation Classes */
+        .adl-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+        }
+        .adl-item {
+            text-align: center;
+            padding: 0.4rem;
+            border-radius: 1rem;
+            background: rgba(255,255,255,0.03);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.6rem;
+        }
+        .adl-item i {
+            font-size: 0.9rem;
+            margin-bottom: 0.15rem;
+            color: #a0aec0;
+            transition: all 0.4s ease;
+        }
+        .adl-item.highlighted {
+            background: rgba(255, 215, 0, 0.12);
+            border-color: var(--gold-primary);
+            transform: scale(1.08);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+        .adl-item.highlighted i {
+            color: var(--gold-primary);
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.9));
+        }
+        .claim-banner {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: none;
+        }
+        .claim-banner.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            display: flex;
+        }
+
+        /* OAD Flow Arrows */
+        .path-arrow-container {
+            height: 40px;
+            width: 10px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .path-arrow {
+            width: 2px;
+            height: 0px;
+            background: var(--gold-primary);
+            position: relative;
+            transition: height 0.8s ease-in-out;
+        }
+        .path-arrow::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: -4px;
+            border-width: 5px 5px 0;
+            border-style: solid;
+            border-color: var(--gold-primary) transparent transparent transparent;
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+        .path-arrow.grow {
+            height: 40px;
+        }
+        .path-arrow.grow::after {
+            opacity: 1;
+            transition-delay: 0.8s;
+        }
+
+        /* OAD Animation Classes */
+        .oad-step {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .oad-step.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .btn-replay {
+            background: rgba(255, 215, 0, 0.08);
+            color: var(--gold-primary);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s;
+        }
+        .btn-replay:hover {
+            background: var(--gold-primary);
+            color: var(--dark-blue);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* ====================================================
+           Mobile Overflow Fixes
+        ==================================================== */
+        @media (max-width: 767px) {
+            * { box-sizing: border-box; }
+            img, svg { max-width: 100%; }
+
+            /* Reduce glass panel padding on mobile */
+            .glass-panel { padding: 1rem !important; }
+
+            /* Allow long text to wrap */
+            .whitespace-nowrap { white-space: normal !important; overflow-wrap: break-word; }
+
+            /* Gift label allow wrap */
+            .project-gift-label { white-space: normal !important; font-size: 0.9rem !important; }
+
+            /* Reduce ADL icon size */
+            .adl-item i { font-size: 0.85rem; }
+
+            /* Cost counter */
+            #cost-counter { font-size: clamp(1.5rem, 8vw, 2.5rem) !important; }
+
+            /* Ensure all section wrappers clip */
+            #view-home, #view-health, #view-legacy {
+                overflow-x: hidden;
+                width: 100%;
+            }
+
+            /* Health/Legacy step grids: stack vertically on mobile */
+            #view-health .grid-cols-2,
+            #view-legacy .grid-cols-2 {
+                grid-template-columns: 1fr !important;
+            }
+            #view-health .grid,
+            #view-legacy .grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Limit graphic sizes */
+            #view-health .max-w-\[120px\],
+            #view-health .max-w-\[220px\],
+            #view-health .max-w-\[280px\],
+            #view-legacy .max-w-\[120px\],
+            #view-legacy .max-w-\[220px\],
+            #view-legacy .max-w-\[280px\] {
+                max-width: 160px !important;
+                margin: 0 auto;
+            }
+
+            /* Prevent OPM tooltip overflow */
+            [class*="w-96"] { width: min(90vw, 22rem) !important; }
+        }
+
+        /* Smart Vertical Scroll Classes */
+        .health-step {
+            scroll-margin-top: 140px;
+            transition: opacity 0.6s, transform 0.6s;
+            opacity: 0.2;
+            transform: translateY(30px);
+        }
+        .health-step.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Metallic Gold Gradient & Glow Definition -->
+    <svg style="width:0; height:0; position:absolute;">
+        <defs>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF9D0" />
+                <stop offset="50%" stop-color="#FFD700" />
+                <stop offset="100%" stop-color="#B8860B" />
+            </linearGradient>
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- 3D Background Canvas (Three.js) -->
+    <div id="canvas-container"></div>
+
+    <!-- Main Content Wrapper -->
+    <div class="relative z-10 min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
+        
+        <!-- ==========================================
+             SECTION 1 & 2: HBD & Projects (HOME VIEW)
+             ========================================== -->
+        <div id="view-home" class="view-section w-full max-w-5xl my-auto">
+            
+            <div class="glass-panel p-6 md:p-12 mb-8 text-center mt-6">
+                
+                <!-- Advanced Interactive 3D HBD Engine & Surprise Gift Animation -->
+                <div class="hbd-3d-container relative hbd-wrapper-height flex items-center justify-center">
+                    
+                    <!-- 1. INTRO GIFT BOX -->
+                    <div id="gift-intro-container" class="absolute z-50 flex flex-col items-center justify-center gift-intro">
+                        <i class="fas fa-gift text-5xl md:text-6xl text-gold drop-shadow-[0_0_30px_rgba(255,215,0,0.8)] animate-pulse"></i>
+                    </div>
+
+                    <!-- 2. HBD TEXT WRAPPER (Pops out after gift opens) -->
+                    <div id="hbd-anim-container" class="absolute w-full flex flex-col items-center opacity-0 scale-0 z-40">
+                        <div id="hbd-3d-wrapper" class="flex flex-col items-center">
+                            <!-- Diamond defs -->
+                            <svg width="0" height="0" style="position:absolute;pointer-events:none">
+                                <defs>
+                                    <filter id="dm-glow" x="-40%" y="-40%" width="180%" height="180%">
+                                        <feGaussianBlur stdDeviation="3" result="b"/>
+                                        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                    </filter>
+                                </defs>
+                            </svg>
+                            <!-- Diamond above text -->
+                            <svg class="hbd-crown block mb-3" viewBox="0 0 100 82" style="width:clamp(3rem,10vw,6rem);height:auto;overflow:visible" filter="url(#dm-glow)">
+                                <polygon points="18,14 5,38 30,38" fill="#5a3800"/>
+                                <polygon points="18,14 30,38 50,38 50,14" fill="#FFF0A0"/>
+                                <polygon points="50,14 50,38 70,38 82,14" fill="#FFD700"/>
+                                <polygon points="82,14 70,38 95,38" fill="#B8860B"/>
+                                <polygon points="5,38 30,38 50,80" fill="#3d2800"/>
+                                <polygon points="30,38 50,38 50,80" fill="#8B6914"/>
+                                <polygon points="50,38 70,38 50,80" fill="#DAA520"/>
+                                <polygon points="70,38 95,38 50,80" fill="#FFD700"/>
+                                <polygon points="18,14 82,14 95,38 50,80 5,38" fill="none" stroke="#FFD700" stroke-width="2" stroke-linejoin="round"/>
+                                <line x1="5" y1="38" x2="95" y2="38" stroke="#FFD700" stroke-width="1.5"/>
+                                <line x1="18" y1="14" x2="30" y2="38" stroke="#FFD700" stroke-width="1.5"/>
+                                <line x1="50" y1="14" x2="50" y2="38" stroke="#FFD700" stroke-width="1.5"/>
+                                <line x1="82" y1="14" x2="70" y2="38" stroke="#FFD700" stroke-width="1.5"/>
+                                <line x1="30" y1="38" x2="50" y2="80" stroke="#FFD700" stroke-width="1.5"/>
+                                <line x1="50" y1="38" x2="50" y2="80" stroke="#FFD700" stroke-width="1.5"/>
+                                <line x1="70" y1="38" x2="50" y2="80" stroke="#FFD700" stroke-width="1.5"/>
+                                <circle cx="26" cy="24" r="2.5" fill="white" opacity="0.9" filter="url(#dm-glow)"/>
+                            </svg>
+                            <h1 class="hbd-3d-text tracking-wider flex justify-center items-center" onclick="triggerWave()" style="cursor:pointer">
+                                <span class="hbd-char" style="--i:1">สุ</span>
+                                <span class="hbd-char" style="--i:2">ข</span>
+                                <span class="hbd-char" style="--i:3">สัน</span>
+                                <span class="hbd-char" style="--i:4">ต์</span>
+                                <span class="hbd-char" style="--i:5">วัน</span>
+                                <span class="hbd-char" style="--i:6">เกิด</span>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Spacer to allow 3D Cake backdrop placement -->
+                <div class="h-6 md:h-12 w-full"></div>
+
+                <!-- 3D FLIPPING PHOTO CARDS SLIDER -->
+                <div class="photo-slider mb-4 relative z-20" id="photo-slider">
+
+                    <!-- Card 1 -->
+                    <div class="img-upload-box" >
+                        <div class="img-card-inner">
+                            <div class="img-front flex flex-col items-center justify-center">
+                                <img src="./1.jpg" class="uploaded-img" alt="Gallery 1">
+                            </div>
+                            <div class="img-back pointer-events-none">
+                                <i class="fas fa-birthday-cake greeting-icon animate-bounce"></i>
+                                <h3 class="greeting-title drop-shadow-md">สุขสันต์วันเกิด</h3>
+                                <p class="greeting-desc">ขอให้มีความสุขมากๆ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="img-upload-box" >
+                        <div class="img-card-inner">
+                            <div class="img-front flex flex-col items-center justify-center">
+                                <img src="./2.jpg" class="uploaded-img" alt="Gallery 2">
+                            </div>
+                            <div class="img-back pointer-events-none">
+                                <i class="fas fa-gem greeting-icon animate-bounce"></i>
+                                <h3 class="greeting-title drop-shadow-md">ความสุขเปี่ยมล้น</h3>
+                                <p class="greeting-desc">สมหวังในทุกสิ่งที่ปรารถนา</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="img-upload-box" >
+                        <div class="img-card-inner">
+                            <div class="img-front flex flex-col items-center justify-center">
+                                <img src="./3.jpg" class="uploaded-img" alt="Gallery 3">
+                            </div>
+                            <div class="img-back pointer-events-none">
+                                <i class="fas fa-star greeting-icon animate-bounce"></i>
+                                <h3 class="greeting-title drop-shadow-md">ความสำเร็จ</h3>
+                                <p class="greeting-desc">ก้าวหน้าและมั่งคั่งตลอดไป</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="img-upload-box" >
+                        <div class="img-card-inner">
+                            <div class="img-front flex flex-col items-center justify-center">
+                                <img src="./4.jpg" class="uploaded-img" alt="Gallery 4">
+                            </div>
+                            <div class="img-back pointer-events-none">
+                                <i class="fas fa-coins greeting-icon animate-bounce"></i>
+                                <h3 class="greeting-title drop-shadow-md">ร่ำรวยเงินทอง</h3>
+                                <p class="greeting-desc">โชคดีและมีชัยในทุกก้าวเดิน</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="img-upload-box" >
+                        <div class="img-card-inner">
+                            <div class="img-front flex flex-col items-center justify-center">
+                                <img src="./5.jpg" class="uploaded-img" alt="Gallery 5">
+                            </div>
+                            <div class="img-back pointer-events-none">
+                                <i class="fas fa-heart greeting-icon animate-bounce"></i>
+                                <h3 class="greeting-title drop-shadow-md">เปี่ยมด้วยความรัก</h3>
+                                <p class="greeting-desc">แวดล้อมด้วยคนที่รักและหวังดี</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="img-upload-box" >
+                        <div class="img-card-inner">
+                            <div class="img-front flex flex-col items-center justify-center">
+                                <img src="./6.jpg" class="uploaded-img" alt="Gallery 6">
+                            </div>
+                            <div class="img-back pointer-events-none">
+                                <i class="fas fa-crown greeting-icon animate-bounce"></i>
+                                <h3 class="greeting-title drop-shadow-md">สุดยอดผู้นำ</h3>
+                                <p class="greeting-desc">ขอให้สุขภาพแข็งแรง</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Gift Reveal -->
+                    <div class="img-upload-box" id="card-gift-reveal" onclick="flipGiftCard(this)" style="cursor:pointer;">
+                        <div class="img-card-inner">
+                            <div class="img-front flex flex-col items-center justify-center" style="background: linear-gradient(135deg, #0a1128, #1a264a); padding: 1rem;">
+                                <i class="fas fa-gift" style="font-size: clamp(3rem,10cqi,4rem); color: #FFD700; filter: drop-shadow(0 0 18px rgba(255,215,0,0.85)); animation: giftFloat 3s ease-in-out infinite; margin-bottom: 0.75rem;"></i>
+                                <p style="font-size: clamp(1rem,6cqi,1.3rem); font-weight: 800; color: white; text-align: center; line-height: 1.5; margin-bottom: 0.5rem;">ขอมอบ 2 โครงการพิเศษ<br>แทนคำขอบคุณ<br>ทุกคำอวยพร</p>
+                                <p style="font-size: clamp(0.75rem,4cqi,0.9rem); color: rgba(255,215,0,0.7); text-align: center;">แตะเพื่อเปิดของขวัญ</p>
+                            </div>
+                            <div class="img-back" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.5rem; padding:1rem;">
+                                <div class="project-gift-card" id="gift-health" onclick="event.stopPropagation(); openProjectGift('gift-health','view-health')" style="width:100%; flex:none;">
+                                    <i class="fas fa-gift project-gift-icon" style="font-size:clamp(2.8rem,12cqi,4rem);"></i>
+                                    <p class="project-gift-label" style="font-size:clamp(0.8rem,4.5cqi,1.05rem);">กองทุนสุขภาพ</p>
+                                    <p class="project-gift-sublabel" style="font-size:clamp(0.65rem,3cqi,0.8rem);">แตะเพื่อเปิดของขวัญ</p>
+                                </div>
+                                <div class="project-gift-card" id="gift-legacy" onclick="event.stopPropagation(); openProjectGift('gift-legacy','view-legacy')" style="width:100%; flex:none;">
+                                    <i class="fas fa-gift project-gift-icon" style="font-size:clamp(2.8rem,12cqi,4rem); animation-delay:-1.5s;"></i>
+                                    <p class="project-gift-label" style="font-size:clamp(0.8rem,4.5cqi,1.05rem);">กองทุนเงินสด</p>
+                                    <p class="project-gift-sublabel" style="font-size:clamp(0.65rem,3cqi,0.8rem);">แตะเพื่อเปิดของขวัญ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             SECTION 3: HEALTH FUND VIEW (SCROLLABLE)
+             ========================================== -->
+        <div id="view-health" class="view-section active w-full max-w-5xl mt-2 mb-6">
+            <div class="glass-panel p-4 md:p-8 relative flex flex-col items-center">
+
+                <!-- HEADER -->
+                <div class="w-full text-center mb-5">
+                    <i class="fas fa-heartbeat text-3xl text-gold mb-2 drop-shadow-lg animate-pulse"></i>
+                    <h2 class="text-2xl md:text-4xl font-extrabold text-gold drop-shadow-sm">กองทุนสุขภาพ</h2>
+                </div>
+
+                <!-- SCROLLABLE CONTENT AREA -->
+                <div class="w-full max-w-4xl flex flex-col space-y-8 pb-6" id="health-scroll-container">
+                    
+                    <!-- STEP 1 -->
+                    <div id="health-step-1" class="health-step">
+                        <div class="grid grid-cols-2 gap-4 items-center bg-white/5 p-4 md:p-6 rounded-3xl border border-white/10">
+                            <div>
+                                <span class="bg-blue-500/25 text-blue-300 border border-blue-500/40 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">ความจำเป็นสูงสุด</span>
+                                <h3 class="text-sm md:text-3xl font-extrabold text-white mt-2 mb-2 leading-tight drop-shadow-md">ดูแลค่ารักษาพยาบาล <span class="text-gold glow-gold">"ตลอดชีวิต"</span></h3>
+                                <p class="text-gray-200 text-sm leading-relaxed drop-shadow-sm font-light">
+                                    การสร้างระบบสวัสดิการ ค่ารักษาพยาบาล<br>ระดับพรีเมียม ดูแลไปตลอดชีวิต<br><span class="text-gold font-bold">คือ เรื่องสำคัญที่ต้องเตรียมตั้งแต่วันนี้</span>
+                                </p>
+                            </div>
+                            <!-- Graphic: Lifelong Care -->
+                            <div class="flex justify-center">
+                                <div class="relative w-full max-w-[120px] md:max-w-[220px] aspect-square bg-blue-950/30 rounded-full border-4 border-white/5 p-3 flex items-center justify-center shadow-[0_0_40px_rgba(37,99,235,0.2)]">
+                                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                                        <defs>
+                                            <filter id="lifeGlow">
+                                                <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                            </filter>
+                                            <linearGradient id="infinityGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="#FFD700"/>
+                                                <stop offset="100%" stop-color="#FFF0A0"/>
+                                            </linearGradient>
+                                        </defs>
+
+                                        <!-- Rotating orbit ring — วงจรไม่สิ้นสุด -->
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,215,0,0.12)" stroke-width="1"/>
+                                        <circle cx="50" cy="50" r="40" fill="none" stroke="#FFD700" stroke-width="1.5"
+                                            stroke-dasharray="20 232" stroke-dashoffset="0" opacity="0.7">
+                                            <animateTransform attributeName="transform" type="rotate"
+                                                from="0 50 50" to="360 50 50" dur="4s" repeatCount="indefinite"/>
+                                        </circle>
+
+                                        <!-- Heart centered at 50,50 -->
+                                        <path d="M 50,78 C 50,78 22,60 22,44 C 22,34 30,28 38,28 C 44,28 49,32 50,37 C 51,32 56,28 62,28 C 70,28 78,34 78,44 C 78,60 50,78 50,78 Z"
+                                            fill="url(#goldGradient)" stroke="#FFD700" stroke-width="1.5" filter="url(#lifeGlow)">
+                                            <animate attributeName="opacity" values="1;0.85;1" dur="1s" repeatCount="indefinite"/>
+                                        </path>
+
+                                        <!-- สัญลักษณ์ ∞ วาดต่อเนื่องบนโล่ -->
+                                        <path id="inf-path"
+                                            d="M 37,50 C 37,44 41,41 45,44 C 49,47 51,53 55,56 C 59,59 63,56 63,50 C 63,44 59,41 55,44 C 51,47 49,53 45,56 C 41,59 37,56 37,50 Z"
+                                            fill="none" stroke="#040814" stroke-width="2.5" stroke-linecap="round"
+                                            stroke-dasharray="100" stroke-dashoffset="100">
+                                            <animate attributeName="stroke-dashoffset" values="100;0;0;100"
+                                                dur="3s" repeatCount="indefinite" keyTimes="0;0.5;0.75;1"/>
+                                        </path>
+
+                                        <!-- จุดทองวิ่งตาม infinity loop ไม่หยุด -->
+                                        <circle r="3" fill="#FFD700" opacity="0.9" filter="url(#lifeGlow)">
+                                            <animateMotion dur="3s" repeatCount="indefinite">
+                                                <mpath href="#inf-path"/>
+                                            </animateMotion>
+                                        </circle>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2 -->
+                    <div id="health-step-2" class="health-step">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white/5 p-6 md:p-8 rounded-3xl border border-white/10">
+                            <div class="order-2 lg:order-1">
+                                <span class="bg-red-500/25 text-red-300 border border-red-500/40 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">มูลค่าภาระจ่ายทิ้ง</span>
+                                <h3 class="text-xl md:text-4xl font-extrabold text-white mt-4 mb-4 leading-tight drop-shadow-md" style="white-space:nowrap;">รายจ่ายตลอดชีวิต</h3>
+                                <p class="text-gray-200 text-sm leading-relaxed drop-shadow-sm font-light">
+                                    หากต้องจ่ายประกันสุขภาพตลอดชีวิต<br>สะสมไปตลอด ยอดเงินจ่ายทิ้งสะสม<br>จะพุ่งสูงขึ้นเกินความคาดหมาย
+                                </p>
+                            </div>
+                            <!-- Graphic Cost Accumulator -->
+                            <div class="order-1 lg:order-2 flex justify-center">
+                                <div class="relative w-full max-w-[340px] bg-red-950/20 rounded-2xl border border-red-500/20 p-8 flex flex-col items-center justify-center shadow-inner">
+                                    <div class="text-red-400 text-3xl font-extrabold tracking-wider mb-3" id="cost-counter">฿0</div>
+                                    <span class="text-xs text-gray-400 uppercase tracking-widest font-bold text-center">เบี้ยรวมสะสมถึงช่วงสูงอายุ</span>
+                                    <div class="flex items-end space-x-4 w-4/5 h-32 mt-6">
+                                        <div class="bg-gray-700 w-full rounded-t-md h-[25%] shadow-inner"></div>
+                                        <div class="bg-gray-700 w-full rounded-t-md h-[55%] shadow-inner"></div>
+                                        <div id="cost-bar-final" class="bg-gradient-to-t from-red-600 to-red-400 shadow-[0_0_20px_rgba(239,68,68,0.6)] w-full rounded-t-md transition-all duration-1000 h-[0%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3 -->
+                    <div id="health-step-3" class="health-step">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white/5 p-6 md:p-8 rounded-3xl border border-white/10">
+                            <div class="order-2 lg:order-1">
+                                <span class="bg-gold/25 text-gold border border-gold/40 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">กลไกอัจฉริยะ</span>
+                                <h3 class="text-xl md:text-4xl font-extrabold text-white mt-4 mb-3 leading-tight drop-shadow-md">ใช้เงินสถาบันการเงินแทน<br><span class="text-gold glow-gold">"ด้วยแนวคิด OPM"</span></h3>
+                                <div class="w-full bg-[#0a0f1e] border border-gold/40 text-gray-200 text-sm font-normal leading-relaxed rounded-xl px-4 py-3 mb-3 shadow-[0_0_20px_rgba(255,215,0,0.15)]">
+                                    <span class="text-gold font-bold">OPM (Other People's Money)</span><br>
+                                    <span class="text-white font-semibold">"การใช้เงินของคนอื่น"</span><br><br>
+                                    คือกลยุทธ์ทางการเงินและการลงทุนที่เน้นการนำแหล่งเงินทุนภายนอกมาใช้สร้างผลตอบแทน โดยใช้เงินในกระเป๋าตัวเองให้น้อยที่สุด
+                                </div>
+                                <p class="text-gray-200 text-sm leading-relaxed drop-shadow-sm font-light">
+                                    แทนที่จะค่อยๆ เสียสละเงินตนเองจ่ายเบี้ยสะสมอย่างสิ้นเปลือง ให้เปลี่ยนแนวคิดมาใช้เงินสถาบันการเงินที่ถูกขยายมูลค่าแบบจัดเต็ม จ่ายประกันสุขภาพแทนเรา ตลอดชีวิต แบบการันตี
+                                </p>
+                            </div>
+                            <!-- Leverage orbital ring -->
+                            <div class="order-1 lg:order-2 flex justify-center">
+                                <div class="relative w-full max-w-[280px] aspect-square bg-yellow-950/10 rounded-full border-2 border-gold/20 p-4 flex items-center justify-center shadow-[0_0_30px_rgba(255,215,0,0.1)]">
+                                    <svg class="w-full h-full animate-[spin_20s_linear_infinite]" viewBox="0 0 100 100">
+                                        <circle cx="50" cy="50" r="32" fill="none" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="5 3"/>
+                                        <circle cx="50" cy="50" r="18" fill="none" stroke="#FFD700" stroke-width="2"/>
+                                        <circle cx="50" cy="18" r="6" fill="#040814" stroke="#FFD700" stroke-width="2"/>
+                                        <circle cx="78" cy="64" r="6" fill="#040814" stroke="#FFD700" stroke-width="2"/>
+                                        <circle cx="22" cy="64" r="6" fill="#040814" stroke="#FFD700" stroke-width="2"/>
+                                        <path d="M 50,38 L 50,62 M 38,50 L 62,50" stroke="#FFD700" stroke-width="2"/>
+                                    </svg>
+                                    <span class="absolute font-black text-base text-gold tracking-widest bg-[#040814] px-3 py-1.5 rounded-xl border border-gold shadow-[0_0_15px_rgba(255,215,0,0.4)]">OPM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4 -->
+                    <div id="health-step-4" class="health-step">
+                        <div class="bg-white/5 p-4 md:p-8 rounded-3xl border border-white/10">
+                            <span class="bg-green-500/25 text-green-300 border border-green-500/40 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">ผลลัพธ์มหาศาล</span>
+                            <h3 class="text-xl md:text-4xl font-extrabold text-white mt-3 mb-5 leading-tight drop-shadow-md" style="white-space:nowrap;">ปลดภาระอย่างถาวร</h3>
+
+                            <!-- Before / After Comparison Cards -->
+                            <div class="flex flex-col gap-4">
+                                <!-- Pair 1 -->
+                                <div class="rounded-2xl border border-white/10 overflow-hidden">
+                                    <div class="flex items-center gap-3 bg-red-900/20 border-b border-red-500/20 px-4 py-3">
+                                        <i class="fas fa-times-circle text-red-400 text-xl shrink-0"></i>
+                                        <span class="text-sm text-gray-300 line-through decoration-red-400/60">จ่ายประกันสุขภาพเองตลอดชีวิต</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 bg-green-900/15 px-4 py-3">
+                                        <i class="fas fa-check-circle text-green-400 text-xl shrink-0"></i>
+                                        <span class="text-sm text-gray-100">ได้ประกันสุขภาพ <strong class="text-gold">ฟรี ตลอดชีวิต</strong></span>
+                                    </div>
+                                </div>
+                                <!-- Pair 2 -->
+                                <div class="rounded-2xl border border-white/10 overflow-hidden">
+                                    <div class="flex items-center gap-3 bg-red-900/20 border-b border-red-500/20 px-4 py-3">
+                                        <i class="fas fa-times-circle text-red-400 text-xl shrink-0"></i>
+                                        <span class="text-sm text-gray-300 line-through decoration-red-400/60">รายจ่าย 3-10 ล้าน ที่ต้องจ่ายทิ้ง</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 bg-green-900/15 px-4 py-3">
+                                        <i class="fas fa-check-circle text-green-400 text-xl shrink-0"></i>
+                                        <span class="text-sm text-gray-100">มีเงินเก็บ เงินออม <strong class="text-gold">มูลค่าเพิ่มขึ้น</strong></span>
+                                    </div>
+                                </div>
+                                <!-- Pair 3 -->
+                                <div class="rounded-2xl border border-white/10 overflow-hidden">
+                                    <div class="flex items-center gap-3 bg-red-900/20 border-b border-red-500/20 px-4 py-3">
+                                        <i class="fas fa-times-circle text-red-400 text-xl shrink-0"></i>
+                                        <span class="text-sm text-gray-300 line-through decoration-red-400/60">มีภาระ มีค่าใช้จ่าย เสียภาษี</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 bg-green-900/15 px-4 py-3">
+                                        <i class="fas fa-check-circle text-green-400 text-xl shrink-0"></i>
+                                        <span class="text-gray-100" style="font-size:clamp(0.65rem,3vw,0.85rem); white-space:nowrap;"><strong class="text-gold">ปลอดภาระ ปลอดค่าใช้จ่าย ปลอดภาษี</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Comparison Table -->
+                <div class="w-full mt-6 rounded-2xl overflow-hidden border border-white/10">
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="bg-gray-700/70 text-gray-200 font-bold px-3 py-2.5 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">จ่ายทิ้งสะสม</th>
+                                <th colspan="3" class="bg-green-800/50 text-green-300 font-bold px-3 py-2.5 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">VS เงินเก็บ เงินออม (เฉลี่ยต่อปี)</th>
+                            </tr>
+                            <tr>
+                                <td class="bg-gray-800/60 text-gray-400 font-semibold px-3 py-2 border border-white/10" style="font-size:clamp(0.55rem,2vw,0.75rem);">ตลอดชีวิต</td>
+                                <td class="bg-green-900/40 text-green-300 font-bold px-3 py-2 border border-white/10" style="font-size:clamp(0.55rem,2vw,0.75rem);">10 ปี</td>
+                                <td class="bg-green-900/40 text-green-300 font-bold px-3 py-2 border border-white/10" style="font-size:clamp(0.55rem,2vw,0.75rem);">15 ปี</td>
+                                <td class="bg-green-900/40 text-green-300 font-bold px-3 py-2 border border-white/10" style="font-size:clamp(0.55rem,2vw,0.75rem);">20 ปี</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="bg-red-900/25 text-red-300 font-bold px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">3 ล้าน</td>
+                                <td class="bg-gray-800/30 text-gray-100 px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">3 แสน</td>
+                                <td class="bg-gray-800/30 text-gray-100 px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">2 แสน</td>
+                                <td class="bg-gray-800/30 text-gray-100 px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">1.5 แสน</td>
+                            </tr>
+                            <tr>
+                                <td class="bg-red-900/25 text-red-300 font-bold px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">5 ล้าน</td>
+                                <td class="bg-gray-900/40 text-gray-100 px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">5 แสน</td>
+                                <td class="bg-gray-900/40 text-gray-100 px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">3.5 แสน</td>
+                                <td class="bg-gray-900/40 text-gray-100 px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">2.5 แสน</td>
+                            </tr>
+                            <tr>
+                                <td class="bg-red-900/25 text-red-300 font-bold px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">10 ล้าน</td>
+                                <td class="bg-gray-800/30 text-gray-100 px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">1 ล้าน</td>
+                                <td class="bg-gray-800/30 text-gray-100 px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">6.5 แสน</td>
+                                <td class="bg-gray-800/30 text-gray-100 px-3 py-3 border border-white/10" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">5 แสน</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- ==========================================
+             SECTION 4: LEGACY / EMERGENCY FUND VIEW
+             ========================================== -->
+        <div id="view-legacy" class="view-section w-full max-w-5xl mt-10 mb-20">
+            <div class="glass-panel p-6 md:p-12">
+                <div class="text-center mb-8">
+                    <i class="fas fa-shield-alt text-4xl text-gold mb-3 drop-shadow-lg animate-pulse"></i>
+                    <h2 class="text-2xl md:text-4xl font-extrabold text-gold drop-shadow-sm">กองทุนเงินสด</h2>
+                    <p class="text-lg mt-2 text-gray-200 font-light">เปลี่ยนเงินก้อนเดิม<br>เพิ่มมูลค่าเป็นกองทุนเงินสด<br>พร้อมรับมือ 3 เหตุฉุกเฉิน</p>
+                </div>
+
+                <!-- Legacy Box -->
+                <div class="mb-6 p-5 bg-gradient-to-r from-yellow-900/40 to-yellow-700/20 border border-gold/50 rounded-3xl flex items-center gap-4 shadow-[0_0_30px_rgba(255,215,0,0.15)]">
+                    <i class="fas fa-landmark text-gold text-2xl shrink-0"></i>
+                    <p class="text-gold font-extrabold text-lg md:text-xl tracking-wide">สร้างกองทุนเงินสด / มรดก มูลค่า... <span class="text-yellow-300">อายุ 100 ปี</span></p>
+                </div>
+
+                <!-- Legacy Fund Table -->
+                <div class="mb-8 w-full rounded-2xl overflow-hidden border border-gold/30">
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="bg-yellow-900/60 text-gold font-bold px-3 py-2 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">กองทุนเงินสด</th>
+                                <th class="bg-yellow-900/40 text-yellow-200 font-bold px-3 py-2 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">อายุ 40</th>
+                                <th class="bg-yellow-900/40 text-yellow-200 font-bold px-3 py-2 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">อายุ 50</th>
+                                <th class="bg-yellow-900/40 text-yellow-200 font-bold px-3 py-2 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">อายุ 60</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="bg-gray-800/40 text-gold font-bold px-3 py-3 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">5 ล้าน</td>
+                                <td class="bg-gray-800/20 text-gray-100 px-3 py-3 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">8X,XXX - 2.2 แสน</td>
+                                <td class="bg-gray-800/20 text-gray-100 px-3 py-3 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">1.1 แสน - 3.1 แสน</td>
+                                <td class="bg-gray-800/20 text-gray-100 px-3 py-3 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">1.9 แสน - 4.2 แสน</td>
+                            </tr>
+                            <tr>
+                                <td class="bg-gray-900/40 text-gold font-bold px-3 py-3 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">10 ล้าน</td>
+                                <td class="bg-gray-900/20 text-gray-100 px-3 py-3 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">1.4 แสน - 4.5 แสน</td>
+                                <td class="bg-gray-900/20 text-gray-100 px-3 py-3 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">2.2 แสน - 6.2 แสน</td>
+                                <td class="bg-gray-900/20 text-gray-100 px-3 py-3 border border-gold/20" style="font-size:clamp(0.6rem,2.5vw,0.8rem);">3.9 แสน - 8.5 แสน</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Emergency 1 -->
+                <div class="mb-8 p-5 bg-red-900/25 border border-red-500/40 rounded-3xl">
+                    <h3 class="font-bold text-red-400 mb-2" style="white-space:nowrap; font-size:clamp(0.75rem,4vw,1.25rem);"><i class="fas fa-exclamation-triangle mr-2"></i>ฉุกเฉิน 1 : การเจ็บป่วยระยะสุดท้าย</h3>
+                    <p class="text-gray-200 text-sm">หากแพทย์วินิจฉัยว่าไม่มีทางรักษาให้หายได้และไม่สามารถอยู่ได้เกิน 12 เดือน <span class="text-gold font-semibold">ให้ทายาทหรือครอบครัวรับเงินก้อนก่อนล่วงหน้า</span> เพื่อใช้ดูแลตัวเอง เพราะประกันสุขภาพไม่จ่ายค่ารักษาพยาบาลการเจ็บป่วยระยะสุดท้าย ต้องกลับมาที่บ้าน ใช้เงินตนเอง</p>
+                </div>
+
+                <!-- Emergency 2: ADLs Animation -->
+                <div class="mb-8 p-5 bg-blue-900/25 border border-blue-500/40 rounded-3xl relative overflow-hidden">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div>
+                            <h3 class="font-bold text-blue-400 mb-2" style="white-space:nowrap; font-size:clamp(0.75rem,4vw,1.25rem);"><i class="fas fa-wheelchair mr-2"></i>ฉุกเฉิน 2: ทุพพลภาพ "รับเงินสด"</h3>
+                            <p class="text-gray-200 text-sm">หากไม่สามารถช่วยเหลือตัวเองในการปฏิบัติกิจวัตรประจำวัน <span class="text-gold font-semibold">3 ใน 6 อย่าง</span> รับเงินก้อนก่อนล่วงหน้าทันที<br><span class="text-gray-400 text-xs">** บริษัทส่วนใหญ่ ยกเว้นการจ่าย เท่านั้น</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="adl-grid mb-6" id="adl-container">
+                        <div class="adl-item" id="adl-1">
+                            <i class="fas fa-bed"></i><br><span class="font-medium">เคลื่อนย้าย<br>(Mobility)</span>
+                        </div>
+                        <div class="adl-item" id="adl-2">
+                            <i class="fas fa-walking"></i><br><span class="font-medium">เคลื่อนที่<br>(Walking)</span>
+                        </div>
+                        <div class="adl-item" id="adl-3">
+                            <i class="fas fa-tshirt"></i><br><span class="font-medium">แต่งกาย<br>(Dressing)</span>
+                        </div>
+                        <div class="adl-item" id="adl-4">
+                            <i class="fas fa-shower"></i><br><span class="font-medium">อาบน้ำ<br>(Bathing)</span>
+                        </div>
+                        <div class="adl-item" id="adl-5">
+                            <i class="fas fa-utensils"></i><br><span class="font-medium">ทานอาหาร<br>(Eating)</span>
+                        </div>
+                        <div class="adl-item" id="adl-6">
+                            <i class="fas fa-toilet"></i><br><span class="font-medium">ขับถ่าย<br>(Toileting)</span>
+                        </div>
+                    </div>
+
+                    <!-- Animation Logic Result Banner -->
+                    <div id="claim-banner" class="claim-banner w-full bg-gradient-to-r from-yellow-600 to-yellow-50 text-gray-900 py-3 px-3 rounded-xl items-center justify-center font-bold shadow-[0_0_30px_rgba(255,215,0,0.4)] border-2 border-white overflow-hidden">
+                        <div class="flex flex-col items-center gap-1" style="font-size:clamp(0.7rem,3.5vw,0.95rem);">
+                            <div class="flex items-center justify-center gap-2 flex-nowrap">
+                                <div class="flex -space-x-1 shrink-0" id="claim-icons">
+                                    <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-yellow-600 shadow-md z-30" style="font-size:10px;"><i class="fas fa-tshirt"></i></div>
+                                    <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-yellow-600 shadow-md z-20" style="font-size:10px;"><i class="fas fa-shower"></i></div>
+                                    <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-yellow-600 shadow-md z-10" style="font-size:10px;"><i class="fas fa-utensils"></i></div>
+                                </div>
+                                <span class="shrink-0">เข้าเงื่อนไข 3 ใน 6 อย่าง</span>
+                                <i class="fas fa-plus text-white drop-shadow-md shrink-0"></i>
+                            </div>
+                            <div class="flex items-center justify-center gap-2 flex-nowrap">
+                                <span id="calendar-anim" class="bg-white text-yellow-600 px-2 py-0.5 rounded shadow-inner shrink-0 transform scale-0 transition-transform duration-500 delay-300"><i class="far fa-calendar-alt mr-1"></i>180 วัน</span>
+                                <i class="fas fa-equals text-white drop-shadow-md shrink-0"></i>
+                                <span class="text-black drop-shadow-lg font-extrabold shrink-0 animate-pulse">เข้าเงื่อนไขรับเงินสด!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TPD Special Benefit — side by side -->
+                    <div class="mt-4 rounded-xl border border-gold/30 bg-[#0a0f1e] overflow-hidden">
+                        <!-- Header -->
+                        <div class="bg-gradient-to-r from-yellow-700/80 to-yellow-500/60 px-3 py-2 text-center">
+                            <p class="text-gold font-extrabold leading-snug" style="font-size:12px;">สิทธิประโยชน์พิเศษ จ่ายเพิ่มเป็น 2 เท่า</p>
+                            <p class="text-yellow-100 mt-0.5" style="font-size:10px;">ทุพพลภาพ จาก <span class="font-bold">ขนส่งสาธารณะ</span> (ขณะเป็นผู้โดยสาร)</p>
+                        </div>
+                        <!-- Two columns always side by side via inline grid -->
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(255,215,0,0.1);">
+                            <!-- Included -->
+                            <div style="background:#0d1a0d; padding:8px; min-width:0;">
+                                <div class="flex items-center gap-1 mb-1.5">
+                                    <div class="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center shrink-0"><i class="fas fa-check text-white" style="font-size:7px;"></i></div>
+                                    <span class="font-bold text-green-400" style="font-size:11px;">คุ้มครอง</span>
+                                </div>
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px; text-align:center;">
+                                    <div style="background:rgba(20,83,45,0.4); border-radius:8px; padding:6px 2px;">
+                                        <i class="fas fa-train text-green-400 block" style="font-size:16px; margin-bottom:2px;"></i>
+                                        <span class="text-gray-200" style="font-size:9px;">รถไฟ</span>
+                                    </div>
+                                    <div style="background:rgba(20,83,45,0.4); border-radius:8px; padding:6px 2px;">
+                                        <i class="fas fa-subway text-green-400 block" style="font-size:16px; margin-bottom:2px;"></i>
+                                        <span class="text-gray-200" style="font-size:9px;">รถไฟฟ้า</span>
+                                    </div>
+                                    <div style="background:rgba(20,83,45,0.4); border-radius:8px; padding:6px 2px;">
+                                        <i class="fas fa-bus text-green-400 block" style="font-size:16px; margin-bottom:2px;"></i>
+                                        <span class="text-gray-200" style="font-size:9px;">รถโดยสาร</span>
+                                    </div>
+                                    <div style="background:rgba(20,83,45,0.4); border-radius:8px; padding:6px 2px;">
+                                        <i class="fas fa-taxi text-green-400 block" style="font-size:16px; margin-bottom:2px;"></i>
+                                        <span class="text-gray-200" style="font-size:9px;">แท็กซี่</span>
+                                    </div>
+                                    <div style="background:rgba(20,83,45,0.4); border-radius:8px; padding:6px 2px;">
+                                        <i class="fas fa-ship text-green-400 block" style="font-size:16px; margin-bottom:2px;"></i>
+                                        <span class="text-gray-200" style="font-size:9px;">เรือสาธารณะ</span>
+                                    </div>
+                                    <div style="background:rgba(20,83,45,0.4); border-radius:8px; padding:6px 2px;">
+                                        <i class="fas fa-plane text-green-400 block" style="font-size:16px; margin-bottom:2px;"></i>
+                                        <span class="text-gray-200" style="font-size:9px;">เครื่องบิน</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Excluded -->
+                            <div style="background:#1a0d0d; padding:8px; min-width:0;">
+                                <div class="flex items-center gap-1 mb-1.5">
+                                    <div class="w-4 h-4 rounded-full bg-red-500 flex items-center justify-center shrink-0"><i class="fas fa-times text-white" style="font-size:7px;"></i></div>
+                                    <span class="font-bold text-red-400" style="font-size:11px;">ไม่คุ้มครอง</span>
+                                </div>
+                                <div style="display:flex; flex-direction:column; gap:4px;">
+                                    <div style="display:flex; align-items:center; gap:6px; background:rgba(127,29,29,0.3); border-radius:6px; padding:5px 6px;">
+                                        <i class="fas fa-car text-red-400 shrink-0" style="font-size:12px; width:14px; text-align:center;"></i>
+                                        <span class="text-gray-300" style="font-size:9px; white-space:nowrap;">รถเช่า/รับจ้างส่วนตัว</span>
+                                    </div>
+                                    <div style="display:flex; align-items:center; gap:6px; background:rgba(127,29,29,0.3); border-radius:6px; padding:5px 6px;">
+                                        <i class="fas fa-motorcycle text-red-400 shrink-0" style="font-size:12px; width:14px; text-align:center;"></i>
+                                        <span class="text-gray-300" style="font-size:9px;">มอเตอร์ไซค์วิน</span>
+                                    </div>
+                                    <div style="display:flex; align-items:center; gap:6px; background:rgba(127,29,29,0.3); border-radius:6px; padding:5px 6px;">
+                                        <i class="fas fa-horse-head text-red-400 shrink-0" style="font-size:12px; width:14px; text-align:center;"></i>
+                                        <span class="text-gray-300" style="font-size:9px;">รถสามล้อ</span>
+                                    </div>
+                                    <div style="display:flex; align-items:center; gap:6px; background:rgba(127,29,29,0.3); border-radius:6px; padding:5px 6px;">
+                                        <i class="fas fa-plane-departure text-red-400 shrink-0" style="font-size:12px; width:14px; text-align:center;"></i>
+                                        <span class="text-gray-300" style="font-size:9px;">เครื่องบินส่วนตัว</span>
+                                    </div>
+                                    <div style="display:flex; align-items:center; gap:6px; background:rgba(127,29,29,0.3); border-radius:6px; padding:5px 6px;">
+                                        <i class="fas fa-helicopter text-red-400 shrink-0" style="font-size:12px; width:14px; text-align:center;"></i>
+                                        <span class="text-gray-300" style="font-size:9px;">เฮลิคอปเตอร์</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer note -->
+                        <div class="px-3 py-1.5 bg-yellow-900/20 text-center text-yellow-200" style="font-size:9px;">
+                            <i class="fas fa-exclamation-triangle text-yellow-400 mr-1"></i>ไม่รวมอุบัติเหตุที่เกิดบนป้ายรถโดยสาร สถานี หรือท่าเรือ
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency 3: Old Age -->
+                <div class="mb-8 p-5 bg-green-900/25 border border-green-500/40 rounded-3xl relative overflow-hidden">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div>
+                            <h3 class="font-bold text-green-400 mb-2" style="white-space:nowrap; font-size:clamp(0.75rem,4vw,1.25rem);"><i class="fas fa-blind mr-2"></i>ฉุกเฉิน 3: หลังอายุ 71 ชราภาพ</h3>
+                            <p class="text-gray-200 text-sm">เช่น ล้มป่วยด้วยโรคชรา ไม่สามารถอาบน้ำ แต่งตัว และรับประทานอาหารเองได้ ต่อเนื่องเกิน 180 วัน <span class="text-gold font-semibold">รับเงินสด</span></p>
+                        </div>
+                    </div>
+
+                    <div class="adl-grid mb-6" id="adl3-container">
+                        <div class="adl-item" id="adl3-1"><i class="fas fa-bed"></i><br><span class="font-medium">เคลื่อนย้าย<br>(Mobility)</span></div>
+                        <div class="adl-item" id="adl3-2"><i class="fas fa-walking"></i><br><span class="font-medium">เคลื่อนที่<br>(Walking)</span></div>
+                        <div class="adl-item" id="adl3-3"><i class="fas fa-tshirt"></i><br><span class="font-medium">แต่งกาย<br>(Dressing)</span></div>
+                        <div class="adl-item" id="adl3-4"><i class="fas fa-shower"></i><br><span class="font-medium">อาบน้ำ<br>(Bathing)</span></div>
+                        <div class="adl-item" id="adl3-5"><i class="fas fa-utensils"></i><br><span class="font-medium">ทานอาหาร<br>(Eating)</span></div>
+                        <div class="adl-item" id="adl3-6"><i class="fas fa-toilet"></i><br><span class="font-medium">ขับถ่าย<br>(Toileting)</span></div>
+                    </div>
+
+                    <div id="claim-banner-3" class="claim-banner w-full bg-gradient-to-r from-green-700 to-green-100 text-gray-900 py-3 px-3 rounded-xl items-center justify-center font-bold shadow-[0_0_30px_rgba(74,222,128,0.4)] border-2 border-white overflow-hidden">
+                        <div class="flex flex-col items-center gap-1" style="font-size:clamp(0.7rem,3.5vw,0.95rem);">
+                            <div class="flex items-center justify-center gap-2 flex-nowrap">
+                                <div class="flex -space-x-1 shrink-0">
+                                    <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-green-600 shadow-md z-30" style="font-size:10px;"><i class="fas fa-tshirt"></i></div>
+                                    <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-green-600 shadow-md z-20" style="font-size:10px;"><i class="fas fa-shower"></i></div>
+                                    <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-green-600 shadow-md z-10" style="font-size:10px;"><i class="fas fa-utensils"></i></div>
+                                </div>
+                                <span class="shrink-0">เข้าเงื่อนไข 3 ใน 6 อย่าง</span>
+                                <i class="fas fa-plus text-white drop-shadow-md shrink-0"></i>
+                            </div>
+                            <div class="flex items-center justify-center gap-2 flex-nowrap">
+                                <span id="calendar-anim-3" class="bg-white text-green-600 px-2 py-0.5 rounded shadow-inner shrink-0 transform scale-0 transition-transform duration-500 delay-300"><i class="far fa-calendar-alt mr-1"></i>180 วัน</span>
+                                <i class="fas fa-equals text-white drop-shadow-md shrink-0"></i>
+                                <span class="text-black drop-shadow-lg font-extrabold shrink-0 animate-pulse">เข้าเงื่อนไขรับเงินสด!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer: other gift + back button -->
+                <div class="w-full mt-8 flex flex-col items-center gap-4">
+                    <p class="text-gray-400 text-sm">ยังมีอีกหนึ่งของขวัญรออยู่</p>
+                    <div class="project-gift-card" onclick="switchView('view-health')" style="width:min(340px,90vw); cursor:pointer; padding:2rem 1.5rem;">
+                        <i class="fas fa-gift project-gift-icon" style="font-size:clamp(3rem,14cqi,4.5rem);"></i>
+                        <p class="project-gift-label" style="font-size:clamp(1.1rem,6cqi,1.4rem);">กองทุนสุขภาพ</p>
+                        <p class="project-gift-sublabel" style="font-size:clamp(0.8rem,3.5cqi,1rem);">แตะเพื่อเปิดของขวัญ</p>
+                    </div>
+                    <div class="flex justify-end w-full mt-2">
+                        <button onclick="switchView('view-home')" class="text-gray-300 hover:text-gold font-semibold transition flex items-center bg-white/5 px-4 py-2 rounded-xl border border-white/10 hover:border-gold/30 text-sm">
+                            <i class="fas fa-arrow-left mr-2"></i> ย้อนกลับ
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Interactions and 3D Animation -->
+    <script>
+        // Global Three.js variables
+        let targetZ = 30;
+        let targetY = 0;
+        let targetRotY = 0;
+        let globalSpeedMultiplier = 1;
+        let currentView = 'home';
+        let birthdayScale = 1.0; 
+
+        // Intro Animation Handlers
+        let giftPopTimeout, textPopTimeout;
+
+        function playHBDAnimation() {
+            clearTimeout(giftPopTimeout);
+            clearTimeout(textPopTimeout);
+
+            const gift = document.getElementById('gift-intro-container');
+            const textContainer = document.getElementById('hbd-anim-container');
+
+            if(gift && textContainer) {
+                // Reset text
+                textContainer.classList.remove('text-pop-in');
+                textContainer.style.opacity = '0';
+                textContainer.style.transform = 'scale(0)';
+
+                // Re-trigger drop-in animation
+                gift.classList.remove('gift-pop-out', 'gift-intro');
+                gift.style.opacity = '1';
+                gift.style.visibility = 'visible';
+                void gift.offsetWidth; // force reflow
+                gift.classList.add('gift-intro');
+
+                // Pop after drop-in animation (0.8s) completes
+                giftPopTimeout = setTimeout(forcePopGift, 900);
+            }
+        }
+
+        function forcePopGift() {
+            clearTimeout(giftPopTimeout);
+            clearTimeout(textPopTimeout);
+
+            const gift = document.getElementById('gift-intro-container');
+            const textContainer = document.getElementById('hbd-anim-container');
+
+            if (gift && !gift.classList.contains('gift-pop-out')) {
+                gift.classList.add('gift-pop-out');
+
+                // Show HBD text after gift bursts — no loop
+                textPopTimeout = setTimeout(() => {
+                    if(textContainer) {
+                        textContainer.classList.add('text-pop-in');
+                    }
+                }, 300);
+            }
+        }
+
+        // Wave animation on tap (run once)
+        function triggerWave() {
+            document.querySelectorAll('.hbd-char').forEach(el => {
+                el.classList.remove('wave');
+                void el.offsetWidth;
+                el.classList.add('wave');
+            });
+        }
+
+        // Photo slider auto-scroll + auto flip each card — stops at last card
+        (function() {
+            const slider = document.getElementById('photo-slider');
+            if (!slider) return;
+            const cards = Array.from(slider.querySelectorAll('.img-upload-box'));
+            let current = 0;
+            const last = cards.length - 1;
+
+            function flipAndScroll() {
+                if (current >= last) return;
+                current++;
+                cards[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+                const card = cards[current];
+                // only flip photo cards, not the gift reveal card
+                if (current < last) {
+                    card.classList.add('flipped');
+                    setTimeout(() => card.classList.remove('flipped'), 2000);
+                }
+            }
+
+            setInterval(flipAndScroll, 3500);
+        })();
+
+        // Flip card 7 (gift reveal card)
+        function flipGiftCard(card) {
+            card.classList.toggle('flipped');
+        }
+
+        // Project Gift Box Open
+        function openProjectGift(cardId, viewId) {
+            const card = document.getElementById(cardId);
+            if (!card || card.classList.contains('pop-out')) return;
+            card.classList.add('pop-out');
+            setTimeout(() => switchView(viewId), 480);
+        }
+
+        // View Navigation
+        function switchView(viewId) {
+            document.querySelectorAll('.view-section').forEach(el => {
+                el.classList.remove('active');
+                el.style.display = 'none';
+            });
+            
+            const target = document.getElementById(viewId);
+            target.style.display = 'block';
+            
+            // Background Adjustments & View Identifiers
+            if (viewId === 'view-home') {
+                currentView = 'home';
+                targetZ = 30; targetY = 0; targetRotY = 0; globalSpeedMultiplier = 1.0;
+                stopVideoSimulation();
+                if(healthObserver) healthObserver.disconnect();
+                
+                // Replay Gift animation on return home
+                playHBDAnimation();
+
+                // Reset project gift boxes
+                ['gift-health','gift-legacy'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.classList.remove('pop-out');
+                });
+                const giftCard = document.getElementById('card-gift-reveal');
+                if (giftCard) giftCard.classList.remove('flipped');
+                
+            } else if (viewId === 'view-health') {
+                currentView = 'health';
+                targetZ = 18; targetY = 6; targetRotY = Math.PI / 4; globalSpeedMultiplier = 1.6;
+                initHealthScrollObserver();
+            } else if (viewId === 'view-legacy') {
+                currentView = 'legacy';
+                targetZ = 24; targetY = -4; targetRotY = -Math.PI / 4; globalSpeedMultiplier = 0.6;
+                stopVideoSimulation();
+                if(healthObserver) healthObserver.disconnect();
+                
+                setTimeout(() => {
+                    runADLAnimationSequence();
+                    runADL3AnimationSequence();
+                }, 800);
+            }
+            
+            setTimeout(() => {
+                target.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 50);
+        }
+
+        // Image Preview logic with Placeholders
+        function previewImage(input, imgId, placeholderId) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgElement = document.getElementById(imgId);
+                    imgElement.src = e.target.result;
+                    imgElement.style.display = 'block';
+                    
+                    if (placeholderId) {
+                        const phElement = document.getElementById(placeholderId);
+                        if (phElement) phElement.style.display = 'none';
+                    }
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // --- 3. Smart Scroll Intersection Observer Logic ---
+        let healthObserver;
+        let costAnimated = false;
+        let costInterval;
+
+        function initHealthScrollObserver() {
+            costAnimated = false;
+            if(healthObserver) healthObserver.disconnect();
+            
+            const options = {
+                root: null,
+                rootMargin: '-20% 0px -40% 0px',
+                threshold: 0
+            };
+
+            healthObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        const stepNum = parseInt(entry.target.id.replace('health-step-', ''));
+                        triggerHealthStepAnimation(stepNum);
+                    }
+                });
+            }, options);
+
+            document.querySelectorAll('.health-step').forEach(step => {
+                healthObserver.observe(step);
+            });
+        }
+
+        function triggerHealthStepAnimation(step) {
+            if (step === 2 && !costAnimated) {
+                animateCostCounter();
+                costAnimated = true;
+            }
+        }
+
+        function animateCostCounter() {
+            const counter = document.getElementById('cost-counter');
+            const costBar = document.getElementById('cost-bar-final');
+            const targets = [3000000, 5000000, 10000000];
+            const barHeights = ['60%', '80%', '100%'];
+            let cycleIndex = 0;
+
+            function runCycle() {
+                const targetVal = targets[cycleIndex];
+                const barH = barHeights[cycleIndex];
+                let val = 0;
+                const step = targetVal / 40;
+
+                costBar.style.height = '0%';
+                clearInterval(costInterval);
+
+                costInterval = setInterval(() => {
+                    val += step;
+                    if (val >= targetVal) {
+                        val = targetVal;
+                        clearInterval(costInterval);
+                        // next cycle after 1.5s pause
+                        setTimeout(() => {
+                            cycleIndex = (cycleIndex + 1) % targets.length;
+                            runCycle();
+                        }, 1500);
+                    }
+                    counter.innerText = `฿${Math.round(val).toLocaleString()}`;
+                }, 25);
+
+                setTimeout(() => { costBar.style.height = barH; }, 100);
+            }
+
+            runCycle();
+        }
+
+        // --- Premium Video Player Simulation (Step 4) ---
+        let isPlayingVideo = false;
+        let videoAnimFrame;
+        let videoProgress = 0;
+        let videoCanvas, ctx;
+
+        function initVideoCanvas() {
+            if(videoCanvas && ctx) return;
+            videoCanvas = document.getElementById('video-canvas');
+            if(!videoCanvas) return;
+            ctx = videoCanvas.getContext('2d');
+            videoCanvas.width = videoCanvas.offsetWidth;
+            videoCanvas.height = videoCanvas.offsetHeight;
+            drawPoster();
+        }
+
+        function drawPoster() {
+            if (!ctx) return;
+            ctx.fillStyle = '#020614';
+            ctx.fillRect(0, 0, videoCanvas.width, videoCanvas.height);
+            ctx.strokeStyle = 'rgba(255, 215, 0, 0.15)';
+            ctx.lineWidth = 1;
+            for(let i=0; i<videoCanvas.width; i+=25) {
+                ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, videoCanvas.height); ctx.stroke();
+            }
+            ctx.fillStyle = 'rgba(255, 215, 0, 0.05)';
+            ctx.beginPath(); ctx.arc(videoCanvas.width/2, videoCanvas.height/2, 45, 0, Math.PI*2); ctx.fill();
+        }
+
+        function toggleVideoSimulation() {
+            const playBtnIcon = document.getElementById('video-icon');
+            if (isPlayingVideo) {
+                stopVideoSimulation();
+            } else {
+                isPlayingVideo = true;
+                playBtnIcon.classList.remove('fa-play');
+                playBtnIcon.classList.add('fa-pause');
+                animateVideo();
+            }
+        }
+
+        function stopVideoSimulation() {
+            isPlayingVideo = false;
+            cancelAnimationFrame(videoAnimFrame);
+            const playBtnIcon = document.getElementById('video-icon');
+            if (playBtnIcon) {
+                playBtnIcon.classList.remove('fa-pause');
+                playBtnIcon.classList.add('fa-play');
+            }
+        }
+
+        function animateVideo() {
+            if (!isPlayingVideo) return;
+            
+            videoProgress += 0.35;
+            if (videoProgress >= 100) videoProgress = 0;
+            
+            const progressEl = document.getElementById('video-progress');
+            const timeEl = document.getElementById('video-time');
+            if (progressEl) progressEl.style.width = `${videoProgress}%`;
+            
+            const sec = Math.floor((videoProgress / 100) * 15);
+            if (timeEl) timeEl.innerText = `0:${sec < 10 ? '0' + sec : sec} / 0:15`;
+
+            ctx.fillStyle = '#020510';
+            ctx.fillRect(0, 0, videoCanvas.width, videoCanvas.height);
+            
+            const time = Date.now() * 0.005;
+            
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(255, 215, 0, 0.5)';
+            ctx.lineWidth = 3;
+            for(let x=0; x<videoCanvas.width; x++) {
+                const y = videoCanvas.height/2 + Math.sin(x*0.015 + time) * 20 * Math.sin(time*0.15);
+                if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(0, 180, 216, 0.4)';
+            ctx.lineWidth = 1.5;
+            for(let x=0; x<videoCanvas.width; x++) {
+                const y = videoCanvas.height/2 + Math.cos(x*0.03 + time*1.1) * 15;
+                if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            ctx.save();
+            ctx.translate(videoCanvas.width/2, videoCanvas.height/2);
+            ctx.rotate(time * 0.15);
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 2.5;
+            ctx.strokeRect(-12, -12, 24, 24);
+            ctx.restore();
+
+            videoAnimFrame = requestAnimationFrame(animateVideo);
+        }
+
+        // --- 5. ADL Automatic Animation Sequence ---
+        let adlAnimTimeout = [];
+
+        let adlShuffled = [];
+        let adlShuffleIndex = 0;
+
+        function adlNextTargets() {
+            if (adlShuffleIndex >= adlShuffled.length) {
+                const all = ['adl-1','adl-2','adl-3','adl-4','adl-5','adl-6'];
+                for (let i = all.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [all[i], all[j]] = [all[j], all[i]];
+                }
+                adlShuffled = [all.slice(0, 3), all.slice(3, 6)];
+                adlShuffleIndex = 0;
+            }
+            return adlShuffled[adlShuffleIndex++];
+        }
+
+        function runADLAnimationSequence() {
+            adlAnimTimeout.forEach(t => clearTimeout(t));
+            adlAnimTimeout = [];
+
+            document.querySelectorAll('#adl-container .adl-item').forEach(item => item.classList.remove('highlighted'));
+            const banner = document.getElementById('claim-banner');
+            const calendarAnim = document.getElementById('calendar-anim');
+            banner.classList.remove('show');
+            calendarAnim.style.transform = 'scale(0)';
+
+            const targets = adlNextTargets();
+            let timeAccumulator = 800;
+
+            targets.forEach((id) => {
+                adlAnimTimeout.push(setTimeout(() => {
+                    document.getElementById(id).classList.add('highlighted');
+                }, timeAccumulator));
+                timeAccumulator += 1200;
+            });
+
+            adlAnimTimeout.push(setTimeout(() => {
+                banner.classList.add('show');
+            }, timeAccumulator + 700));
+
+            adlAnimTimeout.push(setTimeout(() => {
+                calendarAnim.style.transform = 'scale(1)';
+            }, timeAccumulator + 1400));
+
+            adlAnimTimeout.push(setTimeout(() => {
+                runADLAnimationSequence();
+            }, timeAccumulator + 5000));
+        }
+
+        let adl3AnimTimeout = [];
+        let adl3ShuffleIndex = 0;
+        let adl3Shuffled = [];
+
+        function adl3NextTargets() {
+            if (adl3ShuffleIndex >= adl3Shuffled.length) {
+                const all = ['adl3-1','adl3-2','adl3-3','adl3-4','adl3-5','adl3-6'];
+                for (let i = all.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [all[i], all[j]] = [all[j], all[i]];
+                }
+                adl3Shuffled = [all.slice(0, 3), all.slice(3, 6)];
+                adl3ShuffleIndex = 0;
+            }
+            return adl3Shuffled[adl3ShuffleIndex++];
+        }
+
+        function runADL3AnimationSequence() {
+            adl3AnimTimeout.forEach(t => clearTimeout(t));
+            adl3AnimTimeout = [];
+
+            document.querySelectorAll('#adl3-container .adl-item').forEach(item => item.classList.remove('highlighted'));
+            const banner = document.getElementById('claim-banner-3');
+            const calendarAnim = document.getElementById('calendar-anim-3');
+            banner.classList.remove('show');
+            calendarAnim.style.transform = 'scale(0)';
+
+            const targets = adl3NextTargets();
+            let timeAccumulator = 800;
+
+            targets.forEach((id) => {
+                adl3AnimTimeout.push(setTimeout(() => {
+                    document.getElementById(id).classList.add('highlighted');
+                }, timeAccumulator));
+                timeAccumulator += 1200;
+            });
+
+            adl3AnimTimeout.push(setTimeout(() => {
+                banner.classList.add('show');
+            }, timeAccumulator + 700));
+
+            adl3AnimTimeout.push(setTimeout(() => {
+                calendarAnim.style.transform = 'scale(1)';
+            }, timeAccumulator + 1400));
+
+            adl3AnimTimeout.push(setTimeout(() => {
+                runADL3AnimationSequence();
+            }, timeAccumulator + 5000));
+        }
+
+        // --- 6. OAD Infographic Animation Logic ---
+        function playOADAnimationSequence() {
+            const step1 = document.getElementById('oad-step-1');
+            const arrow1 = document.getElementById('oad-arrow-1');
+            const step2 = document.getElementById('oad-step-2');
+            const arrow2 = document.getElementById('oad-arrow-2');
+            const step3 = document.getElementById('oad-step-3');
+            
+            step1.classList.remove('show'); step2.classList.remove('show'); step3.classList.remove('show');
+            arrow1.classList.remove('grow'); arrow2.classList.remove('grow');
+
+            setTimeout(() => { step1.classList.add('show'); }, 0);
+            setTimeout(() => { arrow1.classList.add('grow'); }, 900);
+            setTimeout(() => { step2.classList.add('show'); }, 1800);
+            setTimeout(() => { arrow2.classList.add('grow'); }, 2700);
+            setTimeout(() => { step3.classList.add('show'); }, 3600);
+        }
+
+        // --- 7. Three.js 3D Interactive Background + Birthday Assets ---
+        const initThreeJS = () => {
+            const container = document.getElementById('canvas-container');
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color('#030611');
+            
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 30;
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            container.appendChild(renderer.domElement);
+
+            // Ambient & Point lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+            scene.add(ambientLight);
+            
+            const pointLight1 = new THREE.PointLight(0xFFD700, 1.8, 100);
+            pointLight1.position.set(20, 20, 25);
+            scene.add(pointLight1);
+
+            const pointLight2 = new THREE.PointLight(0xffffff, 1.2, 100);
+            pointLight2.position.set(-20, -10, 15);
+            scene.add(pointLight2);
+
+            // Gold Particles
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = 1500;
+            const posArray = new Float32Array(particlesCount * 3);
+
+            for(let i = 0; i < particlesCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 120;
+            }
+
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+            const particleCanvas = document.createElement('canvas');
+            particleCanvas.width = 16; particleCanvas.height = 16;
+            const particleCtx = particleCanvas.getContext('2d');
+            const pGradient = particleCtx.createRadialGradient(8, 8, 0, 8, 8, 8);
+            pGradient.addColorStop(0, 'rgba(255, 215, 0, 1)');
+            pGradient.addColorStop(1, 'rgba(255, 215, 0, 0)');
+            particleCtx.fillStyle = pGradient;
+            particleCtx.fillRect(0, 0, 16, 16);
+            const particleTexture = new THREE.CanvasTexture(particleCanvas);
+
+            const particlesMaterial = new THREE.PointsMaterial({
+                size: 0.55, map: particleTexture, transparent: true, opacity: 0.8,
+                blending: THREE.AdditiveBlending, depthWrite: false
+            });
+
+            const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particlesMesh);
+
+            // Floating professional background elements (Standard meshes)
+            const abstractObjects = [];
+            const objMaterial = new THREE.MeshStandardMaterial({
+                color: 0xFFD700, metalness: 0.9, roughness: 0.15,
+                transparent: true, opacity: 0.25
+            });
+
+            for(let i=0; i<15; i++) {
+                const geometry = Math.random() > 0.5 ? new THREE.BoxGeometry(1.2, 1.2, 1.2) : new THREE.SphereGeometry(1, 16, 16);
+                const mesh = new THREE.Mesh(geometry, objMaterial);
+                mesh.position.x = (Math.random() - 0.5) * 80;
+                mesh.position.y = (Math.random() - 0.5) * 80;
+                mesh.position.z = (Math.random() - 0.5) * 50 - 15;
+                mesh.rotation.x = Math.random() * Math.PI;
+                mesh.rotation.y = Math.random() * Math.PI;
+                scene.add(mesh);
+                abstractObjects.push({
+                    mesh: mesh,
+                    rotSpeedX: (Math.random() - 0.5) * 0.015,
+                    rotSpeedY: (Math.random() - 0.5) * 0.015,
+                    floatSpeed: (Math.random() * 0.015) + 0.005
+                });
+            }
+
+            // --- ADVANCED 3D BIRTHDAY PRESENTATION ASSETS ---
+
+            // A. Luxury Birthday Cake Centerpiece
+            const cakeGroup = new THREE.Group();
+
+            // Cake Stand Base
+            const standMat = new THREE.MeshStandardMaterial({ color: 0xeeeeee, metalness: 0.5, roughness: 0.1 });
+            const standBase = new THREE.Mesh(new THREE.CylinderGeometry(1.6, 2.5, 1.8, 32), standMat);
+            standBase.position.y = -1.9;
+            cakeGroup.add(standBase);
+
+            const standPlate = new THREE.Mesh(new THREE.CylinderGeometry(4.8, 4.8, 0.4, 32), standMat);
+            standPlate.position.y = -0.9;
+            cakeGroup.add(standPlate);
+
+            // Cake Tier 1 (Base Chocolate)
+            const tier1Mat = new THREE.MeshStandardMaterial({ color: 0x4A2C11, roughness: 0.5 }); // rich chocolate
+            const tier1 = new THREE.Mesh(new THREE.CylinderGeometry(4.2, 4.2, 2.4, 32), tier1Mat);
+            tier1.position.y = 0.3;
+            cakeGroup.add(tier1);
+
+            // Golden Frosting Ring Tier 1
+            const goldMat = new THREE.MeshStandardMaterial({ color: 0xFFD700, metalness: 0.9, roughness: 0.15 });
+            const frosting1 = new THREE.Mesh(new THREE.CylinderGeometry(4.25, 4.25, 0.4, 32), goldMat);
+            frosting1.position.y = 1.3;
+            cakeGroup.add(frosting1);
+
+            // Cake Tier 2 (Cream Vanilla)
+            const tier2Mat = new THREE.MeshStandardMaterial({ color: 0xfffdd0, roughness: 0.4 }); // Creamy vanilla
+            const tier2 = new THREE.Mesh(new THREE.CylinderGeometry(3.0, 3.0, 1.8, 32), tier2Mat);
+            tier2.position.y = 2.0;
+            cakeGroup.add(tier2);
+
+            // Golden Frosting Ring Tier 2
+            const frosting2 = new THREE.Mesh(new THREE.CylinderGeometry(3.05, 3.05, 0.3, 32), goldMat);
+            frosting2.position.y = 2.8;
+            cakeGroup.add(frosting2);
+
+            // Strawberries / Cherries topping
+            const berryGeo = new THREE.SphereGeometry(0.28, 16, 16);
+            const berryMat = new THREE.MeshStandardMaterial({ color: 0xD2143A, roughness: 0.25 });
+            for (let i = 0; i < 8; i++) {
+                const angle = (i / 8) * Math.PI * 2;
+                const berry = new THREE.Mesh(berryGeo, berryMat);
+                berry.position.set(Math.cos(angle) * 3.6, 1.45, Math.sin(angle) * 3.6);
+                cakeGroup.add(berry);
+            }
+            for (let i = 0; i < 6; i++) {
+                const angle = (i / 6) * Math.PI * 2;
+                const berry = new THREE.Mesh(berryGeo, berryMat);
+                berry.position.set(Math.cos(angle) * 2.4, 2.95, Math.sin(angle) * 2.4);
+                cakeGroup.add(berry);
+            }
+
+            // Birthday Candles
+            const candleMat = new THREE.MeshStandardMaterial({ color: 0xFF1493, roughness: 0.2 }); // Neon Pink
+            const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 1.5, 16), candleMat);
+            candle.position.set(0, 3.6, 0);
+            cakeGroup.add(candle);
+
+            // Glowing Flame with flicker animation data
+            const flameMat = new THREE.MeshBasicMaterial({ color: 0xFF8C00 }); // Vibrant orange
+            const flame = new THREE.Mesh(new THREE.ConeGeometry(0.22, 0.6, 10), flameMat);
+            flame.position.set(0, 4.6, 0);
+            cakeGroup.add(flame);
+
+            // Scale & position cake to float optimally behind the title card
+            cakeGroup.position.set(0, -6.5, 4);
+            scene.add(cakeGroup);
+
+            // B. 3D Luxury Floating Metallic Balloons
+            const balloons = [];
+            const createBalloonMesh = (colorHex, x, y, z) => {
+                const balloonGroup = new THREE.Group();
+
+                // Balloon Main Body
+                const bodyGeo = new THREE.SphereGeometry(1.8, 32, 24);
+                bodyGeo.scale(1, 1.35, 1);
+                const bodyMat = new THREE.MeshStandardMaterial({
+                    color: colorHex, metalness: 0.95, roughness: 0.1, envMapIntensity: 1.5
+                });
+                const bodyMesh = new THREE.Mesh(bodyGeo, bodyMat);
+                balloonGroup.add(bodyMesh);
+
+                // Balloon Knot
+                const knotMesh = new THREE.Mesh(new THREE.ConeGeometry(0.25, 0.5, 8), bodyMat);
+                knotMesh.position.y = -2.4;
+                knotMesh.rotation.z = Math.PI;
+                balloonGroup.add(knotMesh);
+
+                // Balloon String
+                const stringMesh = new THREE.Mesh(
+                    new THREE.CylinderGeometry(0.02, 0.02, 7, 8),
+                    new THREE.MeshBasicMaterial({ color: 0xcccccc, transparent: true, opacity: 0.6 })
+                );
+                stringMesh.position.y = -5.9;
+                balloonGroup.add(stringMesh);
+
+                balloonGroup.position.set(x, y, z);
+                scene.add(balloonGroup);
+
+                balloons.push({
+                    group: balloonGroup,
+                    baseX: x, baseY: y, baseZ: z,
+                    swayOffset: Math.random() * Math.PI * 2,
+                    swaySpeed: 1.2 + Math.random() * 1.4
+                });
+            };
+
+            createBalloonMesh(0xFFD700, -11, 4, 6);  // Golden Balloon
+            createBalloonMesh(0xE0E0E0, -13, 1, 4);  // Silver Balloon
+            createBalloonMesh(0xB8860B, 11, 3, 6);   // Dark Gold Balloon
+            createBalloonMesh(0xE0A96D, 13, 0, 4);   // Rose Gold Balloon
+
+            // C. 3D Floating Wrapping Gift Boxes
+            const gifts = [];
+            const createGiftMesh = (boxColor, ribbonColor, x, y, z) => {
+                const giftGroup = new THREE.Group();
+
+                const boxMesh = new THREE.Mesh(
+                    new THREE.BoxGeometry(1.4, 1.4, 1.4),
+                    new THREE.MeshStandardMaterial({ color: boxColor, roughness: 0.3 })
+                );
+                giftGroup.add(boxMesh);
+
+                const ribbonMat = new THREE.MeshStandardMaterial({ color: ribbonColor, metalness: 0.6, roughness: 0.2 });
+                const ribbonX = new THREE.Mesh(new THREE.BoxGeometry(1.45, 0.2, 1.45), ribbonMat);
+                const ribbonY = new THREE.Mesh(new THREE.BoxGeometry(0.2, 1.45, 1.45), ribbonMat);
+                giftGroup.add(ribbonX);
+                giftGroup.add(ribbonY);
+
+                giftGroup.position.set(x, y, z);
+                scene.add(giftGroup);
+
+                gifts.push({
+                    group: giftGroup,
+                    baseX: x, baseY: y, baseZ: z,
+                    rotX: (Math.random() - 0.5) * 0.02,
+                    rotY: (Math.random() - 0.5) * 0.02,
+                    floatOffset: Math.random() * Math.PI
+                });
+            };
+
+            createGiftMesh(0xD2143A, 0xFFD700, -6, -6, 5); // Red Box
+            createGiftMesh(0x1F51FF, 0xffffff, 6, -7, 5);  // Neon Blue Box
+
+            // D. 3D Falling Shiny Confetti Tumbles
+            const confettiGroup = new THREE.Group();
+            const confettiCount = 140;
+            const confettiColors = [0xFFD700, 0xC0C0C0, 0xFF1493, 0x00FFFF, 0x32CD32, 0xFF4500];
+            const confettiData = [];
+
+            const confettiGeo = new THREE.PlaneGeometry(0.55, 0.28);
+            for(let i=0; i<confettiCount; i++) {
+                const confMat = new THREE.MeshStandardMaterial({
+                    color: confettiColors[Math.floor(Math.random() * confettiColors.length)],
+                    side: THREE.DoubleSide,
+                    roughness: 0.2,
+                    metalness: 0.6
+                });
+                const confMesh = new THREE.Mesh(confettiGeo, confMat);
+                confMesh.position.set(
+                    (Math.random() - 0.5) * 70,
+                    Math.random() * 50 - 20,
+                    (Math.random() - 0.5) * 40
+                );
+                confMesh.rotation.set(
+                    Math.random() * Math.PI,
+                    Math.random() * Math.PI,
+                    Math.random() * Math.PI
+                );
+                confettiGroup.add(confMesh);
+
+                confettiData.push({
+                    mesh: confMesh,
+                    speedY: 0.08 + Math.random() * 0.1,
+                    rotSpeedX: (Math.random() - 0.5) * 0.06,
+                    rotSpeedY: (Math.random() - 0.5) * 0.06,
+                    rotSpeedZ: (Math.random() - 0.5) * 0.06,
+                    waveOffset: Math.random() * Math.PI * 2
+                });
+            }
+            scene.add(confettiGroup);
+
+
+            // Mouse interactions track variables
+            let mouseX = 0; let mouseY = 0;
+            let currentX = 0; let currentY = 0;
+
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+                mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+            });
+
+            const clock = new THREE.Clock();
+
+            // Render loop with smooth transitions and wind sway simulation
+            const animate = () => {
+                requestAnimationFrame(animate);
+                const elapsedTime = clock.getElapsedTime();
+
+                // Dynamic camera views interpolation based on current active section
+                camera.position.z += (targetZ - camera.position.z) * 0.04;
+                camera.position.y += (targetY - camera.position.y) * 0.04;
+                scene.rotation.y += (targetRotY - scene.rotation.y) * 0.04;
+
+                currentX += (mouseX * 4 - currentX) * 0.05;
+                currentY += (mouseY * 4 - currentY) * 0.05;
+
+                // ** DOM HBD Text float only — no tilt **
+                if(currentView === 'home') {
+                    const hbdDOM = document.getElementById('hbd-3d-wrapper');
+                    if(hbdDOM) {
+                        const floatY = Math.sin(elapsedTime * 1.5) * 6;
+                        hbdDOM.style.transform = `translateY(${floatY}px)`;
+                    }
+                }
+
+                // Slowly rotate background particles & abstract elements
+                particlesMesh.rotation.y += 0.0008 * globalSpeedMultiplier + (currentX - particlesMesh.rotation.y) * 0.005;
+                particlesMesh.rotation.x += 0.0005 * globalSpeedMultiplier + (currentY - particlesMesh.rotation.x) * 0.005;
+                
+                const positions = particlesGeometry.attributes.position.array;
+                for(let i = 1; i < particlesCount * 3; i += 3) {
+                    positions[i] -= 0.018 * globalSpeedMultiplier;
+                    if (positions[i] < -60) positions[i] = 60;
+                }
+                particlesGeometry.attributes.position.needsUpdate = true;
+
+                abstractObjects.forEach(obj => {
+                    obj.mesh.rotation.x += obj.rotSpeedX;
+                    obj.mesh.rotation.y += obj.rotSpeedY;
+                    obj.mesh.position.y += Math.sin(elapsedTime * obj.floatSpeed) * 0.04;
+                });
+
+                // INTERPOLATE SCALE TRANSITION FOR HBD 3D ASSETS
+                const targetScale = (currentView === 'home') ? 1.0 : 0.0;
+                birthdayScale += (targetScale - birthdayScale) * 0.08;
+
+                cakeGroup.scale.set(birthdayScale, birthdayScale, birthdayScale);
+                confettiGroup.scale.set(birthdayScale, birthdayScale, birthdayScale);
+                balloons.forEach(b => b.group.scale.set(birthdayScale, birthdayScale, birthdayScale));
+                gifts.forEach(g => g.group.scale.set(birthdayScale, birthdayScale, birthdayScale));
+
+                // Process active HBD assets animations
+                if (birthdayScale > 0.01) {
+                    // 1. Candle Flame flicker
+                    const scaleFlicker = 1.0 + Math.sin(elapsedTime * 25.0) * 0.08;
+                    flame.scale.set(scaleFlicker, scaleFlicker + (Math.cos(elapsedTime * 15.0) * 0.05), scaleFlicker);
+
+                    // 2. Interactive Sway of Balloons
+                    balloons.forEach(b => {
+                        const t = elapsedTime * b.swaySpeed;
+                        let swayX = Math.sin(t + b.swayOffset) * 0.4;
+                        let swayZ = Math.cos(t + b.swayOffset) * 0.4;
+
+                        const pushX = currentX * 1.5;
+                        const pushY = currentY * 1.5;
+
+                        b.group.position.x = b.baseX + swayX + pushX * 0.4;
+                        b.group.position.z = b.baseZ + swayZ - pushY * 0.4;
+                        b.group.position.y = b.baseY + Math.sin(t * 0.5) * 0.25;
+
+                        b.group.rotation.z = (swayX + pushX * 0.08) * 0.12;
+                        b.group.rotation.x = (swayZ - pushY * 0.08) * 0.12;
+                    });
+
+                    // 3. Falling Shiny Confetti tumble logic
+                    confettiData.forEach(c => {
+                        c.mesh.position.y -= c.speedY * globalSpeedMultiplier;
+                        c.mesh.position.x += Math.sin(elapsedTime * 2.5 + c.waveOffset) * 0.025;
+                        
+                        c.mesh.rotation.x += c.rotSpeedX;
+                        c.mesh.rotation.y += c.rotSpeedY;
+                        c.mesh.rotation.z += c.rotSpeedZ;
+                        
+                        if(c.mesh.position.y < -35) {
+                            c.mesh.position.y = 35;
+                            c.mesh.position.x = (Math.random() - 0.5) * 70;
+                        }
+                    });
+
+                    // 4. Floating Gift boxes bobbing & tumble
+                    gifts.forEach(g => {
+                        g.group.rotation.x += g.rotX;
+                        g.group.rotation.y += g.rotY;
+                        g.group.position.y = g.baseY + Math.sin(elapsedTime * 1.5 + g.floatOffset) * 0.3;
+                    });
+
+                    // 5. Cake slow spinning focus
+                    cakeGroup.rotation.y = elapsedTime * 0.1;
+                }
+
+                renderer.render(scene, camera);
+            };
+
+            animate();
+
+            // Resize handle
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                
+                if(videoCanvas) {
+                    videoCanvas.width = videoCanvas.offsetWidth;
+                    videoCanvas.height = videoCanvas.offsetHeight;
+                    drawPoster();
+                }
+            });
+        };
+
+        // Initialize 3D & Play Intro Animation on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            initThreeJS();
+            playHBDAnimation();
+        });
+
+    </script>
+</body>
+</html>

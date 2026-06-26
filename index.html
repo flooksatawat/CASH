@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="th" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -32,6 +32,9 @@
             }
         }
     </script>
+    <script>
+        document.documentElement.classList.add('no-gsap');
+    </script>
     
     <style>
         body {
@@ -47,6 +50,782 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .hero-heading {
+            line-height: 1.6 !important;
+        }
+
+        @media (min-width: 640px) {
+            .hero-heading {
+                line-height: 1.55 !important;
+            }
+        }
+
+        .promo-summary h4 {
+            font-size: 1rem !important;
+            line-height: 1.65 !important;
+            padding-block: 0.12em !important;
+        }
+
+        .promo-summary #promo-cases {
+            font-size: 1.75rem !important;
+            line-height: 1 !important;
+        }
+
+        .promo-summary p,
+        .promo-summary .space-y-1\.5 > div,
+        .promo-summary [onclick^="toggleBonusDetails"] > span,
+        .promo-summary [id^="details-"],
+        .promo-summary .tracking-wide {
+            font-size: 0.8125rem !important;
+            line-height: 1.55 !important;
+        }
+
+        .promo-summary [onclick^="toggleBonusDetails"] > span:last-child,
+        .promo-summary .space-y-1\.5 > div > span:last-child {
+            font-size: 0.9375rem !important;
+            line-height: 1.35 !important;
+        }
+
+        .promo-summary #promo-first-month,
+        .promo-summary #promo-total {
+            font-size: 1.15em !important;
+        }
+
+        @media (min-width: 412px) {
+            .promo-summary h4 {
+                font-size: 1.125rem !important;
+                line-height: 1.65 !important;
+                padding-block: 0.12em !important;
+            }
+
+            .promo-summary #promo-cases {
+                font-size: 2rem !important;
+            }
+
+            .promo-summary p,
+            .promo-summary .space-y-1\.5 > div,
+            .promo-summary [onclick^="toggleBonusDetails"] > span,
+            .promo-summary [id^="details-"],
+            .promo-summary .tracking-wide {
+                font-size: 0.875rem !important;
+            }
+
+            .promo-summary [onclick^="toggleBonusDetails"] > span:last-child,
+            .promo-summary .space-y-1\.5 > div > span:last-child {
+                font-size: 1rem !important;
+            }
+        }
+
+        .power-six-preview {
+            width: min(100%, 720px);
+            margin: 0 auto;
+        }
+
+        .power-six-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2px;
+            overflow-x: auto;
+            padding: 0 4px 2px;
+            border-radius: 18px;
+            scrollbar-width: none;
+        }
+
+        .power-six-stats::-webkit-scrollbar {
+            display: none;
+        }
+
+        .power-six-pill {
+            flex: 1 1 0;
+            min-width: 112px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 18px 17px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.035);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        }
+
+        .power-six-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.25em;
+            text-align: center;
+            font-family: "Noto Sans Thai", sans-serif;
+            font-size: clamp(2.1rem, 7.2vw, 3rem);
+            font-weight: 900;
+            font-style: normal;
+            line-height: 1.38;
+            background: linear-gradient(135deg, #fff8cf, #ffd84a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 8px 16px rgba(234, 179, 8, 0.18));
+            transform-origin: center;
+            backface-visibility: hidden;
+            padding-block: 0.08em;
+        }
+
+        .power-six-number.do-flip {
+            animation: powerSixFlip .28s ease-in-out;
+        }
+
+        @keyframes powerSixFlip {
+            0% { transform: rotateX(0deg) scaleY(1); }
+            40% { transform: rotateX(-90deg) scaleY(0.6); }
+            60% { transform: rotateX(90deg) scaleY(0.6); }
+            100% { transform: rotateX(0deg) scaleY(1); }
+        }
+
+        .power-six-label {
+            margin-top: 6px;
+            color: #9898b8;
+            font-size: clamp(0.68rem, 2vw, 0.86rem);
+            font-weight: 600;
+            line-height: 1.45;
+            text-align: center;
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        .power-six-scroll {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            color: #6b6b8a;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            animation: powerSixBob 2.5s ease-in-out infinite;
+        }
+
+        .power-six-scroll-line {
+            width: 1px;
+            height: 42px;
+            background: linear-gradient(to bottom, #facc15, transparent);
+        }
+
+        @keyframes powerSixBob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        /* ===== Flight Animation — เครื่องบินบิน + การ์ดลอย ===== */
+        .power-six-preview { position: relative; }
+
+        /* การ์ดลอยเบาๆ เหมือนเครื่องบินลอยตัว (สลับจังหวะ) */
+        .power-six-pill {
+            animation: pillFloat 4s ease-in-out infinite;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+            cursor: pointer;
+        }
+        .power-six-pill:nth-child(1) { animation-delay: 0s; }
+        .power-six-pill:nth-child(2) { animation-delay: 0.5s; }
+        .power-six-pill:nth-child(3) { animation-delay: 1s; }
+        .power-six-pill:nth-child(4) { animation-delay: 1.5s; }
+
+        /* hover — ยกตัวขึ้น เรืองแสงทอง หยุดลอยชั่วคราว */
+        .power-six-pill:hover {
+            animation-play-state: paused;
+            transform: translateY(-14px) scale(1.05);
+            background: rgba(250, 204, 21, 0.08);
+            border-color: rgba(250, 204, 21, 0.45);
+            box-shadow: 0 18px 40px rgba(234, 179, 8, 0.25),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+        .power-six-pill:hover .power-six-number {
+            transform: scale(1.12);
+            filter: drop-shadow(0 10px 22px rgba(234, 179, 8, 0.5));
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
+        }
+        .power-six-pill:hover .power-six-label {
+            color: #facc15;
+            transition: color 0.35s ease;
+        }
+        body.light-mode .power-six-pill:hover {
+            background: rgba(199, 145, 0, 0.1);
+            border-color: rgba(199, 145, 0, 0.4);
+            box-shadow: 0 18px 40px rgba(199, 145, 0, 0.2);
+        }
+        body.light-mode .power-six-pill:hover .power-six-label { color: #b8860b; }
+
+        @keyframes pillFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(-0.6deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .power-six-pill { animation: none; }
+        }
+
+        .p6-flow {
+            --p6-g1: #f5c518;
+            --p6-g2: #ff9f43;
+            --p6-g3: #ee5a24;
+            --p6-muted: #6b6b8a;
+            --p6-muted2: #9898b8;
+            --p6-glass: rgba(255, 255, 255, 0.035);
+            --p6-border: rgba(255, 255, 255, 0.07);
+            max-width: 1000px;
+            margin: 16px auto 36px;
+            color: #f4f4ff;
+        }
+
+        .p6-sec {
+            padding: clamp(42px, 8vw, 76px) 0;
+        }
+
+        .p6-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(245, 197, 24, 0.22), transparent);
+        }
+
+        .p6-chip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--p6-g1);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .p6-chip-line {
+            width: min(64px, 16vw);
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--p6-g1), transparent);
+        }
+
+        .p6-title {
+            text-align: center;
+            font-family: "Noto Sans Thai", sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 900;
+            line-height: 1.28;
+            margin-bottom: 18px;
+            padding-block: 0.08em;
+            text-wrap: balance;
+        }
+
+        .p6-title em {
+            font-style: italic;
+            background: linear-gradient(135deg, #fff 0%, var(--p6-g1) 50%, var(--p6-g2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding-block: 0.08em;
+        }
+
+        .p6-sub {
+            max-width: 620px;
+            margin: 0 auto 36px;
+            text-align: center;
+            color: var(--p6-muted2);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .p6-team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(10px, 2vw, 16px);
+        }
+
+        @media (max-width: 500px) {
+            .p6-team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .p6-member,
+        .p6-income-card,
+        .p6-strategy-item {
+            background: var(--p6-glass);
+            border: 1px solid var(--p6-border);
+            transition: 0.35s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .p6-member {
+            border-radius: 20px;
+            padding: 28px 16px 22px;
+            text-align: center;
+        }
+
+        .p6-member::before,
+        .p6-income-card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--p6-g1), transparent);
+            opacity: 0;
+            transition: 0.35s;
+        }
+
+        .p6-member::before {
+            top: 0;
+        }
+
+        .p6-income-card::after {
+            bottom: 0;
+        }
+
+        .p6-member:hover,
+        .p6-income-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(245, 197, 24, 0.25);
+            background: rgba(245, 197, 24, 0.04);
+        }
+
+        .p6-member:hover::before,
+        .p6-income-card:hover::after {
+            opacity: 1;
+        }
+
+        .p6-avatar {
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            margin: 0 auto 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .p6-avatar::after {
+            content: "";
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: conic-gradient(var(--p6-g1), var(--p6-g2), var(--p6-g3), var(--p6-g1));
+            z-index: -1;
+        }
+
+        .p6-avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .p6-avatar-inner svg {
+            width: 34px;
+            height: 34px;
+        }
+
+        .p6-c1 { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+        .p6-c2 { background: linear-gradient(135deg, #16213e, #0f3460); }
+        .p6-c3 { background: linear-gradient(135deg, #0f3460, #1a4a8a); }
+        .p6-c4 { background: linear-gradient(135deg, #2d1b6e, #4a2d9e); }
+        .p6-c5 { background: linear-gradient(135deg, #0d3b3b, #0f6060); }
+        .p6-c6 { background: linear-gradient(135deg, #3b1a0d, #7a3a10); }
+
+        .p6-member-name {
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .p6-goal-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .p6-goal-wrap {
+            position: relative;
+            display: inline-block;
+        }
+
+        .p6-goal-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 150px;
+            background: radial-gradient(ellipse, rgba(245, 197, 24, 0.15), transparent);
+            pointer-events: none;
+        }
+
+        .p6-goal-num {
+            position: relative;
+            display: inline-block;
+            font-family: "Noto Sans Thai", sans-serif;
+            font-size: clamp(4.5rem, 16vw, 10rem);
+            font-weight: 900;
+            font-style: normal;
+            line-height: 1.36;
+            background: linear-gradient(135deg, #fff 0%, var(--p6-g1) 50%, var(--p6-g2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .p6-goal-unit {
+            display: block;
+            color: var(--p6-muted2);
+            font-size: clamp(0.9rem, 3vw, 1.4rem);
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            margin-top: 4px;
+        }
+
+        .p6-progress-wrap {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .p6-progress-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--p6-muted);
+            font-size: 0.78rem;
+            margin-bottom: 10px;
+        }
+
+        .p6-progress-label strong {
+            color: var(--p6-g1);
+        }
+
+        .p6-progress-track {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .p6-progress-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 100px;
+            background: linear-gradient(90deg, var(--p6-g1), var(--p6-g2), var(--p6-g3));
+            transition: width 2.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 12px rgba(245, 197, 24, 0.4);
+        }
+
+        .p6-strategy-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .p6-strategy-item {
+            display: grid;
+            grid-template-columns: 48px 1fr;
+            gap: 16px;
+            align-items: start;
+            border-radius: 18px;
+            padding: 22px 20px;
+        }
+
+        .p6-strategy-item:hover {
+            border-color: rgba(245, 197, 24, 0.2);
+            background: rgba(245, 197, 24, 0.03);
+            transform: translateX(4px);
+        }
+
+        .p6-strategy-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Noto Sans Thai", sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            font-style: normal;
+            line-height: 1.4;
+            background: linear-gradient(135deg, var(--p6-g1), var(--p6-g2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.55;
+            padding-block: 0.06em;
+        }
+
+        .p6-strategy-title,
+        .p6-income-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            line-height: 1.45;
+            margin-bottom: 6px;
+        }
+
+        .p6-strategy-desc,
+        .p6-income-desc {
+            color: var(--p6-muted2);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .p6-income-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(10px, 2vw, 16px);
+        }
+
+        @media (max-width: 480px) {
+            .p6-income-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .p6-income-card {
+            border-radius: 20px;
+            padding: 28px 16px;
+            text-align: center;
+        }
+
+        .p6-income-icon {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 4px 12px rgba(245, 197, 24, 0.3));
+        }
+
+        @media (max-width: 640px) {
+            .power-six-preview {
+                width: 100%;
+            }
+
+            .power-six-stats {
+                justify-content: center;
+                overflow-x: visible;
+            }
+
+            .power-six-pill {
+                min-width: 0;
+                padding: 12px 6px 13px;
+            }
+
+            .power-six-number {
+                width: 1.15em;
+                font-size: clamp(1.8rem, 9vw, 2.25rem);
+                line-height: 1.35;
+            }
+
+            .power-six-label {
+                font-size: clamp(0.58rem, 2.5vw, 0.72rem);
+                line-height: 1.35;
+            }
+
+            .p6-sec {
+                padding-block: 36px;
+            }
+
+            .p6-title {
+                font-size: clamp(1.65rem, 8vw, 2.35rem);
+                line-height: 1.32;
+            }
+
+            .p6-sub,
+            .p6-strategy-desc,
+            .p6-income-desc {
+                font-size: 0.86rem;
+                line-height: 1.75;
+            }
+        }
+
+        #growth .glass-card {
+            overflow: visible;
+        }
+
+        #growth :is(h2, h3, h4, p, label, button, span, div) {
+            font-family: "Noto Sans Thai", sans-serif;
+        }
+
+        #growth :is(h2, h3, h4) {
+            line-height: 1.65 !important;
+            padding-block: 0.12em;
+        }
+
+        #growth :is(p, label, button, span, .p6-member-name, .p6-strategy-title, .p6-income-name) {
+            line-height: 1.7 !important;
+        }
+
+        #growth .p6-title {
+            line-height: 1.55 !important;
+            padding-block: 0.18em;
+        }
+
+        #growth .p6-title em,
+        #growth .gradient-text-gold,
+        #growth .gradient-text-purple {
+            display: inline-block;
+            line-height: 1.55 !important;
+            padding-block: 0.08em;
+        }
+
+        #growth .power-six-label {
+            line-height: 1.7 !important;
+            padding-block: 0.12em;
+        }
+
+        #growth .leading-tight {
+            line-height: 1.7 !important;
+        }
+
+        #growth :is(.p6-chip, .p6-chip *, .power-six-scroll, .power-six-scroll *) {
+            line-height: 1.8 !important;
+        }
+
+        #growth :is(.p6-member, .p6-strategy-item, .p6-income-card) {
+            overflow: visible !important;
+        }
+
+        .hbd-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: none;
+            background: rgba(0, 0, 0, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 16px;
+        }
+
+        .hbd-modal.is-open {
+            display: flex;
+        }
+
+        .hbd-modal-panel {
+            position: relative;
+            width: min(100%, 1120px);
+            height: min(92vh, 920px);
+            margin: auto;
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: #050505;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+        }
+
+        .hbd-modal-bar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+            display: flex;
+            gap: 8px;
+        }
+
+        .hbd-modal-action {
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(0, 0, 0, 0.68);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .hbd-modal-action:hover {
+            background: rgba(124, 58, 237, 0.8);
+            transform: translateY(-1px);
+        }
+
+        .hbd-modal-frame {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+            background: #050505;
+        }
+
+        .p6-strategy-item.is-clickable {
+            cursor: pointer;
+        }
+
+        .p6-strategy-item.is-clickable:focus-visible {
+            outline: 2px solid #f5c518;
+            outline-offset: 4px;
+        }
+
+        .reveal-up,
+        .js-gsap-ready .reveal-up,
+        .no-gsap .reveal-up {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        #growth {
+            font-family: Tahoma, "Noto Sans Thai", sans-serif;
+        }
+
+        #growth :is(h2, h3, h4, p, label, button, span, div) {
+            overflow: visible;
+        }
+
+        #growth :is(h2, h3, h4, .p6-title, .p6-strategy-title, .p6-income-name) {
+            font-weight: 800 !important;
+            letter-spacing: 0 !important;
+        }
+
+        #growth .p6-title {
+            font-size: clamp(1.65rem, 4.4vw, 2.65rem);
+            line-height: 1.85 !important;
+            padding-block: 0.28em;
+            margin-bottom: 14px;
+        }
+
+        #growth .p6-title em,
+        #growth .gradient-text-gold,
+        #growth .gradient-text-purple {
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            background-clip: initial !important;
+            -webkit-text-fill-color: currentColor !important;
+            color: #facc15 !important;
+            text-shadow: 0 0 18px rgba(250, 204, 21, 0.18);
+        }
+
+        #growth .p6-chip,
+        #growth .power-six-label,
+        #growth .p6-member-name,
+        #growth .p6-strategy-title,
+        #growth .p6-income-name,
+        #growth h3,
+        #growth h4,
+        #growth p,
+        #growth label,
+        #growth button,
+        #growth span {
+            line-height: 1.9 !important;
+            padding-block: 0.16em;
+        }
+
+        #growth .p6-strategy-desc,
+        #growth .p6-income-desc,
+        #growth .p6-sub {
+            line-height: 2 !important;
+        }
+
+        #growth .p6-member,
+        #growth .p6-strategy-item,
+        #growth .p6-income-card,
+        #growth .promo-summary {
+            padding-top: max(1rem, 20px);
+            padding-bottom: max(1rem, 20px);
         }
         
         .gradient-text-gold {
@@ -104,8 +883,18 @@
         }
 
         .reveal-up {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .js-gsap-ready .reveal-up {
             opacity: 0;
             transform: translateY(40px);
+        }
+
+        .no-gsap .reveal-up {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
 
         /* AI & Futuristic Effects */
@@ -128,50 +917,6 @@
         .transform-style-3d { transform-style: preserve-3d; }
         .tilt-card-transition { transition: transform 0.1s ease; }
 
-        /* Luxury Bento Card Effects */
-        .bento-card {
-            position: relative;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .bento-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 2px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            transition: all 0.5s ease;
-        }
-
-        .bento-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            background: rgba(255, 255, 255, 0.06);
-        }
-
-        .bento-card:hover::before {
-            background: var(--hover-gradient, linear-gradient(135deg, #a78bfa, #6d28d9));
-        }
-
-        .icon-box {
-            transition: transform 0.5s ease;
-        }
-        
-        .bento-card:hover .icon-box {
-            transform: scale(1.1) rotate(5deg);
-        }
-
         /* Hide scrollbar for slider */
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
@@ -191,6 +936,206 @@
         .safe-pb {
             padding-bottom: env(safe-area-inset-bottom);
         }
+
+        /* ============================================
+           LIGHT MODE — เจาะจงสีไม่ให้เพี้ยน
+        ============================================ */
+        body.light-mode {
+            background-color: #eceff5;
+            color: #1f2433;
+        }
+
+        /* พื้นหลัง section / surface เข้ม -> โทนสว่างสลับเฉด */
+        body.light-mode .bg-\[\#050505\],
+        body.light-mode .bg-\[\#07070a\] { background-color: #f6f8fc !important; }
+        body.light-mode .bg-\[\#08080a\] { background-color: #eceff5 !important; }
+        body.light-mode .bg-\[\#0a0a0c\] { background-color: #f6f8fc !important; }
+        body.light-mode #hero { background-color: #eceff5; }
+
+        /* nav + เมนู */
+        body.light-mode #nav-bg {
+            background-color: rgba(246, 248, 252, 0.85) !important;
+            border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+        }
+        body.light-mode #mobile-menu { background-color: rgba(246, 248, 252, 0.98) !important; }
+        body.light-mode #line-1,
+        body.light-mode #line-2 { background-color: #1f2433 !important; }
+
+        /* footer */
+        body.light-mode footer.bg-black,
+        body.light-mode footer { background-color: #e2e6ef !important; border-top-color: rgba(0,0,0,0.08) !important; }
+
+        /* การ์ด/อินพุตพื้นเข้ม -> ขาว */
+        body.light-mode .bg-\[\#1e1e20\],
+        body.light-mode .bg-\[\#161618\],
+        body.light-mode .bg-\[\#111\] {
+            background-color: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* glass card */
+        body.light-mode .glass-card {
+            background: rgba(255, 255, 255, 0.78) !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 8px 30px rgba(60, 60, 90, 0.12) !important;
+        }
+        body.light-mode #growth .glass-card {
+            background: rgba(255, 255, 255, 0.85) !important;
+        }
+
+        /* ข้อความ */
+        body.light-mode .text-white { color: #1f2433 !important; }
+        body.light-mode .text-gray-200 { color: #374151 !important; }
+        body.light-mode .text-gray-300 { color: #475061 !important; }
+        body.light-mode .text-gray-400 { color: #586073 !important; }
+        body.light-mode .text-gray-500 { color: #6b7280 !important; }
+        body.light-mode .text-gray-600 { color: #6b7280 !important; }
+
+        /* เส้นขอบ white/x -> เข้มอ่อน */
+        body.light-mode .border-white\/5,
+        body.light-mode .border-white\/10,
+        body.light-mode .border-white\/20 { border-color: rgba(0, 0, 0, 0.1) !important; }
+
+        /* ปุ่ม CTA สีขาว -> เข้ม ให้เห็นบนพื้นสว่าง */
+        body.light-mode a.bg-white {
+            background-color: #1f2433 !important;
+            color: #ffffff !important;
+        }
+        body.light-mode a.bg-white:hover { background-color: #343b50 !important; }
+
+        /* เส้นกริด hero -> เข้มจางบนพื้นสว่าง */
+        body.light-mode .bg-grid-pattern {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+        }
+
+        /* gradient gold เข้มขึ้นนิดให้คอนทราสต์บนพื้นขาว */
+        body.light-mode .gradient-text-gold {
+            background: linear-gradient(135deg, #b8860b, #c9971a, #8a6000);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        body.light-mode .gradient-text-purple {
+            background: linear-gradient(135deg, #7c3aed, #8b5cf6, #6d28d9);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        /* พื้นโปร่งแสงดำ -> โปร่งแสงอ่อน */
+        body.light-mode .bg-black\/40,
+        body.light-mode .bg-black\/60,
+        body.light-mode .bg-black\/70,
+        body.light-mode .bg-black\/90 {
+            background-color: rgba(0, 0, 0, 0.035) !important;
+            border-color: rgba(0, 0, 0, 0.08) !important;
+        }
+
+        /* glow blobs สีเข้ม -> ลดความเข้มให้ดูนุ่ม */
+        body.light-mode .bg-purple-900\/40,
+        body.light-mode .bg-purple-900\/30,
+        body.light-mode .bg-purple-900\/20,
+        body.light-mode .bg-purple-900\/10,
+        body.light-mode .bg-indigo-900\/40,
+        body.light-mode .bg-yellow-900\/10 { opacity: 0.45; }
+
+        /* สีเหลืองอ่านยากบนพื้นสว่าง → เปลี่ยนเป็น amber เข้ม */
+        body.light-mode .text-yellow-400,
+        body.light-mode .text-yellow-300 { color: #92400e !important; }
+        body.light-mode .text-yellow-500\/90,
+        body.light-mode .text-yellow-500 { color: #78350f !important; }
+        body.light-mode .border-yellow-500 { border-color: #d97706 !important; }
+        body.light-mode .border-l-4.border-yellow-500 { border-left-color: #d97706 !important; }
+        body.light-mode .bg-yellow-500\/20,
+        body.light-mode .bg-yellow-600\/20 { background: rgba(217,119,6,0.12) !important; }
+        body.light-mode .text-yellow-300 { color: #92400e !important; }
+        body.light-mode .bg-yellow-500\/30 { background: rgba(217,119,6,0.15) !important; }
+        body.light-mode .border-yellow-500\/30 { border-color: rgba(180,83,9,0.3) !important; }
+        body.light-mode .border-yellow-500\/20 { border-color: rgba(180,83,9,0.2) !important; }
+        body.light-mode .bg-yellow-400 { background: #b45309 !important; }
+
+        /* gradient panel ม่วงเข้ม -> ม่วงอ่อนโปร่ง */
+        body.light-mode .bg-gradient-to-b.from-purple-900\/30,
+        body.light-mode .from-purple-900\/30.to-transparent {
+            background-image: linear-gradient(to bottom, rgba(139, 92, 246, 0.1), transparent) !important;
+        }
+
+        /* การ์ด Power of Six ให้เห็นชัดบนพื้นสว่าง */
+        body.light-mode .power-six-pill {
+            background: #ffffff !important;
+            border-color: rgba(0, 0, 0, 0.07) !important;
+            box-shadow: 0 6px 22px rgba(60, 60, 90, 0.09) !important;
+        }
+        /* เลขทอง 6 เข้มขึ้นให้อ่านชัด */
+        body.light-mode .power-six-number {
+            background-image: linear-gradient(135deg, #d4a017, #a9760c) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            filter: drop-shadow(0 4px 10px rgba(184, 134, 11, 0.22));
+        }
+        body.light-mode .power-six-label { color: #586073 !important; }
+        body.light-mode .power-six-scroll { color: #8a8aa0 !important; }
+
+        /* ข้อความ p6 (ขาว #f4f4ff) -> เข้มอ่านชัดบนพื้นสว่าง */
+        body.light-mode .p6-title,
+        body.light-mode .p6-member-name,
+        body.light-mode .p6-strategy-title,
+        body.light-mode .p6-income-name,
+        body.light-mode #growth :is(h2, h3, h4),
+        body.light-mode #growth .p6-title {
+            color: #1f2433 !important;
+        }
+        body.light-mode .p6-sub,
+        body.light-mode .p6-strategy-desc,
+        body.light-mode .p6-income-desc,
+        body.light-mode #growth :is(p, span, label, .p6-member-name) {
+            color: #586073 !important;
+        }
+        /* คงสี gradient ทอง/ม่วงของ em และ label ไว้ (อย่าทับ) */
+        body.light-mode #growth .gradient-text-gold,
+        body.light-mode #growth .gradient-text-purple,
+        body.light-mode .p6-title em,
+        body.light-mode .power-six-number,
+        body.light-mode .p6-chip {
+            color: transparent;
+        }
+        body.light-mode .p6-chip { color: #b8860b !important; }
+        /* การ์ด/พื้น p6 ให้เห็นบนพื้นสว่าง */
+        body.light-mode .p6-strategy-item,
+        body.light-mode .p6-income-card,
+        body.light-mode .p6-member {
+            background: rgba(255, 255, 255, 0.85) !important;
+            border-color: rgba(0, 0, 0, 0.07) !important;
+        }
+
+        /* Chubb calculator iframe = โชว์เคสพื้นเข้มโดยตั้งใจ */
+        body.light-mode #chubb-benefits > div > .reveal-up.rounded-2xl {
+            background: #07070a !important;
+            border-color: rgba(0, 0, 0, 0.12) !important;
+            box-shadow: 0 24px 55px rgba(15, 15, 35, 0.22) !important;
+        }
+
+        /* ปุ่มสลับธีม */
+        #theme-toggle {
+            width: 38px; height: 38px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        #theme-toggle:hover { background: rgba(255, 255, 255, 0.14); transform: scale(1.05); }
+        body.light-mode #theme-toggle {
+            border-color: rgba(0, 0, 0, 0.12);
+            background: rgba(0, 0, 0, 0.05);
+            color: #1f2433;
+        }
+        body.light-mode #theme-toggle:hover { background: rgba(0, 0, 0, 0.1); }
+        #theme-toggle .icon-sun { display: none; }
+        body.light-mode #theme-toggle .icon-sun { display: block; }
+        body.light-mode #theme-toggle .icon-moon { display: none; }
     </style>
 </head>
 <body class="overflow-x-hidden selection:bg-luxury-purple selection:text-white">
@@ -210,7 +1155,13 @@
             <div class="flex items-center gap-3 sm:gap-6">
                 <!-- ปุ่มร่วมงานกับเรา -->
                 <a href="#profile" class="hidden md:inline-block bg-white text-black px-4 py-1.5 rounded-full font-semibold hover:bg-gray-200 transition-colors text-xs whitespace-nowrap shrink-0">ร่วมงานกับเรา</a>
-                
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" type="button" aria-label="สลับธีม Light/Dark" title="สลับธีม">
+                    <svg class="icon-moon w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg class="icon-sun w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+
                 <!-- Hamburger Button -->
                 <button id="menu-btn" class="w-10 h-10 flex flex-col justify-center items-end gap-1.5 focus:outline-none cursor-pointer relative z-[130]">
                     <span id="line-1" class="w-5 h-[2px] bg-white transition-all duration-300 origin-right block"></span>
@@ -224,7 +1175,6 @@
             <div class="flex flex-col items-center gap-6 text-xl sm:text-2xl font-bold text-gray-200 w-full px-6">
                 <a href="#academy" class="menu-link hover:text-purple-400 hover:scale-110 transition-all">ห้องเรียนออนไลน์</a>
                 <a href="#growth" class="menu-link hover:text-purple-400 hover:scale-110 transition-all">ความก้าวหน้า</a>
-                <a href="#products" class="menu-link hover:text-purple-400 hover:scale-110 transition-all">ผลิตภัณฑ์</a>
                 <a href="#simulator" class="menu-link hover:text-purple-400 hover:scale-110 transition-all">จำลองรายได้</a>
                 <a href="#profile" class="menu-link hover:text-purple-400 hover:scale-110 transition-all">โปรไฟล์</a>
                 <a href="#profile" class="menu-link md:hidden w-full max-w-[200px] text-center bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-colors text-base mt-4">ร่วมงานกับเรา</a>
@@ -233,7 +1183,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[100dvh] flex items-center justify-center pt-16 pb-10 sm:pt-24 sm:pb-20 overflow-hidden bg-grid-pattern safe-pb">
+    <section id="hero" class="relative min-h-[100dvh] flex items-center justify-center pt-16 pb-10 sm:pt-24 sm:pb-20 overflow-hidden bg-grid-pattern safe-pb">
         <div class="absolute inset-0 z-0 pointer-events-none">
             <div class="absolute top-1/4 left-1/4 w-56 h-56 sm:w-80 sm:h-80 bg-purple-900/40 rounded-full blur-[100px]"></div>
             <div class="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-[400px] sm:h-[400px] bg-indigo-900/40 rounded-full blur-[120px]"></div>
@@ -249,7 +1199,7 @@
                 POWERED BY iA x AI ECOSYSTEM
             </div>
             
-            <h1 class="text-2xl min-[375px]:text-[28px] min-[412px]:text-[30px] sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 min-[412px]:mb-5 sm:mb-6 reveal-up hero-elem leading-[1.35] sm:leading-[1.3] w-full">
+            <h1 class="hero-heading text-2xl min-[375px]:text-[28px] min-[412px]:text-[30px] sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 min-[412px]:mb-5 sm:mb-6 reveal-up hero-elem w-full">
                 ออกแบบชีวิตที่ใช่<br>
                 เพิ่มรายได้ที่ <span class="gradient-text-purple">ไร้ขีดจำกัด</span> ด้วย&nbsp;AI
             </h1>
@@ -343,17 +1293,131 @@
         <div class="absolute right-0 bottom-0 w-[300px] h-[300px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="text-center mb-6 sm:mb-8 reveal-up">
-                <div class="inline-block bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20 text-yellow-400 text-[9px] min-[412px]:text-[10px] font-semibold mb-3 tracking-wider">SUCCESS BLUEPRINT</div>
-                <h2 class="text-2xl min-[412px]:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 tracking-tight leading-tight">
-                    แผนผังความสำเร็จ <br><span class="gradient-text-gold">แบบ Fast Track 6 เดือน</span>
+            <div class="text-center mb-8 sm:mb-12 reveal-up">
+                <p class="text-purple-400 text-[10px] min-[412px]:text-xs font-bold tracking-[0.3em] uppercase mb-3">The System</p>
+                <h2 class="text-3xl min-[412px]:text-4xl md:text-6xl font-black text-white leading-none tracking-tight">
+                    Power <span class="gradient-text-gold">of</span> Six
                 </h2>
-                <p class="text-gray-400 text-xs min-[412px]:text-sm max-w-2xl mx-auto leading-relaxed">
-                    แผนการทำงานที่ถูกออกแบบมาเพื่อเร่งอัตราการสร้างรายได้และผลักดันคุณขึ้นสู่ตำแหน่งผู้บริหารในเวลาที่สั้นที่สุด
-                </p>
+                <p class="text-gray-400 text-xs min-[412px]:text-sm md:text-base mt-4 max-w-lg mx-auto leading-relaxed">6 หมื่น · 6 คน · 6 กลยุทธ์ · 6 ช่องทางรายได้ — ระบบที่ออกแบบมาเพื่อความสำเร็จที่ยั่งยืน</p>
+            </div>
+            <div class="power-six-preview text-center mb-6 sm:mb-8 reveal-up">
+<div class="power-six-stats" id="power-six-stats">
+                    <div class="power-six-pill">
+                        <span class="power-six-number" id="power-six-flip-0">6</span>
+                        <span class="power-six-label">หมื่น</span>
+                    </div>
+                    <div class="power-six-pill">
+                        <span class="power-six-number" id="power-six-flip-1">6</span>
+                        <span class="power-six-label">คน</span>
+                    </div>
+                    <div class="power-six-pill">
+                        <span class="power-six-number" id="power-six-flip-2">6</span>
+                        <span class="power-six-label">กลยุทธ์</span>
+                    </div>
+                    <div class="power-six-pill">
+                        <span class="power-six-number" id="power-six-flip-3">6</span>
+                        <span class="power-six-label">ช่องทางรายได้</span>
+                    </div>
+                </div>
+                <div class="power-six-scroll" aria-hidden="true">
+                    <div class="power-six-scroll-line"></div>
+                    <span>Scroll</span>
+                </div>
             </div>
 
-            <div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-4 min-[412px]:p-6 mb-6 sm:mb-8 max-w-3xl mx-auto border border-yellow-500/30 relative z-10 reveal-up shadow-[0_0_30px_rgba(234,179,8,0.1)]">
+            <div class="p6-flow">
+                <div class="p6-sec" id="p6-team">
+                    <div class="p6-chip reveal-up"><div class="p6-chip-line"></div>01 · 6 คน<div class="p6-chip-line"></div></div>
+                    <h2 class="p6-title reveal-up">สร้าง <em>6 คน</em></h2>
+
+                    <div class="p6-team-grid">
+                        <div class="p6-member reveal-up">
+                            <div class="p6-avatar"><div class="p6-avatar-inner p6-c1"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.9)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+                            <div class="p6-member-name">สมาชิก 1</div>
+                        </div>
+                        <div class="p6-member reveal-up delay-100">
+                            <div class="p6-avatar"><div class="p6-avatar-inner p6-c2"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.9)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+                            <div class="p6-member-name">สมาชิก 2</div>
+                        </div>
+                        <div class="p6-member reveal-up delay-200">
+                            <div class="p6-avatar"><div class="p6-avatar-inner p6-c3"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.9)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+                            <div class="p6-member-name">สมาชิก 3</div>
+                        </div>
+                        <div class="p6-member reveal-up">
+                            <div class="p6-avatar"><div class="p6-avatar-inner p6-c4"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.9)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+                            <div class="p6-member-name">สมาชิก 4</div>
+                        </div>
+                        <div class="p6-member reveal-up delay-100">
+                            <div class="p6-avatar"><div class="p6-avatar-inner p6-c5"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.9)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+                            <div class="p6-member-name">สมาชิก 5</div>
+                        </div>
+                        <div class="p6-member reveal-up delay-200">
+                            <div class="p6-avatar"><div class="p6-avatar-inner p6-c6"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.9)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+                            <div class="p6-member-name">สมาชิก 6</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p6-divider"></div>
+                <div class="p6-sec" id="p6-goal">
+                    <div class="p6-chip reveal-up"><div class="p6-chip-line"></div>02 · 60,000<div class="p6-chip-line"></div></div>
+                    <h2 class="p6-title reveal-up">เป้าหมาย<em>ร่วมกัน</em></h2>
+                    <p class="p6-sub reveal-up">60,000 บาทต่อเดือน คือตัวเลขที่เราต่างมุ่งไปด้วยกัน</p>
+
+                    <div class="p6-goal-hero reveal-up">
+                        <div class="p6-goal-wrap">
+                            <div class="p6-goal-glow"></div>
+                            <div class="p6-goal-num" id="p6-goal-counter">0</div>
+                        </div>
+                        <span class="p6-goal-unit">บาท / เดือน</span>
+                    </div>
+
+                    <div class="p6-progress-wrap reveal-up">
+                        <div class="p6-progress-label">
+                            <span>ความคืบหน้า</span>
+                            <strong>สู่ 60,000</strong>
+                        </div>
+                        <div class="p6-progress-track">
+                            <div class="p6-progress-fill" id="p6-progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p6-divider"></div>
+                <div class="p6-sec" id="p6-strategies">
+                    <div class="p6-chip reveal-up"><div class="p6-chip-line"></div>03 · 6 กลยุทธ์<div class="p6-chip-line"></div></div>
+                    <h2 class="p6-title reveal-up"><em>6 กลยุทธ์</em><br>ขับเคลื่อนความสำเร็จ</h2>
+                    <p class="p6-sub reveal-up">แต่ละกลยุทธ์ถูกออกแบบมาเพื่อเสริมพลังซึ่งกันและกัน</p>
+
+                    <div class="p6-strategy-list">
+                        <div id="health-fund-trigger" class="p6-strategy-item is-clickable reveal-up" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="hbd-health-modal"><div class="p6-strategy-num">01</div><div><div class="p6-strategy-title">กองทุนสุขภาพ</div><div class="p6-strategy-desc">วางแผนคุ้มครองค่าใช้จ่ายด้านสุขภาพ ทั้งผู้ป่วยในและผู้ป่วยนอก ให้ครอบคลุมทุกสถานการณ์</div></div></div>
+                        <div class="p6-strategy-item reveal-up delay-100"><div class="p6-strategy-num">02</div><div><div class="p6-strategy-title">กองทุนเกษียณอายุ</div><div class="p6-strategy-desc">สะสมทรัพย์อย่างเป็นระบบ สร้างรายได้หลังเกษียณที่มั่นคงและยั่งยืนตลอดชีวิต</div></div></div>
+                        <div class="p6-strategy-item reveal-up delay-200"><div class="p6-strategy-num">03</div><div><div class="p6-strategy-title">กองมรดก</div><div class="p6-strategy-desc">วางแผนส่งต่อทรัพย์สินและมรดกให้คนรุ่นต่อไปอย่างมีประสิทธิภาพและประหยัดภาษี</div></div></div>
+                        <div class="p6-strategy-item reveal-up"><div class="p6-strategy-num">04</div><div><div class="p6-strategy-title">กองทุนโรคร้ายแรง</div><div class="p6-strategy-desc">คุ้มครองความเสี่ยงจากโรคร้ายแรง เช่น มะเร็ง หัวใจ หลอดเลือด ด้วยเงินก้อนทันทีที่ตรวจพบ</div></div></div>
+                        <div id="cash-fund-trigger" class="p6-strategy-item is-clickable reveal-up delay-100" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="hbd-health-modal"><div class="p6-strategy-num">05</div><div><div class="p6-strategy-title">กองทุนทุพพลภาพ</div><div class="p6-strategy-desc">สร้างหลักประกันรายได้ทดแทนเมื่อไม่สามารถทำงานได้จากอุบัติเหตุหรือเจ็บป่วย</div></div></div>
+                        <div class="p6-strategy-item reveal-up delay-200"><div class="p6-strategy-num">06</div><div><div class="p6-strategy-title">จองสิทธิเปลี่ยนแบบประกัน</div><div class="p6-strategy-desc">ใช้สิทธิพิเศษปรับเปลี่ยนแบบประกันตามความต้องการที่เปลี่ยนไปในแต่ละช่วงชีวิต</div></div></div>
+                    </div>
+                </div>
+
+                <div class="p6-divider"></div>
+                <div class="p6-sec" id="p6-income">
+                    <div class="p6-chip reveal-up"><div class="p6-chip-line"></div>04 · 6 ช่องทางรายได้<div class="p6-chip-line"></div></div>
+                    <h2 class="p6-title reveal-up"><em>6 ช่องทาง</em><br>สร้างรายได้</h2>
+                    <p class="p6-sub reveal-up">กระจายรายได้หลากหลายช่องทาง เพื่อความมั่นคงและยั่งยืน</p>
+
+                    <div class="p6-income-grid">
+                        <div class="p6-income-card reveal-up"><span class="p6-income-icon">💰</span><div class="p6-income-name">ค่าคอมมิชชัน</div><div class="p6-income-desc">สูงสุด 40%</div></div>
+                        <div class="p6-income-card reveal-up delay-100"><span class="p6-income-icon">📅</span><div class="p6-income-name">โบนัสรายเดือน</div><div class="p6-income-desc">สูงสุด 35%</div></div>
+                        <div class="p6-income-card reveal-up delay-200"><span class="p6-income-icon">🎯</span><div class="p6-income-name">โบนัสครึ่งปี</div><div class="p6-income-desc">สูงสุด 35%</div></div>
+                        <div class="p6-income-card reveal-up"><span class="p6-income-icon">🌟</span><div class="p6-income-name">โบนัสตัวแทนใหม่</div><div class="p6-income-desc">สร้างทีมขยายงาน</div></div>
+                        <div class="p6-income-card reveal-up delay-100"><span class="p6-income-icon">🤝</span><div class="p6-income-name">โบนัสชักชวนตัวแทน</div><div class="p6-income-desc">เพิ่มเครือข่ายทีม</div></div>
+                        <div class="p6-income-card reveal-up delay-200"><span class="p6-income-icon">🔄</span><div class="p6-income-name">โบนัสปีต่ออายุ</div><div class="p6-income-desc">รายได้ต่อเนื่องยั่งยืน</div></div>
+                    </div>
+                </div>
+
+            </div>
+
+<div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-4 min-[412px]:p-6 mb-6 sm:mb-8 max-w-3xl mx-auto border border-yellow-500/30 relative z-10 reveal-up shadow-[0_0_30px_rgba(234,179,8,0.1)]">
                 <div class="text-center mb-5">
                     <h3 class="text-lg min-[412px]:text-xl font-bold text-white mb-1.5">🎯 ออกแบบเป้าหมายของคุณ</h3>
                     <p class="text-gray-400 text-[10px] min-[412px]:text-xs">ปรับมูลค่าการออกแบบสินทรัพย์ต่อเคส (Case Size) เพื่อจำลองผลลัพธ์</p>
@@ -390,7 +1454,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-[#161618] rounded-xl min-[412px]:rounded-[1.25rem] p-3.5 min-[412px]:p-5 border border-white/5 backdrop-blur-sm mb-4 relative overflow-hidden">
+                        <div class="promo-summary bg-[#161618] rounded-xl min-[412px]:rounded-[1.25rem] p-3.5 min-[412px]:p-5 border border-white/5 backdrop-blur-sm mb-4 relative overflow-hidden">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3 relative z-10">
                                 <div>
                                     <h4 class="text-white font-bold text-sm min-[412px]:text-base">สูตรลัด: ออกแบบ <span id="promo-cases" class="text-xl min-[412px]:text-2xl text-yellow-400 mx-1">8</span> เคส/เดือน</h4>
@@ -492,233 +1556,31 @@
                     </div>
                 </div>
 
-                <div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-4 min-[412px]:p-6 lg:col-span-1 flex flex-col justify-center relative overflow-hidden group reveal-up delay-100">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div class="relative z-10">
-                        <div class="w-8 h-8 min-[412px]:w-10 min-[412px]:h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-2.5 min-[412px]:mb-3">
+
+            </div>
+
+            <div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-4 min-[412px]:p-6 mt-4 min-[412px]:mt-5 max-w-3xl mx-auto flex flex-col justify-center relative overflow-hidden group reveal-up border border-blue-500/20 hover:border-blue-500/40 transition-colors">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10 flex flex-col sm:flex-row sm:items-center gap-4 min-[412px]:gap-5">
+                    <div class="flex items-center gap-3 shrink-0">
+                        <div class="w-8 h-8 min-[412px]:w-10 min-[412px]:h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400">
                             <svg class="w-4 h-4 min-[412px]:w-5 min-[412px]:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <h3 class="text-base min-[412px]:text-lg font-bold text-white mb-1.5">สูตรลับ "สวัสดิการสุขภาพฟรี"</h3>
-                        <p class="text-[10px] min-[412px]:text-[11px] text-gray-400 leading-relaxed mb-3">
-                            แนะนำการออกแบบสินทรัพย์แค่ <span id="free-cases" class="text-blue-400 font-bold text-xl min-[412px]:text-2xl mx-1">3</span> <span class="text-blue-400 font-bold">เคส / เดือน</span> <br><span class="text-[9px] min-[412px]:text-[10px] opacity-70">(เฉลี่ยเคสละ <span id="free-case-size">30,000</span> ฿)</span>
-                        </p>
-                        <div class="bg-[#161618] p-3 min-[412px]:p-3.5 rounded-xl border border-white/5 shadow-inner">
-                            <p class="text-[9px] min-[412px]:text-[10px] text-gray-300 mb-1">ค่าคอม <span id="free-fyc">27,000</span> ฿ <br><span class="text-blue-300">+ โบนัสเฉลี่ย/ด. (<span id="free-bonuses">6,750</span> ฿)</span></p>
-                            <p class="text-xs min-[412px]:text-sm text-white mb-1">รวมรับเฉลี่ย <span id="free-total" class="text-lg min-[412px]:text-xl font-bold text-blue-400 ml-1">33,750</span> ฿/ด.</p>
-                            <p class="text-[8px] min-[412px]:text-[9px] text-gray-500 leading-tight mt-1 min-[412px]:mt-1.5">*คำนวณเฉลี่ย 6 ด.แรก ครอบคลุมค่าเบี้ยสุขภาพฟรี!</p>
+                        <div>
+                            <h3 class="text-base min-[412px]:text-lg font-bold text-white">สูตรลับ "สวัสดิการสุขภาพฟรี"</h3>
+                            <p class="text-[10px] min-[412px]:text-[11px] text-gray-400 leading-relaxed mt-0.5">
+                                แนะนำการออกแบบสินทรัพย์แค่ <span id="free-cases" class="text-blue-400 font-bold text-xl min-[412px]:text-2xl mx-1">3</span> <span class="text-blue-400 font-bold">เคส / เดือน</span> <span class="text-[9px] min-[412px]:text-[10px] opacity-70">(เฉลี่ยเคสละ <span id="free-case-size">30,000</span> ฿)</span>
+                            </p>
                         </div>
                     </div>
-                </div>
-
-                <div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-4 min-[412px]:p-6 lg:col-span-1 flex flex-col justify-center relative overflow-hidden group reveal-up delay-200">
-                    <div class="absolute inset-0 bg-gradient-to-br from-green-600/10 to-emerald-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div class="relative z-10">
-                        <div class="w-8 h-8 min-[412px]:w-10 min-[412px]:h-10 rounded-xl bg-green-500/20 flex items-center justify-center text-green-400 mb-2.5 min-[412px]:mb-3">
-                            <svg class="w-4 h-4 min-[412px]:w-5 min-[412px]:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </div>
-                        <h3 class="text-base min-[412px]:text-lg font-bold text-white mb-2">พลังแห่งเลข 5 (สร้างทีม)</h3>
-                        <p class="text-[10px] min-[412px]:text-[11px] text-gray-400 leading-relaxed">
-                            เพียงแนะนำเพื่อนร่วมอาชีพครบ <span class="text-green-400 font-bold">5 คน</span> 
-                            <br><br>
-                            รับ <span class="text-white font-bold bg-white/10 px-1.5 py-0.5 rounded">โบนัสบริหารเพิ่ม 20%</span> จากค่าคอมมิชชันทั้งหมด ยิ่งขยายทีมมาก รายได้ยิ่งทวีคูณ
-                        </p>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-3 min-[412px]:gap-4 mt-1">
-                    <div class="glass-card rounded-xl min-[412px]:rounded-2xl p-3 min-[412px]:p-4 flex items-center gap-3 min-[412px]:gap-4 reveal-up border-l-4 border-l-purple-500 hover:bg-white/5 transition-colors cursor-default shadow-[0_0_20px_rgba(168,85,247,0.1)]">
-                        <div class="w-10 h-10 min-[412px]:w-12 min-[412px]:h-12 shrink-0 rounded-full bg-purple-500/20 flex flex-col items-center justify-center">
-                            <span class="text-purple-400 text-[8px] min-[412px]:text-[9px] font-bold uppercase">เดือนที่</span>
-                            <span class="text-white font-bold text-base min-[412px]:text-lg leading-none">1-3</span>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="text-sm min-[412px]:text-base font-bold text-white mb-0.5">Fast Start Bonus</h4>
-                            <p class="text-gray-400 text-[9px] min-[412px]:text-[10px]">ทำผลงาน 5 เคส (เบี้ย 50k)</p>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-[9px] min-[412px]:text-[10px] text-gray-500 mb-0.5">รับเพิ่ม</div>
-                            <div class="text-lg min-[412px]:text-xl font-bold text-purple-400">+15k฿</div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card rounded-xl min-[412px]:rounded-2xl p-3 min-[412px]:p-4 flex items-center gap-3 min-[412px]:gap-4 reveal-up delay-100 border-l-4 border-l-indigo-500 hover:bg-white/5 transition-colors cursor-default shadow-[0_0_20px_rgba(99,102,241,0.1)]">
-                        <div class="w-10 h-10 min-[412px]:w-12 min-[412px]:h-12 shrink-0 rounded-full bg-indigo-500/20 flex flex-col items-center justify-center">
-                            <span class="text-indigo-400 text-[8px] min-[412px]:text-[9px] font-bold uppercase">เดือนที่</span>
-                            <span class="text-white font-bold text-base min-[412px]:text-lg leading-none">4-6</span>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="text-sm min-[412px]:text-base font-bold text-white mb-0.5">Momentum Bonus</h4>
-                            <p class="text-gray-400 text-[9px] min-[412px]:text-[10px]">ทำผลงาน 10 เคส (เบี้ย 100k)</p>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-[9px] min-[412px]:text-[10px] text-gray-500 mb-0.5">รับเพิ่ม</div>
-                            <div class="text-lg min-[412px]:text-xl font-bold text-indigo-400">+25k฿</div>
-                        </div>
+                    <div class="bg-[#161618] p-3 min-[412px]:p-3.5 rounded-xl border border-white/5 shadow-inner sm:ml-auto sm:min-w-[200px]">
+                        <p class="text-[9px] min-[412px]:text-[10px] text-gray-300 mb-1">ค่าคอม <span id="free-fyc">27,000</span> ฿ <span class="text-blue-300">+ โบนัสเฉลี่ย/ด. (<span id="free-bonuses">6,750</span> ฿)</span></p>
+                        <p class="text-xs min-[412px]:text-sm text-white mb-1">รวมรับเฉลี่ย <span id="free-total" class="text-lg min-[412px]:text-xl font-bold text-blue-400 ml-1">33,750</span> ฿/ด.</p>
+                        <p class="text-[8px] min-[412px]:text-[9px] text-gray-500 leading-tight mt-1 min-[412px]:mt-1.5">*คำนวณเฉลี่ย 6 ด.แรก ครอบคลุมค่าเบี้ยสุขภาพฟรี!</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-16 sm:py-24 bg-[#08080a] relative overflow-hidden">
-        <div class="absolute left-0 top-1/3 -translate-y-1/2 w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="text-center mb-8 sm:mb-12 reveal-up">
-                <h2 class="text-2xl min-[412px]:text-3xl md:text-4xl font-bold mb-3">ผลิตภัณฑ์ที่ <span class="gradient-text-gold">ตอบโจทย์</span> ทุกช่วงชีวิต</h2>
-                <p class="text-gray-400 text-[11px] min-[412px]:text-xs md:text-sm max-w-2xl mx-auto">อาวุธระดับพรีเมียม 10 รูปแบบ ที่ช่วยให้นักออกแบบสินทรัพย์สามารถวางแผนความมั่งคั่งและปกป้องความเสี่ยงให้ลูกค้าได้อย่างไร้รอยต่อ</p>
-            </div>
-        </div>
-
-        <div class="w-full relative z-20 slider-mask reveal-up">
-            <div id="product-track" class="flex gap-3 min-[412px]:gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-[10vw] pb-6 pt-2 items-stretch cursor-grab select-none">
-                
-                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #60a5fa, #8b5cf6);">
-                    <div>
-                        <div class="flex justify-between items-start mb-4 min-[412px]:mb-5">
-                            <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center icon-box shadow-lg shadow-purple-500/20">
-                                <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                            </div>
-                            <div class="text-[8px] min-[412px]:text-[9px] font-bold text-white bg-purple-500/20 px-2 py-1 rounded-full border border-purple-500/30 uppercase tracking-wider backdrop-blur-md">Top Seller</div>
-                        </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Health Protection</h3>
-                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">ประกันสุขภาพเหมาจ่ายวงเงินสูงระดับพรีเมียม ครอบคลุมการรักษาโรคร้ายแรงทั่วโลก เครื่องมือเปิดใจลูกค้าชั้นยอด</p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">เหมาจ่ายตามจริง</span>
-                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">คุ้มครองทั่วโลก</span>
-                    </div>
-                </div>
-
-                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #fbbf24, #ea580c);">
-                    <div>
-                        <div class="flex justify-between items-start mb-4 min-[412px]:mb-5">
-                            <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center icon-box shadow-lg shadow-orange-500/20">
-                                <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </div>
-                            <div class="text-[8px] min-[412px]:text-[9px] font-bold text-yellow-500 bg-yellow-500/10 px-2 py-1 rounded-full border border-yellow-500/20 uppercase tracking-wider">High Premium</div>
-                        </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Retirement Wealth</h3>
-                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">แบบประกันบำนาญเพื่อวัยเกษียณ การันตีกระแสเงินสด ตอบโจทย์กลุ่มลูกค้าระดับบนที่ต้องการลดหย่อนภาษีเต็มเพดาน</p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">ลดหย่อนภาษี</span>
-                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">บำนาญตลอดชีพ</span>
-                    </div>
-                </div>
-
-                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #34d399, #059669);">
-                    <div>
-                        <div class="flex justify-between items-start mb-4 min-[412px]:mb-5">
-                            <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center icon-box shadow-lg shadow-emerald-500/20">
-                                <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                            </div>
-                            <div class="text-[8px] min-[412px]:text-[9px] font-bold text-green-400 bg-green-500/10 px-2 py-1 rounded-full border border-green-500/20 uppercase tracking-wider">Investment</div>
-                        </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Unit-Linked</h3>
-                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">ประกันชีวิตควบการลงทุน มอบโอกาสรับผลตอบแทนสูง ยืดหยุ่นปรับเปลี่ยนได้ตามช่วงชีวิต สำหรับผู้ถือใบอนุญาต IC</p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">ลงทุนกองทุนรวม</span>
-                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">ยืดหยุ่นสูง</span>
-                    </div>
-                </div>
-
-                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #fcd34d, #b45309);">
-                    <div>
-                        <div class="flex justify-between items-start mb-4 min-[412px]:mb-5">
-                            <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-yellow-300 to-yellow-600 flex items-center justify-center icon-box shadow-lg shadow-yellow-500/20">
-                                <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m22 4v-4m-3.1-2l-3.1-5m-5.8 5l-3.1-5m12 11V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-14v-4m2 4h-2"></path></svg>
-                            </div>
-                            <div class="text-[8px] min-[412px]:text-[9px] font-bold text-yellow-300 bg-yellow-500/10 px-2 py-1 rounded-full border border-yellow-500/20 uppercase tracking-wider">Wealth Transfer</div>
-                        </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Legacy Planning</h3>
-                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">การส่งต่อความมั่งคั่งและวางแผนภาษีมรดก สร้างเงินก้อนใหญ่ไร้ภาษีเพื่อส่งต่อความมั่นคงสู่ทายาทอย่างสมบูรณ์แบบ</p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">ทุนประกันสูง</span>
-                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">ปลอดภาษีมรดก</span>
-                    </div>
-                </div>
-
-                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #f87171, #be123c);">
-                    <div>
-                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-red-400 to-rose-600 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-red-500/20">
-                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                        </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">CI Shield</h3>
-                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">สินทรัพย์ปกป้องโรคร้ายแรง เจอ จ่าย จบ รับเงินก้อนใหญ่ทันทีเพื่อเป็นทุนสำรองระหว่างพักฟื้นโดยไม่กระทบเงินเก็บ</p>
-                    </div>
-                </div>
-
-                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #2dd4bf, #0f766e);">
-                    <div>
-                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-teal-400 to-cyan-600 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-teal-500/20">
-                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
-                        </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Education Fund</h3>
-                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">ออกแบบสินทรัพย์สะสมทรัพย์แบบมีระยะเวลา เพื่อสร้างกองทุนการศึกษาที่แน่นอนให้บุตรหลาน พร้อมความคุ้มครองผู้ชำระเบี้ย</p>
-                    </div>
-                </div>
-
-                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #818cf8, #4338ca);">
-                    <div>
-                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-700 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-indigo-500/20">
-                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Tax Saver Pro</h3>
-                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">รูปแบบสินทรัพย์ระยะสั้นที่ออกแบบมาเฉพาะเพื่อการลดหย่อนภาษี 100,000 บาทแรก คืนทุนไว ผลตอบแทนคุ้มค่า</p>
-                    </div>
-                </div>
-
-                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #94a3b8, #334155);">
-                    <div>
-                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-slate-400 to-slate-700 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-slate-500/20">
-                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-14v-4m2 4h-2m-2 0V5a2 2 0 012-2h10a2 2 0 012 2v16m-4 0v-4"></path></svg>
-                        </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Keyman Protection</h3>
-                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">สินทรัพย์คุ้มครองบุคคลสำคัญขององค์กร ปกป้องความเสี่ยงและรักษาเสถียรภาพธุรกิจ พร้อมสิทธินำไปหักค่าใช้จ่ายบริษัท</p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[9px] min-[412px]:text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">Corporate</span>
-                    </div>
-                </div>
-
-                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #f472b6, #db2777);">
-                    <div>
-                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-pink-500/20">
-                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08-.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Endowment 15/5</h3>
-                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">สินทรัพย์ระยะสั้น ชำระเพียง 5 ปี คุ้มครองถึง 15 ปี รับเงินคืนทุกปี ตอบโจทย์คนรุ่นใหม่ที่ชอบผลตอบแทนชัดเจน</p>
-                    </div>
-                </div>
-
-                <div class="bento-card w-[80vw] min-[412px]:w-[300px] sm:w-[340px] shrink-0 snap-center rounded-2xl p-5 min-[412px]:p-6 flex flex-col justify-between" style="--hover-gradient: linear-gradient(135deg, #8b5cf6, #4c1d95);">
-                    <div>
-                        <div class="w-12 h-12 min-[412px]:w-14 min-[412px]:h-14 rounded-xl bg-gradient-to-br from-purple-400 to-indigo-800 flex items-center justify-center mb-4 min-[412px]:mb-5 icon-box shadow-lg shadow-purple-500/20">
-                            <svg class="w-6 h-6 min-[412px]:w-7 min-[412px]:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h3 class="text-lg min-[412px]:text-xl font-bold mb-2 text-white">Global Care VIP</h3>
-                        <p class="text-gray-400 text-[10px] min-[412px]:text-[11px] leading-relaxed mb-4 min-[412px]:mb-5">ยกระดับการรักษา ครอบคลุมโรงพยาบาลชั้นนำทั่วโลก วงเงินสูงสุด 100 ล้านบาท พร้อมบริการเคลื่อนย้ายผู้ป่วยฉุกเฉินระดับ VIP</p>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="text-[9px] min-[412px]:text-[10px] font-semibold text-purple-300">Exclusive VIP</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Slider Controls -->
-            <div class="flex justify-center gap-4 mt-5 sm:mt-8 pb-4 relative z-30 pointer-events-auto">
-                <button id="scroll-left" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 active:scale-95 flex items-center justify-center backdrop-blur-md transition-all text-white shadow-lg cursor-pointer">
-                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                </button>
-                <button id="scroll-right" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 active:scale-95 flex items-center justify-center backdrop-blur-md transition-all text-white shadow-lg cursor-pointer">
-                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                </button>
-            </div>
         </div>
     </section>
 
@@ -788,19 +1650,23 @@
                             </div>
                         </div>
                         
-                        <div class="mt-2 min-[412px]:mt-3 border border-white/5 text-left bg-black/40 p-3 min-[412px]:p-4 rounded-xl backdrop-blur-sm shadow-inner relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[40px] pointer-events-none"></div>
+                        <div class="mt-2 min-[412px]:mt-3 rounded-2xl p-[1.5px] relative" style="background:linear-gradient(135deg,rgba(139,92,246,0.6),rgba(59,130,246,0.4),rgba(139,92,246,0.15))">
+                            <div class="rounded-[calc(1rem-1.5px)] p-3 min-[412px]:p-4 relative overflow-hidden" style="background:linear-gradient(160deg,#0f0f1a 0%,#0a0a14 60%,#070714 100%)">
+                                <!-- glow blobs -->
+                                <div class="absolute -top-6 -right-6 w-36 h-36 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(99,102,241,0.25) 0%,transparent 70%)"></div>
+                                <div class="absolute -bottom-4 -left-4 w-28 h-28 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(59,130,246,0.15) 0%,transparent 70%)"></div>
 
-                            <div class="flex justify-between items-center text-[10px] min-[412px]:text-[11px] mb-1.5 gap-2 relative z-10">
-                                <span class="text-gray-400">รวมรายได้สะสม 5 ปี:</span>
-                                <span class="text-white font-medium whitespace-nowrap" id="total-5year">฿ 0</span>
+                                <div class="flex justify-between items-center text-[10px] min-[412px]:text-[11px] mb-1.5 gap-2 relative z-10">
+                                    <span class="text-gray-400">รวมรายได้สะสม 5 ปี:</span>
+                                    <span class="text-white font-semibold whitespace-nowrap" id="total-5year">฿ 0</span>
+                                </div>
+                                <div class="flex justify-between items-center text-[10px] min-[412px]:text-[11px] mb-2 pb-2 gap-2 relative z-10" style="border-bottom:1px solid rgba(99,102,241,0.3)">
+                                    <span class="font-bold" style="color:#93c5fd">AAA BONUS (โบนัสพิเศษ):</span>
+                                    <span class="font-bold whitespace-nowrap" style="color:#6ee7b7" id="aaa-bonus">+ ฿ 0</span>
+                                </div>
+                                <p class="text-[9px] min-[412px]:text-[10px] text-gray-500 mb-0.5 uppercase tracking-widest text-center mt-2 min-[412px]:mt-3 relative z-10">คาดการณ์รวมรับทั้งหมด <span class="text-purple-200 font-bold">ภายใน 5 ปี</span></p>
+                                <p class="font-bold text-center leading-tight py-1 relative z-10 text-2xl min-[412px]:text-3xl md:text-4xl" style="background:linear-gradient(135deg,#c4b5fd,#93c5fd,#e9d5ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 12px rgba(139,92,246,0.45))" id="grand-total-19m">฿ 0</p>
                             </div>
-                            <div class="flex justify-between items-center text-[10px] min-[412px]:text-[11px] mb-2 pb-2 border-b border-white/10 gap-2 relative z-10">
-                                <span class="text-blue-300 font-bold">AAA BONUS (โบนัสพิเศษ):</span>
-                                <span class="text-blue-400 font-bold whitespace-nowrap" id="aaa-bonus">+ ฿ 0</span>
-                            </div>
-                            <p class="text-[9px] min-[412px]:text-[10px] text-gray-500 mb-0.5 uppercase tracking-widest text-center mt-2 min-[412px]:mt-3 relative z-10">คาดการณ์รวมรับทั้งหมด <span class="text-white font-bold">ภายใน 5 ปี</span></p>
-                            <p class="text-2xl min-[412px]:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-300 to-white text-center leading-tight py-1 relative z-10" id="grand-total-19m">฿ 0</p>
                         </div>
                     </div>
                 </div>
@@ -856,6 +1722,8 @@
             frame.addEventListener('load', function() {
                 resizeChubbFrame(frame);
                 frame.style.opacity = '1';
+                const currentTheme = localStorage.getItem('cashTheme') || 'dark';
+                frame.contentWindow.postMessage({ type: 'cash-theme', theme: currentTheme }, '*');
             });
         }
     });
@@ -874,8 +1742,8 @@
             <div class="glass-card rounded-2xl min-[412px]:rounded-[1.5rem] p-5 min-[412px]:p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 sm:gap-10 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] reveal-up">
                 
                 <div class="perspective-1000 shrink-0">
-                    <div id="tilt-image" class="tilt-card-transition relative w-40 h-40 min-[412px]:w-56 min-[412px]:h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-2xl border border-white/20 group bg-[#111]">
-                        <img id="profile-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" alt="Executive Profile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div id="tilt-image" class="tilt-card-transition relative w-40 h-40 min-[412px]:w-56 min-[412px]:h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden group bg-transparent" style="filter:drop-shadow(0 0 24px rgba(139,92,246,0.55)) drop-shadow(0 8px 32px rgba(0,0,0,0.7))">
+                        <img id="profile-img" src="Profile_nobg.png" alt="Executive Profile" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
                         
                         <label for="profile-upload" class="absolute inset-0 bg-black/70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer backdrop-blur-sm">
                             <div class="w-10 h-10 min-[412px]:w-14 min-[412px]:h-14 rounded-full bg-purple-600/30 flex items-center justify-center mb-2">
@@ -889,32 +1757,66 @@
                 </div>
 
                 <div class="text-center md:text-left flex-1 w-full">
-                    <div class="inline-block bg-purple-500/20 px-3 py-1 rounded-full border border-purple-500/30 text-purple-300 text-[9px] min-[412px]:text-[10px] font-semibold mb-2.5 min-[412px]:mb-3 tracking-wider">AGENCY DIRECTOR</div>
-                    <h3 class="text-xl min-[412px]:text-2xl sm:text-3xl font-bold text-white mb-1 min-[412px]:mb-1.5">ดร. ธนวัฒน์ มั่งคั่ง</h3>
-                    <p class="text-luxury-gold font-medium text-xs min-[412px]:text-sm sm:text-base mb-4 min-[412px]:mb-5">ผู้อำนวยการบริหารภาคอาวุโส</p>
-                    
+                    <button id="profile-role-badge" type="button" class="inline-block bg-purple-500/20 px-3 py-1 rounded-full border border-purple-500/30 text-purple-300 text-[9px] min-[412px]:text-[10px] font-semibold mb-2.5 min-[412px]:mb-3 tracking-wider cursor-pointer hover:bg-purple-500/30 transition-colors">AGENCY Supervisor</button>
+                    <h3 id="profile-name-display" class="text-xl min-[412px]:text-2xl sm:text-3xl font-bold text-white mb-3 min-[412px]:mb-4 select-none cursor-pointer" title="กดค้างเพื่อแก้ชื่อ">ศตวรรษ บุตรากาศ</h3>
+
                     <p class="text-gray-300 text-[11px] min-[412px]:text-xs sm:text-sm leading-relaxed mb-5 min-[412px]:mb-6 italic border-l-4 border-purple-500 pl-3 text-left">
                         "เราไม่ได้แค่สร้างนักขาย แต่เราสร้าง 'เจ้าของธุรกิจ' ที่พร้อมส่งต่อคุณค่า และความมั่นคงทางการเงินให้กับทุกครอบครัว ด้วยระบบการทำงานระดับสากล"
                     </p>
-                    
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 min-[412px]:gap-3 justify-center md:justify-start">
-                        <div class="bg-white/5 p-2.5 min-[412px]:p-3 rounded-xl border border-white/5 backdrop-blur-sm">
-                            <div class="text-lg min-[412px]:text-xl sm:text-2xl font-bold text-white mb-0.5">15<span class="text-purple-500">+</span></div>
-                            <div class="text-[8px] min-[412px]:text-[9px] text-gray-400 uppercase tracking-wider">ปีประสบการณ์</div>
-                        </div>
-                        <div class="bg-white/5 p-2.5 min-[412px]:p-3 rounded-xl border border-white/5 backdrop-blur-sm">
-                            <div class="text-lg min-[412px]:text-xl sm:text-2xl font-bold text-white mb-0.5">MDRT</div>
-                            <div class="text-[8px] min-[412px]:text-[9px] text-gray-400 uppercase tracking-wider">Lifetime Member</div>
-                        </div>
-                        <div class="bg-white/5 p-2.5 min-[412px]:p-3 rounded-xl border border-white/5 backdrop-blur-sm sm:col-span-1 col-span-2">
-                            <div class="text-lg min-[412px]:text-xl sm:text-2xl font-bold text-white mb-0.5">100<span class="text-purple-500">+</span></div>
-                            <div class="text-[8px] min-[412px]:text-[9px] text-gray-400 uppercase tracking-wider">ทีม Asset Designer</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Role Selection Popup -->
+    <div id="role-popup" class="fixed inset-0 z-[200] flex items-center justify-center p-4" style="display:none!important">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="role-popup-backdrop"></div>
+        <div class="relative bg-[#111] border border-purple-500/30 rounded-2xl p-5 w-full max-w-sm shadow-2xl z-10">
+            <p class="text-purple-300 text-xs font-semibold tracking-wider mb-4 text-center">เลือกตำแหน่ง</p>
+            <div class="flex flex-col gap-2 mb-5" id="role-options">
+                <button class="role-opt w-full text-left px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-purple-500/20 hover:border-purple-400/40 transition-all" data-role="AGENCY Supervisor">AGENCY Supervisor</button>
+                <button class="role-opt w-full text-left px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-purple-500/20 hover:border-purple-400/40 transition-all" data-role="AGENCY Leader">AGENCY Leader</button>
+                <button class="role-opt w-full text-left px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-purple-500/20 hover:border-purple-400/40 transition-all" data-role="AGENCY Manager">AGENCY Manager</button>
+                <button class="role-opt w-full text-left px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-purple-500/20 hover:border-purple-400/40 transition-all" data-role="AGENCY Director">AGENCY Director</button>
+                <button class="role-opt w-full text-left px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-purple-500/20 hover:border-purple-400/40 transition-all" data-role="AL Benefits 2025">AL Benefits 2025</button>
+            </div>
+            <div class="bg-purple-500/10 border border-purple-500/20 rounded-xl px-3 py-2.5 text-left">
+                <div class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-purple-300 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7h-3V5a2 2 0 00-2-2H9a2 2 0 00-2 2v2H4a1 1 0 00-1 1v11a2 2 0 002 2h14a2 2 0 002-2V8a1 1 0 00-1-1zM9 7V5h6v2"></path></svg>
+                    <div>
+                        <p class="text-white font-bold text-xs leading-relaxed">ระดับผู้บริหารตัวแทน (AL Benefits 2025)</p>
+                        <p class="text-gray-400 text-[10px] leading-relaxed">คำนวณและเช็คสิทธิ์สำหรับหัวหน้าฝ่ายขาย (AS), ผู้จัดการ (AM), ผู้จัดการอาวุโส (SM) และผู้จัดการภาค (DM)</p>
+                    </div>
+                </div>
+            </div>
+            <button id="role-popup-close" class="absolute top-3 right-3 w-7 h-7 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors text-xs">✕</button>
+        </div>
+    </div>
+
+    <!-- Name Edit Popup -->
+    <div id="name-popup" class="fixed inset-0 z-[200] flex items-center justify-center p-4" style="display:none!important">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="name-popup-backdrop"></div>
+        <div class="relative bg-[#111] border border-purple-500/30 rounded-2xl p-5 w-full max-w-sm shadow-2xl z-10">
+            <p class="text-purple-300 text-xs font-semibold tracking-wider mb-4 text-center">แก้ไขชื่อ</p>
+            <input id="name-popup-input" type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-500/30 mb-4" placeholder="ชื่อที่แสดง">
+            <button id="name-popup-confirm" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-2.5 rounded-xl transition-colors text-sm">บันทึก</button>
+            <button id="name-popup-close" class="absolute top-3 right-3 w-7 h-7 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors text-xs">✕</button>
+        </div>
+    </div>
+
+    <div id="hbd-health-modal" class="hbd-modal" role="dialog" aria-modal="true" aria-label="กองทุนสุขภาพ">
+        <div class="hbd-modal-panel">
+            <div class="hbd-modal-bar">
+                <a class="hbd-modal-action" href="https://flooksatawat.github.io/-HBD/#กองทุนสุขภาพ" target="_blank" rel="noopener" aria-label="เปิดหน้าใหม่">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7m0 0v7m0-7L10 14M5 5h6M5 5v14h14v-6"></path></svg>
+                </a>
+                <button id="hbd-health-close" class="hbd-modal-action" type="button" aria-label="ปิด">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <iframe id="hbd-health-frame" class="hbd-modal-frame" title="กองทุนสุขภาพ" loading="lazy"></iframe>
+        </div>
+    </div>
 
     <footer class="bg-black text-gray-500 text-[10px] min-[412px]:text-[11px] sm:text-xs py-8 border-t border-white/10 safe-pb">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-2.5 min-[412px]:gap-3">
@@ -943,7 +1845,41 @@
 
         document.addEventListener('DOMContentLoaded', () => {
 
-            gsap.registerPlugin(ScrollTrigger);
+            const animationsAvailable = Boolean(window.gsap && window.ScrollTrigger);
+            if (animationsAvailable) {
+                document.documentElement.classList.remove('no-gsap');
+                document.documentElement.classList.add('js-gsap-ready');
+                gsap.registerPlugin(ScrollTrigger);
+            } else {
+                document.documentElement.classList.remove('js-gsap-ready');
+                document.documentElement.classList.add('no-gsap');
+                document.querySelectorAll('.reveal-up').forEach(elem => {
+                    elem.style.opacity = '1';
+                    elem.style.transform = 'translateY(0)';
+                });
+            }
+
+            // --- Theme Toggle (Light/Dark) ---
+            const themeToggle = document.getElementById('theme-toggle');
+            const THEME_KEY = 'cashTheme';
+            function applyTheme(theme) {
+                if (theme === 'light') {
+                    document.body.classList.add('light-mode');
+                } else {
+                    document.body.classList.remove('light-mode');
+                }
+                localStorage.setItem(THEME_KEY, theme);
+                const chubbFrame = document.getElementById('chubbFrame');
+                if (chubbFrame) {
+                    chubbFrame.contentWindow.postMessage({ type: 'cash-theme', theme }, '*');
+                }
+            }
+            applyTheme(localStorage.getItem(THEME_KEY) || 'dark');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    applyTheme(document.body.classList.contains('light-mode') ? 'dark' : 'light');
+                });
+            }
 
             // --- Hamburger Menu Logic ---
             const menuBtn = document.getElementById('menu-btn');
@@ -1348,85 +2284,94 @@
             
             calculateBlueprint();
 
-            const track = document.getElementById("product-track");
-            if (track) {
-                track.addEventListener("mousemove", e => {
-                    for(const card of document.getElementsByClassName("bento-card")) {
-                        const rect = card.getBoundingClientRect(),
-                              x = e.clientX - rect.left,
-                              y = e.clientY - rect.top;
+            const powerSixStats = document.getElementById('power-six-stats');
+            const powerSixDigits = powerSixStats ? Array.from(powerSixStats.querySelectorAll('.power-six-number')) : [];
 
-                        card.style.setProperty("--mouse-x", `${x}px`);
-                        card.style.setProperty("--mouse-y", `${y}px`);
-                    }
+            function flipPowerSixDigit(el, digit) {
+                if (!el) return;
+                el.classList.remove('do-flip');
+                void el.offsetWidth;
+                el.classList.add('do-flip');
+                setTimeout(() => {
+                    el.textContent = digit;
+                }, 140);
+                setTimeout(() => {
+                    el.classList.remove('do-flip');
+                }, 280);
+            }
+
+            function runPowerSixFlips() {
+                if (!powerSixDigits.length) return;
+                const sequence = [1, 2, 3, 4, 5, 6];
+                powerSixDigits.forEach((el, index) => {
+                    el.textContent = '1';
+                    sequence.forEach((digit, step) => {
+                        setTimeout(() => flipPowerSixDigit(el, digit), index * 160 + step * 220 + 250);
+                    });
                 });
             }
 
-            let isDown = false;
-            let startX;
-            let scrollLeft;
+            if (powerSixStats) {
+                powerSixStats.addEventListener('click', runPowerSixFlips);
+                runPowerSixFlips();
 
-            if (track) {
-                track.addEventListener('mousedown', (e) => {
-                    isDown = true;
-                    track.classList.remove('snap-x', 'snap-mandatory'); 
-                    track.style.cursor = 'grabbing';
-                    startX = e.pageX - track.offsetLeft;
-                    scrollLeft = track.scrollLeft;
-                    track.querySelectorAll('.bento-card').forEach(card => card.style.pointerEvents = 'none');
-                });
-                
-                track.addEventListener('mouseleave', () => {
-                    if(!isDown) return;
-                    isDown = false;
-                    track.style.cursor = 'grab';
-                    track.classList.add('snap-x', 'snap-mandatory'); 
-                    track.querySelectorAll('.bento-card').forEach(card => card.style.pointerEvents = 'auto');
-                });
-                
-                track.addEventListener('mouseup', () => {
-                    isDown = false;
-                    track.style.cursor = 'grab';
-                    track.classList.add('snap-x', 'snap-mandatory');
-                    track.querySelectorAll('.bento-card').forEach(card => card.style.pointerEvents = 'auto');
-                });
-                
-                track.addEventListener('mousemove', (e) => {
-                    if (!isDown) return;
-                    e.preventDefault(); 
-                    const x = e.pageX - track.offsetLeft;
-                    const walk = (x - startX) * 2.5; 
-                    track.scrollLeft = scrollLeft - walk;
-                });
-            }
-
-            const btnLeft = document.getElementById('scroll-left');
-            const btnRight = document.getElementById('scroll-right');
-            
-            if(btnLeft && btnRight && track) {
-                const scrollAmount = window.innerWidth > 640 ? 400 : window.innerWidth * 0.85;
-                
-                btnLeft.addEventListener('click', () => {
-                    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                });
-                
-                btnRight.addEventListener('click', () => {
-                    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                });
-            }
-
-            gsap.utils.toArray('.reveal-up').forEach(elem => {
-                gsap.to(elem, {
-                    scrollTrigger: {
-                        trigger: elem,
+                if (animationsAvailable) {
+                    ScrollTrigger.create({
+                        trigger: powerSixStats,
                         start: "top 85%",
-                    },
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    ease: "power2.out"
+                        once: true,
+                        onEnter: runPowerSixFlips
+                    });
+                }
+            }
+
+            const p6GoalCounter = document.getElementById('p6-goal-counter');
+            const p6ProgressFill = document.getElementById('p6-progress-fill');
+
+            function runP6GoalAnimation() {
+                if (!p6GoalCounter) return;
+                let value = 0;
+                const interval = setInterval(() => {
+                    value = Math.min(value + 1200, 60000);
+                    p6GoalCounter.textContent = value.toLocaleString();
+                    if (value >= 60000) clearInterval(interval);
+                }, 16);
+
+                if (p6ProgressFill) {
+                    p6ProgressFill.style.width = '0%';
+                    setTimeout(() => {
+                        p6ProgressFill.style.width = '65%';
+                    }, 300);
+                }
+            }
+
+            if (p6GoalCounter) {
+                if (animationsAvailable) {
+                    ScrollTrigger.create({
+                        trigger: p6GoalCounter,
+                        start: "top 85%",
+                        once: true,
+                        onEnter: runP6GoalAnimation
+                    });
+                } else {
+                    runP6GoalAnimation();
+                }
+            }
+
+            if (animationsAvailable) {
+                gsap.utils.toArray('.reveal-up').forEach(elem => {
+                    gsap.to(elem, {
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: "top 85%",
+                        },
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "power2.out"
+                    });
                 });
-            });
+            }
             
             window.addEventListener('scroll', () => {
                 const navBg = document.getElementById('nav-bg');
@@ -1443,7 +2388,85 @@
 
             const profileUpload = document.getElementById('profile-upload');
             const profileImg = document.getElementById('profile-img');
-            
+            const profileNameDisplay = document.getElementById('profile-name-display');
+            const profileRoleBadge = document.getElementById('profile-role-badge');
+            const profileCacheKeys = {
+                image: 'cashProfileImage',
+                name: 'cashProfileName',
+                role: 'cashProfileRole'
+            };
+
+            function applyProfileName(value) {
+                const name = (value || '').trim() || 'ศตวรรษ บุตรากาศ';
+                if (profileNameDisplay) profileNameDisplay.textContent = name;
+                localStorage.setItem(profileCacheKeys.name, name);
+            }
+
+            function applyProfileRole(value) {
+                const role = value || 'AGENCY Supervisor';
+                if (profileRoleBadge) profileRoleBadge.textContent = role;
+                localStorage.setItem(profileCacheKeys.role, role);
+                // highlight active role in popup
+                document.querySelectorAll('.role-opt').forEach(btn => {
+                    btn.classList.toggle('bg-purple-500/30', btn.dataset.role === role);
+                    btn.classList.toggle('border-purple-400/60', btn.dataset.role === role);
+                });
+            }
+
+            const cachedProfileImage = localStorage.getItem(profileCacheKeys.image);
+            const cachedProfileName = localStorage.getItem(profileCacheKeys.name);
+            const cachedProfileRole = localStorage.getItem(profileCacheKeys.role);
+
+            if (profileImg && cachedProfileImage) profileImg.src = cachedProfileImage;
+            if (cachedProfileName) applyProfileName(cachedProfileName);
+            applyProfileRole(cachedProfileRole || 'AGENCY Supervisor');
+
+            // --- Role Popup ---
+            const rolePopup = document.getElementById('role-popup');
+            function openRolePopup() {
+                rolePopup.style.removeProperty('display');
+                rolePopup.style.display = 'flex';
+            }
+            function closeRolePopup() { rolePopup.style.display = 'none'; }
+
+            if (profileRoleBadge) profileRoleBadge.addEventListener('click', openRolePopup);
+            document.getElementById('role-popup-close').addEventListener('click', closeRolePopup);
+            document.getElementById('role-popup-backdrop').addEventListener('click', closeRolePopup);
+            document.querySelectorAll('.role-opt').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyProfileRole(btn.dataset.role);
+                    closeRolePopup();
+                });
+            });
+
+            // --- Name Popup (long press) ---
+            const namePopup = document.getElementById('name-popup');
+            const nameInput = document.getElementById('name-popup-input');
+            let pressTimer = null;
+
+            function openNamePopup() {
+                nameInput.value = profileNameDisplay ? profileNameDisplay.textContent : '';
+                namePopup.style.removeProperty('display');
+                namePopup.style.display = 'flex';
+                setTimeout(() => nameInput.focus(), 50);
+            }
+            function closeNamePopup() { namePopup.style.display = 'none'; }
+
+            if (profileNameDisplay) {
+                profileNameDisplay.addEventListener('mousedown', () => { pressTimer = setTimeout(openNamePopup, 600); });
+                profileNameDisplay.addEventListener('touchstart', (e) => { e.preventDefault(); pressTimer = setTimeout(openNamePopup, 600); }, { passive: false });
+                ['mouseup','mouseleave','touchend','touchcancel'].forEach(ev =>
+                    profileNameDisplay.addEventListener(ev, () => clearTimeout(pressTimer))
+                );
+            }
+            document.getElementById('name-popup-close').addEventListener('click', closeNamePopup);
+            document.getElementById('name-popup-backdrop').addEventListener('click', closeNamePopup);
+            document.getElementById('name-popup-confirm').addEventListener('click', () => {
+                applyProfileName(nameInput.value);
+                closeNamePopup();
+            });
+            nameInput.addEventListener('keydown', e => { if (e.key === 'Enter') { applyProfileName(nameInput.value); closeNamePopup(); } });
+
             if (profileUpload && profileImg) {
                 profileUpload.addEventListener('change', function(e) {
                     const file = e.target.files[0];
@@ -1451,11 +2474,71 @@
                         const reader = new FileReader();
                         reader.onload = function(event) {
                             profileImg.src = event.target.result;
+                            localStorage.setItem(profileCacheKeys.image, event.target.result);
                         };
                         reader.readAsDataURL(file);
                     }
                 });
             }
+
+            const hbdModal = document.getElementById('hbd-health-modal');
+            const hbdFrame = document.getElementById('hbd-health-frame');
+            const hbdClose = document.getElementById('hbd-health-close');
+            const hbdExternal = hbdModal ? hbdModal.querySelector('a.hbd-modal-action') : null;
+            const hbdTriggers = [
+                {
+                    el: document.getElementById('health-fund-trigger'),
+                    title: 'กองทุนสุขภาพ',
+                    url: 'hbd_health.html',
+                    externalUrl: 'https://flooksatawat.github.io/-HBD/'
+                },
+                {
+                    el: document.getElementById('cash-fund-trigger'),
+                    title: 'กองทุนเงินสด',
+                    url: 'hbd_cash.html',
+                    externalUrl: 'https://flooksatawat.github.io/-HBD/'
+                }
+            ];
+
+            function openHbdModal(config) {
+                if (!hbdModal || !hbdFrame) return;
+                hbdModal.setAttribute('aria-label', config.title);
+                hbdFrame.title = config.title;
+                if (hbdFrame.src !== config.url) hbdFrame.src = config.url;
+                if (hbdExternal) hbdExternal.href = config.externalUrl || config.url;
+                hbdModal.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+                if (hbdClose) hbdClose.focus();
+            }
+
+            function closeHbdModal() {
+                if (!hbdModal) return;
+                hbdModal.classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+
+            hbdTriggers.forEach(config => {
+                if (!config.el) return;
+                config.el.addEventListener('click', () => openHbdModal(config));
+                config.el.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openHbdModal(config);
+                    }
+                });
+            });
+
+            if (hbdClose) hbdClose.addEventListener('click', closeHbdModal);
+            if (hbdModal) {
+                hbdModal.addEventListener('click', event => {
+                    if (event.target === hbdModal) closeHbdModal();
+                });
+            }
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && hbdModal && hbdModal.classList.contains('is-open')) {
+                    closeHbdModal();
+                }
+            });
 
             const tiltImage = document.getElementById('tilt-image');
             
@@ -1482,3 +2565,6 @@
     </script>
 </body>
 </html>
+
+
+
